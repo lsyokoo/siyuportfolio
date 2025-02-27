@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Virtual Stylist</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="index.html">SIYU</a>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="uiux.html">UI/UX</a></li>
+        <li><a href="graphics.html">GRAPHICS</a></li>
+        <li><a href="vr.html">IMMERSIVE</a></li>
+        <li><a href="fashion.html">FASHION</a></li>
+        <li><a href="others.html">OTHERS</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="stylist-title">Virtual Stylist</h1>
+
+    <p class="stylist-description">
+      Virtual-Stylist is an AI-powered web application that redefines how users 
+      discover and communicate their ideal hairstyles. Unlike existing platforms 
+      requiring photo uploads, our solution prioritizes privacy, ensuring users 
+      can explore styles worry-free.
+    </p>
+
+    <!-- final results preview carousel -->
+    <section class="stylist-section">
+      <div class="carousel-container">
+        <div class="carousel-track">
+
+          <div class="carousel-slide">
+            <img src="assets/uiux/stylist/result2.png" alt="Result 2" />
+          </div>
+          <div class="carousel-slide">
+            <img src="assets/uiux/stylist.png" alt="Stylist" />
+          </div>
+          <div class="carousel-slide">
+            <img src="assets/uiux/stylist/result1.png" alt="Result 1" />
+          </div>
+        </div>
+
+        <button class="carousel-button prev">&lt;</button>
+        <button class="carousel-button next">&gt;</button>
+
+      </div>
+    </section>
+
+
+    <section class="stylist-gallery">
+      <h2>Problem & Research Insights</h2>
+      <h3>Challenges</h3>
+      <ul>
+        <li>Many users struggle to describe their ideal hairstyle in words.</li>
+        <li>Photo-based AI styling apps raise privacy & security concerns.</li>
+        <li>Existing solutions (e.g., YouCam) lack inclusivity for non-binary users.</li>
+      </ul>
+      <div class="gallery-grid">
+        <div class="image-container">
+          <img src="assets/uiux/stylist/photosubmit.jpg" alt="Photo Submission" />
+        </div>
+        <div class="image-container">
+          <img src="assets/uiux/stylist/gender.png" alt="Gender Inclusivity" />
+        </div>
+      </div>
+    </section>
+
+   
+
+    <section class="figma-embed">
+      <h2>User Persona & Journey Map</h2>
+      <iframe
+        width="1000"
+        height="600"
+        style="border: 1px solid rgba(0, 0, 0, 0.1);"
+        src="https://www.figma.com/embed?embed_host=share&url=https://www.figma.com/file/jkVmy8qI9MygLqADDRUX2O/Virtual-Stylist?node-id=0%3A1&scaling=contain"
+        allowfullscreen
+      ></iframe>
+    </section>
+
+
+
+    <section class="stylist-section">
+      <h2>Solution & Design Process</h2>
+      <h3>Approach</h3>
+      <p>
+        I designed a photo-free AI system where users input key attributes (age,
+        inclusive gender, style preferences) to receive:
+      </p>
+      <ul>
+        <li>Detailed, professional hairstyle descriptions</li>
+        <li>AI-generated image previews for better visualization</li>
+      </ul>
+
+      <h3>UX Design Process</h3>
+      <ul>
+        <li>Wireframe & IA: Defined user flow & streamlined interactions.</li>
+        <li>Lo-fi Prototype & Testing: Developed a basic functional web prototype using VS Code.</li>
+        <li>
+            UI & Interaction Design: Iterated based on feedback to improve
+            interaction (like modify input, regenerate), and accuracy.
+          </li>
+    </ul>
+
+    <!-- process images-->
+  <div class="bricks-grid">
+    <img src="assets/uiux/stylist/process1.png" alt="Wireframe" />
+    <img src="assets/uiux/stylist/process3.png" alt="Prototype Testing" />
+    <img src="assets/uiux/stylist/process4.png" alt="Iteration" />
+    <img src="assets/uiux/stylist/iterate2.png" alt="UI Iteration 1" />
+  </div>
+  
+
+
+    </section>
+
+
+    <section class="stylist-section">
+      <h2>Tech Stack & Tools</h2>
+      <ul>
+        <li>OpenAI API for text (ChatGPT) and image generation (DALLE).</li>
+        <li>Oak framework for the Deno backend.</li>
+        <li>Google Fonts (Scope One) for typography.</li>
+      </ul>
+    </section>
+  </main>
+
+
+
+  <section class="stylist-live-embed">
+    <h2>App Live Preview</h2>
+    <iframe 
+      src="https://hair-stylist-app.deno.dev" 
+      width="1000" 
+      height="600" 
+      style="border: 1px solid #ccc;"
+    ></iframe>
+    <p class="visit-live-link">
+      Visit the live website: 
+      <a href="https://hair-stylist-app.deno.dev" target="_blank">hair-stylist-app.deno.dev</a>
+    </p>
+  </section>
+
+
+  <footer>
+    <p>
+      &copy; 2025 Siyu Liu |
+      <a href="https://www.linkedin.com/in/siyu-liu-9b2a43270/" target="_blank">LinkedIn</a> |
+      <a href="mailto:lsy20041203@gmail.com">Email</a>
+    </p>
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
+

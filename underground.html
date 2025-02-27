@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Underground Scavengers</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="index.html">SIYU</a>
+      </div>
+      <ul class="nav-menu">
+        <li><a href="about.html">ABOUT</a></li>
+        <li><a href="uiux.html">UI/UX</a></li>
+        <li><a href="graphics.html">GRAPHICS</a></li>
+        <li><a href="vr.html">IMMERSIVE</a></li>
+        <li><a href="fashion.html">FASHION</a></li>
+        <li><a href="others.html">OTHERS</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1 class="underground-title">Underground Scavengers</h1>
+
+    <section class="underground-section">
+      <h2>Overview</h2>
+      <p>
+        A speculative UX project envisioning a digital platform for underground communities in a dystopian future. 
+        This web-based community hub enables people to connect, exchange resources, and showcase innovations, despite limited technological access.
+      </p>
+      <p>
+        Designed from an <i>underground scavenger's perspective</i>, this full-stack website embraces pixel-art aesthetics and low-tech UI, 
+        reflecting the realities of a resource-scarce world.
+      </p>
+      <div class="screenshot-container">
+        <img src="assets/uiux/underground.png" alt="Underground Scavengers Screenshot">
+      </div>
+    </section>
+
+
+    <section class="underground-section">
+      <h2>Research, Problem & Insights</h2>
+      <p>
+        Initially, I explored various speculative works like <i>Folding Beijing, Silo, Earth 2050, Love of a Cyclops & Nonhuman-Nonsense</i>.
+      </p>
+      <p>
+        In order to build an authentic user experience, I conducted role-play interviews, asking participants to imagine themselves as underground scavengers:
+      </p>
+      <ul>
+        <li>How would they communicate without advanced technology?</li>
+        <li>What resources would they need for survival?</li>
+        <li>How would they exchange information and items?</li>
+      </ul>
+      <h3>Key Insights</h3>
+      <ul>
+        <li><b>Limited technology</b> → Minimalist, pixel-based UI (users would rely on outdated interfaces).</li>
+        <li><b>Community-driven</b> → Need for barter fairs & forums.</li>
+        <li><b>Survival over aesthetics</b> → Functionality > modern UX norms (heavy text-based, reducing decorative elements).</li>
+      </ul>
+    </section>
+
+
+
+
+    <section class="figma-embed">
+      <h2>Research Notes & Wireframe on Figma</h2>
+      <iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="1000" height="450" src="https://embed.figma.com/board/CvvIggKj0Xb0JotViiKfmF/Emerging-Futures?node-id=0-1&embed-host=share" allowfullscreen></iframe>
+    </section>
+
+
+
+    <section class="underground-section">
+      <h2>Design Process</h2>
+
+      <h3>1. Figma Wireframing</h3>
+      <ul>
+        <li><b>Real-Time Chat:</b> Low-bandwidth, minimal interface.</li>
+        <li><b>Event Announcements:</b> Simple list format, no images.</li>
+        <li><b>Item Showcase:</b> Low-resolution images (DALL-E generated, edited with Photoshop).</li>
+      </ul>
+
+      <h3>2. Design User Flow</h3>
+      <p>
+        <b>Login as an Underground Resident</b> → Explore community events & items → Engage in barter/trade → Share new creations.
+      </p>
+
+    <!-- Process carousel -->
+    <section class="underground-section">
+      <div class="underground-carousel-container">
+        <div class="underground-carousel-track">
+          <div class="underground-carousel-slide">
+            <img src="assets/uiux/underground/login.png" alt="Process Image 1" />
+          </div>
+          <div class="underground-carousel-slide">
+            <img src="assets/uiux/underground/chat.png" alt="Process Image 2" />
+          </div>
+          <div class="underground-carousel-slide">
+            <img src="assets/uiux/underground/RSVP.png" alt="Process Image 3" />
+          </div>
+          <div class="underground-carousel-slide">
+            <img src="assets/uiux/underground/item.png" alt="Process Image 4" />
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+
+
+    <h3>3. Prototyping & Testing Iteration</h3>
+    <ul>
+      <li><b>Real-time chat</b> via Socket.io.</li>
+      <li><b>Node.js, Express backend</b> (handling user inputs for chat and event RSVP).</li>
+      <li><b>User Testing</b> and <b>Device Testing on Windows 7</b> for accessibility.</li>
+      <li>Iterating based on feedback about aesthetics and functionality.</li>
+    </ul>
+  </section>
+    
+    
+    <div class="carousel-pagination">
+      <span class="carousel-dot active"></span>
+      <span class="carousel-dot"></span>
+      <span class="carousel-dot"></span>
+      <span class="carousel-dot"></span>
+    </div>
+    
+
+
+    <section class="underground-live-embed">
+      <h2>Live Website Preview</h2>
+      <iframe 
+        src="https://final-m4m2.onrender.com/" 
+        width="1000" 
+        height="600" 
+        style="border: 1px solid #ccc;"
+      ></iframe>
+      <p class="visit-live-link">
+        Visit the live website: 
+        <a href="https://final-m4m2.onrender.com/" target="_blank">underground-scavengers-app.deno.dev</a>
+      </p>
+    </section>
+
+
+
+
+<section class="underground-section">
+  <h2>Reflection</h2>
+  <p>
+    This project is both a speculative and practical exploration of survival in a resource-scarce world. 
+    It reflects on how communities adapt and thrive under adversity, emphasizing creativity, resourcefulness, and cooperation. 
+    The choice to focus on community building rather than rebellion highlights a different perspective on dystopian narratives: 
+    <b>resilience over resistance</b>.
+  </p>
+  <p>
+    Moving forward, I plan to expand the website by enriching the items and events pages, transforming them into an 
+    archive of past activities and creations, similar to <i>Love of a Cyclops</i>. Additional visual elements will 
+    strengthen the connection between features, creating a cohesive and engaging user experience.
+  </p>
+</section>
+
+
+  </main>
+
+
+  <footer>
+    <p>
+      &copy; 2025 Siyu Liu |
+      <a href="https://www.linkedin.com/in/siyu-liu-9b2a43270/" target="_blank">LinkedIn</a> |
+      <a href="mailto:lsy20041203@gmail.com">Email</a>
+    </p>
+  </footer>
+
+
+  <script src="script.js"></script>
+</body>
+</html>
