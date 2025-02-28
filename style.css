@@ -370,7 +370,7 @@ button:hover {
 }
 .about-page .profile-picture {
   flex: 1;
-  max-width: 400px;
+  max-width: 300px;
   opacity: 0;
   animation: fadeInFast 0.7s ease-out forwards;
   animation-delay: 0.1s;
@@ -403,7 +403,7 @@ button:hover {
   animation-delay: 0.3s;
 }
 .about-page .about-links a:hover {
-  color: var(--accent-color);
+  color: #e4959e;
 }
 
 /* - about dividers & info - */
@@ -439,27 +439,6 @@ button:hover {
 }
 .about-page .info-block p {
   margin-bottom: 10px;
-}
-
-/* - about contact - */
-.about-page .contact-section {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem 50px;
-  opacity: 0;
-  animation: fadeInFast 0.7s ease-out forwards;
-  animation-delay: 0.6s;
-}
-.about-page .contact-section h2 {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-}
-.about-page .contact-section a {
-  text-decoration: none;
-  color: var(--text-color);
-}
-.about-page .contact-section a:hover {
-  color: var(--accent-color);
 }
 
 /* - about responsive - */
