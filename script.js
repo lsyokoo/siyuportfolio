@@ -164,52 +164,76 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-
+//remake
 document.addEventListener("DOMContentLoaded", function () {
-  if (document.querySelector(".remake-carousel")) {
-    const carousels = document.querySelectorAll(".remake-carousel");
-    carousels.forEach(carousel => {
-      const track = carousel.querySelector(".underground-carousel-track");
-      const prevButton = carousel.querySelector(".carousel-prev");
-      const nextButton = carousel.querySelector(".carousel-next");
-      let currentIndex = 0;
+  const mainImage = document.getElementById("remake-main-image");
+  const title = document.getElementById("remake-image-title");
+  const description = document.getElementById("remake-image-description");
+  const thumbnails = document.querySelectorAll(".remake-thumbnails .thumbnail");
+  const prevButton = document.querySelector(".carousel-prev");
+  const nextButton = document.querySelector(".carousel-next");
 
-      function updateCarousel() {
-        const slideWidth = track.children[0].clientWidth;
-        track.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
-      }
+  let currentIndex = 0;
 
-      nextButton.addEventListener("click", function () {
-        currentIndex = (currentIndex + 1) % track.children.length;
-        updateCarousel();
-      });
+  const images = Array.from(thumbnails).map(thumb => ({
+    src: thumb.src,
+    title: thumb.getAttribute("data-title"),
+    description: thumb.getAttribute("data-desc"),
+  }));
 
-      prevButton.addEventListener("click", function () {
-        currentIndex = (currentIndex - 1 + track.children.length) % track.children.length;
-        updateCarousel();
-      });
-
-      window.addEventListener("resize", updateCarousel);
-    });
+  function updateMainImage(index) {
+    mainImage.src = images[index].src;
+    title.textContent = images[index].title;
+    description.textContent = images[index].description;
+    thumbnails.forEach(thumb => thumb.classList.remove("active"));
+    thumbnails[index].classList.add("active");
   }
 
-  if (document.querySelector(".remake-process-carousel")) {
-    const mainImage = document.getElementById("remake-main-image");
-    const title = document.getElementById("remake-image-title");
-    const description = document.getElementById("remake-image-description");
-    const thumbnails = document.querySelectorAll(".remake-thumbnails .thumbnail");
-    let currentIndex = 0;
+  thumbnails.forEach((thumbnail, index) => {
+    thumbnail.addEventListener("click", () => {
+      currentIndex = index;
+      updateMainImage(currentIndex);
+    });
+  });
 
-    const images = Array.from(thumbnails).map(thumb => ({
-      src: thumb.src,
-      title: thumb.getAttribute("data-title"),
-      description: thumb.getAttribute("data-desc"),
-    }));
+  prevButton.addEventListener("click", () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    updateMainImage(currentIndex);
+  });
+
+  nextButton.addEventListener("click", () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    updateMainImage(currentIndex);
+  });
+
+
+  updateMainImage(currentIndex);
+
+  function resizeMainImage() {
+    const windowHeight = window.innerHeight * 0.8; 
+    mainImage.style.maxHeight = `${windowHeight}px`;
+  }
+
+
+  window.addEventListener("resize", resizeMainImage);
+  resizeMainImage();
+});
+
+
+//shoe
+document.addEventListener("DOMContentLoaded", function () {
+  function setupProcessCarousel(carouselClass, mainImageId, thumbnailsClass, overlayText) {
+    const mainImage = document.getElementById(mainImageId);
+    const thumbnails = document.querySelectorAll(`.${thumbnailsClass} .thumbnail`);
+    const prevButton = document.querySelector(`.${carouselClass} .carousel-prev`);
+    const nextButton = document.querySelector(`.${carouselClass} .carousel-next`);
+    const overlay = document.querySelector(`.${carouselClass} .hover-overlay`);
+
+    let currentIndex = 0;
+    const images = Array.from(thumbnails).map(thumb => thumb.src);
 
     function updateMainImage(index) {
-      mainImage.src = images[index].src;
-      title.textContent = images[index].title;
-      description.textContent = images[index].description;
+      mainImage.src = images[index];
       thumbnails.forEach(thumb => thumb.classList.remove("active"));
       thumbnails[index].classList.add("active");
     }
@@ -221,6 +245,43 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     });
 
+    prevButton.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      updateMainImage(currentIndex);
+    });
+
+    nextButton.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      updateMainImage(currentIndex);
+    });
+
+    // gray and text hover
+    mainImage.parentElement.addEventListener("mouseenter", () => {
+      mainImage.style.filter = "brightness(60%)";
+      overlay.textContent = overlayText;
+      overlay.style.opacity = "1";
+    });
+
+    mainImage.parentElement.addEventListener("mouseleave", () => {
+      mainImage.style.filter = "brightness(100%)";
+      overlay.style.opacity = "0";
+    });
+
+
     updateMainImage(currentIndex);
   }
+
+
+  setupProcessCarousel("basic-carousel", "basic-main-image", "basic-thumbnails", "Basics: Daily Collection");
+  setupProcessCarousel("statement-carousel", "statement-main-image", "statement-thumbnails", "Statement Shoes");
+
+
+  document.querySelectorAll(".research-collage img").forEach((image) => {
+    image.addEventListener("mouseenter", function () {
+      this.style.filter = "brightness(60%)";
+    });
+    image.addEventListener("mouseleave", function () {
+      this.style.filter = "brightness(100%)";
+    });
+  });
 });

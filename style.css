@@ -12,7 +12,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-weight: 400; /* normalizing text weight */
+  font-weight: 400;
 }
 
 body {
@@ -29,20 +29,91 @@ header {
   top: 0;
   left: 0;
   z-index: 100;
-  background-color: transparent;
-  box-shadow: none;
+  background-color: var(--bg-light);
+  backdrop-filter: blur(5px);
 }
 
-/* - nav: 1400px & center - */
+/* - nav: ensure full width background while centering content - */
 nav {
   max-width: 1460px;
+  width: 100%;
   margin: 0 auto;
   padding: 23px 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
   background-color: var(--bg-light);
-  backdrop-filter: blur(5px);
+}
+
+/* - Ensure responsive layout spacing - */
+.section-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 0 2rem;
+}
+
+/* - Responsive fixes for project details pages - */
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    width: 100%;
+    background: var(--bg-light);
+    text-align: center;
+    padding: 10px 0;
+  }
+  .nav-menu.active {
+    display: flex;
+  }
+  .nav-menu li {
+    margin: 15px 0;
+  }
+  .hamburger {
+    display: flex !important;
+    position: absolute;
+    top: 23px;
+    right: 2rem;
+  }
+  .project-details-page .hamburger {
+    display: flex !important;
+  }
+}
+
+/* - Ensure spacing for smaller screens - */
+@media (max-width: 768px) {
+  .section-content,
+  .project-content {
+    padding: 0 1.5rem;
+  }
+}
+
+/* - Add additional spacing fix for content near edges - */
+@media (max-width: 600px) {
+  body {
+    padding: 0 1.5rem;
+  }
+  .section-content, .project-content {
+    padding: 0 1.5rem;
+  }
+}
+
+/* - Fix layout issue for project detail pages - */
+.project-details-page {
+  padding: 2rem;
+}
+
+/* - Ensure full-width background fix - */
+@media (max-width: 768px) {
+  .nav-menu {
+    width: 100vw;
+  }
 }
 
 /* - logo link hover - */
@@ -71,11 +142,6 @@ nav {
   transition: font-size 0.3s ease, color 0.3s ease;
 }
 
-/* - pink hover & active - */
-.nav-menu li a:hover,
-.nav-menu li a.active {
-  color: #e4959e; 
-}
 
 /* - burger menu for small screens - */
 .hamburger {
@@ -89,6 +155,13 @@ nav {
   background: #3e4e50;
   margin: 5px 0;
   transition: all 0.3s;
+}
+
+
+/* - pink hover & active - */
+.nav-menu li a:hover,
+.nav-menu li a.active {
+  color: #e4959e; 
 }
 
 /* - responsive: hide nav on small - */
@@ -1627,44 +1700,141 @@ footer a:hover {
   }
 }
 
+
 /* - remake page - */
-.remake-carousel {
-  position: relative;
-  max-width: 80%;
-  margin: 20px auto;
-  overflow: hidden;
+.remake-title {
+  font-size: 4rem;
+  font-weight: 300;
+  text-align: left;
+  color: #3e4e50;
+  margin: 120px auto 10px;
+  max-width: 1200px;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in forwards;
 }
-.remake-carousel .underground-carousel-track {
-  display: flex;
-  transition: transform 0.4s ease-in-out;
+
+.image-collage {
+  display: grid;
+  gap: 10px; 
+  justify-content: center;
+  max-width: 1400px;
+  margin: auto;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: auto;
+  position: relative; 
 }
-.remake-carousel .underground-carousel-track img {
+
+
+.image-collage img:nth-child(1) { 
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.image-collage img:nth-child(2) { 
+  grid-column: span 1;
+  grid-row: span 1; 
+}
+
+.image-collage img:nth-child(3) { 
+  grid-column: span 1; 
+  grid-row: span 2; 
+}
+
+.image-collage img:nth-child(4) { 
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+.image-collage img:nth-child(5) { 
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+.image-collage img:nth-child(6) { 
+  grid-column: span 2;
+  grid-row: span 1;
+}
+
+.image-collage img:nth-child(7) { 
+  grid-column: span 1;
+  grid-row: span 1;
+}
+.image-collage img:nth-child(8) { 
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+/* scattered puzzle feel */
+.image-collage img {
   width: 100%;
-  max-width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: contain; 
+  transition: transform 0.3s ease-in-out;
+  position: relative;
 }
-.remake-carousel .carousel-prev, .remake-carousel .carousel-next {
+
+
+.image-collage img:nth-child(1) { transform: rotate(-6deg) translate(-10px, 50px); }
+.image-collage img:nth-child(2) { transform: rotate(5deg) translate(15px, 70px); }
+.image-collage img:nth-child(3) { transform: rotate(-2deg) translate(-5px, -12px); }
+.image-collage img:nth-child(4) { transform: rotate(12deg) translate(20px, -100px); }
+.image-collage img:nth-child(5) { transform: rotate(2deg) translate(0px, -180px); }
+.image-collage img:nth-child(6) { transform: rotate(6deg) translate(5px, -200px); }
+.image-collage img:nth-child(7) { transform: rotate(-12deg) translate(-18px, -100px); }
+.image-collage img:nth-child(8) { transform: rotate(2deg) translate(-10px, -300px); }
+
+
+.remake-process-carousel {
+  text-align: center;
+  padding: 20px;
+  position: relative; 
+}
+
+.remake-process-carousel .carousel-slide {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+}
+
+.remake-process-carousel .carousel-slide img {
+  max-height: 70vh;
+  width: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+.remake-process-carousel .carousel-prev,
+.remake-process-carousel .carousel-next {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.4);
   color: white;
   border: none;
-  padding: 10px;
+  padding: 12px 20px;
   cursor: pointer;
-  font-size: 18px;
+  font-size: 24px;
+  z-index: 10;
+  transition: background 0.3s ease-in-out;
 }
-.remake-process-carousel {
-  text-align: center;
-  background-color: #fdf3e7;
-  padding: 20px;
+
+.remake-process-carousel .carousel-prev {
+  left: 10px;
 }
-.remake-process-carousel .carousel-slide {
-  position: relative;
+
+.remake-process-carousel .carousel-next {
+  right: 10px;
 }
-.remake-process-carousel .carousel-slide img {
-  width: 100%;
+
+.remake-process-carousel .carousel-prev:hover,
+.remake-process-carousel .carousel-next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
 }
+
+
 .remake-process-carousel .carousel-caption {
   position: absolute;
   bottom: 10px;
@@ -1680,7 +1850,7 @@ footer a:hover {
   margin-top: 15px;
 }
 .remake-thumbnails .thumbnail {
-  width: 80px;
+  width: 60px;
   height: 50px;
   margin: 0 5px;
   cursor: pointer;
@@ -1691,16 +1861,190 @@ footer a:hover {
   opacity: 1;
   border: 2px solid #222;
 }
-.image-collage, .image-bricks {
+
+
+
+
+
+/* shoe page */
+.shoe-title {
+  font-size: 4rem;
+  font-weight: 300;
+  text-align: left;
+  color: #3e4e50;
+  margin: 120px auto 10px;
+  max-width: 1200px;
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in forwards;
+}
+
+
+.project-intro {
+  max-width: 1200px;
+  margin: 40px auto;
+  font-size: 1.2rem;
+  color: #555;
+  text-align: left;
+  line-height: 1.6;
+}
+
+
+.shoe-process-carousel {
+  text-align: center;
+  position: relative;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.shoe-process-carousel .carousel-slide {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+
+.shoe-process-carousel .carousel-slide img {
+  max-width: 100%; 
+  max-height: 75vh;
+  height: auto;
+  width: auto;
+  object-fit: contain; 
+  display: block;
+  transition: filter 0.3s ease-in-out;
+}
+
+/* hover gray and text*/
+.shoe-process-carousel .carousel-slide {
+  position: relative;
+}
+
+.shoe-process-carousel .carousel-slide:hover img {
+  filter: brightness(60%);
+}
+
+.shoe-process-carousel .hover-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.basic-carousel .carousel-slide:hover .hover-overlay {
+  opacity: 1;
+  content: "Basics: Daily Collection";
+}
+
+.statement-carousel .carousel-slide:hover .hover-overlay {
+  opacity: 1;
+  content: "Statement Shoes";
+}
+
+
+.shoe-process-carousel .carousel-prev,
+.shoe-process-carousel .carousel-next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.4);
+  color: white;
+  border: none;
+  padding: 15px 20px;
+  cursor: pointer;
+  font-size: 24px;
+  z-index: 10;
+  transition: background 0.3s ease-in-out;
+}
+
+.shoe-process-carousel .carousel-prev {
+  left: 20px;
+}
+
+.shoe-process-carousel .carousel-next {
+  right: 20px;
+}
+
+.shoe-process-carousel .carousel-prev:hover,
+.shoe-process-carousel .carousel-next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+.thumbnail-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 15px;
+}
+
+.thumbnail {
+  width: 100px;
+  height: 80px;
+  margin: 0 8px;
+  cursor: pointer;
+  opacity: 0.8;
+  transition: opacity 0.3s, transform 0.2s ease-in-out;
+}
+
+.thumbnail:hover,
+.thumbnail.active {
+  opacity: 1;
+  transform: scale(1.02);
+  border: 2px solid #222;
+}
+
+
+.shoe-section {
+  margin-top: 60px;
+}
+
+
+.research-collage {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 10px;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, auto);
+  gap: 15px;
   justify-content: center;
   max-width: 1200px;
   margin: auto;
 }
-.image-collage img, .image-bricks img {
+
+
+.research-item {
+  position: relative;
+  overflow: hidden;
+}
+
+
+.research-item img {
   width: 100%;
   height: auto;
-  transition: transform 0.3s ease-in-out;
+  object-fit: contain;
+  transition: filter 0.3s ease-in-out;
+}
+
+.research-item:hover img {
+  filter: brightness(60%);
+}
+
+
+.research-item .hover-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.research-item:hover .hover-text {
+  opacity: 1;
 }
