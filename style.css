@@ -1046,12 +1046,12 @@ button:hover {
   background-color: var(--bg-light);
 }
 .section-content {
-  max-width: 1400px;
+  max-width: 1460px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px;
+  gap: 10px;
 }
 .left-text {
   flex: 1;
@@ -1393,7 +1393,6 @@ footer a:hover {
   max-width: 1200px;
   margin: 20px auto;
   text-align: center;
-  
 }
 .screenshot-container img {
   max-width: 100%;
