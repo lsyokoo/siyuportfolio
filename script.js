@@ -285,3 +285,77 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 });
+
+
+//uniform
+document.addEventListener("DOMContentLoaded", function () {
+  const track = document.querySelector(".finaluniform-carousel-track");
+
+  if (track) {
+    const slides = Array.from(track.children);
+
+    slides.forEach((slide) => {
+      let clone = slide.cloneNode(true);
+      track.appendChild(clone);
+    });
+
+    track.addEventListener("mouseenter", function () {
+      track.style.animationPlayState = "paused";
+    });
+
+    track.addEventListener("mouseleave", function () {
+      track.style.animationPlayState = "running";
+    });
+  }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+  function setupUniformProcessCarousel(carouselClass, mainImageId, thumbnailsClass, hoverTextId) {
+    const mainImage = document.getElementById(mainImageId);
+    const thumbnails = document.querySelectorAll(`.${thumbnailsClass} .thumbnail`);
+    const prevButton = document.querySelector(`.${carouselClass} .carousel-prev`);
+    const nextButton = document.querySelector(`.${carouselClass} .carousel-next`);
+    const hoverText = document.getElementById(hoverTextId);
+
+    let currentIndex = 0;
+    const images = Array.from(thumbnails).map(thumb => ({
+      src: thumb.src,
+      title: thumb.getAttribute("data-title"),
+      desc: thumb.getAttribute("data-desc"),
+    }));
+
+    function updateMainImage(index) {
+      mainImage.src = images[index].src;
+      hoverText.innerHTML = `<h3>${images[index].title}</h3><p>${images[index].desc}</p>`;
+      thumbnails.forEach(thumb => thumb.classList.remove("active"));
+      thumbnails[index].classList.add("active");
+    }
+
+    thumbnails.forEach((thumbnail, index) => {
+      thumbnail.addEventListener("click", () => {
+        currentIndex = index;
+        updateMainImage(currentIndex);
+      });
+    });
+
+    prevButton.addEventListener("click", () => {
+      currentIndex = (currentIndex - 1 + images.length) % images.length;
+      updateMainImage(currentIndex);
+    });
+
+    nextButton.addEventListener("click", () => {
+      currentIndex = (currentIndex + 1) % images.length;
+      updateMainImage(currentIndex);
+    });
+
+    updateMainImage(currentIndex);
+  }
+
+  setupUniformProcessCarousel(
+    "uniform-process-carousel",
+    "uniform-process-main-image",
+    "uniform-process-thumbnails",
+    "uniform-hover-text"
+  );
+});
+
