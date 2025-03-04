@@ -554,7 +554,6 @@ button:hover {
   margin: 0 auto;    
   column-count: 3;
   column-gap: 10px;
-  padding-top: 20px;
 }
 .gallery-item {
   break-inside: avoid;
@@ -591,7 +590,7 @@ button:hover {
 
 /* - page title & intro text - */
 .page-title {
-  font-size: 4.5rem; 
+  font-size: 3rem; 
   font-weight: 300;
   text-align: left;
   color: #3e4e50;
