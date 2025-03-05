@@ -1,4 +1,3 @@
-/* - global vars - */
 :root {
   --primary-color: #191919;
   --secondary-color: #6c757d;
@@ -7,7 +6,6 @@
   --box-shadow-hover: inset #8a7373 2px 2px 4px, inset #4d4d4d -2px -2px 4px;
 }
 
-/* - reset & defaults - */
 * {
   margin: 0;
   padding: 0;
@@ -22,7 +20,11 @@ body {
   color: #3e4e50;
 }
 
-/* - header: full width - */
+strong {
+  font-weight: bold; 
+}
+
+
 header {
   position: fixed;
   width: 100%;
@@ -33,7 +35,6 @@ header {
   backdrop-filter: blur(5px);
 }
 
-/* - nav: ensure full width background while centering content - */
 nav {
   max-width: 1460px;
   width: 100%;
@@ -45,18 +46,52 @@ nav {
   background-color: var(--bg-light);
 }
 
-/* - Ensure responsive layout spacing - */
-.section-content {
-  max-width: 1400px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 0 2rem;
+
+.logo a {
+  font-size: 1.5rem;
+  text-decoration: none;
+  color: #3e4e50;
+  font-weight: 400;
+}
+.logo a:hover {
+  color: #e4959e;
 }
 
-/* - Responsive fixes for project details pages - */
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+.nav-menu li a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 400;
+  color: #3e4e50;
+  letter-spacing: 1px;
+  transition: font-size 0.3s ease, color 0.3s ease;
+}
+.nav-menu li a:hover,
+.nav-menu li a.active {
+  color: #e4959e;
+}
+
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+.hamburger span {
+  width: 30px;
+  height: 4px;
+  background: #3e4e50;
+  margin: 5px 0;
+  transition: all 0.3s;
+}
+
+
+
 @media (max-width: 768px) {
   .nav-menu {
     display: none;
@@ -86,112 +121,17 @@ nav {
   }
 }
 
-/* - Ensure spacing for smaller screens - */
-@media (max-width: 768px) {
-  .section-content,
-  .project-content {
-    padding: 0 1.5rem;
-  }
-}
-
-/* - Add additional spacing fix for content near edges - */
-@media (max-width: 600px) {
-  body {
-    padding: 0 1.5rem;
-  }
-  .section-content, .project-content {
-    padding: 0 1.5rem;
-  }
-}
-
-/* - Fix layout issue for project detail pages - */
-.project-details-page {
-  padding: 2rem;
-}
-
-/* - Ensure full-width background fix - */
 @media (max-width: 768px) {
   .nav-menu {
     width: 100vw;
   }
 }
 
-/* - logo link hover - */
-.logo a {
-  font-size: 1.5rem;
-  text-decoration: none;
-  color: #3e4e50;
-  font-weight: 400;
-}
-.logo a:hover {
-  color: #e4959e;
-}
-
-/* - nav menu / hidden on small - */
-.nav-menu {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-}
-.nav-menu li a {
-  text-decoration: none;
-  font-size: 16px;
-  font-weight: 400;
-  color: #3e4e50;
-  letter-spacing: 1px;
-  transition: font-size 0.3s ease, color 0.3s ease;
-}
 
 
-/* - burger menu for small screens - */
-.hamburger {
-  display: none;
-  flex-direction: column;
-  cursor: pointer;
-}
-.hamburger span {
-  width: 30px;
-  height: 4px;
-  background: #3e4e50;
-  margin: 5px 0;
-  transition: all 0.3s;
-}
-
-
-/* - pink hover & active - */
-.nav-menu li a:hover,
-.nav-menu li a.active {
-  color: #e4959e; 
-}
-
-/* - responsive: hide nav on small - */
-@media (max-width: 768px) {
-  .nav-menu {
-    display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 70px; /* accounting for nav height */
-    right: 2rem;
-    width: calc(100% - 4rem);
-    background: var(--bg-light);
-    text-align: center;
-    padding: 10px 0;
-  }
-  .nav-menu.active {
-    display: flex; 
-  }
-  .nav-menu li {
-    margin: 15px 0;
-  }
-  .hamburger {
-    display: flex;
-  }
-}
-
-/* - hero section - */
 #home {
   position: relative;
-  min-height: 100vh;
+  min-height: 100vh; 
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -201,10 +141,9 @@ nav {
   padding: 2rem;
 }
 
-/* - hero heading - */
 #home .content h1 {
   font-size: 4.5rem;
-  font-weight: 300; 
+  font-weight: 300;
   color: #3e4e50;
   max-width: 800px;
   margin: 0 auto;
@@ -221,7 +160,7 @@ nav {
   }
 }
 
-/* - hero subtitle fade - */
+
 #subtitle {
   opacity: 0;
   font-size: 1.6rem;
@@ -232,32 +171,45 @@ nav {
   transform: translateY(0);
 }
 
-/* - scroll down arrow - */
+
 .scrolldown-container {
-  position: absolute;
+  position: absolute;    
   bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
   cursor: pointer;
 }
+
 .scrolldown {
   width: 40px;
   height: auto;
   opacity: 0;
   transform: translateY(30px);
   animation: fadeSlideUp 0.8s ease forwards;
+  animation-delay: 1s;
+  transition: transform 0.3s ease;
+}
+
+
+.scrolldown-container.about-second {
+  position: absolute;
+  bottom: -70px;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  animation: fadeSlideUp 0.8s ease forwards;
   animation-delay: 1.5s;
   transition: transform 0.3s ease;
 }
 
-/* - arrow hover effect - */
+
 .scrolldown-container:hover .scrolldown {
   transform: translateY(0) scale(1.1);
   filter: brightness(0) invert(1) sepia(1) saturate(5) hue-rotate(320deg);
   transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-/* - arrow keyframe - */
+
 @keyframes fadeSlideUp {
   0% {
     opacity: 0;
@@ -269,7 +221,8 @@ nav {
   }
 }
 
-/* - hero text slide - */
+
+
 .slide-text span {
   display: inline-block;
   transform: translateY(-100%);
@@ -290,34 +243,44 @@ nav {
   }
 }
 
-/* - fade in #home - */
+
 .fade-in {
   animation: fadeIn 1.5s ease-in forwards;
 }
 @keyframes fadeIn {
   from { opacity: 0; }
-  to { opacity: 1; }
+  to   { opacity: 1; }
 }
 
-/* - section style - */
+
+
 .section-wrap {
-  padding: 80px 0; 
+  margin-top: 20px;
+  padding: 80px 0;
   background-color: var(--bg-light);
 }
 
-/* - section content: align with nav - */
 .section-content {
   max-width: 1400px;
   margin: 0 auto;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 20px; 
+  gap: 20px;
+  padding: 0 2rem;
 }
 
-/* - left text - */
+@media (max-width: 768px) {
+  .section-content {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
+
+/* LEFT TEXT */
 .left-text {
-  flex: 0.8; 
+  flex: 0.8;
   padding-right: 20px;
 }
 .left-text h2 {
@@ -331,9 +294,10 @@ nav {
   color: #3e4e50;
 }
 
-/* - right image - */
+
+/* RIGHT IMAGE */
 .right-image {
-  flex: 3; 
+  flex: 3;
 }
 .right-image img {
   width: 100%;
@@ -341,8 +305,7 @@ nav {
   display: block;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
-/* - image hover scale - */
+/* image hover scale */
 .right-image a img {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -351,19 +314,7 @@ nav {
   cursor: pointer;
 }
 
-/* - responsive: stack text & image - */
-@media (max-width: 768px) {
-  .section-content {
-    flex-direction: column;
-    text-align: center;
-  }
-  .left-text {
-    padding-right: 0;
-    margin-bottom: 20px;
-  }
-}
-
-/* - hidden classes - */
+/* hidden classes for animations */
 .hidden-left {
   opacity: 0;
   transform: translateX(-50px);
@@ -383,7 +334,10 @@ nav {
   transform: translateY(0);
 }
 
-/* - footer style - */
+
+/* -------------------------
+   FOOTER
+-------------------------- */
 .footer {
   background-color: var(--bg-light);
   color: #3e4e50;
@@ -400,7 +354,10 @@ nav {
   color: #e4959e;
 }
 
-/* - button style - */
+
+/* -------------------------
+   BUTTON STYLE
+-------------------------- */
 button {
   padding: 12px 24px;
   border: 1px solid var(--primary-color);
@@ -413,15 +370,18 @@ button {
 }
 button:hover {
   background-color: var(--primary-color);
-  color: white;
+  color: #ffffff;
   box-shadow: var(--box-shadow-hover);
 }
 
-/* - fadeinfast keyframe - */
+
+/* -------------------------
+   FADE IN FAST KEYFRAME
+-------------------------- */
 @keyframes fadeInFast {
   from {
     opacity: 0;
-    transform: translateY(10px); 
+    transform: translateY(10px);
   }
   to {
     opacity: 1;
@@ -429,7 +389,7 @@ button:hover {
   }
 }
 
-/* - about page - */
+
 .about-page .about-container {
   max-width: 1200px;
   margin: 50px auto;
@@ -437,10 +397,12 @@ button:hover {
   gap: 40px;
   align-items: center;
   padding: 0 2rem;
-  padding-top: 80px;
+  padding-top: 150px; 
   opacity: 0;
   animation: fadeInFast 0.6s ease-out forwards;
 }
+
+
 .about-page .profile-picture {
   flex: 1;
   max-width: 300px;
@@ -452,6 +414,8 @@ button:hover {
   width: 100%;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
+
+
 .about-page .about-details {
   flex: 2;
   opacity: 0;
@@ -479,7 +443,7 @@ button:hover {
   color: #e4959e;
 }
 
-/* - about dividers & info - */
+/* about section divider & info blocks */
 .about-page .section-divider {
   border: 0;
   border-top: 1px solid #ddd;
@@ -489,6 +453,7 @@ button:hover {
   animation: fadeInFast 0.7s ease-out forwards;
   animation-delay: 0.4s;
 }
+
 .about-page .info-section {
   display: flex;
   justify-content: space-between;
@@ -501,6 +466,7 @@ button:hover {
   animation: fadeInFast 0.7s ease-out forwards;
   animation-delay: 0.5s;
 }
+
 .about-page .info-block {
   flex: 1;
   min-width: 250px;
@@ -514,7 +480,7 @@ button:hover {
   margin-bottom: 10px;
 }
 
-/* - about responsive - */
+/* responsive: about page layout */
 @media (max-width: 768px) {
   .about-page .about-container {
     flex-direction: column;
@@ -533,7 +499,7 @@ button:hover {
   }
 }
 
-/* - experience text - */
+/* experience text link hover */
 .experience-text h3 a {
   text-decoration: none;
   color: #3e4e50;
@@ -547,6 +513,7 @@ button:hover {
   font-size: 0.95rem;
   line-height: 1.5;
 }
+
 
 /* - other collage gallery - */
 .collage-gallery {
@@ -871,7 +838,7 @@ button:hover {
   }
 }
 
-/* - graphics page - */
+/* - motion page - */
 .graphics-title {
   font-size: 4.5rem;
   font-weight: 300;
@@ -932,7 +899,7 @@ button:hover {
 /* - triple grid - */
 .triple-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
   max-width: 1200px;
   margin: 0 auto 60px auto;
@@ -947,51 +914,7 @@ button:hover {
 .triple-grid video,
 .triple-grid iframe {
   width: 100%;
-  height: 400px;
-}
-
-/* - wayfinding - */
-.single-image {
-  max-width: 1200px;
-  margin: 20px auto;
-  text-align: left;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-.single-image.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-.wayfinding-description {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  color: #555;
-}
-.single-image img {
-  width: 100%;
-}
-
-/* - sigils grid - */
-.sigil-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  max-width: 1200px;
-  margin: 0 auto 40px auto;
-  opacity: 0;
-  transform: translateY(50px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-}
-.sigil-grid.show {
-  opacity: 1;
-  transform: translateY(0);
-}
-.sigil-grid img {
-  width: 100%;
-  height: 350px;
-  object-fit: cover;
-  transition: transform 0.3s ease;
+  height: 600px;
 }
 
 /* - graphics responsive - */
@@ -1023,7 +946,7 @@ button:hover {
   text-align: left;
   color: #3e4e50;
   margin: 120px auto 10px;
-  max-width: 1400px;
+  max-width: 1150px;
   opacity: 0;
   animation: fadeIn 1.5s ease-in forwards;
 }
@@ -1031,7 +954,7 @@ button:hover {
   font-size: 1.4rem;
   text-align: left;
   color: #3e4e50;
-  max-width: 1390px;
+  max-width: 1150px;
   margin: 0 auto 40px auto;
   line-height: 1.6;
   opacity: 0;
@@ -1039,13 +962,13 @@ button:hover {
   animation-delay: 0.2s;
 }
 
-/* - vr section - */
+
 .section-wrap {
   padding: 80px 0;
   background-color: var(--bg-light);
 }
 .section-content {
-  max-width: 1460px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   align-items: center;

@@ -1,7 +1,6 @@
-// burger icon
+// Burger icon for mobile
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");
-
 if (hamburger && navMenu) {
   hamburger.addEventListener("click", () => {
     navMenu.classList.toggle("active");
@@ -9,6 +8,7 @@ if (hamburger && navMenu) {
 }
 
 document.addEventListener("DOMContentLoaded", function() {
+
   // =============== Subtitle delayed appear ===============
   const subtitle = document.getElementById("subtitle");
   if (subtitle) {
@@ -17,16 +17,29 @@ document.addEventListener("DOMContentLoaded", function() {
     }, 800); // 0.8s
   }
 
-  // =============== scrolldown arrow ===============
+  // =============== 1st arrow: from home (#home) to about (#about) ===============
   const scrollDownArrow = document.getElementById("scrollDownArrow");
   if (scrollDownArrow) {
-    scrollDownArrow.addEventListener("click", function() {
-      const nextSection = document.getElementById("next");
-      if (nextSection) {
-        nextSection.scrollIntoView({ behavior: 'smooth' });
+    scrollDownArrow.addEventListener("click", () => {
+      const aboutSection = document.getElementById("about");
+      if (aboutSection) {
+        aboutSection.scrollIntoView({ behavior: "smooth" });
       }
     });
   }
+
+  // =============== 2nd arrow: from about (#about) to projects (#next) ===============
+  const scrollDownArrowAbout = document.getElementById("scrollDownArrowAbout");
+  if (scrollDownArrowAbout) {
+    scrollDownArrowAbout.addEventListener("click", () => {
+      const nextSection = document.getElementById("next");
+      if (nextSection) {
+        nextSection.scrollIntoView({ behavior: "smooth" });
+      }
+    });
+  }
+});
+
 
   // ===============  textimage slide in ===============
   const hiddenLeftElems = document.querySelectorAll('.hidden-left');
@@ -115,7 +128,6 @@ document.addEventListener("DOMContentLoaded", function() {
 
     window.addEventListener('load', updateCarousel);
   });
-});
 
 
 
