@@ -122,9 +122,9 @@ nav {
   border: 1px solid var(--secondary-color);
   padding: 8px 12px;
   white-space: nowrap;
-  display: none; 
   flex-direction: row; 
   gap: 10px; 
+  align-items: center;
 }
 
 
@@ -132,6 +132,9 @@ nav {
   cursor: pointer;
   transition: color 0.3s ease;
   font-size: 14px;
+  line-height: 1;
+  display: flex;
+  align-items: center;
 }
 
 
