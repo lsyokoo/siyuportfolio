@@ -1,3 +1,40 @@
+//language
+document.addEventListener("DOMContentLoaded", function () {
+  const dropdown = document.querySelector(".language-dropdown");
+  const langOptions = document.querySelector(".language-options");
+
+
+  if (!langOptions) {
+      const newOptions = document.createElement("div");
+      newOptions.classList.add("language-options");
+      newOptions.innerHTML = `
+          <span data-lang="en" class="lang-option active">EN</span>
+          <span data-lang="zh" class="lang-option disabled">中文</span>
+          <span data-lang="jp" class="lang-option disabled">日本語</span>
+      `;
+      dropdown.appendChild(newOptions);
+  }
+
+  dropdown.addEventListener("click", function (event) {
+      event.stopPropagation(); 
+      dropdown.classList.toggle("active");
+
+      
+      const langMenu = dropdown.querySelector(".language-options");
+      langMenu.style.display = dropdown.classList.contains("active") ? "flex" : "none";
+  });
+
+
+  document.addEventListener("click", function (event) {
+      if (!dropdown.contains(event.target)) {
+          dropdown.classList.remove("active");
+          const langMenu = dropdown.querySelector(".language-options");
+          langMenu.style.display = "none";
+      }
+  });
+});
+
+
 // Burger icon for mobile
 const hamburger = document.querySelector(".hamburger");
 const navMenu = document.querySelector(".nav-menu");

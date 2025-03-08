@@ -41,11 +41,22 @@ nav {
   margin: 0 auto;
   padding: 23px 2rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  background-color: var(--bg-light);
+  justify-content: space-between;
+
 }
 
+/* Right section of nav (menu + icons) */
+.nav-right {
+  display: flex;
+  align-items: center;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* Space between globe and hamburger */
+}
 
 .logo a {
   font-size: 1.5rem;
@@ -62,6 +73,10 @@ nav {
   list-style: none;
   display: flex;
   gap: 30px;
+  margin-left: auto; 
+  position: static; 
+  transform: none; 
+  padding-right: 20px; 
 }
 .nav-menu li a {
   text-decoration: none;
@@ -77,22 +92,95 @@ nav {
 }
 
 
+.language-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+
+.globe-icon {
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  stroke: #3e4e50;
+  transition: stroke 0.3s ease
+}
+
+
+.globe-icon:hover {
+  stroke: #e4959e;
+}
+
+.language-options {
+  display: none; 
+  position: absolute;
+  top: 30px;
+  right: 0;
+  background: var(--bg-light);
+  border: 1px solid var(--secondary-color);
+  padding: 8px 12px;
+  white-space: nowrap;
+  display: none; 
+  flex-direction: row; 
+  gap: 10px; 
+}
+
+
+.lang-option {
+  cursor: pointer;
+  transition: color 0.3s ease;
+  font-size: 14px;
+}
+
+
+.lang-option.active {
+  color: #e4959e;
+  font-weight: bold;
+}
+
+
+.lang-option:hover {
+  color: #e4959e;
+}
+
+.lang-option:not(.disabled):hover {
+  color: #e4959e;
+}
+
+
+.lang-option.disabled {
+  color: #bbb;
+  cursor: default;
+}
+
+
+.language-dropdown.active .language-options {
+  display: flex;
+}
+
+
+
+
 .hamburger {
   display: none;
   flex-direction: column;
   cursor: pointer;
 }
 .hamburger span {
-  width: 30px;
-  height: 4px;
+  width: 24px;
+  height: 3px;
   background: #3e4e50;
-  margin: 5px 0;
+  margin: 3px 0;
   transition: all 0.3s;
 }
 
 
 
+
 @media (max-width: 768px) {
+
   .nav-menu {
     display: none;
     flex-direction: column;
@@ -110,22 +198,35 @@ nav {
   .nav-menu li {
     margin: 15px 0;
   }
+
   .hamburger {
     display: flex !important;
+  }
+
+  .icons {
+    display: flex;
+    align-items: center;
     position: absolute;
     top: 23px;
     right: 2rem;
   }
+
+  .language-dropdown {
+    display: flex;
+    align-items: center;
+    margin-right: 1rem; 
+  
+    .globe-icon {
+      width: 22px;
+      height: 22px;
+    }
+  }
+  }
   .project-details-page .hamburger {
     display: flex !important;
   }
-}
 
-@media (max-width: 768px) {
-  .nav-menu {
-    width: 100vw;
-  }
-}
+
 
 
 
@@ -443,7 +544,7 @@ button:hover {
   color: #e4959e;
 }
 
-/* about section divider & info blocks */
+
 .about-page .section-divider {
   border: 0;
   border-top: 1px solid #ddd;
@@ -513,6 +614,63 @@ button:hover {
   font-size: 0.95rem;
   line-height: 1.5;
 }
+
+
+.about-links {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: left;
+  padding: 5px; 
+  overflow: visible; 
+}
+
+
+.icon {
+  width: 24px;
+  height: 24px;
+  stroke: #3e4e50;
+  transition: stroke 0.3s ease, fill 0.3s ease, transform 0.2s ease;
+  transform-origin: center; 
+}
+
+
+.social-icon[aria-label="LinkedIn"] .icon,
+.social-icon[aria-label="Email"] .icon {
+  fill: #3e4e50;
+}
+
+.social-icon[aria-label="LinkedIn"] .icon {
+  stroke-width: 0.1px; 
+  width: 28px; 
+  height: 28px;
+}
+
+.social-icon[aria-label="Instagram"] .icon {
+  fill: none;
+}
+
+
+.social-icon[aria-label="Email"]:hover .icon {
+  stroke: #e4959e;
+  fill: #e4959e;
+  transform: scale(1.1);
+}
+
+.social-icon[aria-label="LinkedIn"]:hover .icon{
+  stroke: #e4959e;
+  fill: #e4959e;
+  transform: scale(1.1);
+}
+
+
+.social-icon[aria-label="Instagram"]:hover .icon {
+  stroke: #e4959e;
+  fill: none;
+  transform: scale(1.1);
+}
+
+
 
 
 /* - other collage gallery - */
