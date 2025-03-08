@@ -1,3 +1,5 @@
+document.addEventListener('contextmenu', event => event.preventDefault());
+
 //language
 document.addEventListener("DOMContentLoaded", function () {
   const dropdown = document.querySelector(".language-dropdown");
