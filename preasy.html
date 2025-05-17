@@ -13,6 +13,32 @@
   display: block;
   margin: 0 auto 20px auto;
 }
+
+.brand-row {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.brand-row.single {
+  justify-content: center;
+}
+
+.brand-img.half {
+  width: 49%;
+  height: auto;
+  object-fit: contain;
+}
+
+.brand-img.full {
+  width: 130%;
+  max-width: 800px;
+  height: auto;
+  object-fit: contain;
+}
+
 </style>
 
 </head>
@@ -149,23 +175,71 @@
     
   </section>
     
+<section class="tof-section">
+  <h2>User Testing & Iteration</h2>
 
+  <p>
+    First, users consistently preferred having control over the slide creation process. Rather than relying on AI-generated content, they wanted to choose from templates and make edits themselves. In response, we removed the AI slide generator and positioned slide creation as a lightweight, user-driven step—shifting our focus toward rehearsal and collaboration.
+  </p>
 
+  <p>
+    Second, participants expressed a strong preference for real, human feedback over automated suggestions. Many emphasized the value of comments from peers, instructors, or teammates, especially in academic and collaborative settings. This led us to prioritize features that facilitate structured peer review, such as tagging and focused reviewer prompts.
+  </p>
 
+  <p>
+    Third, users appreciated having real-time communication and project tracking integrated within the platform. Instead of relying on external tools like Instagram to coordinate, they valued being able to chat and assign tasks directly within the interface. We responded by emphasizing an in-app live chat and shared team dashboard.
+  </p>
 
+  <p>
+    Finally, we addressed concerns around layout consistency. In early wireframes, elements like the toolbar shifted position when collaborators were added, which caused confusion. We standardized the layout across solo and collaborative modes to support user familiarity and reduce friction.
+  </p>
 
-    
+</section>
+
+  
+
     <section class="tof-section">
       <h2>Branding & Visual Identity</h2>
+      <p>
+        To define Preasy's visual language, we explored three distinct brand directions—from playful and energetic to clean and professional. Each moodboard reflected a different personality and user emotion we wanted to test. Through feedback and internal discussions, we evaluated how each direction aligned with the product's values: clarity, confidence, and collaboration.
+      </p>
 
-     <h2>Branding Moodboard Experiments</h2>
       <div class="right-image">
-        <img src="assets/uiux/preasy/brand1.png" alt="brand1 moodboard placeholder">
-      <img src="assets/uiux/preasy/brand2.png" alt="brand2 moodboard placeholder">
-      <img src="assets/uiux/preasy/brand3.png" alt="brand3 moodboard placeholder">
-    </div>
+        <div class="brand-row">
+          <img src="assets/uiux/preasy/brand1.png" alt="brand1 moodboard" class="brand-img half">
+          <img src="assets/uiux/preasy/brand2.png" alt="brand2 moodboard" class="brand-img half">
+        </div>
+      </div>
+      
 
-    <p>Preasy's visual design uses clean layout grids, soft neutral tones, and a balance of utility and friendliness. The logo and font choices aim to convey approachability without sacrificing focus. I designed a Figma-based system with reusable components and scalable text styles.</p>
+      <p>
+        We ultimately selected a brand identity that felt vibrant, sleek, and clean. The color palette features energetic accent tones paired with structured whitespace, while the typography remains modern and approachable. This direction supports Preasy's goal of making presentation prep feel dynamic and motivating.
+      </p>
+      <div class="right-image">
+        <img src="assets/uiux/preasy/brand3.png" alt="brand3">
+      </div>
+      <p>
+        Users described the final aesthetic as “motivating but not overwhelming”—which validated our choice to lean into vibrancy while maintaining clarity. </p>
+      
+
+<section class="tof-section">
+  <h2>Design System</h2>
+
+  <p>
+    We built a reusable design system in Figma to support fast prototyping and visual consistency. It includes standardized components—buttons, inputs, tags, layout grids—organized with variants and naming conventions.
+  </p>
+
+  <p>
+    Our design choices followed three key principles:
+    <br>
+    <strong>Familiar Visual Language:</strong> Inspired by well-known productivity tools to reduce the learning curve and boost user confidence.
+    <br>
+    <strong>Accessible & Readable:</strong> High contrast, clean type, and scalable components ensure clarity across devices.
+    <br>
+    <strong>Trustworthy Look & Feel:</strong>Structured layouts, calm and neutral colors convey focus, stability, and professionalism.
+  </p>
+
+
 
       <div class="right-image">
         <img src="assets/uiux/preasy/designsystem1.png" alt="Design system and color palette placeholder">
@@ -173,14 +247,7 @@
         <img src="assets/uiux/preasy/old dashboard.png" alt="Old Dashboard placeholder">
         <img src="assets/uiux/preasy/old components.png" alt="Old Design System placeholder">
       </div>
-    </section>
 
-    <section class="tof-section">
-      <h2>User Testing</h2>
-      <p>After usability testing with classmates, peers and professors, I received feedback on hierarchy clarity, button size, and onboarding cues. Iterative refinement improved discoverability and supported different workflows.</p>
-      <div class="right-image">
-        <img src="images/testing-feedback.png" alt="iterated wireframes and uis placeholder">
-      </div>
     </section>
 
     <section class="tof-figma-embed">
