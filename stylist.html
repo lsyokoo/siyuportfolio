@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Virtual Stylist</title>
+  <link rel="stylesheet" href="styleoriginal.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="index.html">SIYU</a>
+      </div>
+      <div class="nav-right">
+        <ul class="nav-menu">
+          <li><a href="index.html">UX/UI</a></li>
+          <li><a href="vr.html">MEDIA ART</a></li>
+          <li><a href="extra.html">EXTRAS</a></li>
+          <li><a href="about.html">ABOUT</a></li>
+        </ul>
+        <div class="icons">
+          <div class="language-dropdown">
+            <svg class="globe-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"></path>
+              <path d="M12 2a15.3 15.3 0 0 0-4 10 15.3 15.3 0 0 0 4 10"></path>
+            </svg>
+          </div>
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <h2 class="tof-title">Virtual Stylist</h2>
+    <section class="tof-section">
+      
+      <p>
+      UX & Web Development: AI-powered web application that allows underrepresented users (e.g., nonbinary folks) type in a hairstyle and get an AI-generated preview that allows them to visualize themselves in a way that existing apps do not.</p>
+    </section>
+    
+    <section class="tof-section">
+  <p><strong>Role:</strong> UX designer & Web developer (personal project)<br>
+    <strong>Timeline:</strong> 4 weeks · 2024<br><strong>Tech Stack & Tools:</strong> Figma; VS Code(HTML/CSS/JavaScript); OpenAI API for text (ChatGPT) and image generation (DALLE); Oak framework for the Deno backend; Google Fonts (Scope One) for typography; Canva for laptop mockup.</p>
+
+
+
+ <div class="right-image">
+        <img src="assets/uiux/stylist.png" alt="Stylist Preview Placeholder">
+      </div>
+
+      </section>
+
+    <section class="tof-section">
+      
+      <h2>Problem & Objective</h2>
+      <p>Existing AI styling apps rely on user photos, raising privacy and inclusivity concerns related to gender and ethnicity. Therefore, I aim to create a gender-inclusive, photo-free styling experience that lets users safely explore hairstyles without compromising identity or data privacy.</p>
+      
+      <h2>Inspiration / Social Context</h2>
+       <p>The article <i>Life as a Trans Bitmoji</i> inspired my exploration of digital self-representation. It shows how a virtual avatar can help someone express identity shifts before they happen in real life. Similarly, anime fan art communities reveal the importance of visualization for people who rarely get to see themselves represented. </p>
+      
+      <div class="right-image">
+  <iframe 
+    src="https://wisconsinlife.org/story/life-as-a-trans-bitmoji/"
+    title="Life as a Trans Bitmoji"
+    loading="lazy"
+    referrerpolicy="no-referrer"
+  ></iframe>
+</div>
+
+      <h2>Solution</h2>
+      <p>Built with HTML/CSS/JavaScript with OpenAI APIs to develop a photo-free system where users input key attributes (age, gender identity, style preferences) to receive:</p>
+      <p>1. Detailed, professional hairstyle descriptions
+<br> 2. AI-generated image previews for visualization</p>
+
+     <div class="right-image">
+        <img src="assets/uiux/stylist/result2.png" alt="Stylist Result2 Preview placeholder">
+      </div>
+<br><br>
+   <p><strong>Key Design Decisions:</strong> 
+<div class="right-image">
+        <img src="assets/uiux/stylist/decision1.jpg" alt="Design Decision Preview placeholder">
+      </div>
+
+    <h2>Key Process Stages</h2>
+    <section class="tof-section">
+<div class="right-image">
+        <img src="assets/uiux/stylist/map.png" alt="Persona and Journey Map">
+      </div>
+             <p><strong>Research:</strong> Created user personas and journey map based on interviews and competitor analysis (esp. YouCam), focusing on pain points around gender inclusivity and data privacy.</p>
+<br>
+ <div class="right-image">
+        <img src="assets/uiux/stylist/code.png" alt="Code & Prompt Screenshot">
+      </div>
+      <p><strong>Coding & Prompting:</strong> Developed the app with HTML/CSS/JavaScript, Deno backend, and OpenAI APIs; Then Iterated prompts to improve output accuracy.</p>
+<br>
+    <div class="right-image">
+        <img src="assets/uiux/stylist/iterate.jpg" alt="Iterate Process Screenshot">
+      </div>
+      <p><strong>Prototyping & Testing:</strong> Built and tested wireframes in Figma and prototypes in browser; Enabled input rewriting and real-time regeneration for more flexible exploration.
+    <br>  <br> <strong>Learnings:</strong>This process deepened my understanding of AI bias. During testing, I noticed the model often generated white, young female images, revealing dataset limitations. It pushed me to design with greater inclusivity, ensuring AI styling tools represent everyone more fairly and personally.
+</p>
+
+
+</section>
+
+
+    
+        <section class="stylist-live-embed">
+    <h2>Final App Preview</h2>
+      <div class="right-image">
+        <img src="assets/uiux/stylistmockup.png" alt="Rendering Mockup for Stylist">
+      </div>
+      Visit the live website: 
+      <a href="https://hair-stylist-app.deno.dev" target="_blank">hair-stylist-app.deno.dev</a>
+    </p>
+  </section>
+
+    <section class="tof-section">
+      <h2>Reflections</h2>
+        <p>
+    Virtual Stylist challenged my assumption that removing photos alone would make AI styling tools more inclusive. While a photo-free workflow reduced privacy barriers, testing showed that inclusivity is shaped by many UX decisions, such as how gender options are framed, which defaults appear first, and how prompts influence the language model's result. Adding gender-neutral language and moving away from fixed hairstyle libraries helped increase flexibility, but also revealed that representation cannot be solved through a single feature.
+  </p>
+  <p>
+    Iterative testing exposed deeper limitations. Despite careful interface design, generated previews often defaulted toward narrow visual norms, reflecting biases embedded in training data rather than user intent. This project reshaped how I approach AI-powered UX design: not as the pursuit of seamless automation, but as a balance between user agency, system constraints, and ethical responsibility.
+  </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      &copy; 2026 Siyu Liu |
+      <a href="https://www.linkedin.com/in/siyu-liu-9b2a43270/" target="_blank">LinkedIn</a> |
+      <a href="mailto:lsy20041203@gmail.com">Email</a>
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
