@@ -57,25 +57,16 @@ document.addEventListener("DOMContentLoaded", function() {
   }
 
   // =============== 1st arrow: from home (#home) to about (#about) ===============
-const scrollDownArrow = document.getElementById("scrollDownArrow");
-if (scrollDownArrow) {
-  scrollDownArrow.addEventListener("click", () => {
-    const nextSection = document.getElementById("next");
-    if (nextSection) {
-      nextSection.scrollIntoView({ behavior: "smooth" });
-    }
-  });
-}
-  // =============== 2nd arrow: from about (#about) to projects (#next) ===============
-  const scrollDownArrowAbout = document.getElementById("scrollDownArrowAbout");
-  if (scrollDownArrowAbout) {
-    scrollDownArrowAbout.addEventListener("click", () => {
-      const nextSection = document.getElementById("next");
-      if (nextSection) {
-        nextSection.scrollIntoView({ behavior: "smooth" });
+  const scrollDownArrow = document.getElementById("scrollDownArrow");
+  if (scrollDownArrow) {
+    scrollDownArrow.addEventListener("click", () => {
+      const aboutSection = document.getElementById("next");
+      if (aboutSection) {
+        aboutSection.scrollIntoView({ behavior: "smooth" });
       }
     });
   }
+
 });
 
 
