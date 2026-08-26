@@ -1,0 +1,527 @@
+/* =========================================================
+   OCEAN'S WHISPER
+   REMAKE FASHION PROJECT
+========================================================= */
+
+
+/* =========================================================
+   INTRO
+========================================================= */
+
+.remake-intro {
+  width: 100%;
+
+  padding:
+    105px
+    clamp(2rem, 4vw, 4rem)
+    16px;
+
+  background-color: var(--bg-light);
+}
+
+
+.remake-intro-inner {
+  width: 100%;
+  max-width: 1460px;
+
+  margin: 0 auto;
+
+  opacity: 0;
+
+  animation:
+    remakeFadeUp
+    0.65s
+    ease-out
+    forwards;
+}
+
+
+.remake-intro-title {
+  width: 100%;
+}
+
+
+/* Small category line */
+
+.remake-eyebrow {
+  margin: 0 0 10px 0;
+
+  font-size: 0.66rem;
+  line-height: 1.4;
+
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+
+  color: var(--accent-pink);
+}
+
+
+/* Main title */
+
+.remake-title {
+  margin: 0;
+
+  max-width: 1050px;
+
+  font-size:
+    clamp(
+      2rem,
+      3vw,
+      3.4rem
+    );
+
+  line-height: 1.08;
+
+  font-weight: 400;
+
+  letter-spacing: -1px;
+
+  color: #263638;
+}
+
+
+/* =========================================================
+   FINAL PHOTOS
+========================================================= */
+
+.remake-final {
+  width: 100%;
+
+  padding:
+    0px
+    clamp(2rem, 4vw, 4rem)
+    58px;
+
+  background-color: var(--bg-light);
+}
+
+
+.remake-final-inner {
+  width: 100%;
+  max-width: 1460px;
+
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   FINAL LOOKBOOK
+========================================================= */
+
+.remake-lookbook {
+  width: 100%;
+
+  column-count: 3;
+
+  column-gap: 10px;
+}
+
+
+.remake-look {
+  width: 100%;
+
+  margin:
+    0
+    0
+    10px;
+
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+
+  opacity: 0;
+
+  animation:
+    remakeFadeUp
+    0.65s
+    ease-out
+    forwards;
+}
+
+
+/* Keep original photo proportions */
+
+.remake-look img {
+  width: 100%;
+  height: auto;
+
+  display: block;
+}
+
+
+/* =========================================================
+   FINAL PHOTO STAGGER
+========================================================= */
+
+.remake-look:nth-child(1) {
+  animation-delay: 0.05s;
+}
+
+.remake-look:nth-child(2) {
+  animation-delay: 0.08s;
+}
+
+.remake-look:nth-child(3) {
+  animation-delay: 0.11s;
+}
+
+.remake-look:nth-child(4) {
+  animation-delay: 0.14s;
+}
+
+.remake-look:nth-child(5) {
+  animation-delay: 0.17s;
+}
+
+.remake-look:nth-child(6) {
+  animation-delay: 0.20s;
+}
+
+
+/* =========================================================
+   PROCESS MARQUEE
+========================================================= */
+
+.remake-process {
+  width: 100%;
+
+  padding:
+    10px
+    0
+    65px;
+
+  overflow: hidden;
+
+  background-color: var(--bg-light);
+}
+
+
+.remake-process-marquee {
+  width: 100%;
+
+  overflow: hidden;
+}
+
+
+.remake-process-track {
+  display: flex;
+
+  width: max-content;
+
+  gap: 10px;
+
+  animation:
+    remakeProcessScroll
+    42s
+    linear
+    infinite;
+
+  will-change: transform;
+}
+
+
+/* Pause on hover */
+
+.remake-process-marquee:hover .remake-process-track {
+  animation-play-state: paused;
+}
+
+
+/* =========================================================
+   PROCESS IMAGES
+========================================================= */
+
+.remake-process-image {
+  flex:
+    0
+    0
+    auto;
+
+  height: 250px;
+}
+
+
+.remake-process-image img {
+  width: auto;
+  height: 100%;
+
+  display: block;
+
+  object-fit: contain;
+}
+
+
+/* =========================================================
+   PROCESS ANIMATION
+========================================================= */
+
+@keyframes remakeProcessScroll {
+
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50% - 5px));
+  }
+
+}
+
+
+/* =========================================================
+   PAGE LOAD ANIMATION
+========================================================= */
+
+@keyframes remakeFadeUp {
+
+  from {
+    opacity: 0;
+
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .remake-intro {
+    padding:
+      100px
+      2rem
+      16px;
+  }
+
+
+  .remake-title {
+    max-width: 900px;
+
+    font-size:
+      clamp(
+        1.9rem,
+        3.6vw,
+        3rem
+      );
+  }
+
+
+  .remake-final {
+    padding:
+      0px
+      2rem
+      52px;
+  }
+
+
+  .remake-lookbook {
+    column-count: 3;
+  }
+
+
+  .remake-process-image {
+    height: 220px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .remake-intro {
+    padding:
+      95px
+      2rem
+      16px;
+  }
+
+
+  .remake-eyebrow {
+    margin-bottom: 9px;
+  }
+
+
+  .remake-title {
+    max-width: 700px;
+
+    font-size:
+      clamp(
+        1.8rem,
+        7vw,
+        2.7rem
+      );
+
+    line-height: 1.1;
+
+    letter-spacing: -0.8px;
+  }
+
+
+  .remake-final {
+    padding:
+      0px
+      2rem
+      48px;
+  }
+
+
+  .remake-lookbook {
+    column-count: 2;
+
+    column-gap: 8px;
+  }
+
+
+  .remake-look {
+    margin-bottom: 8px;
+  }
+
+
+  .remake-process {
+    padding:
+      8px
+      0
+      58px;
+  }
+
+
+  .remake-process-track {
+    gap: 8px;
+
+    animation-duration: 38s;
+  }
+
+
+  .remake-process-image {
+    height: 195px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .remake-intro {
+    padding:
+      90px
+      1.25rem
+      12px;
+  }
+
+
+  .remake-eyebrow {
+    font-size: 0.61rem;
+
+    letter-spacing: 1.4px;
+  }
+
+
+  .remake-title {
+    font-size: 2rem;
+
+    line-height: 1.12;
+
+    letter-spacing: -0.7px;
+  }
+
+
+  .remake-final {
+    padding:
+      0px
+      1.25rem
+      44px;
+  }
+
+
+  .remake-lookbook {
+    column-gap: 7px;
+  }
+
+
+  .remake-look {
+    margin-bottom: 7px;
+  }
+
+
+  .remake-process {
+    padding:
+      7px
+      0
+      52px;
+  }
+
+
+  .remake-process-track {
+    gap: 7px;
+
+    animation-duration: 34s;
+  }
+
+
+  .remake-process-image {
+    height: 165px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .remake-title {
+    font-size: 1.8rem;
+  }
+
+
+  .remake-lookbook {
+    column-count: 2;
+  }
+
+
+  .remake-process-image {
+    height: 145px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .remake-intro-inner,
+  .remake-look {
+    opacity: 1;
+
+    animation: none;
+
+    transform: none;
+  }
+
+
+  .remake-process-track {
+    animation: none;
+  }
+
+}

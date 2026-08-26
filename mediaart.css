@@ -1,0 +1,474 @@
+/* =========================================================
+   MEDIA ART PAGE
+   All page-specific classes use the "ma-" prefix.
+========================================================= */
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.ma-hero {
+  padding:
+    130px
+    clamp(2rem, 4vw, 4rem)
+    38px;
+
+  background-color: var(--bg-light);
+}
+
+
+.ma-hero-inner {
+  width: 100%;
+  max-width: 1460px;
+
+  margin: 0 auto;
+
+  /* Page load animation */
+  opacity: 0;
+  animation: maFadeUp 0.65s ease-out forwards;
+}
+
+
+.ma-hero-eyebrow {
+  margin: 0 0 12px 0;
+
+  font-size: 0.72rem;
+  line-height: 1.4;
+
+  letter-spacing: 2px;
+  text-transform: uppercase;
+
+  color: var(--accent-pink);
+}
+
+
+.ma-hero-description {
+  max-width: 820px;
+
+  margin: 0;
+
+  font-size: clamp(1rem, 1.3vw, 1.22rem);
+  line-height: 1.65;
+
+  color: #3e4e50;
+}
+
+
+/* =========================================================
+   PROJECT AREA
+========================================================= */
+
+.ma-projects {
+  padding:
+    10px
+    clamp(2rem, 4vw, 4rem)
+    100px;
+
+  background-color: var(--bg-light);
+}
+
+
+.ma-grid {
+  width: 100%;
+  max-width: 1460px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  column-gap: clamp(22px, 2.2vw, 34px);
+
+  row-gap: clamp(48px, 5vw, 68px);
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.ma-card {
+  width: 100%;
+
+  /* Page load animation */
+  opacity: 0;
+  animation: maFadeUp 0.65s ease-out forwards;
+}
+
+
+.ma-card-link {
+  display: block;
+
+  color: inherit;
+  text-decoration: none;
+}
+
+
+/* =========================================================
+   STAGGERED CARD LOAD
+========================================================= */
+
+.ma-card:nth-child(1) {
+  animation-delay: 0.08s;
+}
+
+.ma-card:nth-child(2) {
+  animation-delay: 0.14s;
+}
+
+.ma-card:nth-child(3) {
+  animation-delay: 0.20s;
+}
+
+.ma-card:nth-child(4) {
+  animation-delay: 0.26s;
+}
+
+.ma-card:nth-child(5) {
+  animation-delay: 0.32s;
+}
+
+.ma-card:nth-child(6) {
+  animation-delay: 0.38s;
+}
+
+.ma-card:nth-child(7) {
+  animation-delay: 0.44s;
+}
+
+
+/* =========================================================
+   CARD IMAGE / VIDEO
+   All thumbnails stay at 16:9 (1280 × 720 ratio)
+========================================================= */
+
+.ma-card-media {
+  width: 100%;
+
+  position: relative;
+
+  aspect-ratio: 16 / 9;
+
+  overflow: hidden;
+
+  margin-bottom: 18px;
+
+  background-color: #e7e1df;
+}
+
+
+.ma-card-media img,
+.ma-card-video {
+  width: 100%;
+  height: 100%;
+
+  display: block;
+
+  object-fit: cover;
+
+  transition:
+    transform 0.35s ease;
+}
+
+
+/* Hover only for clickable cards */
+
+.ma-card-link:hover .ma-card-media img,
+.ma-card-link:hover .ma-card-video {
+  transform: scale(1.015);
+}
+
+
+/* =========================================================
+   CARD TEXT
+========================================================= */
+
+.ma-card-content {
+  width: 100%;
+  max-width: 100%;
+}
+
+
+.ma-card-category {
+  margin: 0 0 9px 0;
+
+  font-size: 0.66rem;
+  line-height: 1.4;
+
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+
+  color: var(--accent-pink);
+}
+
+
+.ma-card-title {
+  margin: 0 0 11px 0;
+
+  font-size: clamp(1.4rem, 1.8vw, 1.85rem);
+  line-height: 1.15;
+
+  letter-spacing: -0.35px;
+
+  color: #263638;
+
+  transition:
+    color 0.3s ease;
+}
+
+
+.ma-card-link:hover .ma-card-title {
+  color: var(--accent-pink);
+}
+
+
+.ma-card-description {
+  max-width: 600px;
+
+  margin: 0 0 13px 0;
+
+  font-size: 0.96rem;
+  line-height: 1.55;
+
+  color: #3e4e50;
+}
+
+
+.ma-card-tools {
+  margin: 0;
+
+  font-size: 0.71rem;
+  line-height: 1.5;
+
+  letter-spacing: 1.2px;
+
+  color: #777777;
+}
+
+
+/* =========================================================
+   COMING SOON
+========================================================= */
+
+.ma-card-status {
+  display: inline-block;
+
+  margin-top: 10px;
+
+  font-size: 0.66rem;
+
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+
+  color: #999999;
+}
+
+
+/* =========================================================
+   PAGE LOAD ANIMATION
+========================================================= */
+
+@keyframes maFadeUp {
+
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .ma-hero {
+    padding:
+      120px
+      2rem
+      34px;
+  }
+
+
+  .ma-projects {
+    padding:
+      8px
+      2rem
+      90px;
+  }
+
+
+  .ma-grid {
+    column-gap: 24px;
+    row-gap: 52px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .ma-hero {
+    padding:
+      105px
+      2rem
+      30px;
+  }
+
+
+  .ma-projects {
+    padding:
+      8px
+      2rem
+      80px;
+  }
+
+
+  .ma-grid {
+    grid-template-columns: 1fr;
+
+    row-gap: 50px;
+  }
+
+
+  .ma-card-media {
+    aspect-ratio: 16 / 9;
+
+    margin-bottom: 17px;
+  }
+
+
+  .ma-card-description {
+    max-width: 680px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .ma-hero {
+    padding:
+      95px
+      1.25rem
+      27px;
+  }
+
+
+  .ma-hero-eyebrow {
+    margin-bottom: 10px;
+
+    font-size: 0.63rem;
+
+    letter-spacing: 1.4px;
+  }
+
+
+  .ma-hero-description {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+
+  .ma-projects {
+    padding:
+      6px
+      1.25rem
+      70px;
+  }
+
+
+  .ma-grid {
+    row-gap: 46px;
+  }
+
+
+  .ma-card-media {
+    aspect-ratio: 16 / 9;
+
+    margin-bottom: 16px;
+  }
+
+
+  .ma-card-category {
+    font-size: 0.62rem;
+  }
+
+
+  .ma-card-title {
+    font-size: 1.5rem;
+  }
+
+
+  .ma-card-description {
+    font-size: 0.94rem;
+  }
+
+
+  .ma-card-tools {
+    font-size: 0.68rem;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .ma-hero {
+    padding-top: 90px;
+    padding-bottom: 25px;
+  }
+
+
+  .ma-grid {
+    row-gap: 42px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .ma-hero-inner,
+  .ma-card {
+    opacity: 1;
+
+    animation: none;
+
+    transform: none;
+  }
+
+
+  .ma-card-media img,
+  .ma-card-video,
+  .ma-card-title {
+    transition: none;
+  }
+
+}

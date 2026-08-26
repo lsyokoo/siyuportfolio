@@ -1,0 +1,369 @@
+/* =========================================================
+   SHARED GALLERY PAGES
+   Used by:
+   - visual.html
+   - fashion.html
+   - photography.html
+
+   Global header / footer / colors / typography
+   are handled by style1.css.
+========================================================= */
+
+
+/* =========================================================
+   GALLERY SECTION
+========================================================= */
+
+.gallery-section {
+  width: 100%;
+
+  padding:
+    82px
+    clamp(2rem, 4vw, 4rem)
+    90px;
+
+  background-color: var(--bg-light);
+}
+
+
+/* =========================================================
+   FEATURED GALLERY PROJECT
+   Used for the large Remake preview on fashion.html
+========================================================= */
+
+.gallery-feature {
+  width: 100%;
+  max-width: 1400px;
+
+  margin:
+    0
+    auto
+    10px;
+
+  overflow: hidden;
+
+  opacity: 0;
+
+  animation:
+    galleryFadeUp
+    0.65s
+    ease-out
+    forwards;
+}
+
+
+.gallery-feature-link {
+  display: block;
+
+  width: 100%;
+}
+
+
+.gallery-feature-image {
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  border-radius: 4px;
+
+  transition:
+    transform 0.35s ease,
+    filter 0.35s ease;
+}
+
+
+/* Featured hover */
+
+@media (hover: hover) and (pointer: fine) {
+
+  .gallery-feature-link:hover .gallery-feature-image {
+    transform: scale(1.008);
+  }
+
+}
+
+
+/* =========================================================
+   COLLAGE GALLERY
+========================================================= */
+
+.collage-gallery {
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  column-count: 3;
+  column-gap: 10px;
+}
+
+
+/* =========================================================
+   GALLERY ITEM
+========================================================= */
+
+.gallery-item {
+  width: 100%;
+
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+
+  margin-bottom: 10px;
+
+  overflow: hidden;
+
+  opacity: 0;
+
+  animation:
+    galleryFadeUp
+    0.65s
+    ease-out
+    forwards;
+}
+
+
+/* Images + Videos */
+
+.gallery-item img,
+.gallery-item video {
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  border-radius: 4px;
+
+  transition:
+    transform 0.3s ease,
+    filter 0.3s ease;
+}
+
+
+/* =========================================================
+   GALLERY HOVER
+========================================================= */
+
+@media (hover: hover) and (pointer: fine) {
+
+  .gallery-item:hover img,
+  .gallery-item:hover video {
+    transform: scale(1.008);
+  }
+
+}
+
+
+/* =========================================================
+   STAGGERED LOAD
+========================================================= */
+
+.gallery-feature {
+  animation-delay: 0.03s;
+}
+
+
+.gallery-item:nth-child(1) {
+  animation-delay: 0.08s;
+}
+
+.gallery-item:nth-child(2) {
+  animation-delay: 0.11s;
+}
+
+.gallery-item:nth-child(3) {
+  animation-delay: 0.14s;
+}
+
+.gallery-item:nth-child(4) {
+  animation-delay: 0.17s;
+}
+
+.gallery-item:nth-child(5) {
+  animation-delay: 0.20s;
+}
+
+.gallery-item:nth-child(6) {
+  animation-delay: 0.23s;
+}
+
+.gallery-item:nth-child(7) {
+  animation-delay: 0.26s;
+}
+
+.gallery-item:nth-child(8) {
+  animation-delay: 0.29s;
+}
+
+.gallery-item:nth-child(9) {
+  animation-delay: 0.32s;
+}
+
+.gallery-item:nth-child(10) {
+  animation-delay: 0.35s;
+}
+
+.gallery-item:nth-child(11) {
+  animation-delay: 0.38s;
+}
+
+.gallery-item:nth-child(12) {
+  animation-delay: 0.41s;
+}
+
+.gallery-item:nth-child(13) {
+  animation-delay: 0.44s;
+}
+
+.gallery-item:nth-child(14) {
+  animation-delay: 0.47s;
+}
+
+
+/* =========================================================
+   LOAD ANIMATION
+========================================================= */
+
+@keyframes galleryFadeUp {
+
+  from {
+    opacity: 0;
+
+    transform:
+      translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+
+    transform:
+      translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .gallery-section {
+    padding:
+      82px
+      2rem
+      80px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .gallery-section {
+    padding:
+      82px
+      2rem
+      70px;
+  }
+
+
+  .collage-gallery {
+    column-count: 2;
+
+    column-gap: 8px;
+  }
+
+
+  .gallery-feature {
+    margin-bottom: 8px;
+  }
+
+
+  .gallery-item {
+    margin-bottom: 8px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .gallery-section {
+    padding:
+      82px
+      1.25rem
+      60px;
+  }
+
+
+  .collage-gallery {
+    column-gap: 8px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .gallery-section {
+    padding:
+      75px
+      1.25rem
+      55px;
+  }
+
+
+  .collage-gallery {
+    column-count: 1;
+  }
+
+
+  .gallery-feature {
+    margin-bottom: 10px;
+  }
+
+
+  .gallery-item {
+    margin-bottom: 10px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .gallery-feature,
+  .gallery-item {
+    opacity: 1;
+
+    animation: none;
+
+    transform: none;
+  }
+
+
+  .gallery-feature-image,
+  .gallery-item img,
+  .gallery-item video {
+    transition: none;
+  }
+
+}

@@ -4,7 +4,9 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Siyu's Portfolio</title>
-  <link rel="stylesheet" href="styleoriginal.css">
+  <link rel="stylesheet" href="style1.css">
+  <link rel="stylesheet" href="about.css">
+
 </head>
 <body>
 
@@ -15,10 +17,16 @@
       </div>
       <div class="nav-right">
         <ul class="nav-menu">
-       <li><a href="index.html">UX/UI</a></li>
-          <li><a href="vr.html">MEDIA ART</a></li>
+           <li>
+            <a href="index.html">PRODUCT</a>
+          </li>
+
+          <li>
+            <a href="mediaart.html">MEDIA ART</a>
+          </li>
+
           <li><a href="extra.html">EXTRAS</a></li>
-          <li><a href="about.html">ABOUT</a></li>
+          <li><a href="about.html"class="active">ABOUT</a></li>
         </ul>
         <div class="icons">
           <div class="language-dropdown">
@@ -44,137 +52,386 @@
   <main>
 
 
-    <section id="about" class="about-page">
+<section class="about-intro">
 
-      <div class="about-container">
-        <div class="profile-picture">
-          <img src="profile1.jpg" alt="Profile Picture" class="profile-img">
-        </div>
-        <div class="about-details">
-              <div class="text-container">
-          <h2>
-            <span>I'm Siyu Liu, it's nice to meet you!
-            </span>
-          </h2>
-        </div>
-          <p>
-          I'm a product designer focused on identifying gaps in user experiences and turning them into intuitive interactions. I look beyond primary flows to understand what's missing. 
-          I've explored how many e-commerce platforms prioritize conversion at checkout but overlook the post-purchase journey, and proposed ways to improve that experience.   </p>
+  <div class="about-intro-inner">
 
-          <p>I enjoy integrating AI into my workflow to rapidly prototype and validate ideas, while critically examining its limitations like bias and lack of inclusivity.</p>
-    <p>When I'm not designing you can find me at Broadway Musicals, museums, concerts, or baking chiffon cakes! </p>
-  
-        <div class="about-links">
-         
-          <a href="mailto:lsy20041203@gmail.com" class="social-icon" aria-label="Email">
-              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
-                  <g data-name="7-Email-Arrow up">
+    <!-- Profile photo -->
+    <div class="about-profile">
+      <img
+        src="profile1.jpg"
+        alt="Portrait of Siyu Liu"
+        class="about-profile-image"
+      >
+    </div>
+
+
+    <!-- Introduction -->
+    <div class="about-bio">
+
+      <h1 class="about-bio-title">
+        This is Siyu, it's nice to meet you~
+      </h1>
+
+      <div class="about-bio-copy">
+
+        <p>
+          I'm a product designer focused on identifying gaps in user experiences
+          and turning them into intuitive interactions. I look beyond primary
+          flows to understand what's missing.
+        </p>
+
+        <p>
+          I've explored how many e-commerce platforms prioritize conversion
+          at checkout but overlook the post-purchase journey, and proposed ways
+          to improve that experience.
+        </p>
+
+        <p>
+          I enjoy integrating AI into my workflow to rapidly prototype and
+          validate ideas, while critically examining its limitations like bias
+          and lack of inclusivity.
+        </p>
+
+        <p class="about-personal">
+          When I'm not designing, you'll find me at musicals and concerts🎭,
+          exploring museums🖼️, playing games🎮, yapping with friends🗣️,
+          or baking pastries👩🏻‍🍳🍪.
+        </p>
+      </div>
+
+
+<div class="about-socials">
+
+  <!-- Email -->
+  <a
+    href="mailto:lsy20041203@gmail.com"
+    class="about-social-link about-social-email"
+    aria-label="Email"
+  >
+    <svg
+      class="about-social-icon"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 32 32"
+    >
+      <g data-name="7-Email-Arrow up">
                       <path d="M29 4H3a3 3 0 0 0-3 3v18a3 3 0 0 0 3 3h13v-2H3a1 1 0 0 1-1-1V7.23l13.42 9.58a1 1 0 0 0 1.16 0L30 7.23V17h2V7a3 3 0 0 0-3-3zM16 14.77 3.72 6h24.56z"/>
                       <path d="m24.29 18.29-4 4 1.41 1.41 2.3-2.29V29h2v-7.59l2.29 2.29 1.41-1.41-4-4a1 1 0 0 0-1.41 0z"/>
                   </g>
-              </svg>
-          </a>
-      
-       
-          <a href="https://www.linkedin.com/in/siyu-liu-9b2a43270/" target="_blank" class="social-icon" aria-label="LinkedIn">
-              <svg class="icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" >
-                  <path d="M 6 3 C 4.355 3 3 4.355 3 6 V 18 C 3 19.645 4.355 21 6 21 H 18 C 19.645 21 21 19.645 21 18 V 6 C 21 4.355 19.645 3 18 3 H 6 z M 6 5 H 18 C 18.565 5 19 5.435 19 6 V 18 C 19 18.565 18.565 19 18 19 H 6 C 5.435 19 5 18.565 5 18 V 6 C 5 5.435 5.435 5 6 5 z M 8.186 6.785 C 7.445 6.785 7 7.229 7 7.818 C 7 8.411 7.444 8.857 8.109 8.857 C 8.85 8.857 9.291 8.411 9.291 7.818 C 9.291 7.23 8.851 6.785 8.186 6.785 z M 7.063 9.963 V 16 H 9.236 V 9.963 H 7.063 z M 11.033 9.963 V 16 H 13.207 V 12.697 C 13.207 11.718 13.908 11.574 14.119 11.574 C 14.33 11.574 14.893 11.785 14.893 12.697 V 16 H 17 V 12.697 C 17 10.806 16.155 9.963 15.104 9.963 C 14.053 9.963 13.49 10.313 13.207 10.807 V 9.963 H 11.033 z"/>
-              </svg>
-          </a>
-      
-      
-          <a href="https://www.instagram.com/siyuu_1203/" target="_blank" class="social-icon" aria-label="Instagram">
-              <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
-                  <rect x="2" y="2" width="20" height="20" rx="5"></rect>
-                  <circle cx="12" cy="12" r="4"></circle>
-                  <circle cx="18" cy="6" r="1"></circle>
-              </svg>
-          </a>
+    </svg>
+  </a>
+
+
+  <!-- LinkedIn -->
+  <a
+    href="https://www.linkedin.com/in/siyu-liu-9b2a43270/"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="about-social-link about-social-linkedin"
+    aria-label="LinkedIn"
+  >
+    <svg
+      class="about-social-icon"
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+    >
+      <path d="M 6 3 C 4.355 3 3 4.355 3 6 V 18 C 3 19.645 4.355 21 6 21 H 18 C 19.645 21 21 19.645 21 18 V 6 C 21 4.355 19.645 3 18 3 H 6 z M 6 5 H 18 C 18.565 5 19 5.435 19 6 V 18 C 19 18.565 18.565 19 18 19 H 6 C 5.435 19 5 18.565 5 18 V 6 C 5 5.435 5.435 5 6 5 z M 8.186 6.785 C 7.445 6.785 7 7.229 7 7.818 C 7 8.411 7.444 8.857 8.109 8.857 C 8.85 8.857 9.291 8.411 9.291 7.818 C 9.291 7.23 8.851 6.785 8.186 6.785 z M 7.063 9.963 V 16 H 9.236 V 9.963 H 7.063 z M 11.033 9.963 V 16 H 13.207 V 12.697 C 13.207 11.718 13.908 11.574 14.119 11.574 C 14.33 11.574 14.893 11.785 14.893 12.697 V 16 H 17 V 12.697 C 17 10.806 16.155 9.963 15.104 9.963 C 14.053 9.963 13.49 10.313 13.207 10.807 V 9.963 H 11.033 z"/>
+    </svg>
+  </a>
+
+
+  <!-- Instagram -->
+  <a
+    href="https://www.instagram.com/siyuu_1203/"
+    target="_blank"
+    rel="noopener noreferrer"
+    class="about-social-link about-social-instagram"
+    aria-label="Instagram"
+  >
+    <svg
+      class="about-social-icon"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2.3"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <rect x="2" y="2" width="20" height="20" rx="5"></rect>
+      <circle cx="12" cy="12" r="4"></circle>
+      <circle cx="18" cy="6" r="1"></circle>
+    </svg>
+  </a>
+</div>
+</section>
+
+<section class="about-education">
+
+  <h2 class="about-section-title">Education</h2>
+
+  <div class="about-education-grid">
+
+    <div class="about-education-item">
+      <h3>Parsons School of Design, The New School</h3>
+      <p>B.F.A. Design and Technology, GPA 3.99</p>
+      <em>Aug 2022 - May 2026</em>
+    </div>
+
+    <div class="about-education-item">
+      <h3>University of Washington, Seattle</h3>
+      <p>M.S. Human-Computer Interaction & Design</p>
+      <em>Expected in Aug 2027</em>
+    </div>
+
+    <div class="about-education-logos">
+      <img src="assets/parsonsdt.png" alt="Parsons Design + Technology">
+      <img src="assets/UW.png" alt="University of Washington">
+      <img src="assets/mhcid.png" alt="MHCI+D">
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =========================================================
+     WORK EXPERIENCE + SKILLS
+========================================================= -->
+<section class="about-work-skills">
+
+  <div class="about-work-skills-inner">
+
+    <!-- Work Experience -->
+    <div class="about-work">
+
+      <h2 class="about-section-title">
+        Work Experience
+      </h2>
+
+
+      <div class="about-work-item">
+
+        <h3>Product Designer</h3>
+
+        <p class="about-work-company">
+          Aphrodite Brands Group LLC
+        </p>
+
+        <p class="about-work-detail">
+          UX Research | E-Commerce | AI Prototyping
+        </p>
+
+        <p class="about-work-date">
+          Aug 2025 - May 2026
+        </p>
+
       </div>
-      
-      
-      
-      
-        </div>
+
+
+      <div class="about-work-item">
+
+        <h3>Product UX Design Intern</h3>
+
+        <p class="about-work-company">
+          BNU Corporation
+        </p>
+
+        <p class="about-work-detail">
+          Responsive Web | Localization | Motion Graphics
+        </p>
+
+        <p class="about-work-date">
+          Summer 2024
+        </p>
+
       </div>
 
-      <hr class="section-divider">
+    </div>
 
-      <section class="info-section">
-        <div class="info-block">
-          <h2>Education</h2>
-          <h3>Parsons School of Design, The New School</h3>
-          <strong> BFA Design and Technology, 4.0 GPA</strong> <br><em>Expected in May 2026</em>
 
-          
+
+    <!-- Skills -->
+    <div class="about-skills">
+
+      <h2 class="about-section-title">
+        Skills
+      </h2>
+
+
+      <p class="about-skills-line">
+        <strong>UX/UI:</strong>
+        User Flows, Wireframes, Prototyping, Design Systems,
+        Rapid Iteration, Competitive Analysis, Journey Maps,
+        Usability Testing
+      </p>
+
+
+      <p class="about-skills-line">
+        <strong>Tools:</strong>
+        Figma, AI-Driven Tools (Cursor, Claude, Figma Make, Framer),
+        Vibe Coding, HTML/CSS/JavaScript, Adobe Creative Suite,
+        CMS Platforms
+      </p>
+
+
+      <p class="about-skills-line">
+        <strong>Others:</strong>
+        Graphic Design, Unity, Arduino, CAD, TouchDesigner, Photography
+      </p>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+
+<!-- =========================================================
+     LEADERSHIP
+========================================================= -->
+<section class="about-leadership">
+
+  <div class="about-leadership-inner">
+
+    <h2 class="about-section-title">
+      Leadership
+    </h2>
+
+
+    <!-- Top two leadership cards -->
+    <div class="about-leadership-top">
+
+
+      <!-- Thesis Committee -->
+      <article class="about-leadership-card">
+
+        <div class="about-leadership-text">
+
+          <h3>Team Lead</h3>
+
+          <p class="about-leadership-org">
+            Design & Technology Thesis Committee
+          </p>
+
+          <p class="about-leadership-detail">
+            Project Management | Cross-team Coordination
+          </p>
+
         </div>
 
-            <div class="info-block">
-          <h2>Skills</h2>
-          <p>UX Research </p>
-          <p>Journey Mapping</p>
-          <p>Design Systems </p>
-          <p>Prototyping </p>
-          <p>Usability Testing </p>
-          <p>Web Development</p>
 
-     <br>
+        <div class="about-leadership-media about-leadership-media-single">
 
-   <p>Visual Design</p>
-            <p>Adobe CS</p>
+          <img
+            src="assets/thesiscommittee.png"
+            alt="Design and Technology Thesis Committee"
+          >
 
-               <br>
-
-           <p>Unity</p>
-           <p>TouchDesigner</p>
-           <p>Arduino</p>
-            <p>Max/MSP</p>
-
-
-
-  
-        
         </div>
 
-        <div class="info-block">
-          <h2>Professional Experience</h2>
+      </article>
 
-          <div class="experience-text">
-            <h3><strong>Product Design Intern</strong></h3>
-            <p><a href="https://aphroditebrandsgroup.com/" target="_blank">↗ Aphrodite Brands Group</a></p>
-            <p>UX Research | E-Commerce | AI Prototyping </p>
-          </div>
 
-          <br>
 
-            <div class="experience-text">
-               <h3><strong>Product UX Design Intern</strong></h3>
-            <p><a href="https://www.bnucorporation.com/" target="_blank">↗ BNU Corporation</a></p>
-            <p>Responsive Web | Localization | Motion Graphics</p>
-          </div>
+      <!-- iD Tech -->
+      <article class="about-leadership-card">
 
-  <br>
+        <div class="about-leadership-text">
 
-     <div class="experience-text">
-            <h3><strong>Resident Assistant</strong></h3>
-            <p><a href="https://www.newschool.edu//" target="_blank">↗ Parsons Residential Education</a></p>
-            <p>Community Building | Conflict Mediation</p>
-          </div>
+          <h3>Creative Instructor</h3>
 
- <br>
+          <p class="about-leadership-org">
+            iD Tech Camps
+          </p>
 
-          <div class="experience-text">
-             <h3><strong>STEM + ART Instructor</strong></h3>
-            <p><a href="https://www.idtech.com/" target="_blank">↗ iD Tech Camps</a></p>
-            <p>Adobe CS | 3D Modeling | Communication</p>
-          </div>
+          <p class="about-leadership-detail">
+            Adobe CS | 3D Modeling | Communication
+          </p>
 
         </div>
 
 
-      </section>
-      
+        <div class="about-leadership-media about-leadership-media-two">
+
+          <img
+            src="assets/idtech1.png"
+            alt="iD Tech group"
+          >
+
+          <img
+            src="assets/idtech2.jpg"
+            alt="iD Tech 2"
+          >
+
+        </div>
+
+      </article>
+
+    </div>
+
+
+
+    <!-- Resident Assistant -->
+    <article class="about-leadership-card about-ra">
+
+      <div class="about-leadership-text">
+
+        <h3>Resident Assistant</h3>
+
+        <p class="about-leadership-org">
+          The New School Residential Education
+        </p>
+
+        <p class="about-leadership-detail">
+          Community Building | Conflict Mediation
+        </p>
+
+      </div>
+
+
+      <div class="about-ra-gallery">
+
+        <img
+          src="assets/ra1.jpg"
+          alt="Resident Assistant Move In"
+        >
+
+        <img
+          src="assets/ra2.jpg"
+          alt="Resident Assistant2"
+        >
+
+        <img
+          src="assets/ra3.jpg"
+          alt="Resident Assistant team"
+        >
+
+        <img
+          src="assets/ra4.jpg"
+          alt="Residential Education group"
+        >
+
+      </div>
+
+    </article>
+
+  </div>
+
+</section>
+
+
+
+
+<div class="scrolltop-container" id="scrollTopArrow">
+  <img
+    src="assets/scrolldown.png"
+    alt="Back to top"
+    class="scrolltop"
+  >
+</div>
+
+
 
   </main>
 

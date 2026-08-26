@@ -1,0 +1,1323 @@
+/* =========================================================
+   ABOUT PAGE
+========================================================= */
+
+
+/* =========================================================
+   ABOUT INTRO SECTION
+========================================================= */
+
+.about-intro {
+  padding:
+    155px
+    clamp(3rem, 6vw, 6rem)
+    55px;
+
+  background-color: var(--bg-light);
+}
+
+
+/* Main two-column layout */
+
+.about-intro-inner {
+  width: 100%;
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(240px, 300px)
+    minmax(0, 1fr);
+
+  align-items: center;
+
+  gap: clamp(35px, 4vw, 55px);
+
+  opacity: 0;
+
+  animation:
+    aboutFadeIn
+    0.65s
+    ease-out
+    forwards;
+}
+
+
+/* =========================================================
+   PROFILE PHOTO
+========================================================= */
+
+.about-profile {
+  width: 100%;
+}
+
+
+.about-profile-image {
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+/* =========================================================
+   ABOUT BIO
+========================================================= */
+
+.about-bio {
+  width: 100%;
+  max-width: 690px;
+}
+
+
+/* Main greeting */
+
+.about-bio-title {
+  margin: 0 0 16px 0;
+
+  font-size: clamp(1.6rem, 2.2vw, 2.2rem);
+
+  line-height: 1.15;
+
+  font-weight: 400;
+
+  letter-spacing: -0.4px;
+
+  color: #263638;
+}
+
+
+/* Main paragraphs */
+
+.about-bio-copy p {
+  margin: 0 0 13px 0;
+
+  font-size: 1rem;
+
+  line-height: 1.6;
+
+  color: #3e4e50;
+}
+
+
+/* Personal / hobbies paragraph */
+
+.about-bio-copy .about-personal {
+  margin-top: 17px;
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   SOCIAL LINKS
+========================================================= */
+
+.about-socials {
+  display: flex;
+
+  align-items: center;
+
+  gap: 15px;
+
+  margin-top: 14px;
+
+  padding: 5px 0;
+
+  overflow: visible;
+}
+
+
+.about-social-link {
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  text-decoration: none;
+
+  color: #3e4e50;
+}
+
+
+/* Base icon */
+
+.about-social-icon {
+  width: 24px;
+  height: 24px;
+
+  display: block;
+
+  color: #3e4e50;
+
+  transform-origin: center;
+
+  transition:
+    fill 0.3s ease,
+    stroke 0.3s ease,
+    transform 0.2s ease;
+}
+
+
+/* =========================================================
+   EMAIL ICON
+========================================================= */
+
+.about-social-email .about-social-icon {
+  width: 24px;
+  height: 24px;
+
+  fill: #3e4e50;
+  stroke: #3e4e50;
+}
+
+
+.about-social-email:hover .about-social-icon {
+  fill: var(--accent-pink);
+  stroke: var(--accent-pink);
+
+  transform: scale(1.1);
+}
+
+
+/* =========================================================
+   LINKEDIN ICON
+========================================================= */
+
+.about-social-linkedin .about-social-icon {
+  width: 28px;
+  height: 28px;
+
+  fill: #3e4e50;
+
+  stroke: #3e4e50;
+
+  stroke-width: 0.1px;
+}
+
+
+.about-social-linkedin:hover .about-social-icon {
+  fill: var(--accent-pink);
+
+  stroke: var(--accent-pink);
+
+  transform: scale(1.1);
+}
+
+
+/* =========================================================
+   INSTAGRAM ICON
+========================================================= */
+
+.about-social-instagram .about-social-icon {
+  width: 24px;
+  height: 24px;
+
+  fill: none;
+
+  stroke: #3e4e50;
+}
+
+
+.about-social-instagram:hover .about-social-icon {
+  fill: none;
+
+  stroke: var(--accent-pink);
+
+  transform: scale(1.1);
+}
+
+
+/* =========================================================
+   ABOUT EDUCATION SECTION
+========================================================= */
+
+.about-education {
+  width: 100%;
+
+  padding:
+    18px
+    clamp(3rem, 6vw, 6rem)
+    65px;
+
+  background-color: var(--bg-light);
+
+  opacity: 0;
+
+  animation:
+    aboutFadeIn
+    0.7s
+    ease-out
+    forwards;
+
+  animation-delay: 0.18s;
+}
+
+
+/* Keep title aligned with profile photo */
+
+.about-education > .about-section-title {
+  width: 100%;
+  max-width: 1100px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* Keep education content aligned with profile photo too */
+
+.about-education > .about-education-grid {
+  width: 100%;
+  max-width: 1100px;
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/* =========================================================
+   EDUCATION TITLE
+========================================================= */
+
+.about-section-title {
+  margin-bottom: 18px;
+
+  font-size: 2rem;
+
+  line-height: 1.2;
+
+  font-weight: 400;
+
+  color: #263638;
+}
+
+
+/* =========================================================
+   EDUCATION GRID
+========================================================= */
+
+.about-education-grid {
+  display: grid;
+
+  grid-template-columns:
+    360px
+    360px
+    150px;
+
+  column-gap: 55px;
+
+  align-items: start;
+
+  justify-content: start;
+}
+
+
+/* =========================================================
+   EDUCATION TEXT
+========================================================= */
+
+.about-education-item h3 {
+  margin-bottom: 4px;
+
+  font-size: 1rem;
+
+  line-height: 1.4;
+
+  font-weight: 400;
+
+  color: #263638;
+}
+
+
+.about-education-item p {
+  margin-bottom: 2px;
+
+  font-size: 1rem;
+
+  line-height: 1.5;
+
+  color: #3e4e50;
+}
+
+
+/* Date / year */
+
+.about-education-item em {
+  font-size: 0.95rem;
+  line-height: 1.5;
+  color: #8a8f91;
+
+  font-style: italic !important;
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   EDUCATION LOGOS
+========================================================= */
+
+.about-education-logos {
+  width: 150px;
+
+  display: grid;
+
+  grid-template-columns:
+    71px
+    71px;
+
+  column-gap: 8px;
+
+  row-gap: 7px;
+
+  align-items: center;
+
+  justify-self: start;
+}
+
+
+/* Parsons */
+
+.about-education-logos img:nth-child(1) {
+  grid-column: 1 / -1;
+
+  width: 150px;
+  height: auto;
+
+  display: block;
+
+  object-fit: contain;
+}
+
+
+/* UW + MHCI+D */
+
+.about-education-logos img:nth-child(2),
+.about-education-logos img:nth-child(3) {
+  width: 71px;
+  height: 46px;
+
+  display: block;
+
+  object-fit: contain;
+}
+
+
+/* =========================================================
+   INTRO ANIMATION
+========================================================= */
+
+@keyframes aboutFadeIn {
+
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+
+/* =========================================================
+   LARGE TABLET / SMALL DESKTOP
+========================================================= */
+
+@media (max-width: 1050px) {
+
+  .about-education-grid {
+    grid-template-columns:
+      minmax(0, 1fr)
+      minmax(0, 1fr);
+
+    column-gap: 24px;
+    row-gap: 24px;
+  }
+
+
+  .about-education-logos {
+    grid-column: 1 / -1;
+
+    justify-self: start;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .about-intro {
+    padding:
+      135px
+      2rem
+      50px;
+  }
+
+
+  .about-intro-inner {
+    grid-template-columns:
+      minmax(220px, 270px)
+      minmax(0, 1fr);
+
+    gap: 45px;
+  }
+
+
+  .about-bio-title {
+    font-size:
+      clamp(
+        1.5rem,
+        2.5vw,
+        1.9rem
+      );
+  }
+
+
+  .about-education {
+    padding:
+      16px
+      2rem
+      60px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .about-intro {
+    padding:
+      120px
+      2rem
+      45px;
+  }
+
+
+  .about-intro-inner {
+    grid-template-columns: 1fr;
+
+    gap: 36px;
+
+    align-items: start;
+  }
+
+
+  .about-profile {
+    width: 100%;
+    max-width: 300px;
+  }
+
+
+  .about-bio {
+    width: 100%;
+    max-width: 650px;
+  }
+
+
+  .about-bio-title {
+    margin-bottom: 15px;
+
+    font-size: 1.8rem;
+  }
+
+
+  .about-bio-copy p {
+    margin-bottom: 13px;
+
+    font-size: 1rem;
+
+    line-height: 1.6;
+  }
+
+
+  .about-bio-copy .about-personal {
+    margin-top: 16px;
+    margin-bottom: 0;
+  }
+
+
+  .about-socials {
+    margin-top: 13px;
+  }
+
+
+  .about-education {
+    padding:
+      14px
+      2rem
+      55px;
+  }
+
+
+  /* Left: education text
+     Right: logo group */
+
+  .about-education-grid {
+    grid-template-columns:
+      minmax(0, 1fr)
+      120px;
+
+    column-gap: 16px;
+    row-gap: 20px;
+
+    align-items: start;
+  }
+
+
+  .about-education-item:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+
+  .about-education-item:nth-child(2) {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+
+  .about-education-logos {
+    grid-column: 2;
+    grid-row: 1 / 3;
+
+    width: 120px;
+
+    grid-template-columns:
+      56px
+      56px;
+
+    column-gap: 8px;
+    row-gap: 6px;
+
+    justify-self: end;
+    align-self: center;
+  }
+
+
+  .about-education-logos img:nth-child(1) {
+    width: 120px;
+  }
+
+
+  .about-education-logos img:nth-child(2),
+  .about-education-logos img:nth-child(3) {
+    width: 56px;
+    height: 38px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .about-intro {
+    padding:
+      105px
+      1.25rem
+      42px;
+  }
+
+
+  .about-intro-inner {
+    gap: 30px;
+  }
+
+
+  .about-profile {
+    max-width: 260px;
+  }
+
+
+  .about-bio-title {
+    margin-bottom: 14px;
+
+    font-size: 1.65rem;
+
+    line-height: 1.2;
+  }
+
+
+  .about-bio-copy p {
+    margin-bottom: 12px;
+
+    font-size: 0.96rem;
+
+    line-height: 1.6;
+  }
+
+
+  .about-bio-copy .about-personal {
+    margin-top: 15px;
+    margin-bottom: 0;
+  }
+
+
+  .about-socials {
+    gap: 14px;
+
+    margin-top: 12px;
+  }
+
+
+  .about-social-icon {
+    width: 23px;
+    height: 23px;
+  }
+
+
+  .about-social-email .about-social-icon {
+    width: 23px;
+    height: 23px;
+  }
+
+
+  .about-social-linkedin .about-social-icon {
+    width: 27px;
+    height: 27px;
+  }
+
+
+  .about-social-instagram .about-social-icon {
+    width: 23px;
+    height: 23px;
+  }
+
+
+  .about-education {
+    padding:
+      12px
+      1.25rem
+      50px;
+  }
+
+
+  .about-section-title {
+    margin-bottom: 16px;
+
+    font-size: 1.7rem;
+  }
+
+
+  .about-education-grid {
+    grid-template-columns:
+      minmax(0, 1fr)
+      105px;
+
+    column-gap: 12px;
+    row-gap: 18px;
+  }
+
+
+  .about-education-item h3,
+  .about-education-item p {
+    font-size: 0.96rem;
+  }
+
+
+  .about-education-item em {
+    font-size: 0.9rem;
+  }
+
+
+  .about-education-logos {
+    width: 105px;
+
+    grid-template-columns:
+      49px
+      49px;
+
+    column-gap: 7px;
+
+    justify-self: end;
+    align-self: center;
+  }
+
+
+  .about-education-logos img:nth-child(1) {
+    width: 105px;
+  }
+
+
+  .about-education-logos img:nth-child(2),
+  .about-education-logos img:nth-child(3) {
+    width: 49px;
+    height: 34px;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .about-intro {
+    padding:
+      100px
+      1.25rem
+      40px;
+  }
+
+
+  .about-profile {
+    max-width: 240px;
+  }
+
+
+  .about-bio-title {
+    font-size: 1.55rem;
+  }
+
+
+  .about-education-grid {
+    grid-template-columns:
+      minmax(0, 1fr)
+      92px;
+
+    column-gap: 10px;
+  }
+
+
+  .about-education-logos {
+    width: 92px;
+
+    grid-template-columns:
+      43px
+      43px;
+
+    column-gap: 6px;
+  }
+
+
+  .about-education-logos img:nth-child(1) {
+    width: 92px;
+  }
+
+
+  .about-education-logos img:nth-child(2),
+  .about-education-logos img:nth-child(3) {
+    width: 43px;
+    height: 30px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .about-intro-inner,
+  .about-education {
+    opacity: 1;
+
+    animation: none;
+
+    transform: none;
+  }
+
+
+  .about-social-icon {
+    transition: none;
+  }
+
+}
+
+
+/* =========================================================
+   WORK EXPERIENCE + SKILLS
+========================================================= */
+
+.about-work-skills {
+  width: 100%;
+
+  padding:
+    35px
+    clamp(3rem, 6vw, 6rem)
+    60px;
+
+  background-color: var(--bg-light);
+
+  opacity: 0;
+
+  animation:
+    aboutFadeIn
+    0.7s
+    ease-out
+    forwards;
+
+  animation-delay: 0.28s;
+}
+
+
+.about-work-skills-inner {
+  width: 100%;
+  max-width: 1100px;
+
+  margin: 0 auto;
+
+  display: grid;
+
+  grid-template-columns: 1fr 1.35fr;
+
+  column-gap: 70px;
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   WORK EXPERIENCE
+========================================================= */
+
+.about-work-item {
+  margin-bottom: 24px;
+}
+
+
+.about-work-item:last-child {
+  margin-bottom: 0;
+}
+
+
+.about-work-item h3 {
+  margin-bottom: 3px;
+
+  font-size: 1rem;
+  line-height: 1.4;
+
+  font-weight: 650;
+
+  color: #263638;
+}
+
+
+.about-work-company {
+  margin-bottom: 2px;
+
+  font-size: 1rem;
+  line-height: 1.45;
+
+  font-style: italic;
+
+  color: #3e4e50;
+}
+
+
+.about-work-detail {
+  margin-bottom: 2px;
+
+  font-size: 1rem;
+  line-height: 1.45;
+
+  color: #3e4e50;
+}
+
+
+.about-work-date {
+  font-size: 0.95rem;
+  line-height: 1.45;
+
+  font-style: italic;
+
+  color: #8a8f91;
+}
+
+
+/* =========================================================
+   SKILLS
+========================================================= */
+
+.about-skills-line {
+  margin-bottom: 22px;
+
+  font-size: 1rem;
+  line-height: 1.55;
+
+  color: #3e4e50;
+}
+
+
+.about-skills-line:last-child {
+  margin-bottom: 0;
+}
+
+
+.about-skills-line strong {
+  font-weight: 650;
+
+  color: #263638;
+}
+
+
+/* =========================================================
+   LEADERSHIP
+========================================================= */
+
+.about-leadership {
+  width: 100%;
+
+  padding:
+    30px
+    clamp(3rem, 6vw, 6rem)
+    80px;
+
+  background-color: var(--bg-light);
+
+  opacity: 0;
+
+  animation:
+    aboutFadeIn
+    0.7s
+    ease-out
+    forwards;
+
+  animation-delay: 0.38s;
+}
+
+
+.about-leadership-inner {
+  width: 100%;
+  max-width: 1100px;
+
+  margin: 0 auto;
+}
+
+
+/* Top two leadership items */
+
+.about-leadership-top {
+  display: grid;
+
+  grid-template-columns:
+    1fr
+    1.35fr;
+
+  column-gap: 70px;
+
+  align-items: start;
+
+  margin-bottom: 40px;
+}
+
+
+/* =========================================================
+   LEADERSHIP TEXT
+========================================================= */
+
+.about-leadership-text {
+  margin-bottom: 10px;
+}
+
+
+.about-leadership-text h3 {
+  margin-bottom: 2px;
+
+  font-size: 1rem;
+  line-height: 1.4;
+
+  font-weight: 650;
+
+  color: #263638;
+}
+
+
+.about-leadership-org {
+  margin-bottom: 2px;
+
+  font-size: 1rem;
+  line-height: 1.45;
+
+  font-style: italic;
+
+  color: #3e4e50;
+}
+
+
+.about-leadership-detail {
+  font-size: 1rem;
+  line-height: 1.45;
+
+  color: #3e4e50;
+}
+
+
+/* =========================================================
+   LEADERSHIP IMAGES
+========================================================= */
+
+.about-leadership-media {
+  width: 100%;
+}
+
+
+/* One image */
+
+.about-leadership-media-single img {
+  width: 100%;
+  height: 210px;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+/* Two images */
+
+.about-leadership-media-two {
+  display: grid;
+
+  grid-template-columns:
+    1.5fr
+    1fr;
+
+  gap: 8px;
+}
+
+
+.about-leadership-media-two img {
+  width: 100%;
+  height: 210px;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+/* =========================================================
+   RESIDENT ASSISTANT
+========================================================= */
+
+.about-ra {
+  width: 100%;
+}
+
+
+.about-ra-gallery {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    1.35fr
+    0.85fr
+    1.25fr
+    0.5fr;
+
+  gap: 8px;
+}
+
+
+.about-ra-gallery img {
+  width: 100%;
+  height: 220px;
+
+  display: block;
+
+  object-fit: cover;
+}
+
+
+/* =========================================================
+   WORK / SKILLS / LEADERSHIP RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+  .about-work-skills {
+    padding:
+      30px
+      2rem
+      55px;
+  }
+
+
+  .about-work-skills-inner {
+    column-gap: 50px;
+  }
+
+
+  .about-leadership {
+    padding:
+      28px
+      2rem
+      70px;
+  }
+
+
+  .about-leadership-top {
+    column-gap: 35px;
+  }
+
+
+  .about-leadership-media-single img,
+  .about-leadership-media-two img {
+    height: 190px;
+  }
+
+
+  .about-ra-gallery img {
+    height: 190px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .about-work-skills {
+    padding:
+      25px
+      2rem
+      50px;
+  }
+
+
+  .about-work-skills-inner {
+    grid-template-columns: 1fr;
+
+    row-gap: 42px;
+  }
+
+
+  .about-leadership {
+    padding:
+      25px
+      2rem
+      65px;
+  }
+
+
+  .about-leadership-top {
+    grid-template-columns: 1fr;
+
+    row-gap: 38px;
+
+    margin-bottom: 38px;
+  }
+
+
+.about-leadership-media-single img {
+  height: auto;
+}
+
+.about-leadership-media-two img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+  .about-ra-gallery {
+    grid-template-columns:
+      1fr
+      1fr;
+
+    gap: 8px;
+  }
+
+
+  .about-ra-gallery img {
+    height: 220px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .about-work-skills {
+    padding:
+      22px
+      1.25rem
+      45px;
+  }
+
+
+  .about-work-skills-inner {
+    row-gap: 36px;
+  }
+
+
+  .about-work-item h3,
+  .about-work-company,
+  .about-work-detail,
+  .about-skills-line {
+    font-size: 0.96rem;
+  }
+
+
+  .about-work-date {
+    font-size: 0.9rem;
+  }
+
+
+  .about-leadership {
+    padding:
+      22px
+      1.25rem
+      55px;
+  }
+
+
+  .about-leadership-text h3,
+  .about-leadership-org,
+  .about-leadership-detail {
+    font-size: 0.96rem;
+  }
+
+
+  .about-leadership-media-two {
+    grid-template-columns:
+      1fr
+      1fr;
+  }
+
+  
+
+  .about-ra-gallery {
+    grid-template-columns:
+      1fr
+      1fr;
+  }
+
+
+  .about-ra-gallery img {
+    height: 170px;
+  }
+
+}
+

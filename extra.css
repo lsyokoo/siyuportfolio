@@ -1,0 +1,99 @@
+/* Normal image shadow */
+.project-preview-image img {
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover shadow */
+.project-preview-image:hover img {
+  box-shadow: 0 5px 16px rgba(0, 0, 0, 0.09);
+}
+
+/* =========================================================
+   EXTRAS PAGE
+========================================================= */
+
+
+/* First section needs space below fixed header */
+
+main .project-preview:first-of-type {
+  padding-top: 130px;
+}
+
+
+/* Reduce spacing between sections */
+
+.project-preview {
+  padding-top: 42px;
+  padding-bottom: 42px;
+}
+
+
+/* Keep internal content aligned */
+
+.project-preview-content {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+
+/* Slightly tighter image/text spacing if needed */
+
+.project-preview-text {
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+  main .project-preview:first-of-type {
+    padding-top: 115px;
+  }
+
+  .project-preview {
+    padding-top: 34px;
+    padding-bottom: 34px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  main .project-preview:first-of-type {
+    padding-top: 105px;
+  }
+
+  .project-preview {
+    padding-top: 28px;
+    padding-bottom: 28px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  main .project-preview:first-of-type {
+    padding-top: 95px;
+  }
+
+  .project-preview {
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+
+}

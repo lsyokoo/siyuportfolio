@@ -1,0 +1,1894 @@
+/* =========================================================
+   UX CASE STUDY
+========================================================= */
+
+
+/* =========================================================
+   PAGE
+========================================================= */
+
+.case-study {
+  width: 100%;
+  background-color: var(--bg-light);
+
+  opacity: 0;
+
+  animation:
+    caseFadeIn
+    0.55s
+    ease-out
+    forwards;
+}
+
+
+@keyframes caseFadeIn {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+
+/* =========================================================
+   MASTER WIDTH
+========================================================= */
+
+.case-container {
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding-left: clamp(3rem, 6vw, 6rem);
+  padding-right: clamp(3rem, 6vw, 6rem);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.case-hero {
+  width: 100%;
+
+  padding-top: 118px;
+  padding-bottom: 46px;
+}
+
+
+/* =========================================================
+   HERO EYEBROW
+========================================================= */
+
+.case-eyebrow {
+  margin: 0 0 13px;
+
+  font-size: 0.78rem;
+  line-height: 1.4;
+
+  font-weight: 500;
+
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+
+  color: var(--accent-pink);
+}
+
+
+/* =========================================================
+   HERO TITLE
+========================================================= */
+
+.case-title {
+  width: 100%;
+  max-width: 1250px;
+
+  margin: 0 0 11px;
+
+  font-size:
+    clamp(
+      2.7rem,
+      3.45vw,
+      3.65rem
+    );
+
+  line-height: 1.07;
+
+  font-weight: 400;
+
+  letter-spacing: -1.7px;
+
+  color: #263638;
+}
+
+
+/* =========================================================
+   HERO SUBTITLE
+========================================================= */
+
+.case-subtitle {
+  width: 100%;
+  max-width: 1200px;
+
+  margin: 0;
+
+  font-size:
+    clamp(
+      1.28rem,
+      1.55vw,
+      1.5rem
+    );
+
+  line-height: 1.45;
+
+  font-weight: 400;
+
+  letter-spacing: -0.15px;
+
+  color: #596668;
+}
+
+
+/* =========================================================
+   PROBLEM / SOLUTION / IMPACT
+========================================================= */
+
+.case-summary {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  column-gap:
+    clamp(
+      48px,
+      6vw,
+      92px
+    );
+
+  margin-top: 44px;
+}
+
+
+.case-summary-item {
+  min-width: 0;
+}
+
+
+.case-summary-label {
+  margin: 0 0 3px;
+
+  font-size: 1rem;
+  line-height: 1.4;
+
+  font-weight: 500;
+
+  letter-spacing: 1.4px;
+  text-transform: uppercase;
+
+  color: #7d888a;
+}
+
+
+.case-summary-text {
+  width: 100%;
+  max-width: 300px;
+
+  margin: 0;
+
+  font-size: 1.08rem;
+  line-height: 1.55;
+
+  font-weight: 400;
+
+  color: #263638;
+}
+
+
+/* =========================================================
+   META
+========================================================= */
+
+.case-meta {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  column-gap:
+    clamp(
+      48px,
+      6vw,
+      92px
+    );
+
+  margin-top: 32px;
+}
+
+
+.case-meta-item {
+  min-width: 0;
+
+  display: flex;
+
+  align-items: baseline;
+
+  gap: 5px;
+
+  font-size: 1rem;
+  line-height: 1.5;
+
+  white-space: nowrap;
+}
+
+
+.case-meta-label {
+  flex-shrink: 0;
+
+  color: #7d7d7d;
+}
+
+
+.case-meta-value {
+  color: #263638;
+}
+
+
+/* =========================================================
+   HERO MEDIA
+========================================================= */
+
+.case-hero-media {
+  width: 100%;
+
+  margin-top: 30px;
+}
+
+
+.case-hero-media img {
+  width: 100%;
+  height: auto;
+
+  display: block;
+}
+
+
+/* =========================================================
+   STANDARD SECTION
+========================================================= */
+
+.case-section {
+  padding-top: 58px;
+  padding-bottom: 58px;
+}
+
+
+.case-context {
+  padding-top: 58px;
+}
+
+
+/* =========================================================
+   SECTION TITLE
+========================================================= */
+
+.case-section-title {
+  margin: 0 0 12px;
+
+  font-size:
+    clamp(
+      1.95rem,
+      2.3vw,
+      2.4rem
+    );
+
+  line-height: 1.15;
+
+  letter-spacing: -0.55px;
+
+  color: #263638;
+}
+
+
+/* =========================================================
+   SECTION INTRO / BODY
+========================================================= */
+
+.case-section-intro,
+.case-wide-copy {
+  max-width: 1050px;
+
+  margin: 0 0 20px;
+
+  font-size: 1.05rem;
+  line-height: 1.68;
+
+  color: #4b595b;
+}
+
+
+.case-section-title + .case-section-intro {
+  margin-top: 0;
+}
+
+
+/* =========================================================
+   MAJOR SECTION DIVIDERS
+   Divider only appears between top-level case sections.
+   Subsections inside them do not receive dividers.
+========================================================= */
+
+.case-section + .case-section {
+  padding-top: 0;
+}
+
+.case-section + .case-section > .case-container {
+  position: relative;
+  padding-top: 58px;
+}
+
+.case-section + .case-section > .case-container::before {
+  content: "";
+  position: absolute;
+
+  top: 0;
+
+  left: clamp(3rem, 6vw, 6rem);
+  right: clamp(3rem, 6vw, 6rem);
+
+  height: 1px;
+
+  background: rgba(62, 78, 80, 0.16);
+}
+
+/* =========================================================
+   CHALLENGE
+========================================================= */
+
+.case-split {
+  display: grid;
+
+  grid-template-columns:
+    minmax(320px, 0.78fr)
+    minmax(0, 1.22fr);
+
+  gap:
+    clamp(
+      48px,
+      6vw,
+      84px
+    );
+
+  align-items: start;
+}
+
+
+.case-split-text {
+  max-width: 470px;
+}
+
+
+.case-split-text p {
+  margin: 0 0 20px;
+
+  font-size: 1.05rem;
+  line-height: 1.68;
+
+  color: #4b585a;
+}
+
+
+.case-emphasis {
+  font-size: 1.05rem !important;
+  line-height: 1.68 !important;
+
+  color: #263638 !important;
+}
+
+
+/* =========================================================
+   THREE CHALLENGES CARD
+========================================================= */
+
+.case-list {
+  margin:
+    24px
+    0
+    26px;
+
+  padding:
+    22px
+    26px
+    12px
+    44px;
+
+  list-style-position: outside;
+
+  background:
+    rgba(255, 255, 255, 0.25);
+
+  border:
+    1px
+    solid
+    rgba(62, 78, 80, 0.14);
+
+  border-radius: 1px;
+
+  box-shadow: none;
+}
+
+
+.case-list li {
+  margin-bottom: 12px;
+
+  padding-left: 2px;
+
+  font-size: 1.02rem;
+  line-height: 1.58;
+
+  color: #465456;
+}
+
+
+.case-list li::marker {
+  color: #8e9799;
+}
+
+
+/* =========================================================
+   CHALLENGE VISUAL
+========================================================= */
+
+.case-split-media {
+  width: 100%;
+
+  padding: 0;
+
+  background: transparent;
+
+  border: none;
+
+  border-radius: 0;
+
+  box-shadow: none;
+}
+
+
+.case-split-media img {
+  width: 100%;
+  height: auto;
+
+  display: block;
+}
+
+
+/* =========================================================
+   INFO CARDS
+========================================================= */
+
+.case-card-grid {
+  display: grid;
+
+  gap: 18px;
+
+  margin-top: 38px;
+}
+
+
+.case-card-grid-2 {
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+}
+
+
+.case-card-grid-3 {
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+}
+
+
+.case-info-card {
+  padding:
+    26px
+    26px
+    24px;
+
+  background:
+    rgba(255, 255, 255, 0.28);
+
+  border:
+    1px
+    solid
+    rgba(62, 78, 80, 0.1);
+
+  border-radius: 3px;
+
+  box-shadow: none;
+}
+
+
+.case-info-card h3 {
+  margin: 0 0 10px;
+
+  font-size: 1.22rem;
+  line-height: 1.35;
+
+  font-weight: 500;
+
+  color: #263638;
+}
+
+
+.case-info-card p {
+  margin: 0;
+
+  font-size: 1.05rem;
+  line-height: 1.65;
+
+  color: #606c6e;
+}
+
+
+/* =========================================================
+   CUSTOMER NEED / BUSINESS NEED
+========================================================= */
+
+.case-split + .case-card-grid-2 .case-info-card {
+  padding:
+    40px
+    28px;
+
+  background:
+    rgba(255, 255, 255, 0.32);
+
+  border:
+    1px
+    solid
+    rgba(251, 146, 176, 0.3);
+
+  border-radius: 3px;
+
+  box-shadow: none;
+}
+
+
+.case-split + .case-card-grid-2 .case-info-card p:first-child {
+  margin: 0 0 10px;
+
+  font-size: 1.22rem;
+  line-height: 1.35;
+
+  font-weight: 500;
+
+  color: #263638;
+}
+
+
+.case-split + .case-card-grid-2 .case-info-card p:last-child {
+  margin: 0;
+
+  font-size: 1.05rem;
+  line-height: 1.65;
+
+  color: #606c6e;
+}
+
+
+/* =========================================================
+   RESEARCH
+========================================================= */
+
+.case-research-row {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(250px, 0.31fr)
+    minmax(0, 1fr);
+
+  gap:
+    clamp(
+      44px,
+      5.5vw,
+      76px
+    );
+
+  align-items: start;
+
+  margin-top: 22px;
+
+  padding-top: 0;
+
+  border: none;
+}
+
+
+.case-research-row + .case-research-row {
+  margin-top: 52px;
+}
+
+
+/* =========================================================
+   RESEARCH SUBSECTION TEXT
+========================================================= */
+
+.case-research-label {
+  max-width: 310px;
+}
+
+
+.case-research-label h3 {
+  margin: 0 0 9px;
+
+  font-size: 1.35rem;
+  line-height: 1.3;
+
+  font-weight: 500;
+
+  letter-spacing: -0.2px;
+
+  color: #263638;
+}
+
+
+.case-research-label p {
+  margin: 0;
+
+  font-size: 1.05rem;
+  line-height: 1.68;
+
+  color: #5d696b;
+}
+
+
+/* =========================================================
+   RESEARCH VISUALS
+========================================================= */
+
+.case-research-content {
+  width: 100%;
+}
+
+
+.case-research-content img {
+  width: 100%;
+  height: auto;
+
+  display: block;
+}
+
+
+.case-research-2col {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+
+/* =========================================================
+   KEY OPPORTUNITIES
+========================================================= */
+
+.case-subsection {
+  margin-top: 54px;
+}
+
+
+.case-subsection-title {
+  margin: 0 0 20px;
+
+  font-size: 1.35rem;
+  line-height: 1.3;
+
+  font-weight: 500;
+
+  letter-spacing: -0.2px;
+
+  color: #263638;
+}
+
+
+/* =========================================================
+   KEY OPPORTUNITY CARDS
+========================================================= */
+
+.case-subsection .case-card-grid {
+  margin-top: 0;
+
+  gap: 18px;
+}
+
+
+.case-subsection .case-info-card {
+  padding:
+    40px
+    28px;
+
+  background:
+    rgba(255, 255, 255, 0.32);
+
+  border:
+    1px
+    solid
+    rgba(251, 146, 176, 0.3);
+
+  border-radius: 3px;
+
+  box-shadow: none;
+}
+
+
+.case-subsection .case-info-card h3 {
+  margin: 0 0 10px;
+
+  font-size: 1.22rem;
+  line-height: 1.35;
+
+  font-weight: 500;
+
+  color: #263638;
+}
+
+
+.case-subsection .case-info-card p {
+  margin: 0;
+
+  font-size: 1.05rem;
+  line-height: 1.65;
+
+  color: #606c6e;
+}
+
+
+/* =========================================================
+   STAKEHOLDER CONVERSATIONS
+========================================================= */
+
+/* =========================================================
+   STAKEHOLDER COLLABORATION
+========================================================= */
+
+.stakeholder-grid {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap:
+    clamp(
+      48px,
+      6vw,
+      84px
+    );
+
+  margin-top: 38px;
+}
+
+
+/* =========================================================
+   EACH COLUMN
+========================================================= */
+
+.stakeholder-column {
+  min-width: 0;
+}
+
+
+.stakeholder-title {
+  margin: 0 0 24px;
+
+  font-size: 1.35rem;
+  line-height: 1.3;
+
+  font-weight: 500;
+
+  letter-spacing: -0.2px;
+
+  color: #263638;
+}
+
+
+/* =========================================================
+   CONVERSATION ROW
+========================================================= */
+
+.conversation-row {
+  width: 100%;
+
+  display: flex;
+
+  margin-bottom: 16px;
+}
+
+
+.conversation-left {
+  justify-content: flex-start;
+}
+
+
+.conversation-right {
+  justify-content: flex-end;
+}
+
+
+/* =========================================================
+   CONVERSATION BUBBLE
+========================================================= */
+
+.conversation-bubble {
+  position: relative;
+
+  width: fit-content;
+  max-width: 82%;
+
+  padding: 18px 20px;
+
+  border-radius: 10px;
+}
+
+
+.conversation-bubble p {
+  margin: 0;
+
+  font-size: 1.05rem;
+  line-height: 1.6;
+
+  color: #4f5c5e;
+}
+
+
+/* Speaker */
+
+.conversation-bubble .conversation-speaker {
+  margin-bottom: 6px;
+
+  font-size: 0.75rem;
+  line-height: 1.4;
+
+  font-weight: 500;
+
+  letter-spacing: 1.1px;
+  text-transform: uppercase;
+
+  color: #8a9294;
+}
+
+
+/* =========================================================
+   STAKEHOLDER / PM
+========================================================= */
+
+.bubble-other {
+  background: rgba(255, 255, 255, 0.38);
+
+  border:
+    1px
+    solid
+    rgba(62, 78, 80, 0.12);
+}
+
+
+.bubble-other::after {
+  content: "";
+
+  position: absolute;
+
+  left: 17px;
+  bottom: -6px;
+
+  width: 11px;
+  height: 11px;
+
+  background: #f7f7f5;
+
+  border-right:
+    1px
+    solid
+    rgba(62, 78, 80, 0.12);
+
+  border-bottom:
+    1px
+    solid
+    rgba(62, 78, 80, 0.12);
+
+  transform: rotate(45deg);
+}
+
+
+/* =========================================================
+   MY RESPONSE
+========================================================= */
+
+.bubble-me {
+  background: rgba(228, 149, 158, 0.10);
+
+  border:
+    1px
+    solid
+    rgba(228, 149, 158, 0.22);
+}
+
+
+.bubble-me::after {
+  content: "";
+
+  position: absolute;
+
+  right: 17px;
+  bottom: -6px;
+
+  width: 11px;
+  height: 11px;
+
+  background: #f8eeee;
+
+  border-right:
+    1px
+    solid
+    rgba(228, 149, 158, 0.22);
+
+  border-bottom:
+    1px
+    solid
+    rgba(228, 149, 158, 0.22);
+
+  transform: rotate(45deg);
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .stakeholder-grid {
+    grid-template-columns: 1fr;
+
+    gap: 52px;
+
+    margin-top: 32px;
+  }
+
+
+  .conversation-bubble {
+    max-width: 84%;
+  }
+
+}
+
+
+/* =========================================================
+   PROCESS / COLLABORATION / VALIDATION
+========================================================= */
+
+.case-process-row {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(300px, 0.4fr)
+    minmax(0, 1fr);
+
+  gap:
+    clamp(
+      44px,
+      5.5vw,
+      78px
+    );
+
+  align-items: start;
+
+  margin-top: 40px;
+
+  padding-top: 0;
+
+  border: none;
+}
+
+
+.case-process-row + .case-process-row {
+  margin-top: 56px;
+}
+
+
+.case-process-text {
+  max-width: 460px;
+}
+
+
+.case-process-text h3 {
+  margin: 0 0 9px;
+
+  font-size: 1.35rem;
+  line-height: 1.3;
+
+  font-weight: 500;
+
+  letter-spacing: -0.2px;
+
+  color: #263638;
+}
+
+
+.case-process-text p {
+  margin: 0 0 14px;
+
+  font-size: 1.05rem;
+  line-height: 1.68;
+
+  color: #5d696b;
+}
+
+
+/* =========================================================
+   VALIDATION IMAGES
+   No card styling
+========================================================= */
+
+.case-process-media {
+  width: 100%;
+
+  padding: 0;
+
+  margin: 0;
+
+  background: transparent;
+
+  border: none;
+
+  border-radius: 0;
+
+  box-shadow: none;
+}
+
+
+.case-process-media img {
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  margin: 0;
+}
+
+
+/* =========================================================
+   MINI LIST
+========================================================= */
+
+.case-mini-list {
+  margin:
+    12px
+    0
+    16px;
+
+  padding-left: 1.2rem;
+
+  max-width: 450px;
+}
+
+
+.case-mini-list li {
+  margin-bottom: 9px;
+
+  font-size: 1.05rem;
+  line-height: 1.6;
+
+  color: #5d696b;
+}
+
+
+.case-supporting-note {
+  margin-top: 12px !important;
+
+  color: #788183 !important;
+}
+
+
+/* =========================================================
+   FINAL DESIGN
+========================================================= */
+
+.case-solution-row {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(300px, 0.4fr)
+    minmax(0, 1fr);
+
+  gap:
+    clamp(
+      46px,
+      5.8vw,
+      82px
+    );
+
+  align-items: start;
+
+  margin-top: 52px;
+
+  padding-top: 0;
+
+  border: none;
+}
+
+
+.case-solution-row + .case-solution-row {
+  margin-top: 72px;
+}
+
+
+.case-solution-text {
+  max-width: 460px;
+}
+
+
+/* 01 / 02 / 03 */
+
+.case-solution-number {
+  margin: 0 0 8px;
+
+  font-size: 0.78rem;
+  line-height: 1.3;
+
+  font-weight: 500;
+
+  letter-spacing: 1.25px;
+
+  color: var(--accent-pink);
+}
+
+
+/* Match Early Concept Testing hierarchy */
+
+.case-solution-text h3 {
+  margin: 0 0 9px;
+
+  font-size: 1.35rem;
+  line-height: 1.3;
+
+  font-weight: 500;
+
+  letter-spacing: -0.2px;
+
+  color: #263638;
+}
+
+
+.case-solution-text p {
+  margin: 0;
+
+  font-size: 1.05rem;
+  line-height: 1.68;
+
+  color: #5f696b;
+}
+
+
+/* =========================================================
+   FINAL DESIGN VISUALS
+   No card styling
+========================================================= */
+
+.case-solution-media {
+  width: 100%;
+
+  padding: 0;
+
+  margin: 0;
+
+  background: transparent;
+
+  border: none;
+
+  border-radius: 0;
+
+  box-shadow: none;
+}
+
+
+.case-solution-media img {
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  margin: 0;
+}
+
+
+/* =========================================================
+   IMPACT
+========================================================= */
+
+.case-impact-note {
+  max-width: 940px;
+
+  margin: 0 0 28px;
+
+  font-size: 1.05rem;
+  line-height: 1.65;
+
+  color: #5b686a;
+}
+
+
+.case-impact-panel {
+  width: 100%;
+
+  padding:
+    28px
+    30px
+    30px;
+
+  background:
+    rgba(228, 149, 158, 0.08);
+
+  border:
+    1px
+    solid
+    rgba(228, 149, 158, 0.18);
+
+  border-radius: 2px;
+
+  box-shadow: none;
+}
+
+
+.case-impact-panel-label {
+  margin: 0 0 24px;
+
+  font-size: 1rem;
+
+  color: #263638;
+}
+
+
+.case-impact-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 18px;
+}
+
+
+.case-impact-item strong {
+  display: block;
+
+  margin: 0 0 8px;
+
+  font-size:
+    clamp(
+      2.05rem,
+      2.7vw,
+      2.7rem
+    );
+
+  line-height: 1;
+
+  font-weight: 550;
+
+  color: #263638;
+}
+
+
+.case-impact-item span {
+  font-size: 0.95rem;
+  line-height: 1.45;
+
+  color: #687274;
+}
+
+
+/* =========================================================
+   IMPACT QUOTES
+========================================================= */
+
+.case-impact-quotes {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap:
+    clamp(
+      54px,
+      7vw,
+      100px
+    );
+
+  margin-top: 32px;
+}
+
+
+.case-quote {
+  max-width: 520px;
+
+  margin: 0;
+
+  padding:
+    20px
+    22px
+    20px
+    24px;
+
+  border-left:
+    2px
+    solid
+    rgba(228, 149, 158, 0.55);
+
+  background:
+    rgba(255, 255, 255, 0.22);
+
+  box-shadow: none;
+}
+
+
+.case-quote p {
+  margin: 0;
+
+  font-size: 1rem;
+  line-height: 1.65;
+
+  font-style: italic;
+
+  color: #4c595b;
+}
+
+
+.case-quote cite {
+  display: block;
+
+  margin-top: 10px;
+
+  font-size: 0.9rem;
+
+  font-style: normal;
+
+  color: #828b8d;
+}
+
+
+.case-quote-right {
+  justify-self: end;
+}
+
+
+/* =========================================================
+   REFLECTION
+========================================================= */
+
+.case-reflection-block {
+  max-width: 1100px;
+
+  display: grid;
+
+  grid-template-columns: 1fr;
+
+  gap: 38px;
+
+  margin-top: 26px;
+}
+
+
+.case-reflection-block > div {
+  padding-top: 0;
+
+  border: none;
+}
+
+
+.case-reflection-block h3 {
+  margin: 0 0 11px;
+
+  font-size: 1.18rem;
+
+  color: #263638;
+}
+
+
+.case-reflection-block ul {
+  margin: 0;
+
+  padding-left: 1.2rem;
+}
+
+
+.case-reflection-block li {
+  margin-bottom: 9px;
+
+  font-size: 1.05rem;
+  line-height: 1.65;
+
+  color: #566466;
+}
+
+
+/* =========================================================
+   NEXT CASE STUDY
+========================================================= */
+
+.case-next {
+  padding-top: 76px;
+  padding-bottom: 82px;
+
+  border-top: 1px solid rgba(62, 78, 80, 0.16);
+}
+
+.case-next > .case-container {
+  border-top: none;
+  padding-top: 0;
+}
+
+
+/* Make NEXT CASE STUDY feel like a subsection heading */
+
+.case-next-label {
+  margin: 0 0 26px;
+
+  font-size: 1.35rem;
+  line-height: 1.3;
+
+  font-weight: 500;
+
+  letter-spacing: -0.2px;
+
+  color: #263638;
+}
+
+
+/* =========================================================
+   NEXT CASE LAYOUT
+========================================================= */
+
+.case-next-link {
+  display: grid;
+
+  grid-template-columns:
+    minmax(320px, 0.42fr)
+    minmax(0, 1fr);
+
+  gap:
+    clamp(
+      48px,
+      6vw,
+      84px
+    );
+
+  align-items: start;
+}
+
+
+/* =========================================================
+   NEXT CASE COPY
+========================================================= */
+
+.case-next-copy {
+  max-width: 440px;
+
+  padding: 0;
+  margin: 0;
+}
+
+
+.case-next-copy .case-eyebrow {
+  margin: 0 0 9px;
+
+  font-size: 0.78rem;
+  line-height: 1.4;
+
+  letter-spacing: 1.4px;
+
+  color: var(--accent-pink);
+}
+
+
+.case-next-copy h2 {
+  margin:
+    0
+    0
+    12px;
+
+  font-size:
+    clamp(
+      1.65rem,
+      2vw,
+      2.15rem
+    );
+
+  line-height: 1.2;
+
+  font-weight: 500;
+
+  letter-spacing: -0.4px;
+
+  color: #263638;
+}
+
+
+.case-next-copy > p:last-child {
+  margin: 0;
+
+  font-size: 1.05rem;
+  line-height: 1.68;
+
+  color: #667173;
+}
+
+
+/* =========================================================
+   NEXT CASE IMAGE
+========================================================= */
+
+.case-next-media {
+  width: 100%;
+
+  padding: 0;
+  margin: 0;
+}
+
+
+.case-next-media img {
+  width: 100%;
+  height: auto;
+
+  display: block;
+
+  margin: 0;
+}
+
+
+/* =========================================================
+   NEXT CASE STUDY TAGS
+========================================================= */
+
+.case-next-pill-row {
+  margin-top: 22px;
+  margin-bottom: 0;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .case-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+
+  .case-hero {
+    padding-top: 108px;
+  }
+
+
+  .case-title {
+    font-size:
+      clamp(
+        2.5rem,
+        5vw,
+        3.2rem
+      );
+  }
+
+
+  .case-subtitle {
+    font-size: 1.25rem;
+  }
+
+
+  .case-summary,
+  .case-meta {
+    column-gap: 32px;
+  }
+
+
+  .case-summary-text {
+    max-width: 300px;
+
+    font-size: 1.03rem;
+  }
+
+
+  .case-split {
+    grid-template-columns:
+      minmax(290px, 0.82fr)
+      minmax(0, 1.18fr);
+
+    gap: 38px;
+  }
+
+
+  .case-process-row,
+  .case-solution-row {
+    grid-template-columns:
+      minmax(280px, 0.42fr)
+      minmax(0, 1fr);
+  }
+
+
+  .case-next-link {
+    grid-template-columns:
+      minmax(280px, 0.45fr)
+      minmax(0, 1fr);
+  }
+
+
+  .case-impact-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    row-gap: 26px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .case-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+
+  .case-hero {
+    padding-top: 98px;
+    padding-bottom: 38px;
+  }
+
+
+  .case-title {
+    font-size:
+      clamp(
+        2.25rem,
+        8vw,
+        3rem
+      );
+
+    letter-spacing: -1.2px;
+  }
+
+
+  .case-subtitle {
+    max-width: 650px;
+
+    font-size: 1.15rem;
+  }
+
+
+  .case-summary {
+    grid-template-columns: 1fr;
+
+    row-gap: 26px;
+
+    margin-top: 34px;
+  }
+
+
+  .case-summary-text {
+    max-width: 520px;
+
+    font-size: 1rem;
+  }
+
+
+  .case-meta {
+    grid-template-columns: 1fr;
+
+    row-gap: 8px;
+
+    margin-top: 28px;
+  }
+
+
+  .case-meta-item {
+    font-size: 1rem;
+  }
+
+
+  .case-section {
+    padding-top: 52px;
+    padding-bottom: 52px;
+  }
+
+
+  /* Major section divider spacing on mobile */
+
+  .case-section + .case-section {
+    padding-top: 0;
+  }
+
+
+  .case-section + .case-section > .case-container {
+    padding-top: 52px;
+  }
+
+
+  .case-split,
+  .case-research-row,
+  .case-process-row,
+  .case-solution-row,
+  .case-next-link {
+    grid-template-columns: 1fr;
+
+    gap: 26px;
+  }
+
+
+  .case-split-text,
+  .case-process-text,
+  .case-solution-text,
+  .case-next-copy {
+    max-width: 620px;
+  }
+
+
+  .case-list {
+    max-width: 620px;
+  }
+
+
+  .case-research-label {
+    max-width: 620px;
+  }
+
+
+  .case-card-grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+
+  .case-impact-quotes {
+    grid-template-columns: 1fr;
+
+    gap: 22px;
+  }
+
+
+  .case-quote,
+  .case-quote-right {
+    justify-self: start;
+
+    width: 100%;
+    max-width: 620px;
+  }
+
+
+  .case-next {
+    padding-top: 0;
+    padding-bottom: 70px;
+  }
+
+
+  .case-next > .case-container {
+    padding-top: 64px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .case-container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+
+  .case-hero {
+    padding-top: 92px;
+  }
+
+
+  .case-eyebrow {
+    font-size: 0.7rem;
+  }
+
+
+  .case-title {
+    font-size: 2.25rem;
+  }
+
+
+  .case-subtitle {
+    font-size: 1.08rem;
+  }
+
+
+  .case-summary {
+    margin-top: 30px;
+  }
+
+
+  .case-summary-grid,
+  .case-summary,
+  .case-meta {
+    grid-template-columns: 1fr;
+  }
+
+
+  .case-card-grid-2,
+  .case-card-grid-3 {
+    grid-template-columns: 1fr;
+  }
+
+
+  .case-research-2col {
+    grid-template-columns: 1fr;
+  }
+
+
+  .case-impact-grid {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+
+  .case-info-card,
+  .case-split + .case-card-grid-2 .case-info-card,
+  .case-subsection .case-info-card {
+    padding:
+      26px
+      22px;
+  }
+
+
+  .case-list {
+    padding:
+      20px
+      22px
+      10px
+      40px;
+  }
+
+
+  .case-next-label {
+    font-size: 1.25rem;
+  }
+
+}
+
+
+/* =========================================================
+   VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .case-impact-grid {
+    grid-template-columns: 1fr;
+  }
+
+}

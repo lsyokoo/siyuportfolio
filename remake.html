@@ -1,93 +1,379 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Ocean's Whisper: A Remake Dual-Wear Dress</title>
-  <link rel="stylesheet" href="styleoriginal.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ocean's Whisper | Siyu Liu</title>
+
+  <!-- Global -->
+  <link rel="stylesheet" href="style1.css">
+
+  <!-- Remake page only -->
+  <link rel="stylesheet" href="remake.css">
 </head>
 
+
 <body>
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
   <header>
+
     <nav>
+
       <div class="logo">
         <a href="index.html">SIYU</a>
       </div>
+
+
       <div class="nav-right">
+
         <ul class="nav-menu">
-       <li><a href="index.html">UX/UI</a></li>
-          <li><a href="vr.html">MEDIA ART</a></li>
-          <li><a href="extra.html">EXTRAS</a></li>
-          <li><a href="about.html">ABOUT</a></li>
+
+          <li>
+            <a href="index.html">PRODUCT</a>
+          </li>
+
+          <li>
+            <a href="mediaart.html">MEDIA ART</a>
+          </li>
+
+          <li>
+            <a href="extra.html" class="active">EXTRAS</a>
+          </li>
+
+          <li>
+            <a href="about.html">ABOUT</a>
+          </li>
+
         </ul>
+
+
         <div class="icons">
+
+          <!-- Language -->
           <div class="language-dropdown">
-            <svg class="globe-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+            <svg
+              class="globe-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
               <circle cx="12" cy="12" r="10"></circle>
               <line x1="2" y1="12" x2="22" y2="12"></line>
+
               <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"></path>
               <path d="M12 2a15.3 15.3 0 0 0-4 10 15.3 15.3 0 0 0 4 10"></path>
+
             </svg>
+
           </div>
+
+
+          <!-- Mobile Menu -->
           <div class="hamburger">
             <span></span>
             <span></span>
             <span></span>
           </div>
+
         </div>
+
       </div>
+
     </nav>
+
   </header>
 
-  <main>
-    <h1 class="remake-title">Ocean's Whisper:<br>A Remake Dual-Wear Dress</h1>
 
-    <section class="remake-section">
-      <div class="remake-image-collage group">
-        <img src="assets/fashion/remake/onepiece/5.jpg" alt="One-Piece Image 5" />
-        <img src="assets/fashion/remake/skirt/1.jpg" alt="Skirt Image 1" />
-        <img src="assets/fashion/remake/onepiece/2.jpg" alt="One-Piece Image 2" />
-        <img src="assets/fashion/remake/skirt/3.jpg" alt="Skirt Image 3" />
-        <img src="assets/fashion/remake/onepiece/3.jpg" alt="One-Piece Image 3" />
-        <img src="assets/fashion/remake/onepiece/4.jpg" alt="One-Piece Image 4" />
-        <img src="assets/fashion/remake/skirt/2.jpg" alt="Skirt Image 2" /> 
-        <img src="assets/fashion/remake/onepiece/1.jpg" alt="One-Piece Image 1" />
-      </div>
-    </section>
-    
-    
-    <section class="process-carousel">
-      <div class="carousel-container remake-process-carousel">
-        <button class="carousel-prev">&#10094;</button>
-        <div class="carousel-slide">
-          <img id="remake-main-image" src="assets/fashion/remake/process/moodboard.jpeg" alt="Process Image" />
-          <div class="carousel-caption">
-            <h3 id="remake-image-title">Moodboard</h3>
-            <p id="remake-image-description">The inspiration behind the design.</p>
-          </div>
+
+  <!-- =====================================================
+       MAIN
+  ====================================================== -->
+  <main>
+
+
+    <!-- ===================================================
+         INTRO
+    ==================================================== -->
+    <section class="remake-intro">
+
+      <div class="remake-intro-inner">
+
+        <!-- Left -->
+        <div class="remake-intro-title">
+
+          <p class="remake-eyebrow">
+            FASHION DESIGN · UPCYCLING · TEXTILE MANIPULATION
+          </p>
+
+          <h1 class="remake-title">
+            Ocean's Whisper: A Remake Dual-Wear Dress
+          </h1>
+
         </div>
-        <button class="carousel-next">&#10095;</button>
+
       </div>
-    
-      <div class="thumbnail-container remake-thumbnails">
-        <img class="thumbnail active" src="assets/fashion/remake/process/moodboard.jpeg" data-title="Moodboard" data-desc="Inspired by denim transformation techniques." />
-        <img class="thumbnail" src="assets/fashion/remake/process/sketch.jpeg" data-title="Sketch" data-desc="Initial design sketches." />
-        <img class="thumbnail" src="assets/fashion/remake/process/oldgarments.jpeg" data-title="Old Garments" data-desc="Selected blue jeans and a white cotton skirt." />
-        <img class="thumbnail" src="assets/fashion/remake/process/step1.jpeg" data-title="Step 1" data-desc="Cut jeans and attach rag pieces to create a curled shape." />
-        <img class="thumbnail" src="assets/fashion/remake/process/step2.jpeg" data-title="Step 2" data-desc="Cut and tie-dye the white skirt with unique patterns." />
-        <img class="thumbnail" src="assets/fashion/remake/process/step3.jpeg" data-title="Step 3" data-desc="Bleach leftover denim sections to add patterns." />
-        <img class="thumbnail" src="assets/fashion/remake/process/step4.jpeg" data-title="Step 4" data-desc="Create fluid tassel texture by cutting and pulling denim threads." />
-        <img class="thumbnail" src="assets/fashion/remake/process/step5.jpeg" data-title="Step 5" data-desc="Assemble all parts on the dress form for experimentation." />
-        <img class="thumbnail" src="assets/fashion/remake/process/step6.jpeg" data-title="Step 6" data-desc="Hand-sew using yarn and embroidery techniques for a natural look." />
-      </div>
+
     </section>
+
+
+
+    <!-- ===================================================
+         FINAL PHOTOS
+    ==================================================== -->
+    <section class="remake-final">
+
+      <div class="remake-final-inner">
+
+        <div class="remake-lookbook">
+
+
+          <figure class="remake-look">
+            <img
+              src="assets/fashion/remake/skirt/1.jpg"
+              alt="Ocean's Whisper final look"
+            >
+          </figure>
+
+
+
+          <figure class="remake-look">
+            <img
+              src="assets/fashion/remake/onepiece/5.jpg"
+              alt="Ocean's Whisper final look"
+            >
+          </figure>
+          
+
+                   <figure class="remake-look">
+            <img
+              src="assets/fashion/remake/onepiece/1.jpg"
+              alt="Ocean's Whisper final look"
+            >
+          </figure>
+
+
+  
+
+                                     <figure class="remake-look">
+            <img
+              src="assets/fashion/remake/onepiece/3.jpg"
+              alt="Ocean's Whisper final look"
+            >
+          </figure>
+
+
+                    <figure class="remake-look">
+            <img
+              src="assets/fashion/remake/onepiece/2.jpg"
+              alt="Ocean's Whisper final look"
+            >
+          </figure>
+
+                                     <figure class="remake-look">
+            <img
+              src="assets/fashion/remake/onepiece/4.jpg"
+              alt="Ocean's Whisper final look"
+            >
+          </figure>
+        </div>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         PROCESS MARQUEE
+    ==================================================== -->
+    <section class="remake-process">
+
+      <div class="remake-process-marquee">
+
+        <div class="remake-process-track">
+
+
+          <!-- ========= FIRST SET ========= -->
+
+          <div class="remake-process-image">
+            <img
+              src="assets/fashion/remake/process/moodboard.jpeg"
+              alt="Moodboard"
+            >
+          </div>
+
+          <div class="remake-process-image">
+            <img
+              src="assets/fashion/remake/process/sketch.jpeg"
+              alt="Sketch"
+            >
+          </div>
+
+          <div class="remake-process-image">
+            <img
+              src="assets/fashion/remake/process/oldgarments.jpeg"
+              alt="Old garments"
+            >
+          </div>
+
+          <div class="remake-process-image">
+            <img
+              src="assets/fashion/remake/process/step1.jpeg"
+              alt="Process"
+            >
+          </div>
+
+          <div class="remake-process-image">
+            <img
+              src="assets/fashion/remake/process/step2.jpeg"
+              alt="Process"
+            >
+          </div>
+
+          <div class="remake-process-image">
+            <img
+              src="assets/fashion/remake/process/step3.jpeg"
+              alt="Process"
+            >
+          </div>
+
+          <div class="remake-process-image">
+            <img
+              src="assets/fashion/remake/process/step4.jpeg"
+              alt="Process"
+            >
+          </div>
+
+          <div class="remake-process-image">
+            <img
+              src="assets/fashion/remake/process/step5.jpeg"
+              alt="Process"
+            >
+          </div>
+
+          <div class="remake-process-image">
+            <img
+              src="assets/fashion/remake/process/step6.jpeg"
+              alt="Process"
+            >
+          </div>
+
+
+
+          <!-- ========= DUPLICATE SET FOR LOOP ========= -->
+
+          <div class="remake-process-image" aria-hidden="true">
+            <img
+              src="assets/fashion/remake/process/moodboard.jpeg"
+              alt=""
+            >
+          </div>
+
+          <div class="remake-process-image" aria-hidden="true">
+            <img
+              src="assets/fashion/remake/process/sketch.jpeg"
+              alt=""
+            >
+          </div>
+
+          <div class="remake-process-image" aria-hidden="true">
+            <img
+              src="assets/fashion/remake/process/oldgarments.jpeg"
+              alt=""
+            >
+          </div>
+
+          <div class="remake-process-image" aria-hidden="true">
+            <img
+              src="assets/fashion/remake/process/step1.jpeg"
+              alt=""
+            >
+          </div>
+
+          <div class="remake-process-image" aria-hidden="true">
+            <img
+              src="assets/fashion/remake/process/step2.jpeg"
+              alt=""
+            >
+          </div>
+
+          <div class="remake-process-image" aria-hidden="true">
+            <img
+              src="assets/fashion/remake/process/step3.jpeg"
+              alt=""
+            >
+          </div>
+
+          <div class="remake-process-image" aria-hidden="true">
+            <img
+              src="assets/fashion/remake/process/step4.jpeg"
+              alt=""
+            >
+          </div>
+
+          <div class="remake-process-image" aria-hidden="true">
+            <img
+              src="assets/fashion/remake/process/step5.jpeg"
+              alt=""
+            >
+          </div>
+
+          <div class="remake-process-image" aria-hidden="true">
+            <img
+              src="assets/fashion/remake/process/step6.jpeg"
+              alt=""
+            >
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
   </main>
 
-  <footer>
-    <p>&copy; 2026 Siyu Liu | <a href="https://www.linkedin.com/in/siyu-liu-9b2a43270/" target="_blank">LinkedIn</a> | <a href="mailto:lsy20041203@gmail.com">Email</a></p>
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+  <footer class="footer">
+
+    <p>
+      © 2026 Siyu Liu |
+
+      <a
+        href="https://www.linkedin.com/in/siyu-liu-9b2a43270/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        LinkedIn
+      </a>
+
+      |
+
+      <a href="mailto:lsy20041203@gmail.com">
+        Email
+      </a>
+    </p>
+
   </footer>
 
+
   <script src="script.js"></script>
+
 </body>
+
 </html>

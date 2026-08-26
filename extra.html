@@ -1,105 +1,192 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Extra</title>
-    <link rel="stylesheet" href="styleoriginal.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Siyu's Portfolio</title>
+  <link rel="stylesheet" href="style1.css">
+   <link rel="stylesheet" href="extra.css">
+   <link rel="stylesheet" href="gallery.css">
 </head>
-
 <body>
-    <header>
-        <nav>
-          <div class="logo">
-            <a href="index.html">SIYU</a>
-          </div>
-          <div class="nav-right">
-            <ul class="nav-menu">
-          <li><a href="index.html">UX/UI</a></li>
-          <li><a href="vr.html">MEDIA ART</a></li>
-          <li><a href="extra.html">EXTRAS</a></li>
+
+  <header>
+    <nav>
+      <div class="logo">
+        <a href="index.html">SIYU</a>
+      </div>
+      <div class="nav-right">
+        <ul class="nav-menu">
+            <li>
+            <a href="index.html">PRODUCT</a>
+          </li>
+
+          <li>
+            <a href="mediaart.html">MEDIA ART</a>
+          </li>
+
+          <li><a href="extra.html"class="active">EXTRAS</a></li>
           <li><a href="about.html">ABOUT</a></li>
-            </ul>
-            <div class="icons">
-              <div class="language-dropdown">
-                <svg class="globe-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                  stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <circle cx="12" cy="12" r="10"></circle>
-                  <line x1="2" y1="12" x2="22" y2="12"></line>
-                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"></path>
-                  <path d="M12 2a15.3 15.3 0 0 0-4 10 15.3 15.3 0 0 0 4 10"></path>
-                </svg>
-              </div>
-              <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-              </div>
-            </div>
+        </ul>
+
+        <div class="icons">
+          <div class="language-dropdown">
+            <svg class="globe-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"></path>
+              <path d="M12 2a15.3 15.3 0 0 0-4 10 15.3 15.3 0 0 0 4 10"></path>
+            </svg>
           </div>
-        </nav>
-      </header>
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  
+  
+  <main>
 
-    <main>
+<!-- ===== Project Preview 1 ===== -->
+<section class="project-preview">
+  <div class="project-preview-content">
 
-        <div class="fashion-grid">
-            <!-- Remake Dress (Slide Up) -->
-            <div class="fashion-item slide-up">
-                <a href="remake.html">
-                    <img src="assets/fashion/remake/onepiece/1.jpg" alt="Remake Dress">
-                </a>
-            </div>
-    
-            <!-- Shoe Design (slide Down) -->
-            <div class="fashion-item slide-down">
-                <a href="shoe.html">
-                    <img src="assets/fashion/shoe/basic/2.jpg" alt="Shoe Design">
-                </a>
-            </div>
-    
-            <!-- Uniform (Up) -->
-            <div class="fashion-item slide-up">
-                <a href="uniform.html">
-                    <img src="assets/fashion/uniform/final/2.jpg" alt="Uniform">
-                </a>
-            </div>
-    
-            <!-- Other Fashion Works (Down) -->
-            <div class="fashion-item slide-down">
-                <a href="otherfashion.html">
-                    <img src="assets/fashion/otherfashion/garment1.jpg" alt="Other Fashion Works">
-                </a>
-            </div>
+    <div class="project-preview-text hidden-left">
+
+      <h2>Visual Design</h2>
+
+      <div class="project-pill-row">
+        <span>Motion Graphics</span>
+        <span>Branding</span>
+        <span>Graphic Design</span>
+        <span>Social Media Content</span>
+      </div>
+
+  
+    </div>
+
+    <a class="project-preview-image hidden-up" href="visual.html">
+      <img src="assets/visual/lisalee.png">
+    </a>
+
+  </div>
+</section>
+
+
+<!-- ===== Project Preview 2 ===== -->
+<section class="project-preview">
+  <div class="project-preview-content">
+
+    <div class="project-preview-text hidden-left">
+      <h2>Fashion Design</h2>
+
+      <div class="project-pill-row">
+        <span>Garment</span>
+        <span>Fabrication</span>
+        <span>Footwear</span>
+        <span>Jewelry</span>
+         <span>Illustration</span>
+      </div>
+
+    </div>
+
+    <a class="project-preview-image hidden-up" href="fashion.html">
+      <img src="assets/fashion/remake/skirt/5.png">
+    </a>
+
+  </div>
+</section>
+
+
+<!-- ===== Project Preview 3 (Virtual Stylist) ===== -->
+<section class="project-preview">
+  <div class="project-preview-content">
+
+    <div class="project-preview-text hidden-left">
+
+      <h2>Photography</h2>
+
+      <div class="project-pill-row">
+        <span>Art Direction</span>
+        <span>Retouching</span>
+        <span>Visual Storytelling</span>
+      </div>
+
+    </div>
+
+    <a class="project-preview-image hidden-up" href="photography.html">
+      <img src="assets/others/photo4.jpg">
+    </a>
+
+  </div>
+</section>
+
+
+    <section class="gallery-section">
+
+      <div class="collage-gallery">
+
+           <div class="gallery-item">
+          <img
+            src="assets/others/stilllife.jpg"
+            alt="Stilllife Sketching"
+          >
+        </div>
+
+                    <div class="gallery-item">
+          <img
+            src="assets/others/anatomy.jpg"
+            alt="Anatomy Sketching"
+          >
         </div>
 
 
-        <div class="collage-gallery">
-           <div class="gallery-item"><img src="assets/others/photo2.jpg" alt="Image 1"></div>
-            <div class="gallery-item"><img src="assets/others/photo1.jpg" alt="Image 2"></div>
-             <div class="gallery-item"><img src="assets/others/photo3.jpg" alt="Image 3"></div>
-              <div class="gallery-item"><img src="assets/others/photo4.jpg" alt="Image 4"></div>
-               <div class="gallery-item"><img src="assets/others/photo5.jpg" alt="Image 5"></div>
-            <div class="gallery-item"><img src="assets/others/gloves.jpg" alt="Image 6"></div>
-            <div class="gallery-item"><img src="assets/others/anatomy.jpg" alt="Image 7"></div>
-               <div class="gallery-item"><img src="assets/others/bracelet.png" alt="Image 8"></div>
-            <div class="gallery-item"><img src="assets/others/hands.jpg" alt="Image 9"></div>
-            <div class="gallery-item"><img src="assets/others/cat.jpg" alt="Image 10"></div>
-            <div class="gallery-item"><img src="assets/others/face.jpg" alt="Image 11"></div>
-            <div class="gallery-item"><img src="assets/others/stilllife.jpg" alt="Image 12"></div>
-
-
-
-
-    </main>
+          <div class="gallery-item">
+          <img
+            src="assets/others/cat.jpg"
+            alt="CatInkPainting"
+          >
         </div>
 
-    </main>
-    
-    
-    
-    
 
-      <!-- 3. Footer -->
+
+                <div class="gallery-item">
+          <img
+            src="assets/others/face.jpg"
+            alt="Face Drawing"
+          >
+        </div>
+
+          <div class="gallery-item">
+          <img
+            src="assets/others/hands.jpg"
+            alt="Hand Drawing"
+          >
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+    <div class="scrolltop-container" id="scrollTopArrow">
+  <img
+    src="assets/scrolldown.png"
+    alt="Back to top"
+    class="scrolltop"
+  >
+</div>
+
+
+
+  </main>
+
   <footer class="footer">
     <p>
       © 2026 Siyu Liu |
@@ -108,7 +195,8 @@
     </p>
   </footer>
 
-    <script src="script.js"></script>
-    
+  <!-- JS -->
+  <script src="script.js"></script>
 </body>
 </html>
+

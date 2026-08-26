@@ -1,146 +1,825 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Virtual Stylist</title>
-  <link rel="stylesheet" href="styleoriginal.css">
+
+  <title>Virtual Stylist | Siyu Liu</title>
+
+  <!-- Global Website Styles -->
+  <link rel="stylesheet" href="style1.css">
+
+  <!-- Case Study Styles -->
+  <link rel="stylesheet" href="casestudy.css">
 </head>
 
+
 <body>
+
+  <!-- =====================================================
+       HEADER
+  ====================================================== -->
+
   <header>
+
     <nav>
+
       <div class="logo">
         <a href="index.html">SIYU</a>
       </div>
+
+
       <div class="nav-right">
+
         <ul class="nav-menu">
-          <li><a href="index.html">UX/UI</a></li>
-          <li><a href="vr.html">MEDIA ART</a></li>
-          <li><a href="extra.html">EXTRAS</a></li>
-          <li><a href="about.html">ABOUT</a></li>
+
+          <li>
+            <a href="index.html" class="active">
+              PRODUCT
+            </a>
+          </li>
+
+          <li>
+            <a href="vr.html">
+              MEDIA ART
+            </a>
+          </li>
+
+          <li>
+            <a href="extra.html">
+              EXTRAS
+            </a>
+          </li>
+
+          <li>
+            <a href="about.html">
+              ABOUT
+            </a>
+          </li>
+
         </ul>
+
+
         <div class="icons">
+
           <div class="language-dropdown">
-            <svg class="globe-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+
+            <svg
+              class="globe-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+
               <circle cx="12" cy="12" r="10"></circle>
+
               <line x1="2" y1="12" x2="22" y2="12"></line>
-              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"></path>
-              <path d="M12 2a15.3 15.3 0 0 0-4 10 15.3 15.3 0 0 0 4 10"></path>
+
+              <path
+                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10">
+              </path>
+
+              <path
+                d="M12 2a15.3 15.3 0 0 0-4 10 15.3 15.3 0 0 0 4 10">
+              </path>
+
             </svg>
+
           </div>
+
+
           <div class="hamburger">
             <span></span>
             <span></span>
             <span></span>
           </div>
+
         </div>
+
       </div>
+
     </nav>
+
   </header>
 
-  <main>
-    <h2 class="tof-title">Virtual Stylist</h2>
-    <section class="tof-section">
-      
-      <p>
-      UX & Web Development: AI-powered web application that allows underrepresented users (e.g., nonbinary folks) type in a hairstyle and get an AI-generated preview that allows them to visualize themselves in a way that existing apps do not.</p>
+
+
+  <!-- =====================================================
+       CASE STUDY
+  ====================================================== -->
+
+  <main class="case-study">
+
+
+    <!-- ===================================================
+         HERO
+    ==================================================== -->
+
+    <section class="case-hero">
+
+      <div class="case-container">
+
+
+        <p class="case-eyebrow">
+          AI PRODUCT · UX/UI · WEB DEVELOPMENT
+        </p>
+
+
+        <h1 class="case-title">
+          Virtual Stylist
+        </h1>
+
+
+        <p class="case-subtitle">
+          A photo-free AI styling experience helping users
+          explore hairstyles with greater privacy, flexibility, and
+          inclusivity.
+        </p>
+
+
+
+        <!-- ===============================================
+             META
+        ================================================ -->
+
+        <div class="case-meta">
+
+
+          <div class="case-meta-item">
+
+            <span class="case-meta-label">
+              Role:
+            </span>
+
+            <span class="case-meta-value">
+              UX Designer & Developer
+            </span>
+
+          </div>
+
+
+          <div class="case-meta-item">
+
+            <span class="case-meta-label">
+              Timeline:
+            </span>
+
+            <span class="case-meta-value">
+              4 Weeks · 2024
+            </span>
+
+          </div>
+
+
+          <div class="case-meta-item">
+
+            <span class="case-meta-label">
+              Project:
+            </span>
+
+            <span class="case-meta-value">
+              Personal Project
+            </span>
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- ===============================================
+             HERO IMAGE
+        ================================================ -->
+
+        <div class="case-hero-media">
+
+          <img
+            src="assets/uiux/stylist.png"
+            alt="Virtual Stylist interface"
+          >
+
+        </div>
+
+
+      </div>
+
     </section>
-    
-    <section class="tof-section">
-  <p><strong>Role:</strong> UX designer & Web developer (personal project)<br>
-    <strong>Timeline:</strong> 4 weeks · 2024<br><strong>Tech Stack & Tools:</strong> Figma; VS Code(HTML/CSS/JavaScript); OpenAI API for text (ChatGPT) and image generation (DALLE); Oak framework for the Deno backend; Google Fonts (Scope One) for typography; Canva for laptop mockup.</p>
 
 
 
- <div class="right-image">
-        <img src="assets/uiux/stylist.png" alt="Stylist Preview Placeholder">
+    <!-- ===================================================
+         PROBLEM & OBJECTIVE
+    ==================================================== -->
+
+    <section class="case-section">
+
+      <div class="case-container">
+
+
+        <h2 class="case-section-title">
+          Problem & Objective
+        </h2>
+
+
+        <p class="case-section-intro">
+          Existing AI styling apps often rely on user photos, raising
+          privacy and inclusivity concerns related to gender and ethnicity.
+          I wanted to create a gender-inclusive, photo-free styling
+          experience that lets users explore hairstyles without
+          compromising identity or personal data.
+        </p>
+
+
+
+        <div class="case-card-grid case-card-grid-2">
+
+
+          <div class="case-info-card">
+
+            <h3>
+              Privacy
+            </h3>
+
+            <p>
+              Hairstyle visualization often requires users to upload
+              personal photos before they can explore different looks.
+            </p>
+
+          </div>
+
+
+          <div class="case-info-card">
+
+            <h3>
+              Representation
+            </h3>
+
+            <p>
+              Existing tools can reinforce narrow assumptions around
+              gender, appearance, and who styling experiences are
+              designed for.
+            </p>
+
+          </div>
+
+
+        </div>
+
+
       </div>
 
-      </section>
-
-    <section class="tof-section">
-      
-      <h2>Problem & Objective</h2>
-      <p>Existing AI styling apps rely on user photos, raising privacy and inclusivity concerns related to gender and ethnicity. Therefore, I aim to create a gender-inclusive, photo-free styling experience that lets users safely explore hairstyles without compromising identity or data privacy.</p>
-      
-      <h2>Inspiration / Social Context</h2>
-       <p>The article <i>Life as a Trans Bitmoji</i> inspired my exploration of digital self-representation. It shows how a virtual avatar can help someone express identity shifts before they happen in real life. Similarly, anime fan art communities reveal the importance of visualization for people who rarely get to see themselves represented. </p>
-      
-  <div class="right-image">
-  <a href="https://wisconsinlife.org/story/life-as-a-trans-bitmoji/" target="_blank">
-    <img src="assets/uiux/stylist/bitmoji.png" alt="Life as a Trans Bitmoji">
-  </a>
-</div>
-
-      <h2>Solution</h2>
-      <p>Built with HTML/CSS/JavaScript with OpenAI APIs to develop a photo-free system where users input key attributes (age, gender identity, style preferences) to receive:</p>
-      <p>1. Detailed, professional hairstyle descriptions
-<br> 2. AI-generated image previews for visualization</p>
-
-     <div class="right-image">
-        <img src="assets/uiux/stylist/result2.png" alt="Stylist Result2 Preview placeholder">
-      </div>
-<br><br>
-   <p><strong>Key Design Decisions:</strong> 
-<div class="right-image">
-        <img src="assets/uiux/stylist/decision1.jpg" alt="Design Decision Preview placeholder">
-      </div>
-
-    <h2>Key Process Stages</h2>
-    <section class="tof-section">
-<div class="right-image">
-        <img src="assets/uiux/stylist/map.png" alt="Persona and Journey Map">
-      </div>
-             <p><strong>Research:</strong> Created user personas and journey map based on interviews and competitor analysis (esp. YouCam), focusing on pain points around gender inclusivity and data privacy.</p>
-<br>
- <div class="right-image">
-        <img src="assets/uiux/stylist/code.png" alt="Code & Prompt Screenshot">
-      </div>
-      <p><strong>Coding & Prompting:</strong> Developed the app with HTML/CSS/JavaScript, Deno backend, and OpenAI APIs; Then Iterated prompts to improve output accuracy.</p>
-<br>
-    <div class="right-image">
-        <img src="assets/uiux/stylist/iterate.jpg" alt="Iterate Process Screenshot">
-      </div>
-      <p><strong>Prototyping & Testing:</strong> Built and tested wireframes in Figma and prototypes in browser; Enabled input rewriting and real-time regeneration for more flexible exploration.
-    <br>  <br> <strong>Learnings:</strong>This process deepened my understanding of AI bias. During testing, I noticed the model often generated white, young female images, revealing dataset limitations. It pushed me to design with greater inclusivity, ensuring AI styling tools represent everyone more fairly and personally.
-</p>
-
-
-</section>
-
-
-    
-        <section class="stylist-live-embed">
-    <h2>Final App Preview</h2>
-      <div class="right-image">
-        <img src="assets/uiux/stylistmockup.png" alt="Rendering Mockup for Stylist">
-      </div>
-      Visit the live website: 
-      <a href="https://hair-stylist-app.deno.dev" target="_blank">hair-stylist-app.deno.dev</a>
-    </p>
-  </section>
-
-    <section class="tof-section">
-      <h2>Reflections</h2>
-        <p>
-    Virtual Stylist challenged my assumption that removing photos alone would make AI styling tools more inclusive. While a photo-free workflow reduced privacy barriers, testing showed that inclusivity is shaped by many UX decisions, such as how gender options are framed, which defaults appear first, and how prompts influence the language model's result. Adding gender-neutral language and moving away from fixed hairstyle libraries helped increase flexibility, but also revealed that representation cannot be solved through a single feature.
-  </p>
-  <p>
-    Iterative testing exposed deeper limitations. Despite careful interface design, generated previews often defaulted toward narrow visual norms, reflecting biases embedded in training data rather than user intent. This project reshaped how I approach AI-powered UX design: not as the pursuit of seamless automation, but as a balance between user agency, system constraints, and ethical responsibility.
-  </p>
     </section>
+
+
+
+    <!-- ===================================================
+         SOCIAL CONTEXT
+    ==================================================== -->
+
+    <section class="case-section">
+
+      <div class="case-container">
+
+
+        <h2 class="case-section-title">
+          Inspiration & Social Context
+        </h2>
+
+
+
+        <div class="case-process-row">
+
+
+          <div class="case-process-text">
+
+            <h3>
+              Digital Self-Representation
+            </h3>
+
+
+            <p>
+              The article <em>Life as a Trans Bitmoji</em> inspired my
+              exploration of digital self-representation. It shows how
+              a virtual avatar can help someone express identity shifts
+              before they happen in real life.
+            </p>
+
+
+            <p>
+              Similarly, anime fan art communities reveal the importance
+              of visualization for people who rarely get to see
+              themselves represented.
+            </p>
+
+          </div>
+
+
+          <div class="case-process-media">
+
+            <a
+              href="https://wisconsinlife.org/story/life-as-a-trans-bitmoji/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+
+              <img
+                src="assets/uiux/stylist/bitmoji.png"
+                alt="Life as a Trans Bitmoji article"
+              >
+
+            </a>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         SOLUTION
+    ==================================================== -->
+
+    <section class="case-section">
+
+      <div class="case-container">
+
+
+        <h2 class="case-section-title">
+          Solution
+        </h2>
+
+
+        <p class="case-section-intro">
+          I built a photo-free system using HTML, CSS, JavaScript,
+          and OpenAI APIs. Instead of uploading an image, users enter
+          attributes such as age, gender identity, and style preferences
+          to generate personalized hairstyle recommendations.
+        </p>
+
+
+
+        <div class="case-card-grid case-card-grid-2">
+
+
+          <div class="case-info-card">
+
+            <h3>
+              01 · Hairstyle Description
+            </h3>
+
+            <p>
+              Generate detailed hairstyle recommendations based on
+              the user's preferences and identity.
+            </p>
+
+          </div>
+
+
+          <div class="case-info-card">
+
+            <h3>
+              02 · AI Visualization
+            </h3>
+
+            <p>
+              Translate the recommendation into an AI-generated
+              preview without requiring a personal photo.
+            </p>
+
+          </div>
+
+
+        </div>
+
+
+
+        <div
+          class="case-process-media"
+          style="margin-top: 42px;"
+        >
+
+          <img
+            src="assets/uiux/stylist/result2.png"
+            alt="Virtual Stylist generated result"
+          >
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         KEY DESIGN DECISIONS
+    ==================================================== -->
+
+    <section class="case-section">
+
+      <div class="case-container">
+
+
+        <h2 class="case-section-title">
+          Key Design Decisions
+        </h2>
+
+
+        <div class="case-process-media">
+
+          <img
+            src="assets/uiux/stylist/decision1.jpg"
+            alt="Virtual Stylist key design decisions"
+          >
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         PROCESS
+    ==================================================== -->
+
+    <section class="case-section">
+
+      <div class="case-container">
+
+
+        <h2 class="case-section-title">
+          Key Process Stages
+        </h2>
+
+
+
+        <!-- ===============================================
+             RESEARCH
+        ================================================ -->
+
+        <div class="case-process-row">
+
+
+          <div class="case-process-text">
+
+            <h3>
+              Research
+            </h3>
+
+
+            <p>
+              Created user personas and a journey map based on
+              interviews and competitor analysis, particularly YouCam,
+              focusing on pain points around gender inclusivity and
+              data privacy.
+            </p>
+
+          </div>
+
+
+          <div class="case-process-media">
+
+            <img
+              src="assets/uiux/stylist/map.png"
+              alt="Virtual Stylist persona and journey map"
+            >
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- ===============================================
+             CODING & PROMPTING
+        ================================================ -->
+
+        <div class="case-process-row">
+
+
+          <div class="case-process-text">
+
+            <h3>
+              Coding & Prompting
+            </h3>
+
+
+            <p>
+              Developed the app with HTML, CSS, JavaScript, a Deno
+              backend, and OpenAI APIs. I iterated on prompts to
+              improve the relevance and accuracy of generated results.
+            </p>
+
+          </div>
+
+
+          <div class="case-process-media">
+
+            <img
+              src="assets/uiux/stylist/code.png"
+              alt="Virtual Stylist development and prompting process"
+            >
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- ===============================================
+             PROTOTYPING & TESTING
+        ================================================ -->
+
+        <div class="case-process-row">
+
+
+          <div class="case-process-text">
+
+            <h3>
+              Prototyping & Testing
+            </h3>
+
+
+            <p>
+              Built and tested wireframes in Figma and functional
+              prototypes in the browser.
+            </p>
+
+
+            <p>
+              Testing led me to support input rewriting and real-time
+              regeneration, giving users more control over how they
+              explored different styles.
+            </p>
+
+          </div>
+
+
+          <div class="case-process-media">
+
+            <img
+              src="assets/uiux/stylist/iterate.jpg"
+              alt="Virtual Stylist prototyping and testing"
+            >
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         AI BIAS
+    ==================================================== -->
+
+    <section class="case-section">
+
+      <div class="case-container">
+
+
+        <h2 class="case-section-title">
+          Designing Around AI Bias
+        </h2>
+
+
+        <p class="case-section-intro">
+          Testing revealed a limitation beyond the interface itself.
+          When demographic details were underspecified, generated
+          previews often defaulted toward young white women, exposing
+          biases in the underlying model.
+        </p>
+
+
+
+        <div class="case-card-grid case-card-grid-2">
+
+
+          <div class="case-info-card">
+
+            <h3>
+              What I Observed
+            </h3>
+
+            <p>
+              Even a seemingly neutral interface could produce narrow
+              representations because generated results were shaped
+              by biases beyond the UI.
+            </p>
+
+          </div>
+
+
+          <div class="case-info-card">
+
+            <h3>
+              How It Changed My Approach
+            </h3>
+
+            <p>
+              I became more intentional about language, user control,
+              and how inputs are framed rather than assuming a
+              photo-free workflow alone would make the experience
+              inclusive.
+            </p>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         FINAL APP
+    ==================================================== -->
+
+    <section class="case-section">
+
+      <div class="case-container">
+
+
+        <h2 class="case-section-title">
+          Final App
+        </h2>
+
+
+        <div class="case-process-media">
+
+          <img
+            src="assets/uiux/stylistmockup.png"
+            alt="Virtual Stylist final app mockup"
+          >
+
+        </div>
+
+
+
+        <p
+          class="case-wide-copy"
+          style="margin-top: 22px;"
+        >
+
+          <a
+            href="https://hair-stylist-app.deno.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            style="text-decoration: underline;"
+          >
+            Visit live web app ↗
+          </a>
+
+        </p>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         REFLECTION
+    ==================================================== -->
+
+    <section class="case-section">
+
+      <div class="case-container">
+
+
+        <h2 class="case-section-title">
+          Reflection
+        </h2>
+
+
+        <div class="case-reflection-block">
+
+
+          <div>
+
+            <h3>
+              Inclusivity Goes Beyond Removing Photos
+            </h3>
+
+
+            <p class="case-wide-copy">
+              Virtual Stylist challenged my assumption that removing
+              photos alone would make AI styling tools more inclusive.
+              Testing showed that inclusivity is also shaped by how
+              gender options are framed, which defaults appear first,
+              and how prompts influence generated results.
+            </p>
+
+          </div>
+
+
+
+          <div>
+
+            <h3>
+              Designing for Agency, Not Automation
+            </h3>
+
+
+            <p class="case-wide-copy">
+              This project reshaped how I approach AI-powered UX:
+              not as the pursuit of seamless automation, but as a
+              balance between user agency, system constraints, and
+              ethical responsibility.
+            </p>
+
+          </div>
+
+
+        </div>
+
+
+      </div>
+
+    </section>
+
+
+
+    <!-- ===================================================
+         BACK TO TOP
+    ==================================================== -->
+
+    <div
+      class="scrolltop-container"
+      id="scrollTopArrow"
+    >
+
+      <img
+        src="assets/scrolldown.png"
+        alt="Back to top"
+        class="scrolltop"
+      >
+
+    </div>
+
+
   </main>
 
-  <footer>
+
+
+  <!-- =====================================================
+       FOOTER
+  ====================================================== -->
+
+  <footer class="footer">
+
     <p>
-      &copy; 2026 Siyu Liu |
-      <a href="https://www.linkedin.com/in/siyu-liu-9b2a43270/" target="_blank">LinkedIn</a> |
-      <a href="mailto:lsy20041203@gmail.com">Email</a>
+      © 2026 Siyu Liu |
+
+      <a
+        href="https://www.linkedin.com/in/siyu-liu-9b2a43270/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        LinkedIn
+      </a>
+
+      |
+
+      <a href="mailto:lsy20041203@gmail.com">
+        Email
+      </a>
     </p>
+
   </footer>
 
+
+
   <script src="script.js"></script>
+
+
 </body>
+
 </html>
