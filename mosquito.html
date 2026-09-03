@@ -7,13 +7,9 @@
 
   <title>Mosquito Havoc | Siyu Liu</title>
 
-  <!-- Global Website Styles -->
   <link rel="stylesheet" href="style1.css">
-
-  <!-- Case Study Styles -->
-  <link rel="stylesheet" href="casestudy.css">
+  <link rel="stylesheet" href="mediadetail.css">
 </head>
-
 
 <body>
 
@@ -29,37 +25,27 @@
         <a href="index.html">SIYU</a>
       </div>
 
-
       <div class="nav-right">
 
         <ul class="nav-menu">
 
           <li>
-            <a href="index.html">
-              PRODUCT
-            </a>
+            <a href="index.html">PRODUCT</a>
           </li>
 
           <li>
-            <a href="mediaart.html" class="active">
-              MEDIA ART
-            </a>
+            <a href="mediaart.html" class="active">MEDIA ART</a>
           </li>
 
           <li>
-            <a href="extra.html">
-              EXTRAS
-            </a>
+            <a href="extra.html">EXTRAS</a>
           </li>
 
           <li>
-            <a href="about.html">
-              ABOUT
-            </a>
+            <a href="about.html">ABOUT</a>
           </li>
 
         </ul>
-
 
         <div class="icons">
 
@@ -73,31 +59,17 @@
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
+              aria-hidden="true"
             >
-
               <circle cx="12" cy="12" r="10"></circle>
-
-              <line
-                x1="2"
-                y1="12"
-                x2="22"
-                y2="12">
-              </line>
-
-              <path
-                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10">
-              </path>
-
-              <path
-                d="M12 2a15.3 15.3 0 0 0-4 10 15.3 15.3 0 0 0 4 10">
-              </path>
-
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"></path>
+              <path d="M12 2a15.3 15.3 0 0 0-4 10 15.3 15.3 0 0 0 4 10"></path>
             </svg>
 
           </div>
 
-
-          <div class="hamburger">
+          <div class="hamburger" aria-label="Open navigation menu">
             <span></span>
             <span></span>
             <span></span>
@@ -112,109 +84,552 @@
   </header>
 
 
-
   <!-- =====================================================
        PROJECT PAGE
   ====================================================== -->
 
-  <main class="case-study">
+  <main class="media-page">
 
 
     <!-- ===================================================
          HERO
     ==================================================== -->
 
-    <section class="case-hero">
+    <section class="media-hero">
 
-      <div class="case-container">
+      <div class="media-container">
 
-
-        <p class="case-eyebrow">
-          PHYSICAL COMPUTING · UNITY · INTERACTION DESIGN
+        <p class="media-eyebrow">
+          PHYSICAL COMPUTING · GAME DESIGN
         </p>
 
-
-        <h1 class="case-title">
+        <h1 class="media-title">
           Mosquito Havoc
         </h1>
 
-
-        <p class="case-subtitle">
-          Mosquito Havoc is a collaborative project built with Arduino and Unity where players flap their arms to fly as a mosquito trying to sting a baby. The project queers conventional interfaces by replacing efficiency with awkwardness and humor, turning physical struggle into empathy.
+        <p class="media-subtitle">
+          By flipping control and embracing inefficiency,
+          Mosquito Havoc turns awkward movement into empathy and humor.
         </p>
 
 
+        <!-- Hero Metadata -->
+
+        <div class="media-meta">
+
+          <div class="media-meta-item">
+
+            <p class="media-meta-label">
+              Role
+            </p>
+
+            <p class="media-meta-value">
+              Physical Computing &amp; Visual Design
+            </p>
+
+
+
+          </div>
+
+
+          <div class="media-meta-item">
+
+            <p class="media-meta-label">
+              Team
+            </p>
+
+            <p class="media-meta-value">
+              3-Person Team · Game Dev & 3D Art
+            </p>
+
+
+          </div>
+
+
+          <div class="media-meta-item">
+
+            <p class="media-meta-label">
+              Timeline
+            </p>
+
+            <p class="media-meta-value">
+              Mar - Apr 2025 · 5 Weeks
+            </p>
+
+          </div>
+
+
+          <div class="media-meta-item">
+
+            <p class="media-meta-label">
+              Toolset
+            </p>
+
+            <p class="media-meta-value">
+              Unity · Arduino · GitHub · Adobe CC
+            </p>
+          </div>
+
+        </div>
+
+
+        <!-- Hero Image -->
+
+        <div class="media-hero-image">
+
+          <img
+            src="assets/vr/mosquito/mosquito.jpg"
+            alt="Mosquito Havoc game and physical installation"
+          >
+
+        </div>
+
       </div>
 
     </section>
 
 
+<!-- ===================================================
+     CURIOSITY & OBJECTIVES
+==================================================== -->
+
+<section class="media-section">
+
+  <div class="media-container">
+
+    <div class="media-two-column">
+
+
+      <!-- Curiosity -->
+
+      <div class="media-text-block">
+
+        <h2 class="media-heading">
+          Curiosity
+        </h2>
+
+        <p>
+          After reading <em>Queering Control(ler)s Through Reflective
+          Game Design Practices</em> by Jess Marcotte, we began exploring
+          how interaction design could challenge the usual expectations
+          of efficiency, control, and comfort.
+        </p>
+
+      </div>
+
+
+      <!-- Objectives -->
+
+      <div class="media-text-block media-objectives">
+
+        <h2 class="media-heading">
+          Objectives
+        </h2>
+
+        <ul>
+
+          <li>
+            Design a queer left-right control system.
+          </li>
+
+          <li>
+            Build an open, accessible installation.
+          </li>
+
+          <li>
+            Turn glitches into part of the play.
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+    <!-- ===================================================
+         INSPIRATION & RESEARCH
+    ==================================================== -->
+
+    <section class="media-section">
+
+      <div class="media-container">
+
+        <h2 class="media-heading">
+          Inspiration &amp; Research
+        </h2>
+
+        <p class="media-wide-copy">
+          Games like <em>Taiko</em> are about
+          rhythmic movement, balance between control and chaos. While
+          <em>Who's Your Daddy?</em> is about asymmetrical challenge
+          (protect vs disrupt). <em>Mosquito Escape</em>, a
+          wearable-controller game project, clarified my decision not
+          to use wearable interfaces.
+        </p>
+
+
+        <div class="media-research-grid">
+
+          <figure class="media-figure">
+
+            <img
+              src="assets/vr/mosquito/taiko.png"
+              alt="Taiko  game references"
+            >
+
+            <figcaption>
+              Taiko
+            </figcaption>
+
+          </figure>
+
+
+          <figure class="media-figure">
+
+            <img
+              src="assets/vr/mosquito/daddy.png"
+              alt="Who's Your Daddy game reference"
+            >
+
+            <figcaption>
+              Who's Your Daddy?
+            </figcaption>
+
+          </figure>
+
+
+          <figure class="media-figure">
+
+            <img
+              src="assets/vr/mosquito/escape.png"
+              alt="Mosquito Escape wearable-controller game reference"
+            >
+
+            <figcaption>
+              Mosquito Escape
+            </figcaption>
+
+          </figure>
+
+        </div>
+
+      </div>
+
+    </section>
 
 
     <!-- ===================================================
-         PROJECT IMAGES
+         CONCEPT STATEMENT
     ==================================================== -->
 
-    <section class="case-section">
+    <section class="media-section">
 
-      <div class="case-container">
+      <div class="media-container">
+
+        <h2 class="media-heading">
+          Concept Statement
+        </h2>
+
+  <p class="media-wide-copy">
+  Players embody a restless mosquito. Instead of protecting the
+  baby—or pressing buttons or wearing wings—they flap their arms
+  to fly and sting the baby, turning physical discomfort into
+  playful absurdity. The game asks:
+  <strong class="media-emphasis">
+    “What if control felt unstable, emotional, and shared?”
+  </strong>
+</p>
+      </div>
+
+    </section>
 
 
-        <h2 class="case-section-title">
-          Project Highlights
+    <!-- ===================================================
+         KEY PROCESS STAGES
+    ==================================================== -->
+
+    <section class="media-section">
+
+      <div class="media-container">
+
+        <h2 class="media-heading">
+          Key Process Stages
         </h2>
 
 
-        <div class="case-process-media">
 
-          <img
-            src="assets/vr/mosquito1.png"
-            alt="Mosquito Havoc project screenshot 1"
-          >
+        <div class="media-process-list">
+
+
+          <!-- 01 Graphic Design -->
+
+          <article class="media-process-row">
+
+            <div class="media-process-copy">
+
+              <p class="media-process-number">
+                01
+              </p>
+
+              <h3>
+                Graphic Design
+              </h3>
+
+              <p>
+                I created the visual identity in Adobe Illustrator,
+                balancing bold simplicity with a touch of absurd humor
+                to reflect our playful tone.
+              </p>
+
+            </div>
+
+            <div class="media-process-media">
+
+              <img
+                src="assets/vr/mosquito/logo.png"
+                alt="Mosquito Havoc logo and visual identity"
+              >
+
+            </div>
+
+          </article>
+
+
+          <!-- 02 Sensor Research -->
+
+          <article class="media-process-row">
+
+            <div class="media-process-copy">
+
+              <p class="media-process-number">
+                02
+              </p>
+
+              <h3>
+                Sensor Research
+              </h3>
+
+              <p>
+                For one iteration, I tried force and ultrasonic sensors,
+                but I found that the IR break-beam was the most responsive
+                and intuitive for contact-free control.
+              </p>
+
+            </div>
+
+            <div class="media-process-media">
+
+              <img
+                src="assets/vr/mosquito/sensor.png"
+                alt="Force, ultrasonic, and IR break-beam sensor research"
+              >
+
+            </div>
+
+          </article>
+
+
+         
+          <!-- 03 Low-Fidelity Prototype -->
+
+          <article class="media-process-row">
+
+            <div class="media-process-copy">
+
+              <p class="media-process-number">
+                03
+              </p>
+
+              <h3>
+                Low-Fidelity Prototype &amp; Testing
+              </h3>
+
+              <p>
+                I replaced Unity's keyboard input with an Arduino
+                IR-sensor prototype and used cardboard tests to tune
+                spacing and flap-to-movement response.
+              </p>
+
+            </div>
+
+            <div class="media-process-media">
+
+                <img
+                  src="assets/vr/mosquito/prototype.png"
+                  alt="Arduino IR-sensor prototype"
+                >
+         
+            </div>
+
+          </article>
+
+           <!-- 04 Installation Setup -->
+
+          <article class="media-process-row">
+
+            <div class="media-process-copy">
+
+              <p class="media-process-number">
+                04
+              </p>
+
+              <h3>
+                Installation Setup
+              </h3>
+
+              <p>
+                I built a soft, playful installation with fabrics and
+                plush toys, echoing the Unity scene's pink-blue palette
+                across physical and digital space.
+              </p>
+
+            </div>
+
+            <div class="media-process-media">
+
+                <img
+                  src="assets/vr/mosquito/setup.png"
+                  alt="installation setup"
+                >
+            </div>
+
+          </article>
+
+
+
+          <!-- 05 Level Design -->
+
+          <article class="media-process-row">
+
+            <div class="media-process-copy">
+
+              <p class="media-process-number">
+                05
+              </p>
+
+              <h3>
+                Level Design &amp; Physical Adjustment
+              </h3>
+
+              <p>
+                I refined object placement in Unity and adjusted sensor
+                positions in the physical space to better guide player
+                routes and improve detection.
+              </p>
+
+            </div>
+
+            <div class="media-process-media">
+
+                <img
+                  src="assets/vr/mosquito/adjustment.png"
+                  alt="Mosquito Havoc level design in Unity and Physical Adjustment"
+                >
+
+            </div>
+
+          </article>
 
         </div>
-
-
-        <div
-          class="case-process-media"
-          style="margin-top: 32px;"
-        >
-
-          <img
-            src="assets/vr/mosquito2.png"
-            alt="Mosquito Havoc project screenshot 2"
-          >
-
-        </div>
-
-
-        <div
-          class="case-process-media"
-          style="margin-top: 32px;"
-        >
-
-          <img
-            src="assets/vr/mosquito3.png"
-            alt="Mosquito Havoc project screenshot 3"
-          >
-
-        </div>
-
 
       </div>
 
     </section>
 
+
+    <!-- ===================================================
+         FINAL OUTCOME
+    ==================================================== -->
+
+    <section class="media-section">
+
+      <div class="media-container">
+
+        <h2 class="media-heading">
+          Final Outcome
+        </h2>
+
+        <p class="media-wide-copy">
+          Instead of optimizing control, we designed friction. By
+          flipping control and embracing inefficiency,
+          <em>Mosquito Havoc</em> turns awkward movement into empathy
+          and humor. Players feel the mosquito's futile struggle:
+          flapping desperately to move only a little forward.
+        </p>
+
+
+        <!-- Core Mechanics -->
+
+        <div class="media-subsection">
+
+          <h2 class="media-heading">
+            Core Mechanics
+          </h2>
+
+          <p class="media-wide-copy">
+            Arm gestures control movement: right arm → fly left-forward,
+            left arm → fly right-forward, both arms → fly forward.
+            Fans repel the mosquito when approached, while furniture
+            obstacles alter or block the flying path of the mosquito.
+          </p>
+
+          <div class="media-outcome-grid">
+
+            <img
+              src="assets/vr/mosquito/final1.png"
+              alt="Mosquito Havoc gameplay"
+            >
+
+            <img
+              src="assets/vr/mosquito/final2.png"
+              alt="Player controlling Mosquito Havoc through arm movements"
+            >
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         REFLECTION
+    ==================================================== -->
+
+    <section class="media-section">
+
+      <div class="media-container">
+
+        <h2 class="media-heading">
+          Reflection
+        </h2>
+
+        <p class="media-reflection">
+          This project taught me that failure can be performative. Each
+          bug and misread gesture became part of the game’s rhythm. It
+          showed me the power of queering interaction—breaking
+          conventions to build inclusive experiences that turn
+          frustration into laughter and connection. Collaboration also
+          made the unpredictability rewarding, as we iterated and
+          improvised together.
+        </p>
+
+      </div>
+
+    </section>
 
 
     <!-- ===================================================
          BACK TO TOP
     ==================================================== -->
 
-    <div
-      class="scrolltop-container"
-      id="scrollTopArrow"
-    >
+    <div class="scrolltop-container" id="scrollTopArrow">
 
       <img
         src="assets/scrolldown.png"
@@ -224,9 +639,7 @@
 
     </div>
 
-
   </main>
-
 
 
   <!-- =====================================================
@@ -255,10 +668,7 @@
 
   </footer>
 
-
-
   <script src="script.js"></script>
-
 
 </body>
 

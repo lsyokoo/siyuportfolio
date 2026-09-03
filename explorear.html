@@ -7,59 +7,29 @@
 
   <title>ExplorEAR | Siyu Liu</title>
 
-  <!-- Global Website Styles -->
   <link rel="stylesheet" href="style1.css">
-
-  <!-- Case Study Styles -->
-  <link rel="stylesheet" href="casestudy.css">
+  <link rel="stylesheet" href="mediadetail.css">
 </head>
-
 
 <body>
 
-  <!-- =====================================================
-       HEADER
-  ====================================================== -->
+  <!-- ==================== HEADER ==================== -->
 
   <header>
-
     <nav>
 
       <div class="logo">
         <a href="index.html">SIYU</a>
       </div>
 
-
       <div class="nav-right">
 
         <ul class="nav-menu">
-
-          <li>
-            <a href="index.html">
-              PRODUCT
-            </a>
-          </li>
-
-          <li>
-            <a href="mediaart.html" class="active">
-              MEDIA ART
-            </a>
-          </li>
-
-          <li>
-            <a href="extra.html">
-              EXTRAS
-            </a>
-          </li>
-
-          <li>
-            <a href="about.html">
-              ABOUT
-            </a>
-          </li>
-
+          <li><a href="index.html">PRODUCT</a></li>
+          <li><a href="mediaart.html" class="active">MEDIA ART</a></li>
+          <li><a href="extra.html">EXTRAS</a></li>
+          <li><a href="about.html">ABOUT</a></li>
         </ul>
-
 
         <div class="icons">
 
@@ -73,31 +43,17 @@
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
+              aria-hidden="true"
             >
-
               <circle cx="12" cy="12" r="10"></circle>
-
-              <line
-                x1="2"
-                y1="12"
-                x2="22"
-                y2="12">
-              </line>
-
-              <path
-                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10">
-              </path>
-
-              <path
-                d="M12 2a15.3 15.3 0 0 0-4 10 15.3 15.3 0 0 0 4 10">
-              </path>
-
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"></path>
+              <path d="M12 2a15.3 15.3 0 0 0-4 10 15.3 15.3 0 0 0 4 10"></path>
             </svg>
 
           </div>
 
-
-          <div class="hamburger">
+          <div class="hamburger" aria-label="Open navigation menu">
             <span></span>
             <span></span>
             <span></span>
@@ -108,127 +64,588 @@
       </div>
 
     </nav>
-
   </header>
 
 
+  <!-- ==================== PROJECT ==================== -->
 
-  <!-- =====================================================
-       PROJECT PAGE
-  ====================================================== -->
-
-  <main class="case-study">
+  <main class="media-page">
 
 
-    <!-- ===================================================
-         HERO
-    ==================================================== -->
+    <!-- ==================== HERO ==================== -->
 
-    <section class="case-hero">
+    <section class="media-hero">
 
-      <div class="case-container">
+      <div class="media-container">
 
-
-        <p class="case-eyebrow">
-          IMMERSIVE EXPERIENCE · UNITY
+        <p class="media-eyebrow">
+          IMMERSIVE EXPERIENCE · UNITY VR
         </p>
 
-
-        <h1 class="case-title">
+        <h1 class="media-title">
           ExplorEAR
         </h1>
 
-
-        <p class="case-subtitle">
-        ExplorEAR reimagines anatomy as sensory storytelling.
+        <p class="media-subtitle">
+          ExplorEAR reimagines anatomy as sensory storytelling.
           By blending biological metaphors from nature with dreamlike
-          landscapes, it transforms the microscopic into the
-          cosmic, helping users sense their bodies differently.
+          landscapes, it transforms the microscopic into the cosmic,
+          helping users sense their bodies differently.
         </p>
 
+        <div class="media-hero-image">
+
+          <img
+            src="assets/vr/ear/explorear1.png"
+            alt="ExplorEAR immersive environment"
+          >
+
+        </div>
 
       </div>
 
     </section>
 
 
-    <!-- ===================================================
-         PROJECT HIGHLIGHTS
-    ==================================================== -->
+    <!-- ==================== CURIOSITY / INITIAL CONCEPT ==================== -->
 
-    <section class="case-section">
+    <section class="media-section">
 
-      <div class="case-container">
+      <div class="media-container">
+
+        <div class="media-two-column">
+
+          <div class="media-text-block">
+
+            <h2 class="media-heading">
+              Curiosity
+            </h2>
+
+            <p>
+              I noticed that most people, including myself, wear headphones daily without fully understanding the ear's internal structures, how they function, or how prolonged listening may affect hearing.
+            </p>
+
+          </div>
 
 
-        <h2 class="case-section-title">
-          Project Highlights
+          <div class="media-text-block">
+
+            <h2 class="media-heading">
+              Initial Concept
+            </h2>
+
+            <p>My initial goal was to create an educational healthcare experience where users could explore the ear's structures and functions through interactive navigation and instructional pop-ups.</p>
+        
+          </div>
+
+        </div>
+
+
+        <!-- ==================== EARLY EXPLORATIONS ==================== -->
+
+        <div class="media-subsection">
+
+          <h2 class="media-heading">
+            Early Explorations
+          </h2>
+
+          <p>
+            The following images are my concept illustrations.
+            However, testing revealed two main issues:
+          </p>
+
+          <ol class="media-findings">
+
+            <li>
+              “Anatomical visuals felt too clinical and uncanny in VR.”
+            </li>
+
+            <li>
+              “The 'educational' framing created pressure rather than curiosity.”
+            </li>
+
+          </ol>
+
+          <div class="media-four-images">
+
+            <img
+              src="assets/vr/ear/process/concept1.png"
+              alt="ExplorEAR early concept illustration"
+            >
+
+            <img
+              src="assets/vr/ear/process/concept2.png"
+              alt="ExplorEAR early concept illustration"
+            >
+
+            <img
+              src="assets/vr/ear/process/concept3.png"
+              alt="ExplorEAR early concept illustration"
+            >
+
+            <img
+              src="assets/vr/ear/process/concept4.png"
+              alt="ExplorEAR early concept illustration"
+            >
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==================== CONCEPT ==================== -->
+
+    <section class="media-section">
+
+      <div class="media-container">
+
+        <h2 class="media-heading">
+          Concept
+        </h2>
+
+        <div class="media-concept-layout">
+
+          <div class="media-concept-copy">
+
+            <p>
+              Inspired by <em>Ask the StoryBots</em>' playful abstraction
+              of anatomy, I began to explore poetic ways to represent
+              the ossicles—seeing them like branching trees and natural forms.
+              Tamiko Thiel's works further influenced my aesthetic,
+              leading me to reimagine the body's microscopic structures
+              through the lens of nature.
+            </p>
+
+          </div>
+
+          <div class="media-concept-images">
+
+            <figure>
+
+              <img
+                src="assets/vr/ear/process/storybots.png"
+                alt="Ask the StoryBots reference"
+              >
+
+              <figcaption>
+                Ask the StoryBots
+              </figcaption>
+
+            </figure>
+
+            <figure>
+
+              <img
+                src="assets/vr/ear/process/tamiko.png"
+                alt="Tamiko Thiel artwork reference"
+              >
+
+              <figcaption>
+                Tamiko Thiel, Sponge Space Trash Takeover
+              </figcaption>
+
+            </figure>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==================== TRANSLATING ANATOMY ==================== -->
+
+    <section class="media-section">
+
+      <div class="media-container">
+
+        <h2 class="media-heading">
+          Translating Anatomy into Natural Landscapes
+        </h2>
+
+        <p class="media-intro">
+          I combined anatomical references with natural materials,
+          using wooden ossicles and layered shaders to evoke organic texture.
+          Adjusted lighting and filters create a fluid, dreamlike atmosphere
+          that transforms microscopic forms into immersive space.
+        </p>
+
+        <div class="media-translation-layout">
+
+
+          <!-- Left column -->
+
+          <div class="media-translation-examples">
+
+            <div class="media-example">
+
+              <div class="media-image-pair">
+
+                <img
+                  src="assets/vr/ear/process/canalref.png"
+                  alt="Ear canal reference"
+                >
+
+                <img
+                  src="assets/vr/ear/process/canalenv.png"
+                  alt="Ear canal environment"
+                >
+
+              </div>
+
+              <p>
+                1. The ear canal becomes a textured tunnel: skin and ear wax
+                forming stones in a natural cave.
+              </p>
+
+            </div>
+
+
+            <div class="media-example">
+
+              <div class="media-image-pair">
+
+                <img
+                  src="assets/vr/ear/process/ossicleref.png"
+                  alt="Ossicles reference"
+                >
+
+                <img
+                  src="assets/vr/ear/process/ossicleenv.png"
+                  alt="Ossicles environment"
+                >
+
+              </div>
+
+              <p>
+                2. Ossicles turn into branching wood, surrounded by flowing
+                water that hints at trapped fluid and muffled hearing.
+              </p>
+
+            </div>
+
+
+            <div class="media-example">
+
+              <div class="media-image-pair">
+
+                <img
+                  src="assets/vr/ear/process/haircellref.png"
+                  alt="Hair cells reference"
+                >
+
+                <img
+                  src="assets/vr/ear/process/haircellenv.png"
+                  alt="Hair cells environment"
+                >
+
+              </div>
+
+              <p>
+                3. Hair cells drift like grass in lymphic water,
+                evoking the quiet rhythm of hearing within.
+              </p>
+
+            </div>
+
+          </div>
+
+
+          <!-- Right column -->
+
+          <div class="media-unity">
+
+
+            <img
+              src="assets/vr/ear/process/unityscene1.png"
+              alt="ExplorEAR Unity scene construction"
+            >
+
+               <p>
+              Crafted and sourced assets shape a tunnel-like outer and
+              middle ear, while the inner ear opens into a terrain formed
+              through layered textures and spatial composition.
+            </p>
+
+            <img
+              src="assets/vr/ear/process/unityscene2.png"
+              alt="ExplorEAR Unity scene overview"
+            >
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==================== KEY PROCESS STAGES ==================== -->
+
+    <section class="media-section">
+
+      <div class="media-container">
+
+        <h2 class="media-heading">
+          Key Process Stages
+        </h2>
+
+        <div class="media-process-grid">
+
+
+          <!-- Objectives -->
+
+          <div class="media-process-item media-objectives">
+
+            <h3>
+              Objectives
+            </h3>
+
+            <ul>
+
+              <li>
+                Reimagine anatomy through nature.
+              </li>
+
+              <li>
+                Translate sound into spatial sensation.
+              </li>
+
+              <li>
+                Evoke empathy through embodied perception.
+              </li>
+
+            </ul>
+
+            <p class="media-question">
+              “How can immersive VR make people sense their own
+              bodies differently?”
+            </p>
+
+          </div>
+
+
+          <!-- 3D Modeling -->
+
+          <div class="media-process-item">
+
+            <h3>
+              3D Modeling &amp; Sculpting
+            </h3>
+
+            <p>
+              Modeled the ear and tunnel in Blender as environment assets.
+            </p>
+
+            <img
+              src="assets/vr/ear/process/blender.png"
+              alt="Sculpting in Blender"
+            >
+
+          </div>
+
+
+          <!-- Teleportation -->
+
+          <div class="media-process-item">
+
+            <h3>
+              Interaction Coding - Teleportation
+            </h3>
+
+            <p>
+              Hidden teleportation triggers guide players through
+              transitions intuitively.
+            </p>
+
+            <img
+              src="assets/vr/ear/process/teleportation.png"
+              alt="Teleportation interaction and code"
+            >
+
+          </div>
+
+
+          <!-- Popup UI -->
+
+          <div class="media-process-item">
+
+            <h3>
+              Interaction Coding - Popup UI
+            </h3>
+
+            <p>
+              Approaching triggers shard-like UI cues that evoke
+              unconscious listening.
+            </p>
+
+            <img
+              src="assets/vr/ear/process/popupui.png"
+              alt="Popup UI and interaction code"
+            >
+
+          </div>
+
+
+          <!-- Sound -->
+
+          <div class="media-process-item">
+
+            <h3>
+              Sound Design
+            </h3>
+
+            <p>
+              Layered audio in Audacity slowly distorts,
+              reflecting fatigue.
+            </p>
+
+            <img
+              src="assets/vr/ear/process/sound.png"
+              alt="Sound editing in Audacity"
+            >
+
+          </div>
+
+
+          <!-- Testing -->
+
+          <div class="media-process-item">
+
+            <h3>
+              Iteration &amp; Testing
+            </h3>
+
+            <p>
+              Testing spatial comfort &amp; pacing with headset &amp; projection.
+            </p>
+
+            <img
+              src="assets/vr/ear/process/testing.png"
+              alt="ExplorEAR headset and projection testing"
+            >
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==================== FINAL EXPERIENCE ==================== -->
+
+    <section class="media-section">
+
+      <div class="media-container">
+
+        <h2 class="media-heading">
+          Final Experience
         </h2>
 
 
-        <div class="case-process-media">
+        <!-- Outer Ear -->
 
-          <img
-            src="assets/vr/ear/ear1.png"
-            alt="ExplorEAR immersive environment screenshot 1"
-          >
+        <div class="media-outer-ear">
 
-        </div>
+          <p>
+            <strong>OUTER EAR:</strong>
+            Rocky tunnel with mineral-like formations (earwax).
+          </p>
 
+          <div class="media-outer-images">
 
-        <div
-          class="case-process-media"
-          style="margin-top: 32px;"
-        >
+            <img
+              src="assets/vr/ear/1.png"
+              alt="ExplorEAR outer ear environment"
+            >
 
-          <img
-            src="assets/vr/ear/ear2.png"
-            alt="ExplorEAR immersive environment screenshot 2"
-          >
+            <img
+              src="assets/vr/ear/2.png"
+              alt="ExplorEAR outer ear environment"
+            >
 
-        </div>
-
-
-        <div
-          class="case-process-media"
-          style="margin-top: 32px;"
-        >
-
-          <img
-            src="assets/vr/ear/ear3.png"
-            alt="ExplorEAR immersive environment screenshot 3"
-          >
+          </div>
 
         </div>
 
 
-        <div
-          class="case-process-media"
-          style="margin-top: 32px;"
-        >
+        <!-- Middle Ear + Inner Ear -->
 
-          <img
-            src="assets/vr/ear/ear4.png"
-            alt="ExplorEAR immersive environment screenshot 4"
-          >
+        <div class="media-final-grid">
+
+          <div class="media-final-item">
+
+            <p>
+              <strong>MIDDLE EAR:</strong>
+              Wooden bridge of tree stumps (ossicles).
+            </p>
+
+            <img
+              src="assets/vr/ear/4.png"
+              alt="ExplorEAR middle ear environment"
+            >
+
+          </div>
+
+
+          <div class="media-final-item">
+
+            <p>
+              <strong>INNER EAR:</strong>
+              Field of swaying grass and flowers (hair cells).
+            </p>
+
+            <img
+              src="assets/vr/ear/5.png"
+              alt="ExplorEAR inner ear environment"
+            >
+
+          </div>
 
         </div>
-
 
       </div>
 
     </section>
 
 
+    <!-- ==================== REFLECTION ==================== -->
 
-    <!-- ===================================================
-         BACK TO TOP
-    ==================================================== -->
+    <section class="media-section">
 
-    <div
-      class="scrolltop-container"
-      id="scrollTopArrow"
-    >
+      <div class="media-container">
+
+        <h2 class="media-heading">
+          Reflection
+        </h2>
+
+        <p class="media-reflection">
+          <em>ExplorEAR</em> reimagines anatomy as sensory storytelling.
+          By blending biological metaphors with dreamlike landscapes,
+          the project transforms the microscopic into the cosmic,
+          helping users sense their own bodies differently. I learned
+          that empathy doesn't always come from information, but from
+          experience. When education becomes play, awareness turns
+          into connection.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ==================== BACK TO TOP ==================== -->
+
+    <div class="scrolltop-container" id="scrollTopArrow">
 
       <img
         src="assets/scrolldown.png"
@@ -238,14 +655,10 @@
 
     </div>
 
-
   </main>
 
 
-
-  <!-- =====================================================
-       FOOTER
-  ====================================================== -->
+  <!-- ==================== FOOTER ==================== -->
 
   <footer class="footer">
 
@@ -269,11 +682,7 @@
 
   </footer>
 
-
-
   <script src="script.js"></script>
 
-
 </body>
-
 </html>

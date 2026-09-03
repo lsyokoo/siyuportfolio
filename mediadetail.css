@@ -1,0 +1,926 @@
+/* =========================================================
+   MEDIA ART PROJECT PAGE
+========================================================= */
+
+.media-page {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: var(--bg-light);
+
+  opacity: 0;
+  animation: mediaFadeIn 0.55s ease-out forwards;
+}
+
+@keyframes mediaFadeIn {
+
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.media-container {
+  width: 100%;
+  max-width: 1400px;
+
+  margin: 0 auto;
+
+  padding-left: clamp(3rem, 6vw, 6rem);
+  padding-right: clamp(3rem, 6vw, 6rem);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.media-hero {
+  padding-top: 118px;
+  padding-bottom: 0;
+}
+
+.media-eyebrow {
+  margin: 0 0 13px;
+
+  font-size: 0.78rem;
+  line-height: 1.4;
+
+  font-weight: 500;
+
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+
+  color: var(--accent-pink);
+}
+
+.media-title {
+  max-width: 1250px;
+
+  margin: 0 0 11px;
+
+  font-size: clamp(2.7rem, 3.45vw, 3.65rem);
+  line-height: 1.07;
+
+  font-weight: 400;
+
+  letter-spacing: -1.7px;
+
+  color: #263638;
+}
+
+.media-subtitle {
+  width: 100%;
+  max-width: none;
+
+  margin: 0;
+
+  font-size: clamp(1.28rem, 1.55vw, 1.5rem);
+  line-height: 1.45;
+
+  color: #59666894;
+}
+
+
+/* =========================================================
+   HERO META
+========================================================= */
+
+.media-meta {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 32px;
+
+  margin-top: 36px;
+}
+
+.media-meta-item {
+  min-width: 0;
+}
+
+.media-meta-label {
+  margin: 0 0 7px;
+
+  font-size: 0.78rem !important;
+  line-height: 1.4 !important;
+
+  font-weight: 500;
+
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+
+  color: #7d888a !important;
+}
+
+.media-meta-value {
+  margin: 0 0 2px;
+
+  font-size: 1rem !important;
+  line-height: 1.55 !important;
+
+  color: #263638 !important;
+}
+
+.media-meta-value:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   HERO IMAGE
+========================================================= */
+
+.media-hero-image {
+  width: 100%;
+
+  margin-top: 30px;
+}
+
+.media-hero-image img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+}
+
+
+/* =========================================================
+   SECTIONS
+========================================================= */
+
+.media-section {
+  padding-top: 0;
+  padding-bottom: 72px;
+}
+
+/* Hero image to the first section */
+
+.media-hero + .media-section {
+  padding-top: 56px;
+}
+
+/* Add bottom space after the final section */
+
+.media-section:last-of-type {
+  padding-bottom: 72px;
+}
+
+
+.media-heading {
+  margin: 0 0 14px;
+
+  font-size: clamp(1.8rem, 2.2vw, 2.3rem);
+  line-height: 1.2;
+
+  font-weight: 500;
+
+  letter-spacing: -0.45px;
+
+  color: #263638;
+}
+
+
+/* =========================================================
+   BODY COPY
+========================================================= */
+
+.media-section p,
+.media-text-block p,
+.media-process-item p,
+.media-process-copy p,
+.media-example p,
+.media-unity p,
+.media-final-item p,
+.media-outer-ear p {
+  font-size: 1.05rem;
+  line-height: 1.68;
+
+  color: #4b595b;
+}
+
+.media-wide-copy {
+  width: 100%;
+  max-width: none;
+
+  margin: 0;
+
+  font-size: 1.05rem;
+  line-height: 1.68;
+
+  color: #4b595b;
+}
+
+.media-intro {
+  width: 100%;
+  max-width: none;
+
+  margin: 0 0 26px;
+}
+
+
+/* =========================================================
+   CURIOSITY / INITIAL CONCEPT
+========================================================= */
+
+.media-two-column {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: clamp(48px, 7vw, 100px);
+}
+
+.media-text-block {
+  min-width: 0;
+}
+
+.media-text-block p {
+  width: 100%;
+  max-width: none;
+
+  margin: 0;
+}
+
+
+/* =========================================================
+   SUBSECTION
+========================================================= */
+
+.media-subsection {
+  margin-top: 56px;
+}
+
+.media-subsection > p {
+  margin-top: 0;
+}
+
+
+/* =========================================================
+   EARLY EXPLORATIONS
+========================================================= */
+
+.media-findings {
+  max-width: 1050px;
+
+  margin: 10px 0 22px;
+
+  padding-left: 1.4rem;
+}
+
+.media-findings li {
+  margin-bottom: 7px;
+
+  font-size: 1.05rem;
+  line-height: 1.6;
+
+  color: #4b595b;
+}
+
+.media-findings li:last-child {
+  margin-bottom: 0;
+}
+
+.media-four-images {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, minmax(0, 1fr));
+
+  gap: 10px;
+}
+
+.media-four-images img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+}
+
+
+/* =========================================================
+   CONCEPT
+========================================================= */
+
+.media-concept-layout {
+  display: block;
+}
+
+.media-concept-copy {
+  width: 100%;
+  max-width: none;
+}
+
+.media-concept-copy p {
+  width: 100%;
+  max-width: none;
+
+  margin: 0;
+}
+
+.media-concept-images {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 12px;
+
+  margin-top: 22px;
+}
+
+.media-concept-images figure {
+  min-width: 0;
+
+  margin: 0;
+}
+
+.media-concept-images img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+}
+
+.media-concept-images figcaption {
+  margin-top: 7px;
+
+  font-size: 0.78rem;
+  line-height: 1.45;
+
+  color: #7d888a;
+}
+
+
+/* =========================================================
+   RESEARCH GRID
+========================================================= */
+
+.media-research-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 18px;
+
+  margin-top: 24px;
+}
+
+.media-figure {
+  min-width: 0;
+
+  margin: 0;
+}
+
+.media-figure img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+}
+
+.media-figure figcaption {
+  margin-top: 7px;
+
+  font-size: 0.78rem;
+  line-height: 1.45;
+
+  color: #7d888a;
+}
+
+
+/* =========================================================
+   ANATOMY TRANSLATION
+========================================================= */
+
+.media-translation-layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(300px, 0.42fr)
+    minmax(0, 0.58fr);
+
+  gap: clamp(48px, 7vw, 96px);
+
+  align-items: start;
+}
+
+.media-translation-examples {
+  display: grid;
+
+  gap: 44px;
+}
+
+.media-example p {
+  margin: 10px 0 0;
+}
+
+.media-image-pair {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 10px;
+}
+
+.media-image-pair img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+}
+
+
+/* =========================================================
+   UNITY SCENE CONSTRUCTION
+========================================================= */
+
+.media-unity {
+  align-self: start;
+
+  margin: 0;
+  padding: 0;
+}
+
+.media-unity h3,
+.media-process-item h3 {
+  margin: 0 0 6px;
+
+  font-size: 1.3rem;
+  line-height: 1.3;
+
+  font-weight: 500;
+
+  color: #263638;
+}
+
+.media-unity p {
+  margin: 0 0 16px;
+}
+
+.media-unity img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  margin-bottom: 12px;
+}
+
+.media-unity img:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   TWO-COLUMN PROCESS GRID
+   Used by ExplorEAR
+========================================================= */
+
+.media-process-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap:
+    56px
+    clamp(44px, 5vw, 72px);
+
+  margin-top: 28px;
+}
+
+.media-process-item {
+  min-width: 0;
+}
+
+.media-process-item h3 {
+  margin-bottom: 6px;
+}
+
+.media-process-item p {
+  margin: 0 0 16px;
+}
+
+.media-process-item > img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+}
+
+
+/* =========================================================
+   OBJECTIVES
+========================================================= */
+
+.media-objectives {
+  margin-top: 0;
+}
+
+.media-objectives .media-heading {
+  margin-bottom: 16px;
+}
+
+.media-objectives h3 {
+  margin: 0 0 16px;
+
+  font-size: 1.3rem;
+  line-height: 1.3;
+
+  font-weight: 500;
+
+  color: #263638;
+}
+
+.media-objectives ul {
+  margin: 0;
+
+  padding-left: 1.25rem;
+}
+
+.media-objectives li {
+  margin-bottom: 10px;
+
+  font-size: 1.05rem;
+  line-height: 1.6;
+
+  color: #4b595b;
+}
+
+.media-objectives li:last-child {
+  margin-bottom: 0;
+}
+
+
+/* =========================================================
+   QUESTION
+========================================================= */
+
+.media-question {
+  max-width: 800px;
+
+  margin: 18px 0 0;
+
+  font-size: 1.05rem !important;
+  line-height: 1.68 !important;
+
+  font-weight: 600;
+
+  color: #263638 !important;
+}
+
+
+/* =========================================================
+   SINGLE-COLUMN PROCESS LIST
+   Left text / right image
+========================================================= */
+
+.media-process-list {
+  margin-top: 48px;
+}
+
+.media-process-row {
+  width: 100%;
+
+  display: grid;
+
+  grid-template-columns:
+    minmax(280px, 0.38fr)
+    minmax(0, 0.62fr);
+
+  gap: clamp(44px, 6vw, 84px);
+
+  align-items: start;
+}
+
+.media-process-row + .media-process-row {
+  margin-top: 64px;
+
+  padding-top: 64px;
+
+  border-top:
+    1px
+    solid
+    rgba(62, 78, 80, 0.11);
+}
+
+.media-process-copy {
+  min-width: 0;
+  max-width: 440px;
+}
+
+.media-process-number {
+  margin: 0 0 7px;
+
+  font-size: 0.78rem !important;
+  line-height: 1.3 !important;
+
+  font-weight: 500;
+
+  letter-spacing: 1.25px;
+
+  color: var(--accent-pink) !important;
+}
+
+.media-process-copy h3 {
+  margin: 0 0 8px;
+
+  font-size: 1.3rem;
+  line-height: 1.3;
+
+  font-weight: 500;
+
+  color: #263638;
+}
+
+.media-process-copy p {
+  margin: 0;
+}
+
+.media-process-media {
+  width: 100%;
+  min-width: 0;
+}
+
+.media-process-media > img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+}
+
+.media-process-image-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 12px;
+}
+
+.media-process-image-grid img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+}
+
+
+/* =========================================================
+   FINAL EXPERIENCE
+========================================================= */
+
+.media-outer-ear {
+  width: 100%;
+}
+
+.media-outer-ear > p {
+  margin: 0 0 10px;
+}
+
+.media-outer-images {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 12px;
+}
+
+.media-outer-images img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+}
+
+.media-final-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 12px;
+
+  margin-top: 44px;
+}
+
+.media-final-item {
+  min-width: 0;
+}
+
+.media-final-item p {
+  margin: 0 0 10px;
+}
+
+.media-final-item img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+}
+
+
+/* =========================================================
+   OUTCOME GRID
+========================================================= */
+
+.media-outcome-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(2, minmax(0, 1fr));
+
+  gap: 12px;
+
+  margin-top: 22px;
+}
+
+.media-outcome-grid img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+}
+
+
+/* =========================================================
+   REFLECTION
+========================================================= */
+
+.media-reflection {
+  width: 100%;
+  max-width: none;
+
+  margin: 0;
+
+  font-size: 1.05rem !important;
+  line-height: 1.68 !important;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .media-container {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+
+  .media-meta {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+
+    gap: 28px 48px;
+  }
+
+  .media-four-images {
+    grid-template-columns:
+      repeat(2, minmax(0, 1fr));
+  }
+
+  .media-translation-layout {
+    gap: 40px;
+  }
+
+  .media-process-row {
+    grid-template-columns:
+      minmax(250px, 0.4fr)
+      minmax(0, 0.6fr);
+
+    gap: 40px;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .media-hero {
+    padding-top: 98px;
+    padding-bottom: 0;
+  }
+
+  .media-title {
+    font-size: clamp(2.25rem, 8vw, 3rem);
+  }
+
+  .media-subtitle {
+    font-size: 1.15rem;
+  }
+
+  .media-section {
+    padding-top: 56px;
+    padding-bottom: 56px;
+  }
+
+  .media-two-column,
+  .media-translation-layout,
+  .media-process-grid,
+  .media-process-row,
+  .media-final-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .media-two-column {
+    gap: 42px;
+  }
+
+  .media-subsection {
+    margin-top: 48px;
+  }
+
+  .media-process-grid {
+    gap: 48px;
+  }
+
+  .media-process-copy {
+    max-width: 620px;
+  }
+
+  .media-process-row {
+    gap: 24px;
+  }
+
+  .media-process-row + .media-process-row {
+    margin-top: 52px;
+
+    padding-top: 52px;
+  }
+
+  .media-concept-images,
+  .media-outer-images {
+    grid-template-columns: 1fr;
+  }
+
+  .media-final-grid {
+    gap: 36px;
+
+    margin-top: 36px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .media-container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .media-meta {
+    grid-template-columns: 1fr;
+
+    gap: 24px;
+
+    margin-top: 30px;
+  }
+
+  .media-four-images,
+  .media-image-pair,
+  .media-process-image-grid,
+  .media-outcome-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .media-research-grid {
+    grid-template-columns: 1fr;
+
+    gap: 26px;
+  }
+
+}
+
+.media-emphasis {
+  font-weight: 700 !important;
+  font-style: italic;
+  color: #263638;
+}

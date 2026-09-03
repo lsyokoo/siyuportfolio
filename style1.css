@@ -587,7 +587,6 @@ nav {
 }
 
 
-
 /* =========================
    Project Preview System
 ========================= */
@@ -777,26 +776,21 @@ nav {
 }
 
 
-
 /* =========================
-   Project Image
+   Project Image / Video
 ========================= */
 
 .project-preview-image {
   display: block;
-
   width: 100%;
-
   align-self: start;
 }
 
-
-.project-preview-image img {
+.project-preview-image img,
+.project-preview-image video {
   width: 100%;
   height: auto;
-
   display: block;
-
   object-fit: cover;
 
   box-shadow:
@@ -810,10 +804,9 @@ nav {
     box-shadow 0.35s ease;
 }
 
-
-.project-preview-image:hover img {
-  transform:
-    translateY(-5px);
+.project-preview-image:hover img,
+.project-preview-image:hover video {
+  transform: translateY(-5px);
 
   box-shadow:
     0
@@ -821,7 +814,6 @@ nav {
     38px
     rgba(0, 0, 0, 0.17);
 }
-
 
 
 /* =========================
