@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +15,6 @@
   <link rel="stylesheet" href="casestudy.css">
 </head>
 
-
 <body>
 
   <!-- =====================================================
@@ -22,18 +22,15 @@
   ====================================================== -->
 
   <header>
-
     <nav>
 
       <div class="logo">
         <a href="index.html">SIYU</a>
       </div>
 
-
       <div class="nav-right">
 
         <ul class="nav-menu">
-
           <li>
             <a href="index.html" class="active">
               PRODUCT
@@ -57,14 +54,11 @@
               ABOUT
             </a>
           </li>
-
         </ul>
-
 
         <div class="icons">
 
           <div class="language-dropdown">
-
             <svg
               class="globe-icon"
               viewBox="0 0 24 24"
@@ -74,28 +68,12 @@
               stroke-linecap="round"
               stroke-linejoin="round"
             >
-
               <circle cx="12" cy="12" r="10"></circle>
-
-              <line
-                x1="2"
-                y1="12"
-                x2="22"
-                y2="12">
-              </line>
-
-              <path
-                d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10">
-              </path>
-
-              <path
-                d="M12 2a15.3 15.3 0 0 0-4 10 15.3 15.3 0 0 0 4 10">
-              </path>
-
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"></path>
+              <path d="M12 2a15.3 15.3 0 0 0-4 10 15.3 15.3 0 0 0 4 10"></path>
             </svg>
-
           </div>
-
 
           <div class="hamburger">
             <span></span>
@@ -106,11 +84,51 @@
         </div>
 
       </div>
-
     </nav>
-
   </header>
 
+
+  <!-- =====================================================
+       CASE STUDY SIDEBAR
+  ====================================================== -->
+
+  <aside
+    class="case-sidebar"
+    aria-label="Case study sections"
+  >
+
+    <!-- Back Arrow -->
+
+    <a
+      href="index.html"
+      class="case-sidebar-back"
+      aria-label="Back to portfolio homepage"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        width="30"
+        height="30"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M19 12H5"></path>
+        <path d="m12 19-7-7 7-7"></path>
+      </svg>
+    </a>
+
+    <!-- Auto-generated navigation -->
+
+    <nav
+      class="case-sidebar-links"
+      id="caseSidebarLinks"
+      aria-label="On this page"
+    ></nav>
+
+  </aside>
 
 
   <!-- =====================================================
@@ -121,66 +139,70 @@
 
 
     <!-- ===================================================
-         HERO
+         HERO / OVERVIEW
     ==================================================== -->
 
     <section class="case-hero">
 
       <div class="case-container">
 
-
         <p class="case-eyebrow">
           RESPONSIVE WEB · LOCALIZATION
         </p>
-
 
         <h1 class="case-title">
           Building a Multilingual Web System for BNU
         </h1>
 
 
+        <!-- CASE SUMMARY -->
 
-<!-- ===============================================
-     CASE SUMMARY
-================================================ -->
+        <div class="case-summary">
 
-<div class="case-summary">
+          <div class="case-summary-item">
 
-  <div class="case-summary-item">
-    <p class="case-summary-label">PROBLEM</p>
+            <p class="case-summary-label">
+              PROBLEM
+            </p>
 
-    <p class="case-summary-text">
-      Expanding BNU's website to 4 languages exposed CMS constraints, creating complex navigation and mobile usability issues.
-    </p>
-  </div>
+            <p class="case-summary-text">
+              Expanding BNU's website to 4 languages exposed CMS constraints, creating complex navigation and mobile usability issues.
+            </p>
 
-
-  <div class="case-summary-item">
-    <p class="case-summary-label">SOLUTION</p>
-
-    <p class="case-summary-text">
-      A custom multilingual system with clearer navigation, responsive layouts, and a brand-focused landing page.
-    </p>
-  </div>
+          </div>
 
 
-  <div class="case-summary-item">
-    <p class="case-summary-label">IMPACT</p>
+          <div class="case-summary-item">
 
-    <p class="case-summary-text">
-      Reduced menu complexity by 50% and mobile layout issues by 40% across 4 localized experiences.
-    </p>
-  </div>
+            <p class="case-summary-label">
+              SOLUTION
+            </p>
 
-</div>
-        
+            <p class="case-summary-text">
+              A custom multilingual system with clearer navigation, responsive layouts, and a brand-focused landing page.
+            </p>
 
-        <!-- ===============================================
-             META
-        ================================================ -->
+          </div>
+
+
+          <div class="case-summary-item">
+
+            <p class="case-summary-label">
+              IMPACT
+            </p>
+
+            <p class="case-summary-text">
+              Reduced menu complexity by 50% and mobile layout issues by 40% across 4 localized experiences.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- META -->
 
         <div class="case-meta">
-
 
           <div class="case-meta-item">
 
@@ -220,14 +242,10 @@
 
           </div>
 
-
         </div>
 
 
-
-        <!-- ===============================================
-             HERO IMAGE
-        ================================================ -->
+        <!-- HERO IMAGE -->
 
         <div class="case-hero-media">
 
@@ -238,399 +256,378 @@
 
         </div>
 
+      </div>
 
+    </section>
+
+
+    <!-- ===================================================
+         CHALLENGE
+    ==================================================== -->
+
+    <section class="case-section">
+
+      <div class="case-container">
+
+        <h2 class="case-section-title">
+          Challenge
+        </h2>
+
+
+        <div class="case-split">
+
+          <div class="case-split-text">
+
+            <p class="case-emphasis">
+              To support BNU's U.S. and Asian audiences with a multilingual system, I identified three challenges:
+            </p>
+
+            <ul class="case-list">
+
+              <li>
+                Automated translation added costs and limited content control
+              </li>
+
+              <li>
+                Localized pages overcrowded the navigation bar
+              </li>
+
+              <li>
+                Existing layouts did not adapt well across devices
+              </li>
+
+            </ul>
+
+          </div>
+
+
+          <div class="case-split-media">
+
+            <img
+              src="assets/uiux/bnu/bnuchallenge.png"
+              alt="BNU multilingual website challenges"
+            >
+
+          </div>
+
+        </div>
+
+
+        <!-- CUSTOMER / BUSINESS NEED -->
+
+        <div class="case-card-grid case-card-grid-2">
+
+          <div class="case-info-card">
+
+            <p>
+              <strong>CUSTOMER NEED</strong>
+            </p>
+
+            <p>
+              Navigate a clear and trustworthy experience in their preferred language across devices.
+            </p>
+
+          </div>
+
+
+          <div class="case-info-card">
+
+            <p>
+              <strong>BUSINESS NEED</strong>
+            </p>
+
+            <p>
+              Support four localized experiences while maintaining content control, manageable costs, and brand consistency.
+            </p>
+
+          </div>
+
+        </div>
 
       </div>
 
     </section>
 
-<!-- ===================================================
-     CHALLENGE
-==================================================== -->
 
-<section class="case-section">
+    <!-- ===================================================
+         FINAL DESIGN
+    ==================================================== -->
 
-  <div class="case-container">
+    <section class="case-section">
 
-    <h2 class="case-section-title">
-      The Challenge
-    </h2>
+      <div class="case-container">
 
+        <h2 class="case-section-title">
+          Final Design
+        </h2>
 
-    <div class="case-split">
 
+        <!-- 01 MULTILINGUAL SYSTEM -->
 
-      <div class="case-split-text">
+        <div class="case-solution-row">
 
-        <p class="case-emphasis">
-       To support BNU's U.S. and Asian audiences with a multilingual system, I identified three challenges:
-        </p>
+          <div class="case-solution-text">
 
+            <p class="case-solution-number">
+              01
+            </p>
 
-        <ul class="case-list">
+            <h3>
+              Multilingual System
+            </h3>
 
-          <li>
-            Automated translation added costs and limited content control
-          </li>
+            <p>
+              Created a landing page and clear navigation for each language, with a custom opening animation to strengthen BNU's brand identity.
+            </p>
 
-          <li>
-            Localized pages overcrowded the navigation bar
-          </li>
+          </div>
 
-          <li>
-            Existing layouts did not adapt well across devices
-          </li>
 
-        </ul>
+          <div class="case-solution-media">
 
-      </div>
+            <video
+              autoplay
+              muted
+              loop
+              playsinline
+              style="width: 100%; height: auto; display: block;"
+            >
 
+              <source
+                src="assets/uiux/bnu/landing.mov"
+                type="video/mp4"
+              >
 
-      <div class="case-split-media">
+            </video>
 
-        <img
-          src="assets/uiux/bnu/bnuchallenge.png"
-          alt="BNU multilingual website challenges"
-        >
-
-      </div>
-
-
-    </div>
-
-
-
-    <div class="case-card-grid case-card-grid-2">
-
-
-      <div class="case-info-card">
-
-        <p><strong>CUSTOMER NEED</strong></p>
-
-        <p>
-          Navigate a clear and trustworthy experience in their preferred
-          language across devices.
-        </p>
-
-      </div>
-
-
-      <div class="case-info-card">
-
-        <p><strong>BUSINESS NEED</strong></p>
-
-        <p>
-          Support four localized experiences while maintaining content control,
-          manageable costs, and brand consistency.
-        </p>
-
-      </div>
-
-
-    </div>
-
-
-  </div>
-
-</section>
-
-
-<!-- ===================================================
-     FINAL DESIGN
-==================================================== -->
-
-<section class="case-section">
-
-  <div class="case-container">
-
-    <h2 class="case-section-title">
-      Final Design & Implementation
-    </h2>
-
-
-    <!-- 01 -->
-     <div class="case-solution-row">
-
-      <div class="case-solution-text">
-
-        <p class="case-solution-number">
-          01
-        </p>
-
-        <h3>
-         Multilingual System
-        </h3>
-
-        <p>
-      Created a landing page and clear navigation for each language, with a custom opening animation to strengthen BNU's brand identity.
-       </p>
-
-      </div>
-
-
-      <div class="case-solution-media">
-
-        <video
-          autoplay
-          muted
-          loop
-          playsinline
-          style="width: 100%; height: auto; display: block;"
-        >
-
-          <source
-            src="assets/uiux/bnu/landing.mov"
-            type="video/mp4"
-          >
-
-        </video>
-
-      </div>
-
-
-
-  </div>
-
-    
-    <!-- 02 -->
-
-    <div class="case-solution-row">
-
-      <div class="case-solution-text">
-
-        <p class="case-solution-number">
-          02
-        </p>
-
-        <h3>
-          Responsive Experience
-        </h3>
-
-        <p>
-      Improved hierarchy, layouts, and responsive behavior across the website for a clearer, more consistent experience on desktop and mobile. </p>
-
-      </div>
-
-
-      <div class="case-solution-media">
-
-        <img
-          src="assets/uiux/bnu/responsive.png"
-          alt="BNU responsive desktop and mobile experience"
-        >
-
-      </div>
-
-    </div>
-
-
-
-    <!-- 03 -->
-<div class="case-solution-row">
-
-      <div class="case-solution-text">
-
-        <p class="case-solution-number">
-          03
-        </p>
-
-        <h3>
-          Localization
-        </h3>
-
-        <p>
-      Localized the Chinese site by adapting content and typography to preserve readability and visual consistency.
-        </p>
-
-      </div>
-
-
-  <div class="case-solution-media">
-
-        <video
-          autoplay
-          muted
-          loop
-          playsinline
-          style="width: 100%; height: auto; display: block;"
-        >
-
-          <source
-            src="assets/uiux/bnu/chinesenav.mov"
-            type="video/mp4"
-          >
-
-        </video>
-
-
-      </div>
-
-    </div>
-
-
-
-    
-
-</section>
-
-
-
-<!-- ===================================================
-     IMPACT
-==================================================== -->
-
-<section class="case-section case-impact">
-
-  <div class="case-container">
-
-    <h2 class="case-section-title">
-      Impact
-    </h2>
-
-
-    <p class="case-impact-note">
-      The final system improved navigation and mobile usability
-      while supporting four localized experiences.
-    </p>
-
-
-
-    <div class="case-impact-panel">
-
-      <div class="case-impact-grid">
-
-
-        <div class="case-impact-item">
-
-          <strong>
-            -50%
-          </strong>
-
-          <span>
-            ↓ Menu Complexity
-          </span>
+          </div>
 
         </div>
 
 
-        <div class="case-impact-item">
+        <!-- 02 RESPONSIVE EXPERIENCE -->
 
-          <strong>
-            -40%
-          </strong>
+        <div class="case-solution-row">
 
-          <span>
-            ↓ Mobile Layout Issues
-          </span>
+          <div class="case-solution-text">
+
+            <p class="case-solution-number">
+              02
+            </p>
+
+            <h3>
+              Responsive Experience
+            </h3>
+
+            <p>
+              Improved hierarchy, layouts, and responsive behavior across the website for a clearer, more consistent experience on desktop and mobile.
+            </p>
+
+          </div>
+
+
+          <div class="case-solution-media">
+
+            <img
+              src="assets/uiux/bnu/responsive.png"
+              alt="BNU responsive desktop and mobile experience"
+            >
+
+          </div>
 
         </div>
 
 
-        <div class="case-impact-item">
+        <!-- 03 LOCALIZATION -->
 
-          <strong>
-            4
-          </strong>
+        <div class="case-solution-row">
 
-          <span>
-            Localized Experiences
-          </span>
+          <div class="case-solution-text">
+
+            <p class="case-solution-number">
+              03
+            </p>
+
+            <h3>
+              Localization
+            </h3>
+
+            <p>
+              Localized the Chinese site by adapting content and typography to preserve readability and visual consistency.
+            </p>
+
+          </div>
+
+
+          <div class="case-solution-media">
+
+            <video
+              autoplay
+              muted
+              loop
+              playsinline
+              style="width: 100%; height: auto; display: block;"
+            >
+
+              <source
+                src="assets/uiux/bnu/chinesenav.mov"
+                type="video/mp4"
+              >
+
+            </video>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         IMPACT
+    ==================================================== -->
+
+    <section class="case-section case-impact">
+
+      <div class="case-container">
+
+        <h2 class="case-section-title">
+          Impact
+        </h2>
+
+
+        <p class="case-impact-note">
+          The final system improved navigation and mobile usability while supporting four localized experiences.
+        </p>
+
+
+        <!-- IMPACT METRICS -->
+
+        <div class="case-impact-panel">
+
+          <div class="case-impact-grid">
+
+            <div class="case-impact-item">
+
+              <strong>
+                -50%
+              </strong>
+
+              <span>
+                ↓ Menu Complexity
+              </span>
+
+            </div>
+
+
+            <div class="case-impact-item">
+
+              <strong>
+                -40%
+              </strong>
+
+              <span>
+                ↓ Mobile Layout Issues
+              </span>
+
+            </div>
+
+
+            <div class="case-impact-item">
+
+              <strong>
+                4
+              </strong>
+
+              <span>
+                Localized Experiences
+              </span>
+
+            </div>
+
+          </div>
 
         </div>
 
 
-      </div>
+        <!-- FEEDBACK -->
 
-    </div>
+        <div class="case-impact-quotes">
 
+          <blockquote class="case-quote">
 
+            <p>
+              “I enjoyed working with Siyu. She communicated quickly, took ownership of her work, and proactively found solutions.”
+            </p>
 
-<!-- Feedback -->
+            <cite>
+              — Founder, BNU
+            </cite>
 
-<div class="case-impact-quotes">
-
-  <blockquote class="case-quote">
-
-    <p>
-      “I enjoyed working with Siyu. She communicated quickly, took ownership of her work, and proactively found solutions.”
-    </p>
-
-    <cite>
-      — Founder, BNU
-    </cite>
-
-  </blockquote>
+          </blockquote>
 
 
-  <blockquote class="case-quote case-quote-right">
+          <blockquote class="case-quote case-quote-right">
 
-    <p>
-      “It's much clearer on my phone now, and I can switch to my preferred language right away. I like the opening animation too!”
-    </p>
+            <p>
+              “It's much clearer on my phone now, and I can switch to my preferred language right away. I like the opening animation too!”
+            </p>
 
-    <cite>
-      — BNU Target User
-    </cite>
+            <cite>
+              — BNU Target User
+            </cite>
 
-  </blockquote>
+          </blockquote>
 
-</div>
-
-</div>
-
-</section>
-
-
-
-
-
-<!-- ===================================================
-     REFLECTION
-==================================================== -->
-
-<section class="case-section">
-
-  <div class="case-container">
-
-    <h2 class="case-section-title">
-      Reflection
-    </h2>
-
-    <div class="case-reflection-block">
-
-      <div>
-
-        <h3>
-          What I Learned
-        </h3>
-
-        <ul>
-
-          <li>
-            Designing within CMS constraints taught me to balance
-            user experience, technical feasibility, and business needs.
-          </li>
-
-          <li>
-            Localization goes beyond translation. Navigation, responsive
-            behavior, content, and visual consistency all need to work together.
-          </li>
-
-        </ul>
+        </div>
 
       </div>
 
+    </section>
 
 
-    </div>
+    <!-- ===================================================
+         REFLECTION
+    ==================================================== -->
 
-  </div>
+    <section class="case-section">
 
-</section>
+      <div class="case-container">
+
+        <h2 class="case-section-title">
+          Reflection
+        </h2>
 
 
- <!-- ===================================================
-         NEXT CASE
+        <div class="case-reflection-block">
+
+          <div>
+
+            <ul>
+
+              <li>
+                Designing within CMS constraints taught me to balance user experience, technical feasibility, and business needs.
+              </li>
+
+              <li>
+                Localization goes beyond translation. Navigation, responsive behavior, content, and visual consistency all need to work together.
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ===================================================
+         NEXT CASE STUDY
     ==================================================== -->
 
     <section class="case-next">
@@ -647,70 +644,66 @@
           class="case-next-link"
         >
 
+          <div class="case-next-copy">
 
-<div class="case-next-copy">
+            <p class="case-eyebrow">
+              Independent Project
+            </p>
 
-  <p class="case-eyebrow">
-   Independent Project
-  </p>
+            <h2>
+              Virtual Stylist
+            </h2>
 
-  <h2>
-    Virtual Stylist
-  </h2>
+            <p>
+              An AI-powered web app that allows users to explore ideal hairstyles and visualize themselves in ways existing tools do not.
+            </p>
 
-  <p>
-    An AI-powered web app that allows users to explore ideal hairstyles and visualize themselves in ways existing tools do not.
-  </p>
+            <div class="project-pill-row case-next-pill-row">
 
-  <div class="project-pill-row case-next-pill-row">
-    <span>0→1</span>
-    <span>AI Integration</span>
-    <span>Web Dev</span>
-  </div>
+              <span>0→1</span>
+              <span>AI Integration</span>
+              <span>Web Dev</span>
 
-</div>
+            </div>
+
+          </div>
 
 
           <div class="case-next-media">
 
             <img
               src="assets/uiux/stylist.png"
-              alt="BNU case study"
+              alt="Virtual Stylist case study preview"
             >
 
           </div>
 
-
         </a>
-
 
       </div>
 
     </section>
 
-
-
-
-    <!-- ===================================================
-         BACK TO TOP
-    ==================================================== -->
-
-    <div
-      class="scrolltop-container"
-      id="scrollTopArrow"
-    >
-
-      <img
-        src="assets/scrolldown.png"
-        alt="Back to top"
-        class="scrolltop"
-      >
-
-    </div>
-
-
   </main>
 
+
+  <!-- =====================================================
+       BACK TO TOP
+       Outside main for full-page centering
+  ====================================================== -->
+
+  <div
+    class="scrolltop-container"
+    id="scrollTopArrow"
+  >
+
+    <img
+      src="assets/scrolldown.png"
+      alt="Back to top"
+      class="scrolltop"
+    >
+
+  </div>
 
 
   <!-- =====================================================
@@ -735,15 +728,17 @@
       <a href="mailto:lsy20041203@gmail.com">
         Email
       </a>
+
     </p>
 
   </footer>
 
 
+  <!-- =====================================================
+       SHARED JAVASCRIPT
+  ====================================================== -->
 
   <script src="script.js"></script>
 
-
 </body>
-
 </html>

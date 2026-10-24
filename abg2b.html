@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +15,6 @@
   <link rel="stylesheet" href="casestudy.css">
 </head>
 
-
 <body>
 
   <!-- =====================================================
@@ -22,13 +22,11 @@
   ====================================================== -->
 
   <header>
-
     <nav>
 
       <div class="logo">
         <a href="index.html">SIYU</a>
       </div>
-
 
       <div class="nav-right">
 
@@ -52,7 +50,6 @@
 
         </ul>
 
-
         <div class="icons">
 
           <div class="language-dropdown">
@@ -66,19 +63,13 @@
               stroke-linecap="round"
               stroke-linejoin="round"
             >
-
               <circle cx="12" cy="12" r="10"></circle>
-
               <line x1="2" y1="12" x2="22" y2="12"></line>
-
               <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"></path>
-
               <path d="M12 2a15.3 15.3 0 0 0-4 10 15.3 15.3 0 0 0 4 10"></path>
-
             </svg>
 
           </div>
-
 
           <div class="hamburger">
             <span></span>
@@ -91,9 +82,50 @@
       </div>
 
     </nav>
-
   </header>
 
+
+  <!-- =====================================================
+       CASE STUDY SIDEBAR
+  ====================================================== -->
+
+  <aside
+    class="case-sidebar"
+    aria-label="Case study sections"
+  >
+
+    <!-- Back Arrow -->
+
+    <a
+      href="index.html"
+      class="case-sidebar-back"
+      aria-label="Back to portfolio homepage"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        width="30"
+        height="30"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M19 12H5"></path>
+        <path d="m12 19-7-7 7-7"></path>
+      </svg>
+    </a>
+
+    <!-- Automatically Generated Navigation -->
+
+    <nav
+      class="case-sidebar-links"
+      id="caseSidebarLinks"
+      aria-label="On this page"
+    ></nav>
+
+  </aside>
 
 
   <!-- =====================================================
@@ -104,13 +136,12 @@
 
 
     <!-- ===================================================
-         HERO
+         HERO / OVERVIEW
     ==================================================== -->
 
     <section class="case-hero">
 
       <div class="case-container">
-
 
         <!-- Category -->
 
@@ -126,12 +157,9 @@
         </h1>
 
 
-        <!-- ===============================================
-             PROBLEM / SOLUTION / IMPACT
-        ================================================ -->
+        <!-- PROBLEM / SOLUTION / IMPACT -->
 
         <div class="case-summary">
-
 
           <!-- Problem -->
 
@@ -157,7 +185,7 @@
             </p>
 
             <p class="case-summary-text">
-             A wholesale platform for retailer acquisition, Faire purchasing, and co-branding, with later explorations into direct ordering and operations.
+              A wholesale platform for retailer acquisition, Faire purchasing, and co-branding, with later explorations into direct ordering and operations.
             </p>
 
           </div>
@@ -172,22 +200,17 @@
             </p>
 
             <p class="case-summary-text">
-             Secured 5+ retail partnerships and increased wholesale orders by 21%.
+              Secured 5+ retail partnerships and increased wholesale orders by 21%.
             </p>
 
           </div>
 
-
         </div>
 
 
-
-        <!-- ===============================================
-             ROLE / COMPANY
-        ================================================ -->
+        <!-- ROLE / TIMELINE / COMPANY -->
 
         <div class="case-meta">
-
 
           <div class="case-meta-item">
 
@@ -201,7 +224,8 @@
 
           </div>
 
-            <div class="case-meta-item">
+
+          <div class="case-meta-item">
 
             <span class="case-meta-label">
               Timeline:
@@ -226,14 +250,10 @@
 
           </div>
 
-
         </div>
 
 
-
-        <!-- ===============================================
-             ONE PROJECT IMAGE
-        ================================================ -->
+        <!-- HERO IMAGE -->
 
         <div class="case-hero-media">
 
@@ -244,20 +264,26 @@
 
         </div>
 
-
       </div>
 
     </section>
 
 
-
     <!-- ===================================================
-         NDA
+         PROJECT SCOPE & NDA
     ==================================================== -->
 
-    <section class="case-section">
+    <section
+      class="case-section"
+      data-nav-label="Project Scope & NDA"
+    >
 
       <div class="case-container">
+
+        <h2 class="case-section-title">
+          Project Scope & NDA
+        </h2>
+
 
         <p class="case-section-intro">
           The launched experience helped prospective retailers
@@ -284,34 +310,30 @@
           </a>
         </p>
 
-
       </div>
 
     </section>
 
-
-
-
-    <!-- ===================================================
-         BACK TO TOP
-    ==================================================== -->
-
-    <div
-      class="scrolltop-container"
-      id="scrollTopArrow"
-    >
-
-      <img
-        src="assets/scrolldown.png"
-        alt="Back to top"
-        class="scrolltop"
-      >
-
-    </div>
-
-
   </main>
 
+
+  <!-- =====================================================
+       BACK TO TOP
+       Outside main for full-page centering
+  ====================================================== -->
+
+  <div
+    class="scrolltop-container"
+    id="scrollTopArrow"
+  >
+
+    <img
+      src="assets/scrolldown.png"
+      alt="Back to top"
+      class="scrolltop"
+    >
+
+  </div>
 
 
   <!-- =====================================================
@@ -343,9 +365,11 @@
   </footer>
 
 
+  <!-- =====================================================
+       SHARED SCRIPT
+  ====================================================== -->
+
   <script src="script.js"></script>
 
-
 </body>
-
 </html>
