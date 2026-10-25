@@ -985,3 +985,708 @@
     transform: rotate(-3deg);
   }
 }
+
+
+
+/* =====================================================
+   OFF THE CLOCK — INTERACTIVE EDITORIAL COLLAGE
+===================================================== */
+
+.about-offclock {
+  width: 100%;
+  padding: 20px clamp(3rem, 6vw, 6rem) 100px;
+  background: var(--about-bg, #FAFAF9);
+}
+
+.about-offclock-inner {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.about-offclock-heading {
+  margin-bottom: 30px;
+}
+
+.about-offclock-heading .about-section-title {
+  margin-bottom: 10px;
+}
+
+.about-offclock-subtitle {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-style: italic;
+  color: var(--about-body, #3e4e50);
+}
+
+/* =====================================================
+   COLLAGE CANVAS
+===================================================== */
+
+.about-offclock-collage {
+  position: relative;
+  isolation: isolate;
+
+  width: 100%;
+  max-width: 1250px;
+  height: clamp(540px, 52vw, 710px);
+
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.about-offclock .offclock-item {
+  position: absolute;
+  box-sizing: border-box;
+  margin: 0;
+  cursor: default;
+
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* =====================================================
+   WHITE PHOTO PAPER — SQUARE CORNERS
+===================================================== */
+
+.about-offclock .offclock-photo {
+  padding: 10px;
+
+  background: #FFFFFF;
+  border: 1px solid #EEECE8;
+  border-radius: 0;
+
+  box-shadow:
+    0 3px 8px rgba(0, 0, 0, 0.07),
+    0 12px 27px rgba(0, 0, 0, 0.09);
+
+  overflow: visible;
+  user-select: none;
+
+  transition:
+    transform 0.38s cubic-bezier(.2, .75, .25, 1),
+    box-shadow 0.38s ease;
+}
+
+.about-offclock .offclock-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  border: none;
+  border-radius: 0;
+
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* =====================================================
+   PHOTO POSITIONS — DESKTOP
+===================================================== */
+
+/* Cafe — top left */
+
+.about-offclock .offclock-cafe {
+  top: 4%;
+  left: 2%;
+
+  width: 24%;
+  aspect-ratio: 4 / 5;
+
+  transform: rotate(-6deg);
+  z-index: 4;
+}
+
+/* Cake — center */
+
+.about-offclock .offclock-baking {
+  top: 11%;
+  left: 30%;
+  right: auto;
+
+  width: 32%;
+  aspect-ratio: 4 / 3;
+
+  transform: rotate(-4deg);
+  z-index: 3;
+}
+
+.about-offclock .offclock-baking img {
+  object-fit: contain;
+  background: #FFFFFF;
+}
+
+/* Seven Sisters — upper right */
+
+.about-offclock .offclock-seaside {
+  top: 3%;
+  left: auto;
+  right: 3%;
+
+  width: 24%;
+  aspect-ratio: 4 / 5;
+
+  transform: rotate(6deg);
+  z-index: 4;
+}
+
+/* Duck — lower left */
+
+.about-offclock .offclock-food {
+  top: 62%;
+  left: 4%;
+  right: auto;
+
+  width: 26%;
+  aspect-ratio: 1.25 / 1;
+
+  transform: rotate(5deg);
+  z-index: 5;
+}
+
+/* Concert — center right */
+
+.about-offclock .offclock-concert {
+  top: 37%;
+  left: 59%;
+  right: auto;
+
+  width: 24%;
+  aspect-ratio: 4 / 5;
+
+  transform: rotate(-5deg);
+  z-index: 6;
+}
+
+/* Classical music — lower center */
+
+.about-offclock .offclock-musical {
+  top: 55%;
+  left: 34%;
+  right: auto;
+
+  width: 21%;
+  aspect-ratio: 4 / 5;
+
+  transform: rotate(-1deg);
+  z-index: 7;
+}
+
+/* Museum — lower right */
+
+.about-offclock .offclock-museum {
+  top: 66%;
+  left: auto;
+  right: 2%;
+
+  width: 19%;
+  aspect-ratio: 4 / 5;
+
+  transform: rotate(5deg);
+  z-index: 5;
+}
+
+/* =====================================================
+   PNG STICKERS — INTERACTIVE
+===================================================== */
+
+.about-offclock .offclock-sticker {
+  z-index: 9;
+
+  pointer-events: auto;
+  user-select: none;
+
+  filter:
+    drop-shadow(0 3px 7px rgba(0, 0, 0, 0.12));
+
+  transition:
+    transform 0.35s cubic-bezier(.2, .75, .25, 1),
+    filter 0.35s ease;
+}
+
+.about-offclock .offclock-sticker img {
+  display: block;
+  width: 100%;
+  height: auto;
+
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Nintendo Switch — right side of Cake */
+
+.about-offclock .offclock-switch {
+  top: 12%;
+  left: 59%;
+
+  width: 13%;
+
+  transform: rotate(9deg);
+}
+
+/* Gorillaz — left-middle */
+
+.about-offclock .offclock-gorillaz {
+  top: 42%;
+  left: 18%;
+
+  width: 19%;
+
+  transform: rotate(8deg);
+}
+
+/* Piano — bottom */
+
+.about-offclock .offclock-piano {
+  top: 88%;
+  left: 53%;
+
+  width: 24%;
+
+  transform: rotate(-9deg);
+}
+
+/* =====================================================
+   HOVER — PHOTOS ONLY, NO CLICK-TO-LOCK
+===================================================== */
+
+@media (hover: hover) and (pointer: fine) {
+
+  .about-offclock .offclock-photo:hover {
+    z-index: 50;
+
+    transform: rotate(0deg) scale(1.065);
+
+    box-shadow:
+      0 9px 23px rgba(0, 0, 0, 0.11),
+      0 22px 45px rgba(0, 0, 0, 0.15);
+  }
+
+  /* Sticker hover */
+
+  .about-offclock .offclock-sticker:hover {
+    z-index: 50;
+
+    transform: rotate(0deg) scale(1.14);
+
+    filter:
+      drop-shadow(0 8px 14px rgba(0, 0, 0, 0.18));
+  }
+}
+
+/* =====================================================
+   SHARED WHITE INFORMATION BUBBLES
+===================================================== */
+
+
+/* =====================================================
+   OFF THE CLOCK — EDITORIAL ANNOTATION CARDS
+   Refined photo captions, not cartoon tooltips
+===================================================== */
+
+/* Shared caption cards */
+
+.about-offclock .offclock-photo::after,
+.about-offclock .offclock-sticker::after {
+  content: attr(data-caption);
+
+  position: absolute;
+  z-index: 4;
+
+  /* Attached closely to photo's lower edge */
+  left: 14px;
+  bottom: -17px;
+
+  width: max-content;
+  max-width: min(265px, 80vw);
+  min-width: 145px;
+  box-sizing: border-box;
+
+  padding: 27px 16px 16px;
+
+  background:
+    linear-gradient(
+      var(--about-accent, #BB3F5B),
+      var(--about-accent, #BB3F5B)
+    )
+    16px 16px / 34px 1px no-repeat,
+    #FFFFFF;
+
+  border: 1px solid #EAE6E2;
+  border-radius: 0;
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.055),
+    0 10px 24px rgba(0, 0, 0, 0.055);
+
+  color: #343638;
+  font-family: inherit;
+  font-size: 0.83rem;
+  font-weight: 450;
+  font-style: normal;
+  line-height: 1.55;
+  letter-spacing: -0.005em;
+  text-align: left;
+  white-space: normal;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translateY(8px);
+
+  pointer-events: none;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.3s cubic-bezier(.2, .75, .25, 1),
+    visibility 0.25s ease;
+}
+
+/* Remove any previous pointer triangles */
+
+.about-offclock .offclock-photo::before,
+.about-offclock .offclock-sticker::before {
+  content: none;
+}
+
+/* Show only during mouse hover */
+
+@media (hover: hover) and (pointer: fine) {
+
+  .about-offclock .offclock-photo:hover::after,
+  .about-offclock .offclock-sticker:hover::after {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+  }
+}
+
+/* For the longer captions, prevent excessive width */
+
+.about-offclock .offclock-musical::after,
+.about-offclock .offclock-switch::after {
+  max-width: 250px;
+}
+
+/* Sticker captions: positioned relative to PNGs */
+
+.about-offclock .offclock-sticker::after {
+  left: 5px;
+  bottom: -18px;
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .about-offclock .offclock-photo::after,
+  .about-offclock .offclock-sticker::after {
+    left: 6px;
+    bottom: -12px;
+
+    min-width: 0;
+    max-width: min(205px, 74vw);
+
+    padding: 24px 12px 12px;
+
+    background:
+      linear-gradient(
+        var(--about-accent, #BB3F5B),
+        var(--about-accent, #BB3F5B)
+      )
+      12px 13px / 28px 1px no-repeat,
+      #FFFFFF;
+
+    font-size: 0.75rem;
+    line-height: 1.45;
+  }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .about-offclock .offclock-photo::after,
+  .about-offclock .offclock-sticker::after {
+    transition: none;
+  }
+}
+
+
+
+
+/* =====================================================
+   EDITORIAL NOTE — BELOW COLLAGE
+===================================================== */
+
+.about-offclock .offclock-note {
+  position: relative;
+
+  width: fit-content;
+  max-width: 320px;
+
+  margin: 100px 0 0 7%;
+
+  font-size: 0.88rem;
+  line-height: 1.55;
+  font-style: italic;
+  color: #807974;
+
+  transform: rotate(-3deg);
+
+  pointer-events: none;
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+  .about-offclock {
+    padding: 15px 2rem 90px;
+  }
+
+  .about-offclock-collage {
+    height: clamp(510px, 60vw, 640px);
+  }
+
+  .about-offclock .offclock-note {
+    font-size: 0.8rem;
+  }
+}
+
+/* =====================================================
+   MOBILE — COMPACT COLLAGE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  .about-offclock {
+    padding: 10px 1.5rem 80px;
+  }
+
+  .about-offclock-heading {
+    margin-bottom: 26px;
+  }
+
+  .about-offclock-collage {
+    max-width: 470px;
+    height: 760px;
+  }
+
+  .about-offclock .offclock-photo {
+    padding: 6px;
+  }
+
+  .about-offclock .offclock-cafe {
+    top: 3%;
+    left: 1%;
+    width: 40%;
+    transform: rotate(-6deg);
+  }
+
+  .about-offclock .offclock-baking {
+    top: 26%;
+    left: 15%;
+    right: auto;
+
+    width: 58%;
+    aspect-ratio: 4 / 3;
+
+    transform: rotate(-4deg);
+  }
+
+  .about-offclock .offclock-seaside {
+    top: 3%;
+    left: auto;
+    right: 1%;
+
+    width: 39%;
+    transform: rotate(6deg);
+  }
+
+  .about-offclock .offclock-food {
+    top: 70%;
+    left: 0;
+    width: 42%;
+    transform: rotate(5deg);
+  }
+
+  .about-offclock .offclock-concert {
+    top: 46%;
+    left: 57%;
+    width: 40%;
+    transform: rotate(-5deg);
+  }
+
+  .about-offclock .offclock-musical {
+    top: 55%;
+    left: 13%;
+    width: 34%;
+    transform: rotate(5deg);
+  }
+
+  .about-offclock .offclock-museum {
+    top: 77%;
+    right: 1%;
+    width: 30%;
+    transform: rotate(-1deg);
+  }
+
+  /* Switch: right edge of Cake */
+
+  .about-offclock .offclock-switch {
+    top: 30%;
+    left: 66%;
+    width: 23%;
+
+    transform: rotate(9deg);
+  }
+
+  .about-offclock .offclock-gorillaz {
+    top: 48%;
+    left: 7%;
+    width: 30%;
+    transform: rotate(8deg);
+  }
+
+  .about-offclock .offclock-piano {
+    top: 89%;
+    left: 37%;
+    width: 42%;
+    transform: rotate(-9deg);
+  }
+
+  .about-offclock .offclock-note {
+    margin: 95px auto 0;
+    max-width: 260px;
+  }
+}
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 480px) {
+
+  .about-offclock {
+    padding: 10px 1.25rem 75px;
+  }
+
+  .about-offclock-collage {
+    height: 660px;
+  }
+
+  .about-offclock .offclock-photo {
+    padding: 5px;
+  }
+
+  .about-offclock .offclock-note {
+    margin-top: 90px;
+  }
+}
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .about-offclock .offclock-photo,
+  .about-offclock .offclock-sticker,
+  .about-offclock .offclock-photo::before,
+  .about-offclock .offclock-photo::after,
+  .about-offclock .offclock-sticker::before,
+  .about-offclock .offclock-sticker::after {
+    transition: none;
+  }
+}
+
+
+
+/* ==========================================
+   OFF THE CLOCK — LABEL REFINEMENTS
+   Lempicka + Nintendo Switch only
+========================================== */
+
+/* Lempicka: narrower, more balanced caption */
+
+.about-offclock .offclock-museum::after {
+  width: 190px;
+  min-width: 0;
+  max-width: 190px;
+
+  left: 50%;
+  bottom: -25px;
+
+  transform: translate(-50%, 8px);
+
+  padding: 26px 13px 13px;
+
+  background:
+    linear-gradient(
+      var(--about-accent, #BB3F5B),
+      var(--about-accent, #BB3F5B)
+    )
+    13px 14px / 30px 1px no-repeat,
+    #FFFFFF;
+}
+
+/* Switch: label BELOW the sticker, not over it */
+
+.about-offclock .offclock-switch::after {
+  width: 210px;
+  min-width: 0;
+  max-width: 210px;
+
+  left: 50%;
+  top: calc(100% + 12px);
+  bottom: auto;
+
+  transform: translate(-50%, 8px);
+
+  padding: 26px 14px 13px;
+
+  background:
+    linear-gradient(
+      var(--about-accent, #BB3F5B),
+      var(--about-accent, #BB3F5B)
+    )
+    14px 14px / 30px 1px no-repeat,
+    #FFFFFF;
+}
+
+/* Keep horizontal positioning when labels appear */
+
+@media (hover: hover) and (pointer: fine) {
+
+  .about-offclock .offclock-museum:hover::after,
+  .about-offclock .offclock-switch:hover::after {
+    transform: translate(-50%, 0);
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 768px) {
+
+  .about-offclock .offclock-museum::after {
+    width: 165px;
+    max-width: 165px;
+    bottom: -18px;
+  }
+
+  .about-offclock .offclock-switch::after {
+    width: 185px;
+    max-width: 185px;
+
+    top: calc(100% + 8px);
+    bottom: auto;
+  }
+}
