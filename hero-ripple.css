@@ -1,0 +1,84 @@
+
+/* =====================================================
+   HERO — NATURAL WATER REFRACTION
+   Minimal / editorial / interactive
+===================================================== */
+
+#home .hero-image {
+  position: relative;
+  isolation: isolate;
+}
+
+/* Original artwork always remains visible */
+
+#home .hero-image .hero-image-base {
+  position: relative;
+  z-index: 1;
+
+  display: block;
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Real-time image refraction layer */
+
+#home .hero-water-canvas {
+  position: absolute;
+  z-index: 2;
+
+  display: block;
+  pointer-events: none;
+
+  background: transparent;
+  opacity: 1;
+}
+
+/* Disable the previous synthetic ripple layers */
+
+#home .hero-image-ripple,
+#home .hero-image-rings,
+#home .hero-image-shine,
+#home .hero-ripple-defs {
+  display: none !important;
+}
+
+/* Remove the previous animated image entrance */
+
+#home .hero-image .hero-image-base {
+  animation: none;
+  filter: none;
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  #home .hero-water-canvas {
+    display: none !important;
+  }
+
+  #home .hero-image .hero-image-base {
+    animation: none !important;
+    transform: none !important;
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  #home .hero-water-canvas {
+    display: none !important;
+  }
+}
+
+
+/* ==========================================
+   PREVENT IMAGE DRAGGING
+========================================== */
+
+#home .hero-image img {
+  -webkit-user-drag: none;
+  user-select: none;
+  -webkit-user-select: none;
+}

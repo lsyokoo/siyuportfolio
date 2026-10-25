@@ -1175,3 +1175,154 @@ nav {
   }
 
 }
+
+/* ==========================================
+   PROJECT THUMBNAIL — CUSTOM CURSOR
+========================================== */
+
+/* ==========================================
+   PROJECT THUMBNAIL — CUSTOM CURSOR
+   View / Coming Soon
+========================================== */
+
+.project-view-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-sizing: border-box;
+  padding: 12px;
+
+  background: #BB3F5B;
+  color: #FFFFFF;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: 1.65rem;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+  text-align: center;
+
+  pointer-events: none;
+  user-select: none;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translate(-50%, -50%) scale(0.8);
+
+  transition:
+    opacity 0.2s ease,
+    transform 0.2s ease,
+    visibility 0.2s ease;
+}
+
+/* Visible cursor */
+
+.project-view-cursor.is-visible {
+  opacity: 1;
+  visibility: visible;
+
+  transform: translate(-50%, -50%) scale(1);
+}
+
+
+/* Coming Soon — dark circle */
+
+.project-view-cursor.is-coming-soon {
+  background-color: #303333;
+
+  color: #FFFFFF;
+
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.16rem;
+  letter-spacing: -0.025em;
+}
+
+
+/* ==========================================
+   DEFAULT CURSOR BEHAVIOR
+========================================== */
+
+@media (hover: hover) and (pointer: fine) {
+
+  /* Normal mouse behavior outside the circle's
+     permitted area */
+
+  [data-project-cursor],
+  [data-project-cursor] * {
+    cursor: inherit;
+  }
+
+  /* Only hide the default mouse while
+     the custom circle is actually visible */
+
+  [data-project-cursor].project-cursor-active,
+  [data-project-cursor].project-cursor-active * {
+    cursor: none;
+  }
+
+  /* Clickable project thumbnails */
+
+  a[data-project-cursor],
+  a[data-project-cursor] * {
+    cursor: pointer;
+  }
+
+  a[data-project-cursor].project-cursor-active,
+  a[data-project-cursor].project-cursor-active * {
+    cursor: none;
+  }
+
+  /* Coming Soon thumbnails are not clickable */
+
+  .ma-card-media[data-cursor-label="Coming Soon"],
+  .ma-card-media[data-cursor-label="Coming Soon"] * {
+    cursor: default;
+  }
+
+  .ma-card-media[data-cursor-label="Coming Soon"].project-cursor-active,
+  .ma-card-media[data-cursor-label="Coming Soon"].project-cursor-active * {
+    cursor: none;
+  }
+
+}
+
+
+/* ==========================================
+   TOUCH DEVICES
+========================================== */
+
+@media (hover: none), (pointer: coarse) {
+  .project-view-cursor {
+    display: none;
+  }
+}
+
+
+/* ==========================================
+   ACCESSIBILITY — REDUCED MOTION
+========================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  .project-view-cursor {
+    transition: none;
+  }
+}

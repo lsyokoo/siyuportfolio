@@ -188,7 +188,7 @@
   line-height: 1.32;
   letter-spacing: -0.035em;
 
-  color: var(--about-accent);
+  color: var(--about-text);
 }
 
 .about-intro-heading-question {

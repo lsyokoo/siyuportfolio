@@ -1,0 +1,378 @@
+
+/* =====================================================
+   INDEX PAGE — EDITORIAL HERO + KINETIC TYPOGRAPHY
+
+   - Wider text column
+   - Burgundy Playfair Display Italic
+   - Natural text wrapping
+   - Animated letters on hover
+   - No underline
+   - Existing project cursor unaffected
+===================================================== */
+
+
+/* =====================================================
+   1. HERO LAYOUT
+===================================================== */
+
+#home .hero-content {
+  display: grid;
+
+  grid-template-columns:
+    minmax(0, 1.65fr)
+    minmax(0, 1fr);
+
+  align-items: center;
+  column-gap: clamp(18px, 2vw, 32px);
+
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+#home .hero-text {
+  width: 100%;
+  max-width: none;
+  min-width: 0;
+}
+
+
+/* =====================================================
+   2. MAIN HEADING
+===================================================== */
+
+#home .hero-title {
+  display: block;
+
+  width: 100%;
+  max-width: none;
+
+  margin: 0 0 32px;
+
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.025em;
+}
+
+#home .hero-title-main {
+  display: block;
+
+  font-family:
+    "Inter",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+
+  font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.025em;
+
+  color: #3E4E50;
+}
+
+
+/* =====================================================
+   3. BURGUNDY PLAYFAIR TEXT
+===================================================== */
+
+#home .hero-name,
+#home .hero-title-highlight {
+  display: inline;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-style: italic;
+  font-weight: 500;
+  font-size: 1.12em;
+  line-height: inherit;
+  letter-spacing: -0.02em;
+
+  color: #BB3F5B;
+
+  background: none;
+  background-image: none;
+  text-decoration: none;
+}
+
+
+/* =====================================================
+   4. SUBTITLE
+===================================================== */
+
+#home .hero-subtitle {
+  max-width: 650px;
+  margin: 0;
+
+  font-family:
+    "Inter",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+
+  font-size: clamp(1rem, 1.2vw, 1.15rem);
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 0;
+
+  color: #535B5B;
+}
+
+
+/* =====================================================
+   5. HERO ARTWORK
+===================================================== */
+
+#home .hero-image {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  width: 100%;
+  min-width: 0;
+}
+
+#home .hero-image img {
+  display: block;
+
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+}
+
+
+/* =====================================================
+   6. KINETIC TYPOGRAPHY — ORIGINAL TEXT
+===================================================== */
+
+/*
+   The original text always determines its layout.
+
+   JS creates temporary visual letters outside
+   the heading when the user hovers.
+*/
+
+#home .kinetic-original {
+  color: inherit;
+}
+
+
+/* Hide original text while animated letters are visible */
+
+#home .hero-name.kinetic-playing .kinetic-original,
+#home .hero-title-highlight.kinetic-playing .kinetic-original {
+  visibility: hidden;
+}
+
+
+/* =====================================================
+   7. KINETIC LETTER OVERLAY
+===================================================== */
+
+.kinetic-letter-layer {
+  position: fixed;
+  inset: 0;
+
+  z-index: 100;
+
+  pointer-events: none;
+  overflow: visible;
+}
+
+.kinetic-letter {
+  position: fixed;
+
+  display: inline-block;
+
+  margin: 0;
+  padding: 0;
+
+  white-space: pre;
+  color: #BB3F5B;
+
+  pointer-events: none;
+  user-select: none;
+
+  transform-origin: 50% 85%;
+
+  animation:
+    kineticLetterBounce
+    650ms
+    cubic-bezier(0.22, 0.8, 0.25, 1)
+    both;
+
+  animation-delay: var(--letter-delay, 0ms);
+}
+
+
+/* =====================================================
+   8. LETTER BOUNCE
+===================================================== */
+
+@keyframes kineticLetterBounce {
+
+  0% {
+    transform:
+      translateY(0)
+      rotate(0deg)
+      scale(1);
+  }
+
+  25% {
+    transform:
+      translateY(-8px)
+      rotate(var(--letter-rotation, -3deg))
+      scale(1.06);
+  }
+
+  48% {
+    transform:
+      translateY(3px)
+      rotate(1.5deg)
+      scale(0.97);
+  }
+
+  70% {
+    transform:
+      translateY(-2px)
+      rotate(-0.7deg)
+      scale(1.02);
+  }
+
+  100% {
+    transform:
+      translateY(0)
+      rotate(0deg)
+      scale(1);
+  }
+
+}
+
+
+/* =====================================================
+   9. SUBTLE HOVER COLOR
+===================================================== */
+
+@media (hover: hover) and (pointer: fine) {
+
+  #home .hero-name,
+  #home .hero-title-highlight {
+    transition: color 250ms ease;
+  }
+
+  #home .hero-name:hover,
+  #home .hero-title-highlight:hover {
+    color: #9F2F4A;
+  }
+
+}
+
+
+/* =====================================================
+   10. TABLET
+===================================================== */
+
+@media (max-width: 1000px) {
+
+  #home .hero-content {
+    grid-template-columns: 1fr;
+    gap: 46px;
+  }
+
+  #home .hero-text {
+    max-width: 760px;
+  }
+
+  #home .hero-title-main {
+    font-size: clamp(1.8rem, 3.2vw, 2.2rem);
+  }
+
+  #home .hero-image {
+    justify-content: center;
+  }
+
+  #home .hero-image img {
+    max-width: 430px;
+  }
+
+}
+
+
+/* =====================================================
+   11. MOBILE
+===================================================== */
+
+@media (max-width: 768px) {
+
+  #home .hero-title {
+    margin-bottom: 28px;
+  }
+
+  #home .hero-title-main {
+    font-size: clamp(1.7rem, 5vw, 2rem);
+    line-height: 1.4;
+  }
+
+  #home .hero-subtitle {
+    font-size: 1rem;
+    line-height: 1.65;
+  }
+
+}
+
+
+/* =====================================================
+   12. SMALL MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+  #home .hero-title-main {
+    font-size: 1.7rem;
+  }
+
+  #home .hero-name,
+  #home .hero-title-highlight {
+    font-size: 1.12em;
+  }
+
+}
+
+
+/* =====================================================
+   13. VERY SMALL MOBILE
+===================================================== */
+
+@media (max-width: 380px) {
+
+  #home .hero-title-main {
+    font-size: 1.55rem;
+  }
+
+  #home .hero-subtitle {
+    font-size: 0.96rem;
+  }
+
+}
+
+
+/* =====================================================
+   14. ACCESSIBILITY
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .kinetic-letter-layer {
+    display: none !important;
+  }
+
+  #home .hero-name.kinetic-playing .kinetic-original,
+  #home .hero-title-highlight.kinetic-playing .kinetic-original {
+    visibility: visible !important;
+  }
+
+}

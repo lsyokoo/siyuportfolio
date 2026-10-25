@@ -472,3 +472,127 @@
   }
 
 }
+
+
+/* =========================================================
+   CREATIVE TECH — EDITORIAL HIGHLIGHT TYPOGRAPHY
+========================================================= */
+
+.ma-hero-highlight {
+  display: inline;
+
+  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+  font-style: italic;
+  font-weight: 500;
+
+  font-size: 1.13em;
+  line-height: inherit;
+  letter-spacing: -0.02em;
+
+  color: #BB3F5B;
+
+  cursor: default;
+}
+
+/* Preserve original spacing and line wrapping */
+
+.ma-hero-highlight .ma-kinetic-original {
+  visibility: visible;
+}
+
+.ma-hero-highlight.ma-kinetic-playing .ma-kinetic-original {
+  visibility: hidden;
+}
+
+/* Floating letter layer */
+
+.ma-kinetic-layer {
+  position: fixed;
+  inset: 0;
+
+  z-index: 100;
+
+  pointer-events: none;
+  overflow: visible;
+}
+
+.ma-kinetic-letter {
+  position: fixed;
+  display: inline-block;
+
+  margin: 0;
+  padding: 0;
+
+  white-space: pre;
+  pointer-events: none;
+  user-select: none;
+
+  transform-origin: 50% 85%;
+
+ animation:
+  maKineticBounce 750ms ease-in-out both;
+
+  animation-delay: var(--ma-letter-delay, 0ms);
+}
+
+@keyframes maKineticBounce {
+  0% {
+    transform: translateY(0) rotate(0deg) scale(1);
+  }
+
+  25% {
+    transform:
+      translateY(-3px)
+      rotate(-1deg)
+      scale(1.02);
+  }
+
+  48% {
+    transform:
+      translateY(1px)
+      rotate(0.5deg)
+      scale(0.99);
+  }
+
+  70% {
+    transform:
+      translateY(-1px)
+      rotate(0deg)
+      scale(1.01);
+  }
+
+  100% {
+    transform:
+      translateY(0)
+      rotate(0deg)
+      scale(1);
+  }
+}
+
+/* Gentle hover color transition */
+
+@media (hover: hover) and (pointer: fine) {
+  .ma-hero-highlight {
+    transition: color 250ms ease;
+  }
+
+  .ma-hero-highlight:hover {
+    color: #9F2F4A;
+  }
+}
+
+/* Accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .ma-kinetic-layer {
+    display: none !important;
+  }
+
+  .ma-hero-highlight.ma-kinetic-playing .ma-kinetic-original {
+    visibility: visible !important;
+  }
+
+  .ma-hero-highlight {
+    transition: none !important;
+  }
+}

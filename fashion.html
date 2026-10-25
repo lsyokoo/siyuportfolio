@@ -7,11 +7,21 @@
 
   <title>Fashion Design | Siyu Liu</title>
 
-  <!-- Shared site styles -->
-  <link rel="stylesheet" href="style1.css">
+ 
+<!-- Playfair Display Italic -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <!-- Shared gallery styles -->
-  <link rel="stylesheet" href="gallery.css">
+<link
+  href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap"
+  rel="stylesheet"
+>
+
+<!-- Shared site styles -->
+<link rel="stylesheet" href="style1.css">
+
+<!-- Shared gallery styles -->
+<link rel="stylesheet" href="gallery.css">
 </head>
 
 
@@ -106,26 +116,30 @@
     <section class="gallery-section">
 
 
-      <!-- =========================
-           FEATURED REMAKE PROJECT
-      ========================== -->
-      <div class="gallery-feature">
 
-        <a
-          href="remake.html"
-          class="gallery-feature-link"
-          aria-label="View Remake fashion project"
-        >
+<!-- =========================
+     FEATURED REMAKE PROJECT
+     Custom View Cursor
+========================== -->
+<div class="gallery-feature">
 
-          <img
-            src="assets/fashion/remake/skirt/4.jpg"
-            alt="Remake fashion project"
-            class="gallery-feature-image"
-          >
+  <a
+    href="remake.html"
+    class="gallery-feature-link"
+    data-project-cursor
+    data-cursor-label="View"
+    aria-label="View Remake fashion project"
+  >
 
-        </a>
+    <img
+      src="assets/fashion/remake/skirt/4.jpg"
+      alt="Remake fashion project"
+      class="gallery-feature-image"
+    >
 
-      </div>
+  </a>
+
+</div>
 
 
 
@@ -308,6 +322,7 @@
        JS
   ========================== -->
   <script src="script.js"></script>
+  <script src="project-cursor.js"></script>
 
 </body>
 

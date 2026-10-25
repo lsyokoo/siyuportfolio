@@ -4,7 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Siyu's Portfolio</title>
-  <link rel="stylesheet" href="style1.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link
+  href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap"
+  rel="stylesheet"
+>
+
+<link rel="stylesheet" href="style1.css">
+<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="hero-ripple.css">
+
 </head>
 <body>
 
@@ -51,22 +63,77 @@
 
  <section id="home" class="fade-in">
   <div class="hero-content">
-    <div class="hero-text">
-      <p class="hero-intro">Welcome! I'm Siyu Liu✨</p>
+   
 
-      <h1 class="hero-title">
-        A product designer & design technologist with a talent for spotting overlooked UX gaps.
-      </h1>
+<div class="hero-text">
 
-      <p id="subtitle" class="hero-subtitle">
-        I use AI tools to rapidly prototype and validate ideas, while optimizing experiences across both B2C &amp; B2B products.
-      </p>
-    </div>
+  <h1 class="hero-title">
+  <span class="hero-title-main">
+    <span class="hero-name">Siyu</span>
+    is a product designer &amp; creative technologist
+    with a talent for spotting
+    <span class="hero-title-highlight">overlooked UX gaps.</span>
+  </span>
+</h1>
 
-    <div class="hero-image">
-      <img src="assets/heroprofile.png" alt="Abstract portrait artwork">
-    </div>
-  </div>
+  <p id="subtitle" class="hero-subtitle">
+Curious about emerging tools and AI, she combines research and rapid prototyping to test ideas and improve B2C and B2B experiences.  </p>
+
+</div>
+
+
+  <div class="hero-image">
+
+  <img
+    src="assets/heroprofile.png"
+    alt="Abstract portrait artwork"
+    class="hero-image-base"
+     draggable="false"
+  >
+
+  <img
+    src="assets/heroprofile.png"
+    alt=""
+    aria-hidden="true"
+    class="hero-image-ripple"
+     draggable="false"
+  >
+
+  <svg
+    class="hero-ripple-defs"
+    width="0"
+    height="0"
+    aria-hidden="true"
+    focusable="false"
+  >
+    <filter
+      id="heroRippleFilter"
+      x="-20%"
+      y="-20%"
+      width="140%"
+      height="140%"
+    >
+      <feTurbulence
+        id="heroRippleNoise"
+        type="fractalNoise"
+        baseFrequency="0.012 0.018"
+        numOctaves="1"
+        seed="8"
+        result="noise"
+      ></feTurbulence>
+
+      <feDisplacementMap
+        id="heroRippleDisplacement"
+        in="SourceGraphic"
+        in2="noise"
+        scale="0"
+        xChannelSelector="R"
+        yChannelSelector="G"
+      ></feDisplacementMap>
+    </filter>
+  </svg>
+
+</div>
 
   <div class="scrolldown-container" id="scrollDownArrow">
     <img src="assets/scrolldown.png" alt="Scroll Down" class="scrolldown">
@@ -107,10 +174,14 @@
       </div>
     </div>
 
-    <a class="project-preview-image hidden-up" href="abg.html">
-      <img src="assets/uiux/abg/web1.png">
-    </a>
-
+ <a
+  class="project-preview-image hidden-up"
+  href="abg.html"
+  data-project-cursor
+  aria-label="View YNYG project"
+>
+  <img src="assets/uiux/abg/web1.png" alt="YNYG project preview">
+</a>
   </div>
 </section>
 
@@ -147,9 +218,17 @@
       </div>
     </div>
 
-    <a class="project-preview-image hidden-up" href="bnu.html">
-      <img src="assets/uiux/bnu1.png">
-    </a>
+  <a
+  class="project-preview-image hidden-up"
+  href="bnu.html"
+  data-project-cursor
+  aria-label="View BNU project"
+>
+  <img
+    src="assets/uiux/bnu1.png"
+    alt="BNU multilingual website project preview"
+  >
+</a>
 
   </div>
 </section>
@@ -165,13 +244,12 @@
       <h2>Virtual Stylist</h2>
 
       <p class="project-description">
-        An AI-powered app that allows users to explore ideal hairstyles and visualize themselves in ways existing tools do not.
+        An inclusive AI-powered app that allows users to explore hairstyles and visualize themselves in ways existing tools do not.
       </p>
 
       <div class="project-pill-row">
         <span>Web Dev</span>
         <span>AI Integration</span>
-        <span>Vibe Coding</span>
       </div>
 
       <div class="project-divider"></div>
@@ -184,9 +262,18 @@
       </div>
     </div>
 
-    <a class="project-preview-image hidden-up" href="stylist.html">
-      <img src="assets/uiux/stylist.png">
-    </a>
+   
+<a
+  class="project-preview-image hidden-up"
+  href="stylist.html"
+  data-project-cursor
+  aria-label="View Virtual Stylist project"
+>
+  <img
+    src="assets/uiux/stylist.png"
+    alt="Virtual Stylist AI-powered hairstyle application preview"
+  >
+</a>
 
   </div>
 </section>
@@ -209,7 +296,6 @@
 <div class="project-pill-row">
   <span>B2B Commerce</span>
   <span>Internal Tools</span>
-  <span>Systems Thinking</span>
 </div>
 
       <div class="project-divider"></div>
@@ -226,9 +312,17 @@
       </div>
     </div>
 
-    <a class="project-preview-image hidden-up" href="abg2b.html">
-      <img src="assets/uiux/abg/Wholesale.png">
-    </a>
+ <a
+  class="project-preview-image hidden-up"
+  href="abg2b.html"
+  data-project-cursor
+  aria-label="View YNYG Wholesale project"
+>
+  <img
+    src="assets/uiux/abg/Wholesale.png"
+    alt="YNYG Wholesale platform project preview"
+  >
+</a>
 
   </div>
 </section>
@@ -255,6 +349,9 @@
 
   <!-- JS -->
   <script src="script.js"></script>
+  <script src="project-cursor.js"></script>
+  <script src="hero-kinetic.js"></script>
+  <script src="hero-ripple.js"></script>
 </body>
 </html>
 

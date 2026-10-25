@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,6 +7,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Media Art | Siyu Liu</title>
+
+  <!-- Playfair Display Italic -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap"
+    rel="stylesheet"
+  />
 
   <!-- Shared styles -->
   <link rel="stylesheet" href="style1.css" />
@@ -48,9 +58,7 @@
 
         <div class="icons">
 
-          <!-- Language -->
           <div class="language-dropdown">
-
             <svg
               class="globe-icon"
               viewBox="0 0 24 24"
@@ -71,10 +79,8 @@
               <span class="lang-option disabled">中文</span>
               <span class="lang-option disabled">日本語</span>
             </div>
-
           </div>
 
-          <!-- Mobile menu -->
           <div class="hamburger">
             <span></span>
             <span></span>
@@ -84,7 +90,6 @@
         </div>
 
       </div>
-
     </nav>
   </header>
 
@@ -102,12 +107,16 @@
           HCI · INTERACTIVE MEDIA · IMMERSIVE EXPERIENCE · CREATIVE TECHNOLOGY
         </p>
 
-        <p class="ma-hero-description">
-          Experimenting with visuals, codes, sensors, and sound to transform
-          everyday perception, inviting people to sense, move, and connect
-          through technology in unexpected ways🙌.
-        </p>
-
+      <p class="ma-hero-description">
+  Experimenting with visuals, codes, sensors, and sound to
+  <span class="ma-hero-highlight">
+    transform everyday perception
+  </span>,
+  inviting people to sense, move, and connect through technology
+  <span class="ma-hero-highlight">
+    in unexpected ways
+  </span> 🙌.
+</p>
       </div>
 
     </section>
@@ -122,11 +131,15 @@
 
 
         <!-- =====================
-             Slimeship
+             Slimeship — Coming Soon
         ====================== -->
         <article class="ma-card">
 
-          <div class="ma-card-media">
+          <div
+            class="ma-card-media"
+            data-project-cursor
+            data-cursor-label="Coming Soon"
+          >
             <img
               src="assets/vr/thesis/thesis1.jpg"
               alt="Slimeship interactive installation"
@@ -155,13 +168,17 @@
 
 
         <!-- =====================
-             Mosquito Havoc
+             Mosquito Havoc — View
         ====================== -->
         <article class="ma-card">
 
           <a href="mosquito.html" class="ma-card-link">
 
-            <div class="ma-card-media">
+            <div
+              class="ma-card-media"
+              data-project-cursor
+              data-cursor-label="View"
+            >
               <img
                 src="assets/vr/mosquito.png"
                 alt="Mosquito Havoc interactive game"
@@ -192,13 +209,17 @@
 
 
         <!-- =====================
-             ExplorEAR
+             ExplorEAR — View
         ====================== -->
         <article class="ma-card">
 
           <a href="explorear.html" class="ma-card-link">
 
-            <div class="ma-card-media">
+            <div
+              class="ma-card-media"
+              data-project-cursor
+              data-cursor-label="View"
+            >
               <img
                 src="assets/vr/ear/explorear.png"
                 alt="ExplorEAR immersive VR experience"
@@ -229,11 +250,15 @@
 
 
         <!-- =====================
-             ByteDance Collaboration
+             ByteDance — Coming Soon
         ====================== -->
         <article class="ma-card">
 
-          <div class="ma-card-media">
+          <div
+            class="ma-card-media"
+            data-project-cursor
+            data-cursor-label="Coming Soon"
+          >
             <img
               src="assets/bytedance.png"
               alt="ByteDance collaborative audiovisual performance project"
@@ -261,27 +286,27 @@
         </article>
 
 
-        
         <!-- =====================
              Interactive Retro Webcam
+             No custom cursor
         ====================== -->
         <article class="ma-card">
 
           <div class="ma-card-media">
 
-<video
-  autoplay
-  muted
-  loop
-  playsinline
-  controls
-  class="ma-card-video"
->
-  <source
-    src="assets/visual/Experimental Camera.mp4"
-    type="video/mp4"
-  />
-</video>
+            <video
+              autoplay
+              muted
+              loop
+              playsinline
+              controls
+              class="ma-card-video"
+            >
+              <source
+                src="assets/visual/Experimental Camera.mp4"
+                type="video/mp4"
+              />
+            </video>
 
           </div>
 
@@ -302,6 +327,7 @@
 
         <!-- =====================
              STYLY XR
+             No custom cursor
         ====================== -->
         <article class="ma-card">
 
@@ -326,25 +352,18 @@
 
         </article>
 
-
       </div>
 
     </section>
 
 
-
-
     <div class="scrolltop-container" id="scrollTopArrow">
-  <img
-    src="assets/scrolldown.png"
-    alt="Back to top"
-    class="scrolltop"
-  >
-</div>
-
-
-
-
+      <img
+        src="assets/scrolldown.png"
+        alt="Back to top"
+        class="scrolltop"
+      />
+    </div>
 
   </main>
 
@@ -373,7 +392,8 @@
 
 
   <script src="script.js"></script>
+  <script src="project-cursor.js"></script>
+  <script src="mediaart-kinetic.js"></script>
 
 </body>
-
 </html>
