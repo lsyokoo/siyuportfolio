@@ -1,419 +1,734 @@
-/* =========================================================
-   ABOUT PAGE
-========================================================= */
 
+/* =====================================================
+   ABOUT PAGE — EDITORIAL + STICKER COLLAGE
+===================================================== */
 
-/* =========================================================
-   ABOUT INTRO SECTION
-========================================================= */
+:root {
+  --about-text: #303333;
+  --about-body: #3e4e50;
+  --about-muted: #626867;
+  --about-accent: #BB3F5B;
+  --about-accent-hover: #9F2F4A;
+  --about-border: #E5E5E2;
+  --about-bg: #FAFAF9;
+}
+
+/* =====================================================
+   SHARED LAYOUT
+===================================================== */
+
+.about-intro,
+.about-background,
+.about-leadership {
+  width: 100%;
+  background: var(--about-bg);
+}
+
+.about-intro-inner,
+.about-background-inner,
+.about-leadership-inner {
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-width: 0;
+}
+
+.about-section-title {
+  margin: 0 0 25px;
+  font-size: clamp(1.7rem, 2.3vw, 2rem);
+  line-height: 1.2;
+  font-weight: 500;
+  letter-spacing: -0.3px;
+  color: var(--about-accent);
+}
+
+/* =====================================================
+   INTRO
+===================================================== */
 
 .about-intro {
-  padding:
-    155px
-    clamp(3rem, 6vw, 6rem)
-    55px;
-
-  background-color: var(--bg-light);
+  padding: 145px clamp(3rem, 6vw, 6rem) 65px;
 }
-
-
-/* Main two-column layout */
 
 .about-intro-inner {
-  width: 100%;
-  max-width: 1100px;
-
-  margin: 0 auto;
-
   display: grid;
-
-  grid-template-columns:
-    minmax(240px, 300px)
-    minmax(0, 1fr);
-
+  grid-template-columns: 225px minmax(0, 1fr);
+  column-gap: clamp(45px, 5.5vw, 85px);
   align-items: center;
-
-  gap: clamp(35px, 4vw, 55px);
-
-  opacity: 0;
-
-  animation:
-    aboutFadeIn
-    0.65s
-    ease-out
-    forwards;
+  animation: aboutFadeIn 0.65s ease-out both;
 }
 
-
-/* =========================================================
-   PROFILE PHOTO
-========================================================= */
+/* =====================================================
+   PROFILE POLAROID
+===================================================== */
 
 .about-profile {
   width: 100%;
-}
-
-
-.about-profile-image {
-  width: 100%;
-  height: auto;
-
-  display: block;
-
-  box-shadow:
-    0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-
-/* =========================================================
-   ABOUT BIO
-========================================================= */
-
-.about-bio {
-  width: 100%;
-  max-width: 690px;
-}
-
-
-/* Main greeting */
-
-.about-bio-title {
-  margin: 0 0 16px 0;
-
-  font-size: clamp(1.6rem, 2.2vw, 2.2rem);
-
-  line-height: 1.15;
-
-  font-weight: 400;
-
-  letter-spacing: -0.4px;
-
-  color: #263638;
-}
-
-
-/* Main paragraphs */
-
-.about-bio-copy p {
-  margin: 0 0 13px 0;
-
-  font-size: 1rem;
-
-  line-height: 1.6;
-
-  color: #3e4e50;
-}
-
-
-/* Personal / hobbies paragraph */
-
-.about-bio-copy .about-personal {
-  margin-top: 17px;
-  margin-bottom: 0;
-}
-
-
-/* =========================================================
-   SOCIAL LINKS
-========================================================= */
-
-.about-socials {
-  display: flex;
-
-  align-items: center;
-
-  gap: 15px;
-
-  margin-top: 14px;
-
-  padding: 5px 0;
-
+  min-width: 0;
+  padding: 14px 10px 12px;
   overflow: visible;
 }
 
+.about-polaroid {
+  position: relative;
+  width: 205px;
+  max-width: 100%;
+  padding: 10px 10px 11px;
 
-.about-social-link {
-  display: inline-flex;
+  background: #FFFFFF;
+  border: 1px solid #EEECE8;
 
-  align-items: center;
+  box-shadow:
+    0 3px 8px rgba(0, 0, 0, 0.07),
+    0 12px 27px rgba(0, 0, 0, 0.09);
 
-  justify-content: center;
+  transform: rotate(-3deg);
+  transform-origin: center center;
 
-  text-decoration: none;
+  overflow: visible;
 
-  color: #3e4e50;
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease;
 }
 
+/* Original profile hover is preserved */
 
-/* Base icon */
+.about-polaroid:hover {
+  transform: rotate(0deg) translateY(-4px);
 
-.about-social-icon {
-  width: 24px;
-  height: 24px;
+  box-shadow:
+    0 6px 14px rgba(0, 0, 0, 0.08),
+    0 18px 34px rgba(0, 0, 0, 0.11);
+}
+
+/* Profile Tape */
+
+.about-profile-tape {
+  position: absolute;
+  z-index: 5;
+
+  top: -14px;
+  left: 50%;
 
   display: block;
 
-  color: #3e4e50;
+  width: 95px;
+  height: auto;
+  max-width: 54%;
 
-  transform-origin: center;
+  transform: translateX(-50%) rotate(-6deg);
 
-  transition:
-    fill 0.3s ease,
-    stroke 0.3s ease,
-    transform 0.2s ease;
+  pointer-events: none;
+  user-select: none;
+  transition: none;
 }
 
+.about-profile-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 4.6;
 
-/* =========================================================
-   EMAIL ICON
-========================================================= */
+  object-fit: cover;
+  object-position: center 35%;
+
+  background: #EBE8E5;
+}
+
+.about-polaroid-caption {
+  padding: 12px 0 2px;
+
+  font-size: 0.77rem;
+  line-height: 1.2;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+
+  text-align: center;
+  color: #76716D;
+}
+
+/* =====================================================
+   BIO
+===================================================== */
+
+.about-bio {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-self: center;
+
+  width: 100%;
+  min-width: 0;
+}
+
+.about-bio-copy {
+  max-width: 850px;
+}
+
+.about-intro-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  gap: 7px;
+  max-width: 850px;
+  margin: 0 0 24px;
+  padding: 0;
+
+  color: var(--about-accent);
+}
+
+.about-intro-heading-main {
+  display: block;
+
+  font-family: inherit;
+  font-size: clamp(1.55rem, 2.3vw, 2rem);
+  font-weight: 500;
+  line-height: 1.32;
+  letter-spacing: -0.035em;
+
+  color: var(--about-accent);
+}
+
+.about-intro-heading-question {
+  display: block;
+
+  font-family:
+    "Playfair Display",
+    Georgia,
+    "Times New Roman",
+    serif;
+
+  font-size: clamp(1.65rem, 2.65vw, 2.45rem);
+  font-style: italic;
+  font-weight: 500;
+  line-height: 1.38;
+  letter-spacing: -0.02em;
+
+  color: var(--about-accent);
+}
+
+.about-bio-copy p {
+  margin: 0 0 13px;
+
+  font-size: 1rem;
+  line-height: 1.65;
+
+  color: var(--about-body);
+}
+
+.about-bio-copy p:last-child {
+  margin-bottom: 0;
+}
+
+.about-bio-copy .about-personal {
+  margin-top: 15px;
+  margin-bottom: 0;
+}
+
+/* =====================================================
+   SOCIAL ICONS — ORIGINAL STYLING
+===================================================== */
+
+.about-socials {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 13px;
+  padding: 0;
+}
+
+.about-social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  color: var(--about-body);
+  text-decoration: none;
+}
+
+.about-social-icon {
+  display: block;
+  width: 24px;
+  height: 24px;
+
+  color: var(--about-body);
+
+  transition:
+    fill 0.25s ease,
+    stroke 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* Email */
 
 .about-social-email .about-social-icon {
   width: 24px;
   height: 24px;
-
-  fill: #3e4e50;
-  stroke: #3e4e50;
+  fill: var(--about-body);
+  stroke: var(--about-body);
 }
 
-
-.about-social-email:hover .about-social-icon {
-  fill: var(--accent-pink);
-  stroke: var(--accent-pink);
-
-  transform: scale(1.1);
-}
-
-
-/* =========================================================
-   LINKEDIN ICON
-========================================================= */
+/* LinkedIn — original outline icon */
 
 .about-social-linkedin .about-social-icon {
+  display: block;
   width: 28px;
   height: 28px;
 
-  fill: #3e4e50;
-
-  stroke: #3e4e50;
-
+  fill: var(--about-body);
+  stroke: var(--about-body);
   stroke-width: 0.1px;
 }
 
-
-.about-social-linkedin:hover .about-social-icon {
-  fill: var(--accent-pink);
-
-  stroke: var(--accent-pink);
-
-  transform: scale(1.1);
-}
-
-
-/* =========================================================
-   INSTAGRAM ICON
-========================================================= */
+/* Instagram */
 
 .about-social-instagram .about-social-icon {
-  width: 24px;
-  height: 24px;
-
   fill: none;
-
-  stroke: #3e4e50;
+  stroke: var(--about-body);
 }
 
+/* Social Hover */
+
+.about-social-email:hover .about-social-icon,
+.about-social-linkedin:hover .about-social-icon {
+  fill: var(--about-accent);
+  stroke: var(--about-accent);
+  transform: scale(1.1);
+}
 
 .about-social-instagram:hover .about-social-icon {
   fill: none;
-
-  stroke: var(--accent-pink);
-
+  stroke: var(--about-accent);
   transform: scale(1.1);
 }
 
+/* =====================================================
+   WORK + EDUCATION
+===================================================== */
 
-/* =========================================================
-   ABOUT EDUCATION SECTION
-========================================================= */
-
-.about-education {
-  width: 100%;
-
-  padding:
-    18px
-    clamp(3rem, 6vw, 6rem)
-    65px;
-
-  background-color: var(--bg-light);
-
-  opacity: 0;
-
-  animation:
-    aboutFadeIn
-    0.7s
-    ease-out
-    forwards;
-
-  animation-delay: 0.18s;
+.about-background {
+  padding: 25px clamp(3rem, 6vw, 6rem) 60px;
+  animation: aboutFadeIn 0.7s ease-out both;
 }
 
-
-/* Keep title aligned with profile photo */
-
-.about-education > .about-section-title {
-  width: 100%;
-  max-width: 1100px;
-
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
-/* Keep education content aligned with profile photo too */
-
-.about-education > .about-education-grid {
-  width: 100%;
-  max-width: 1100px;
-
-  margin-left: auto;
-  margin-right: auto;
-}
-
-
-/* =========================================================
-   EDUCATION TITLE
-========================================================= */
-
-.about-section-title {
-  margin-bottom: 18px;
-
-  font-size: 2rem;
-
-  line-height: 1.2;
-
-  font-weight: 400;
-
-  color: #263638;
-}
-
-
-/* =========================================================
-   EDUCATION GRID
-========================================================= */
-
-.about-education-grid {
+.about-background-inner {
   display: grid;
-
-  grid-template-columns:
-    360px
-    360px
-    150px;
-
-  column-gap: 55px;
-
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(55px, 7vw, 110px);
   align-items: start;
-
-  justify-content: start;
 }
 
+.about-background-column {
+  min-width: 0;
+}
 
-/* =========================================================
-   EDUCATION TEXT
-========================================================= */
+.about-school,
+.about-work-item {
+  margin-bottom: 30px;
+}
 
-.about-education-item h3 {
-  margin-bottom: 4px;
+.about-school:last-child,
+.about-work-item:last-child {
+  margin-bottom: 0;
+}
+
+.about-school h3,
+.about-work-item h3 {
+  margin: 0 0 4px;
 
   font-size: 1rem;
-
   line-height: 1.4;
+  font-weight: 650;
 
-  font-weight: 400;
-
-  color: #263638;
+  color: var(--about-text);
 }
 
-
-.about-education-item p {
-  margin-bottom: 2px;
+.about-school p,
+.about-work-company {
+  margin: 0 0 3px;
 
   font-size: 1rem;
-
   line-height: 1.5;
 
-  color: #3e4e50;
+  color: var(--about-body);
 }
 
+.about-work-company {
+  font-style: italic;
+}
 
-/* Date / year */
+.about-school em,
+.about-work-date {
+  display: block;
+  margin: 0;
 
-.about-education-item em {
   font-size: 0.95rem;
   line-height: 1.5;
-  color: #8a8f91;
-
-  font-style: italic !important;
+  font-style: italic;
   font-weight: 400;
+
+  color: var(--about-muted);
 }
 
+/* =====================================================
+   EDUCATION LOGO STICKER COLLAGE
+===================================================== */
 
-/* =========================================================
-   EDUCATION LOGOS
-========================================================= */
+/* Education text on left, collage on right */
 
-.about-education-logos {
-  width: 150px;
-
+.about-education-content {
   display: grid;
-
-  grid-template-columns:
-    71px
-    71px;
-
-  column-gap: 8px;
-
-  row-gap: 7px;
-
+  grid-template-columns: minmax(0, 1fr) 160px;
+  gap: 18px;
   align-items: center;
-
-  justify-self: start;
 }
 
+.about-education-list {
+  min-width: 0;
+}
 
-/* Parsons */
+/* SVG filter definitions are invisible */
 
-.about-education-logos img:nth-child(1) {
-  grid-column: 1 / -1;
+.about-sticker-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
 
-  width: 150px;
+/* Sticker placement area */
+
+.about-education-collage {
+  position: relative;
+  width: 160px;
+  height: 190px;
+
+  overflow: visible;
+  flex-shrink: 0;
+}
+
+/* Shared sticker styling */
+
+.about-logo-sticker {
+  position: absolute;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: transparent;
+  border: 0;
+  padding: 0;
+
+  pointer-events: none;
+  transition: none;
+}
+
+.about-logo-sticker img {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  /* White die-cut border follows PNG alpha */
+  filter: url(#about-logo-white-outline);
+
+  transition: none;
+}
+
+/* UW sticker — behind */
+
+.about-logo-uw {
+  top: 4px;
+  right: 0;
+
+  width: 122px;
+  height: 122px;
+
+  z-index: 1;
+
+  transform: rotate(10deg);
+
+  filter:
+    drop-shadow(0 4px 5px rgba(0, 0, 0, 0.12));
+}
+
+/* Parsons sticker — in front */
+
+.about-logo-parsons {
+  left: 0;
+  bottom: 8px;
+
+  width: 145px;
+  height: 94px;
+
+  z-index: 2;
+
+  transform: rotate(-9deg);
+
+  filter:
+    drop-shadow(0 4px 5px rgba(0, 0, 0, 0.12));
+}
+
+/* No sticker hover effects */
+
+.about-logo-sticker:hover,
+.about-logo-sticker:hover img {
+  transition: none;
+}
+
+/* =====================================================
+   LEADERSHIP
+===================================================== */
+
+.about-leadership {
+  padding: 20px clamp(3rem, 6vw, 6rem) 85px;
+  animation: aboutFadeIn 0.7s ease-out both;
+}
+
+.about-leadership-inner > .about-section-title {
+  margin-bottom: 30px;
+}
+
+.about-leadership-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  column-gap: clamp(50px, 6vw, 90px);
+  row-gap: 56px;
+
+  align-items: start;
+}
+
+.about-leadership-card {
+  display: flex;
+  flex-direction: column;
+
+  width: 100%;
+  min-width: 0;
+
+  margin: 0;
+  padding: 0;
+
+  border: none;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.about-leadership-text {
+  min-width: 0;
+  margin-bottom: 16px;
+}
+
+.about-leadership-text h3 {
+  margin: 0 0 3px;
+
+  font-size: 1rem;
+  line-height: 1.4;
+  font-weight: 650;
+
+  color: var(--about-text);
+}
+
+.about-leadership-org {
+  margin: 0 0 3px;
+
+  font-size: 1rem;
+  line-height: 1.45;
+  font-style: italic;
+
+  color: var(--about-body);
+}
+
+.about-leadership-detail {
+  margin: 0;
+
+  font-size: 1rem;
+  line-height: 1.5;
+
+  color: var(--about-body);
+}
+
+/* =====================================================
+   ADMISSIONS ADVISING LINK
+===================================================== */
+
+.about-detail-separator {
+  display: inline;
+  padding: 0 3px;
+  color: var(--about-body);
+}
+
+.about-advising-link {
+  display: inline-flex;
+  align-items: baseline;
+  vertical-align: baseline;
+
+  gap: 5px;
+
+  color: var(--about-accent);
+  font-size: inherit;
+  font-weight: 500;
+  line-height: inherit;
+
+  text-decoration: none;
+  white-space: nowrap;
+
+  transition: color 0.25s ease;
+}
+
+.about-advising-link-text {
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.about-advising-arrow {
+  display: inline-block;
+
+  font-size: 0.95em;
+  line-height: 1;
+  text-decoration: none;
+
+  transition: transform 0.25s ease;
+}
+
+.about-advising-link:hover {
+  color: var(--about-accent-hover);
+}
+
+.about-advising-link:hover .about-advising-arrow {
+  transform: translate(3px, -3px);
+}
+
+/* =====================================================
+   WHITE PHOTO PAPER — LEADERSHIP
+===================================================== */
+
+.about-leadership-image {
+  width: 100%;
+  min-width: 0;
+}
+
+.about-photo-frame {
+  position: relative;
+  isolation: isolate;
+
+  width: 100%;
+
+  padding: 12px 12px 20px;
+
+  background: #FFFFFF;
+  border: 1px solid #F0EEEB;
+
+  box-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.035),
+    0 8px 19px rgba(0, 0, 0, 0.075);
+
+  overflow: visible;
+
+  transform: none;
+  transition: none;
+}
+
+/* Photos remain uncropped */
+
+.about-photo-frame .about-leadership-photo {
+  display: block;
+
+  width: 100%;
+  aspect-ratio: 16 / 10;
+
+  object-fit: contain;
+  object-position: center;
+
+  background: #FFFFFF;
+}
+
+/* =====================================================
+   REAL TAPE
+===================================================== */
+
+.about-photo-frame .about-real-tape {
+  position: absolute;
+  z-index: 3;
+
+  display: block;
+
+  top: -17px;
+  left: 50%;
+
+  width: 115px;
   height: auto;
+  max-width: 34%;
 
-  display: block;
+  transform: translateX(-50%);
 
-  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+
+  transition: none;
 }
 
+/* Tape positions from your current version */
 
-/* UW + MHCI+D */
-
-.about-education-logos img:nth-child(2),
-.about-education-logos img:nth-child(3) {
-  width: 71px;
-  height: 46px;
-
-  display: block;
-
-  object-fit: contain;
+.about-leadership-card:nth-child(1) .about-real-tape {
+  transform: translateX(-50%) rotate(-4deg);
 }
 
+.about-leadership-card:nth-child(2) .about-real-tape {
+  transform: translateX(-50%) rotate(3deg);
+}
 
-/* =========================================================
-   INTRO ANIMATION
-========================================================= */
+.about-leadership-card:nth-child(3) .about-real-tape {
+  transform: translateX(-50%) rotate(-3deg);
+}
+
+.about-leadership-card:nth-child(4) .about-real-tape {
+  transform: translateX(-50%) rotate(2deg);
+}
+
+/* =====================================================
+   NO LEADERSHIP PHOTO HOVER
+===================================================== */
+
+.about-photo-frame,
+.about-photo-frame:hover,
+.about-leadership-card:hover .about-photo-frame {
+  transform: none;
+  transition: none;
+
+  box-shadow:
+    0 2px 5px rgba(0, 0, 0, 0.035),
+    0 8px 19px rgba(0, 0, 0, 0.075);
+}
+
+.about-real-tape,
+.about-leadership-photo {
+  transition: none;
+}
+
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
+
+.about-social-link:focus-visible,
+.about-advising-link:focus-visible {
+  outline: 2px solid var(--about-accent);
+  outline-offset: 5px;
+}
+
+/* =====================================================
+   PAGE LOAD ANIMATION
+===================================================== */
 
 @keyframes aboutFadeIn {
-
   from {
     opacity: 0;
     transform: translateY(10px);
@@ -423,875 +738,197 @@
     opacity: 1;
     transform: translateY(0);
   }
-
 }
 
-
-/* =========================================================
-   LARGE TABLET / SMALL DESKTOP
-========================================================= */
-
-@media (max-width: 1050px) {
-
-  .about-education-grid {
-    grid-template-columns:
-      minmax(0, 1fr)
-      minmax(0, 1fr);
-
-    column-gap: 24px;
-    row-gap: 24px;
-  }
-
-
-  .about-education-logos {
-    grid-column: 1 / -1;
-
-    justify-self: start;
-  }
-
-}
-
-
-/* =========================================================
+/* =====================================================
    TABLET
-========================================================= */
+===================================================== */
 
-@media (max-width: 900px) {
+@media (max-width: 1100px) and (min-width: 769px) {
+
+  .about-education-content {
+    grid-template-columns: 1fr;
+    gap: 2px;
+  }
+
+  .about-education-collage {
+    margin-left: auto;
+    margin-right: 20px;
+    margin-top: 10px;
+    height: 145px;
+  }
+}
+
+@media (max-width: 1000px) {
 
   .about-intro {
-    padding:
-      135px
-      2rem
-      50px;
+    padding: 130px 2rem 55px;
   }
-
 
   .about-intro-inner {
-    grid-template-columns:
-      minmax(220px, 270px)
-      minmax(0, 1fr);
-
-    gap: 45px;
+    grid-template-columns: 215px minmax(0, 1fr);
+    column-gap: 40px;
   }
 
-
-  .about-bio-title {
-    font-size:
-      clamp(
-        1.5rem,
-        2.5vw,
-        1.9rem
-      );
+  .about-polaroid {
+    width: 195px;
   }
 
-
-  .about-education {
-    padding:
-      16px
-      2rem
-      60px;
+  .about-background {
+    padding: 25px 2rem 55px;
   }
 
+  .about-background-inner {
+    column-gap: 40px;
+  }
+
+  .about-leadership {
+    padding: 20px 2rem 75px;
+  }
+
+  .about-leadership-grid {
+    column-gap: 35px;
+    row-gap: 48px;
+  }
+
+  .about-intro-heading-main {
+    font-size: clamp(1.5rem, 2.6vw, 1.85rem);
+  }
+
+  .about-intro-heading-question {
+    font-size: clamp(1.6rem, 3vw, 2.1rem);
+  }
 }
 
-
-/* =========================================================
+/* =====================================================
    MOBILE
-========================================================= */
+===================================================== */
 
 @media (max-width: 768px) {
 
   .about-intro {
-    padding:
-      120px
-      2rem
-      45px;
+    padding: 115px 2rem 45px;
   }
-
 
   .about-intro-inner {
     grid-template-columns: 1fr;
-
-    gap: 36px;
-
+    gap: 28px;
     align-items: start;
   }
 
-
   .about-profile {
     width: 100%;
-    max-width: 300px;
+    padding: 12px 10px 8px;
   }
 
+  .about-polaroid {
+    width: 205px;
+  }
 
   .about-bio {
-    width: 100%;
-    max-width: 650px;
+    max-width: 680px;
   }
 
-
-  .about-bio-title {
-    margin-bottom: 15px;
-
-    font-size: 1.8rem;
+  .about-intro-heading {
+    margin-bottom: 21px;
+    gap: 6px;
   }
 
-
-  .about-bio-copy p {
-    margin-bottom: 13px;
-
-    font-size: 1rem;
-
-    line-height: 1.6;
-  }
-
-
-  .about-bio-copy .about-personal {
-    margin-top: 16px;
-    margin-bottom: 0;
-  }
-
-
-  .about-socials {
-    margin-top: 13px;
-  }
-
-
-  .about-education {
-    padding:
-      14px
-      2rem
-      55px;
-  }
-
-
-  /* Left: education text
-     Right: logo group */
-
-  .about-education-grid {
-    grid-template-columns:
-      minmax(0, 1fr)
-      120px;
-
-    column-gap: 16px;
-    row-gap: 20px;
-
-    align-items: start;
-  }
-
-
-  .about-education-item:nth-child(1) {
-    grid-column: 1;
-    grid-row: 1;
-  }
-
-
-  .about-education-item:nth-child(2) {
-    grid-column: 1;
-    grid-row: 2;
-  }
-
-
-  .about-education-logos {
-    grid-column: 2;
-    grid-row: 1 / 3;
-
-    width: 120px;
-
-    grid-template-columns:
-      56px
-      56px;
-
-    column-gap: 8px;
-    row-gap: 6px;
-
-    justify-self: end;
-    align-self: center;
-  }
-
-
-  .about-education-logos img:nth-child(1) {
-    width: 120px;
-  }
-
-
-  .about-education-logos img:nth-child(2),
-  .about-education-logos img:nth-child(3) {
-    width: 56px;
-    height: 38px;
-  }
-
-}
-
-
-/* =========================================================
-   SMALL MOBILE
-========================================================= */
-
-@media (max-width: 600px) {
-
-  .about-intro {
-    padding:
-      105px
-      1.25rem
-      42px;
-  }
-
-
-  .about-intro-inner {
-    gap: 30px;
-  }
-
-
-  .about-profile {
-    max-width: 260px;
-  }
-
-
-  .about-bio-title {
-    margin-bottom: 14px;
-
-    font-size: 1.65rem;
-
-    line-height: 1.2;
-  }
-
-
-  .about-bio-copy p {
-    margin-bottom: 12px;
-
-    font-size: 0.96rem;
-
-    line-height: 1.6;
-  }
-
-
-  .about-bio-copy .about-personal {
-    margin-top: 15px;
-    margin-bottom: 0;
-  }
-
-
-  .about-socials {
-    gap: 14px;
-
-    margin-top: 12px;
-  }
-
-
-  .about-social-icon {
-    width: 23px;
-    height: 23px;
-  }
-
-
-  .about-social-email .about-social-icon {
-    width: 23px;
-    height: 23px;
-  }
-
-
-  .about-social-linkedin .about-social-icon {
-    width: 27px;
-    height: 27px;
-  }
-
-
-  .about-social-instagram .about-social-icon {
-    width: 23px;
-    height: 23px;
-  }
-
-
-  .about-education {
-    padding:
-      12px
-      1.25rem
-      50px;
-  }
-
-
-  .about-section-title {
-    margin-bottom: 16px;
-
+  .about-intro-heading-main {
     font-size: 1.7rem;
   }
 
-
-  .about-education-grid {
-    grid-template-columns:
-      minmax(0, 1fr)
-      105px;
-
-    column-gap: 12px;
-    row-gap: 18px;
+  .about-intro-heading-question {
+    font-size: clamp(1.8rem, 4.7vw, 2.2rem);
   }
 
-
-  .about-education-item h3,
-  .about-education-item p {
-    font-size: 0.96rem;
+  .about-background {
+    padding: 18px 2rem 50px;
   }
 
-
-  .about-education-item em {
-    font-size: 0.9rem;
-  }
-
-
-  .about-education-logos {
-    width: 105px;
-
-    grid-template-columns:
-      49px
-      49px;
-
-    column-gap: 7px;
-
-    justify-self: end;
-    align-self: center;
-  }
-
-
-  .about-education-logos img:nth-child(1) {
-    width: 105px;
-  }
-
-
-  .about-education-logos img:nth-child(2),
-  .about-education-logos img:nth-child(3) {
-    width: 49px;
-    height: 34px;
-  }
-
-}
-
-
-/* =========================================================
-   VERY SMALL MOBILE
-========================================================= */
-
-@media (max-width: 480px) {
-
-  .about-intro {
-    padding:
-      100px
-      1.25rem
-      40px;
-  }
-
-
-  .about-profile {
-    max-width: 240px;
-  }
-
-
-  .about-bio-title {
-    font-size: 1.55rem;
-  }
-
-
-  .about-education-grid {
-    grid-template-columns:
-      minmax(0, 1fr)
-      92px;
-
-    column-gap: 10px;
-  }
-
-
-  .about-education-logos {
-    width: 92px;
-
-    grid-template-columns:
-      43px
-      43px;
-
-    column-gap: 6px;
-  }
-
-
-  .about-education-logos img:nth-child(1) {
-    width: 92px;
-  }
-
-
-  .about-education-logos img:nth-child(2),
-  .about-education-logos img:nth-child(3) {
-    width: 43px;
-    height: 30px;
-  }
-
-}
-
-
-/* =========================================================
-   REDUCED MOTION
-========================================================= */
-
-@media (prefers-reduced-motion: reduce) {
-
-  .about-intro-inner,
-  .about-education {
-    opacity: 1;
-
-    animation: none;
-
-    transform: none;
-  }
-
-
-  .about-social-icon {
-    transition: none;
-  }
-
-}
-
-
-/* =========================================================
-   WORK EXPERIENCE + SKILLS
-========================================================= */
-
-.about-work-skills {
-  width: 100%;
-
-  padding:
-    35px
-    clamp(3rem, 6vw, 6rem)
-    60px;
-
-  background-color: var(--bg-light);
-
-  opacity: 0;
-
-  animation:
-    aboutFadeIn
-    0.7s
-    ease-out
-    forwards;
-
-  animation-delay: 0.28s;
-}
-
-
-.about-work-skills-inner {
-  width: 100%;
-  max-width: 1100px;
-
-  margin: 0 auto;
-
-  display: grid;
-
-  grid-template-columns: 1fr 1.35fr;
-
-  column-gap: 70px;
-
-  align-items: start;
-}
-
-
-/* =========================================================
-   WORK EXPERIENCE
-========================================================= */
-
-.about-work-item {
-  margin-bottom: 24px;
-}
-
-
-.about-work-item:last-child {
-  margin-bottom: 0;
-}
-
-
-.about-work-item h3 {
-  margin-bottom: 3px;
-
-  font-size: 1rem;
-  line-height: 1.4;
-
-  font-weight: 650;
-
-  color: #263638;
-}
-
-
-.about-work-company {
-  margin-bottom: 2px;
-
-  font-size: 1rem;
-  line-height: 1.45;
-
-  font-style: italic;
-
-  color: #3e4e50;
-}
-
-
-.about-work-detail {
-  margin-bottom: 2px;
-
-  font-size: 1rem;
-  line-height: 1.45;
-
-  color: #3e4e50;
-}
-
-
-.about-work-date {
-  font-size: 0.95rem;
-  line-height: 1.45;
-
-  font-style: italic;
-
-  color: #8a8f91;
-}
-
-
-/* =========================================================
-   SKILLS
-========================================================= */
-
-.about-skills-line {
-  margin-bottom: 22px;
-
-  font-size: 1rem;
-  line-height: 1.55;
-
-  color: #3e4e50;
-}
-
-
-.about-skills-line:last-child {
-  margin-bottom: 0;
-}
-
-
-.about-skills-line strong {
-  font-weight: 650;
-
-  color: #263638;
-}
-
-
-/* =========================================================
-   LEADERSHIP
-========================================================= */
-
-.about-leadership {
-  width: 100%;
-
-  padding:
-    30px
-    clamp(3rem, 6vw, 6rem)
-    80px;
-
-  background-color: var(--bg-light);
-
-  opacity: 0;
-
-  animation:
-    aboutFadeIn
-    0.7s
-    ease-out
-    forwards;
-
-  animation-delay: 0.38s;
-}
-
-
-.about-leadership-inner {
-  width: 100%;
-  max-width: 1100px;
-
-  margin: 0 auto;
-}
-
-
-/* Top two leadership items */
-
-.about-leadership-top {
-  display: grid;
-
-  grid-template-columns:
-    1fr
-    1.35fr;
-
-  column-gap: 70px;
-
-  align-items: start;
-
-  margin-bottom: 40px;
-}
-
-
-/* =========================================================
-   LEADERSHIP TEXT
-========================================================= */
-
-.about-leadership-text {
-  margin-bottom: 10px;
-}
-
-
-.about-leadership-text h3 {
-  margin-bottom: 2px;
-
-  font-size: 1rem;
-  line-height: 1.4;
-
-  font-weight: 650;
-
-  color: #263638;
-}
-
-
-.about-leadership-org {
-  margin-bottom: 2px;
-
-  font-size: 1rem;
-  line-height: 1.45;
-
-  font-style: italic;
-
-  color: #3e4e50;
-}
-
-
-.about-leadership-detail {
-  font-size: 1rem;
-  line-height: 1.45;
-
-  color: #3e4e50;
-}
-
-
-/* =========================================================
-   LEADERSHIP IMAGES
-========================================================= */
-
-.about-leadership-media {
-  width: 100%;
-}
-
-
-/* One image */
-
-.about-leadership-media-single img {
-  width: 100%;
-  height: 210px;
-
-  display: block;
-
-  object-fit: cover;
-}
-
-
-/* Two images */
-
-.about-leadership-media-two {
-  display: grid;
-
-  grid-template-columns:
-    1.5fr
-    1fr;
-
-  gap: 8px;
-}
-
-
-.about-leadership-media-two img {
-  width: 100%;
-  height: 210px;
-
-  display: block;
-
-  object-fit: cover;
-}
-
-
-/* =========================================================
-   RESIDENT ASSISTANT
-========================================================= */
-
-.about-ra {
-  width: 100%;
-}
-
-
-.about-ra-gallery {
-  width: 100%;
-
-  display: grid;
-
-  grid-template-columns:
-    1.35fr
-    0.85fr
-    1.25fr
-    0.5fr;
-
-  gap: 8px;
-}
-
-
-.about-ra-gallery img {
-  width: 100%;
-  height: 220px;
-
-  display: block;
-
-  object-fit: cover;
-}
-
-
-/* =========================================================
-   WORK / SKILLS / LEADERSHIP RESPONSIVE
-========================================================= */
-
-@media (max-width: 900px) {
-
-  .about-work-skills {
-    padding:
-      30px
-      2rem
-      55px;
-  }
-
-
-  .about-work-skills-inner {
-    column-gap: 50px;
-  }
-
-
-  .about-leadership {
-    padding:
-      28px
-      2rem
-      70px;
-  }
-
-
-  .about-leadership-top {
-    column-gap: 35px;
-  }
-
-
-  .about-leadership-media-single img,
-  .about-leadership-media-two img {
-    height: 190px;
-  }
-
-
-  .about-ra-gallery img {
-    height: 190px;
-  }
-
-}
-
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 768px) {
-
-  .about-work-skills {
-    padding:
-      25px
-      2rem
-      50px;
-  }
-
-
-  .about-work-skills-inner {
+  .about-background-inner {
     grid-template-columns: 1fr;
-
-    row-gap: 42px;
-  }
-
-
-  .about-leadership {
-    padding:
-      25px
-      2rem
-      65px;
-  }
-
-
-  .about-leadership-top {
-    grid-template-columns: 1fr;
-
     row-gap: 38px;
-
-    margin-bottom: 38px;
   }
 
-
-.about-leadership-media-single img {
-  height: auto;
-}
-
-.about-leadership-media-two img {
-  width: 100%;
-  height: 180px;
-  object-fit: cover;
-}
-
-  .about-ra-gallery {
-    grid-template-columns:
-      1fr
-      1fr;
-
-    gap: 8px;
+  .about-education-content {
+    grid-template-columns: minmax(0, 1fr) 150px;
+    gap: 12px;
   }
 
-
-  .about-ra-gallery img {
-    height: 220px;
+  .about-education-collage {
+    width: 150px;
+    height: 175px;
   }
 
+  .about-leadership {
+    padding: 18px 2rem 70px;
+  }
+
+  .about-leadership-grid {
+    grid-template-columns: 1fr;
+    row-gap: 44px;
+  }
 }
 
-
-/* =========================================================
+/* =====================================================
    SMALL MOBILE
-========================================================= */
+===================================================== */
 
 @media (max-width: 600px) {
 
-  .about-work-skills {
-    padding:
-      22px
-      1.25rem
-      45px;
+  .about-intro {
+    padding: 105px 1.25rem 42px;
   }
 
-
-  .about-work-skills-inner {
-    row-gap: 36px;
+  .about-polaroid {
+    width: 190px;
   }
 
+  .about-profile-tape {
+    width: 85px;
+    top: -12px;
+  }
 
+  .about-intro-heading-main {
+    font-size: 1.55rem;
+    line-height: 1.35;
+  }
+
+  .about-intro-heading-question {
+    font-size: 1.8rem;
+    line-height: 1.4;
+  }
+
+  .about-bio-copy p {
+    font-size: 0.96rem;
+    line-height: 1.65;
+  }
+
+  .about-background {
+    padding: 16px 1.25rem 45px;
+  }
+
+  .about-section-title {
+    font-size: 1.7rem;
+    margin-bottom: 20px;
+  }
+
+  .about-school h3,
+  .about-school p,
   .about-work-item h3,
-  .about-work-company,
-  .about-work-detail,
-  .about-skills-line {
+  .about-work-company {
     font-size: 0.96rem;
   }
 
-
+  .about-school em,
   .about-work-date {
     font-size: 0.9rem;
   }
 
-
   .about-leadership {
-    padding:
-      22px
-      1.25rem
-      55px;
+    padding: 16px 1.25rem 60px;
   }
-
 
   .about-leadership-text h3,
   .about-leadership-org,
@@ -1299,25 +936,52 @@
     font-size: 0.96rem;
   }
 
-
-  .about-leadership-media-two {
-    grid-template-columns:
-      1fr
-      1fr;
+  .about-photo-frame {
+    padding: 9px 9px 15px;
   }
 
-  
-
-  .about-ra-gallery {
-    grid-template-columns:
-      1fr
-      1fr;
+  .about-photo-frame .about-real-tape {
+    width: 94px;
+    top: -15px;
   }
-
-
-  .about-ra-gallery img {
-    height: 170px;
-  }
-
 }
 
+@media (max-width: 520px) {
+
+  .about-education-content {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .about-education-collage {
+    width: 160px;
+    height: 160px;
+    margin-left: 12px;
+  }
+}
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+  .about-intro-inner,
+  .about-background,
+  .about-leadership {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .about-polaroid,
+  .about-social-icon,
+  .about-advising-link,
+  .about-advising-arrow {
+    transition: none;
+  }
+
+  .about-polaroid:hover {
+    transform: rotate(-3deg);
+  }
+}
