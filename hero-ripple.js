@@ -41,10 +41,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
   /* CANVAS SETUP */
 
-  const canvas = document.createElement("canvas");
-  canvas.className = "hero-water-canvas";
-  canvas.setAttribute("aria-hidden", "true");
-  canvas.style.pointerEvents = "none";
+
+const canvas = document.createElement("canvas");
+
+canvas.className = "hero-water-canvas";
+canvas.setAttribute("aria-hidden", "true");
+
+/* Ensure the Canvas always overlays the artwork */
+
+Object.assign(canvas.style, {
+  position: "absolute",
+  zIndex: "2",
+  display: "block",
+  pointerEvents: "none",
+  background: "transparent",
+  opacity: "1"
+});
 
   const ctx = canvas.getContext("2d", {
     willReadFrequently: true
