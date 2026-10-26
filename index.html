@@ -1,53 +1,79 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Siyu's Portfolio</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap"
+    rel="stylesheet"
+  >
 
-<link
-  href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap"
-  rel="stylesheet"
->
-
-<link rel="stylesheet" href="style1.css">
-<link rel="stylesheet" href="index.css">
-<link rel="stylesheet" href="hero-ripple.css">
-
+  <link rel="stylesheet" href="style1.css">
+  <link rel="stylesheet" href="index.css">
+  <link rel="stylesheet" href="hero-ripple.css">
 </head>
+
 <body>
 
+  <!-- HEADER -->
   <header>
     <nav>
       <div class="logo">
         <a href="index.html">SIYU</a>
       </div>
+
       <div class="nav-right">
         <ul class="nav-menu">
-               <li>
-            <a href="index.html"class="active">PRODUCT</a>
+          <li>
+            <a href="index.html" class="active">PRODUCT</a>
           </li>
-
           <li>
             <a href="mediaart.html">CREATIVE TECH</a>
           </li>
-
-          <li><a href="extra.html">EXTRAS</a></li>
-          <li><a href="about.html">ABOUT</a></li>
+          <li>
+            <a href="extra.html">EXTRAS</a>
+          </li>
+          <li>
+            <a href="about.html">ABOUT</a>
+          </li>
+          <li>
+            <a
+              href="assets/Siyu_Liu_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="nav-resume"
+              aria-label="Resume (PDF, opens in a new tab)"
+            >
+              RESUME
+              <span class="nav-resume-arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
         </ul>
+
         <div class="icons">
           <div class="language-dropdown">
-            <svg class="globe-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-              stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <svg
+              class="globe-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
               <circle cx="12" cy="12" r="10"></circle>
               <line x1="2" y1="12" x2="22" y2="12"></line>
               <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"></path>
               <path d="M12 2a15.3 15.3 0 0 0-4 10 15.3 15.3 0 0 0 4 10"></path>
             </svg>
           </div>
+
           <div class="hamburger">
             <span></span>
             <span></span>
@@ -57,301 +83,306 @@
       </div>
     </nav>
   </header>
-  
-  
+
   <main>
 
- <section id="home" class="fade-in">
-  <div class="hero-content">
-   
+    <!-- HERO -->
+    <section id="home" class="fade-in">
+      <div class="hero-content">
 
-<div class="hero-text">
+        <div class="hero-text">
+          <h1 class="hero-title">
+            <span class="hero-title-main">
+              <span class="hero-name">Siyu</span>
+              is a product designer &amp; creative technologist
+              with a talent for spotting
+              <span class="hero-title-highlight">overlooked UX gaps.</span>
+            </span>
+          </h1>
 
-  <h1 class="hero-title">
-  <span class="hero-title-main">
-    <span class="hero-name">Siyu</span>
-    is a product designer &amp; creative technologist
-    with a talent for spotting
-    <span class="hero-title-highlight">overlooked UX gaps.</span>
-  </span>
-</h1>
+          <p id="subtitle" class="hero-subtitle">
+            Curious about emerging tools and AI, she combines
+            research and rapid prototyping to test ideas and
+            improve B2C and B2B experiences.
+          </p>
+        </div>
 
-  <p id="subtitle" class="hero-subtitle">
-Curious about emerging tools and AI, she combines research and rapid prototyping to test ideas and improve B2C and B2B experiences.  </p>
+        <div class="hero-image">
+          <img
+            src="assets/heroprofile.png"
+            alt="Abstract portrait artwork"
+            class="hero-image-base"
+            draggable="false"
+            fetchpriority="high"
+          >
+        </div>
 
-</div>
+      </div>
+    </section>
 
-
-  <div class="hero-image">
-
-  <img
-    src="assets/heroprofile.png"
-    alt="Abstract portrait artwork"
-    class="hero-image-base"
-     draggable="false"
-  >
-
-  <img
-    src="assets/heroprofile.png"
-    alt=""
-    aria-hidden="true"
-    class="hero-image-ripple"
-     draggable="false"
-  >
-
-  <svg
-    class="hero-ripple-defs"
-    width="0"
-    height="0"
-    aria-hidden="true"
-    focusable="false"
-  >
-    <filter
-      id="heroRippleFilter"
-      x="-20%"
-      y="-20%"
-      width="140%"
-      height="140%"
+    <!-- PROJECT 1: YNYG POST-PURCHASE -->
+    <section
+      id="project-ynyg"
+      class="project-preview"
+      style="scroll-margin-top: 90px;"
     >
-      <feTurbulence
-        id="heroRippleNoise"
-        type="fractalNoise"
-        baseFrequency="0.012 0.018"
-        numOctaves="1"
-        seed="8"
-        result="noise"
-      ></feTurbulence>
+      <div class="project-preview-content">
 
-      <feDisplacementMap
-        id="heroRippleDisplacement"
-        in="SourceGraphic"
-        in2="noise"
-        scale="0"
-        xChannelSelector="R"
-        yChannelSelector="G"
-      ></feDisplacementMap>
-    </filter>
-  </svg>
+        <div class="project-preview-text hidden-left">
+          <p class="project-label">
+            Aphrodite Brands Group LLC
+          </p>
 
-</div>
+          <h2>
+            <a href="abg.html" class="project-title-link">
+              Optimizing Post-Purchase Engagement for YNYG
+            </a>
+          </h2>
 
-  <div class="scrolldown-container" id="scrollDownArrow">
-    <img src="assets/scrolldown.png" alt="Scroll Down" class="scrolldown">
-  </div>
-</section>
-      
+          <p class="project-description">
+            Bridging the gap between checkout &amp; delivery
+            to drive customer retention &amp; sentiment.
+          </p>
 
-<!-- ===== Project Preview 1 ===== -->
-<section class="project-preview">
-  <div class="project-preview-content">
+          <div class="project-pill-row">
+            <span>E-Commerce</span>
+            <span>B2C</span>
+            <span>Product Strategy</span>
+          </div>
 
-    <div class="project-preview-text hidden-left">
-      <p class="project-label">Aphrodite Brands Group LLC</p>
+          <div class="project-divider"></div>
 
-      <h2>Optimizing Post-Purchase Engagement for YNYG</h2>
+          <div class="project-metrics">
+            <div class="project-metric">
+              <strong>+18%</strong>
+              <span>Retention</span>
+            </div>
 
-      <p class="project-description">
-        Bridging the gap between checkout & delivery to drive customer retention & sentiment.
-      </p>
-
-      <div class="project-pill-row">
-        <span>E-Commerce</span>
-        <span>B2C</span>
-        <span>Product Strategy</span>
-      </div>
-
-      <div class="project-divider"></div>
-
-      <div class="project-metrics">
-        <div class="project-metric">
-          <strong>+18%</strong>
-          <span>Retention</span>
+            <div class="project-metric">
+              <strong>+32%</strong>
+              <span>Repeat Purchase</span>
+            </div>
+          </div>
         </div>
-        <div class="project-metric">
-          <strong>+32%</strong>
-          <span>Repeat Purchase</span>
-        </div>
+
+        <a
+          class="project-preview-image hidden-up"
+          href="abg.html"
+          data-project-cursor
+          aria-label="View YNYG project"
+        >
+          <img
+            src="assets/uiux/abg/web1.png"
+            alt="YNYG project preview"
+          >
+        </a>
+
       </div>
+    </section>
+
+    <!-- PROJECT 2: YNYG WHOLESALE -->
+    <section
+      id="project-wholesale"
+      class="project-preview"
+      style="scroll-margin-top: 90px;"
+    >
+      <div class="project-preview-content">
+
+        <div class="project-preview-text hidden-left">
+          <p class="project-label">
+            Aphrodite Brands Group LLC
+          </p>
+
+          <h2>
+            <a href="abg2b.html" class="project-title-link">
+              YNYG Wholesale
+            </a>
+          </h2>
+
+          <p class="project-description">
+            A wholesale platform evolving from retail
+            partnerships to direct ordering and internal
+            operations.
+          </p>
+
+          <div class="project-pill-row">
+            <span>B2B Commerce</span>
+            <span>Internal Tools</span>
+          </div>
+
+          <div class="project-divider"></div>
+
+          <div class="project-metrics">
+            <div class="project-metric">
+              <strong>+5</strong>
+              <span>Partnerships</span>
+            </div>
+
+            <div class="project-metric">
+              <strong>+21%</strong>
+              <span>Wholesale Orders</span>
+            </div>
+          </div>
+        </div>
+
+        <a
+          class="project-preview-image hidden-up"
+          href="abg2b.html"
+          data-project-cursor
+          aria-label="View YNYG Wholesale project"
+        >
+          <img
+            src="assets/uiux/abg/Wholesale.png"
+            alt="YNYG Wholesale platform project preview"
+          >
+        </a>
+
+      </div>
+    </section>
+
+    <!-- PROJECT 3: BNU -->
+    <section
+      id="project-bnu"
+      class="project-preview"
+      style="scroll-margin-top: 90px;"
+    >
+      <div class="project-preview-content">
+
+        <div class="project-preview-text hidden-left">
+          <p class="project-label">
+            BNU Corporation
+          </p>
+
+          <h2>
+            <a href="bnu.html" class="project-title-link">
+              Building a Multilingual Web System for BNU
+            </a>
+          </h2>
+
+          <p class="project-description">
+            Engaging multilingual users across mobile
+            &amp; desktop touchpoints.
+          </p>
+
+          <div class="project-pill-row">
+            <span>Responsive Web</span>
+            <span>Localization</span>
+          </div>
+
+          <div class="project-divider"></div>
+
+          <div class="project-metrics">
+            <div class="project-metric">
+              <strong>4</strong>
+              <span>Languages</span>
+            </div>
+
+            <div class="project-metric">
+              <strong>100%</strong>
+              <span>Mobile Ready</span>
+            </div>
+          </div>
+        </div>
+
+        <a
+          class="project-preview-image hidden-up"
+          href="bnu.html"
+          data-project-cursor
+          aria-label="View BNU project"
+        >
+          <img
+            src="assets/uiux/bnu1.png"
+            alt="BNU multilingual website project preview"
+          >
+        </a>
+
+      </div>
+    </section>
+
+    <!-- PROJECT 4: VIRTUAL STYLIST -->
+    <section
+      id="project-stylist"
+      class="project-preview"
+      style="scroll-margin-top: 90px;"
+    >
+      <div class="project-preview-content">
+
+        <div class="project-preview-text hidden-left">
+          <p class="project-label">
+            Independent Project
+          </p>
+
+          <h2>
+            <a href="stylist.html" class="project-title-link">
+              Virtual Stylist
+            </a>
+          </h2>
+
+          <p class="project-description">
+            An inclusive AI-powered app that allows users
+            to explore hairstyles and visualize themselves
+            in ways existing tools do not.
+          </p>
+
+          <div class="project-pill-row">
+            <span>Web Dev</span>
+            <span>AI Integration</span>
+          </div>
+
+          <div class="project-divider"></div>
+
+          <div class="project-metrics">
+            <div class="project-metric">
+              <strong>0→1</strong>
+              <span>Product Development</span>
+            </div>
+          </div>
+        </div>
+
+        <a
+          class="project-preview-image hidden-up"
+          href="stylist.html"
+          data-project-cursor
+          aria-label="View Virtual Stylist project"
+        >
+          <img
+            src="assets/uiux/stylist.png"
+            alt="Virtual Stylist AI-powered hairstyle application preview"
+          >
+        </a>
+
+      </div>
+    </section>
+
+    <!-- BACK TO TOP -->
+    <div class="scrolltop-container" id="scrollTopArrow">
+      <img
+        src="assets/scrolldown.png"
+        alt="Back to top"
+        class="scrolltop"
+      >
     </div>
-
- <a
-  class="project-preview-image hidden-up"
-  href="abg.html"
-  data-project-cursor
-  aria-label="View YNYG project"
->
-  <img src="assets/uiux/abg/web1.png" alt="YNYG project preview">
-</a>
-  </div>
-</section>
-
-
-<!-- ===== Project Preview 2 ===== -->
-<section class="project-preview">
-  <div class="project-preview-content">
-
-    <div class="project-preview-text hidden-left">
-      <p class="project-label">BNU Corporation</p>
-
-      <h2>Building a Multilingual Web System for BNU</h2>
-
-      <p class="project-description">
-        Engaging multilingual users across mobile & desktop touchpoints.
-      </p>
-
-      <div class="project-pill-row">
-        <span>Responsive Web</span>
-        <span>Localization</span>
-      </div>
-
-      <div class="project-divider"></div>
-
-      <div class="project-metrics">
-        <div class="project-metric">
-          <strong>4</strong>
-          <span>Languages</span>
-        </div>
-        <div class="project-metric">
-          <strong>100%</strong>
-          <span>Mobile Ready</span>
-        </div>
-      </div>
-    </div>
-
-  <a
-  class="project-preview-image hidden-up"
-  href="bnu.html"
-  data-project-cursor
-  aria-label="View BNU project"
->
-  <img
-    src="assets/uiux/bnu1.png"
-    alt="BNU multilingual website project preview"
-  >
-</a>
-
-  </div>
-</section>
-
-
-<!-- ===== Project Preview 3 (Virtual Stylist) ===== -->
-<section class="project-preview">
-  <div class="project-preview-content">
-
-    <div class="project-preview-text hidden-left">
-      <p class="project-label">Independent Project</p>
-
-      <h2>Virtual Stylist</h2>
-
-      <p class="project-description">
-        An inclusive AI-powered app that allows users to explore hairstyles and visualize themselves in ways existing tools do not.
-      </p>
-
-      <div class="project-pill-row">
-        <span>Web Dev</span>
-        <span>AI Integration</span>
-      </div>
-
-      <div class="project-divider"></div>
-
-      <div class="project-metrics">
-        <div class="project-metric">
-          <strong>0→1</strong>
-          <span>Product Development</span>
-        </div>
-      </div>
-    </div>
-
-   
-<a
-  class="project-preview-image hidden-up"
-  href="stylist.html"
-  data-project-cursor
-  aria-label="View Virtual Stylist project"
->
-  <img
-    src="assets/uiux/stylist.png"
-    alt="Virtual Stylist AI-powered hairstyle application preview"
-  >
-</a>
-
-  </div>
-</section>
-
-
-
-<!-- ===== Project Preview 4 ===== -->
-<section class="project-preview">
-  <div class="project-preview-content">
-
-    <div class="project-preview-text hidden-left">
-      <p class="project-label">Aphrodite Brands Group LLC</p>
-
-      <h2>YNYG Wholesale</h2>
-
-   <p class="project-description">
-  A wholesale platform evolving from retail partnerships to direct ordering and internal operations.
-  </p>
-
-<div class="project-pill-row">
-  <span>B2B Commerce</span>
-  <span>Internal Tools</span>
-</div>
-
-      <div class="project-divider"></div>
-
-      <div class="project-metrics">
-        <div class="project-metric">
-          <strong>+5</strong>
-          <span>Partnerships</span>
-        </div>
-        <div class="project-metric">
-          <strong>+21%</strong>
-          <span>Wholesale Orders</span>
-        </div>
-      </div>
-    </div>
-
- <a
-  class="project-preview-image hidden-up"
-  href="abg2b.html"
-  data-project-cursor
-  aria-label="View YNYG Wholesale project"
->
-  <img
-    src="assets/uiux/abg/Wholesale.png"
-    alt="YNYG Wholesale platform project preview"
-  >
-</a>
-
-  </div>
-</section>
-
-
-
-<div class="scrolltop-container" id="scrollTopArrow">
-  <img
-    src="assets/scrolldown.png"
-    alt="Back to top"
-    class="scrolltop"
-  >
-</div>
 
   </main>
 
+  <!-- FOOTER -->
   <footer class="footer">
     <p>
       © 2026 Siyu Liu |
-      <a href="https://www.linkedin.com/in/siyu-liu-9b2a43270/" target="_blank">LinkedIn</a> |
+      <a
+        href="https://www.linkedin.com/in/siyu-liu-9b2a43270/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >LinkedIn</a> |
       <a href="mailto:lsy20041203@gmail.com">Email</a>
     </p>
   </footer>
 
-  <!-- JS -->
+  <!-- JAVASCRIPT -->
   <script src="script.js"></script>
   <script src="project-cursor.js"></script>
   <script src="hero-kinetic.js"></script>
   <script src="hero-ripple.js"></script>
+
 </body>
 </html>
-

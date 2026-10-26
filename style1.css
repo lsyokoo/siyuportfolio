@@ -1326,3 +1326,58 @@ nav {
     transition: none;
   }
 }
+
+/* ==========================================
+   NAVBAR — RESUME HOVER ARROW
+========================================== */
+
+.nav-menu .nav-resume {
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
+  white-space: nowrap;
+}
+
+.nav-menu .nav-resume-arrow {
+  display: inline-block;
+
+  width: 0;
+  opacity: 0;
+  overflow: hidden;
+
+  font-size: 0.85em;
+  line-height: 1;
+
+  transform: translate(-4px, 3px);
+
+  transition:
+    width 0.25s ease,
+    opacity 0.25s ease,
+    transform 0.25s ease,
+    margin-left 0.25s ease;
+}
+
+/* Show arrow on hover or keyboard focus */
+
+.nav-menu .nav-resume:hover .nav-resume-arrow,
+.nav-menu .nav-resume:focus-visible .nav-resume-arrow {
+  width: 14px;
+  margin-left: 5px;
+  opacity: 1;
+  transform: translate(0, 0);
+}
+
+/* Keyboard accessibility */
+
+.nav-menu .nav-resume:focus-visible {
+  outline: 2px solid #BB3F5B;
+  outline-offset: 5px;
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  .nav-menu .nav-resume-arrow {
+    transition: none;
+  }
+}

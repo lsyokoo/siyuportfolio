@@ -1,267 +1,301 @@
 
 document.addEventListener("DOMContentLoaded", () => {
   /* =====================================================
-     HERO WATER RIPPLE
-     Opening ripple + interactive refraction
+     HERO — NATURAL WATER REFRACTION
   ===================================================== */
 
-  const container = document.querySelector("#home .hero-image");
-  const image = container?.querySelector(".hero-image-base");
+  const image = document.querySelector(
+    "#home .hero-image-base"
+  );
 
-  if (!container || !image) return;
+  const container = image?.closest(".hero-image");
 
-  const pointerMedia = window.matchMedia(
+  if (!image || !container) return;
+
+  const hover = window.matchMedia(
     "(hover: hover) and (pointer: fine)"
   );
 
-  const motionMedia = window.matchMedia(
+  const reducedMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)"
   );
 
-  if (motionMedia.matches) return;
+  if (reducedMotion.matches) return;
 
-  /* =====================================================
-     SETTINGS
-  ===================================================== */
+  /* SETTINGS */
 
-  const SETTINGS = {
+  const settings = {
     resolution: 0.85,
     strength: 5.5,
     speed: 0.115,
     waveWidth: 19,
-    duration: 2400, 
+    duration: 2400,
 
-    spawnInterval: 105,
-    spawnDistance: 24,
-    maxWaves: 4,
+    maxWaves: 5,
+    spawnInterval: 85,
     frameInterval: 1000 / 30,
 
-    // Opening animation — plays once
-    openingEnabled: true,
-    openingStrength: 0.75,
-    openingStartDelay: 600, // 0.6s
-openingSecondWaveDelay: 280
+    openingDelay: 600,
+    secondWaveDelay: 280
   };
 
-  /* =====================================================
-     CANVAS SETUP
-  ===================================================== */
+  /* CANVAS SETUP */
 
   const canvas = document.createElement("canvas");
   canvas.className = "hero-water-canvas";
   canvas.setAttribute("aria-hidden", "true");
+  canvas.style.pointerEvents = "none";
 
-  const context = canvas.getContext("2d", {
-    alpha: true,
+  const ctx = canvas.getContext("2d", {
     willReadFrequently: true
   });
 
-  if (!context) return;
+  const source = document.createElement("canvas");
 
-  container.appendChild(canvas);
-
-  const sourceCanvas = document.createElement("canvas");
-
-  const sourceContext = sourceCanvas.getContext("2d", {
+  const sourceCtx = source.getContext("2d", {
     willReadFrequently: true
   });
 
-  if (!sourceContext) {
-    canvas.remove();
-    return;
-  }
+  if (!ctx || !sourceCtx) return;
 
-  let sourcePixels = null;
-  let framePixels = null;
+  container.append(canvas);
 
-  let width = 0;
-  let height = 0;
+  let w = 0;
+  let h = 0;
+
+  let pixels = null;
+  let frame = null;
 
   let waves = [];
-  let animationFrame = null;
-  let lastFrameTime = 0;
+  let raf = null;
 
-  let lastSpawnTime = 0;
-  let lastSpawnX = null;
-  let lastSpawnY = null;
+  let lastDraw = -Infinity;
+  let lastSpawn = -Infinity;
 
   let openingTimer = null;
-  let openingPlayed = false;
+  let secondTimer = null;
 
-  let available = false;
+  let openingPlayed = false;
+  let interacted = false;
+
+  let lastClientX = null;
+  let lastClientY = null;
 
   const clamp = (value, min, max) =>
     Math.max(min, Math.min(max, value));
 
-  /* =====================================================
-     READ ORIGINAL IMAGE
-  ===================================================== */
+  /* CLEAR / STOP */
 
-  function prepareImage() {
+  function clear() {
+    if (w && h) {
+      ctx.clearRect(0, 0, w, h);
+    }
+  }
+
+  function stop() {
+    if (raf !== null) {
+      cancelAnimationFrame(raf);
+    }
+
+    raf = null;
+    waves = [];
+    lastDraw = -Infinity;
+
+    clear();
+  }
+
+  function cancelOpening() {
+    clearTimeout(openingTimer);
+    clearTimeout(secondTimer);
+
+    openingTimer = null;
+    secondTimer = null;
+  }
+
+  /* SYNCHRONIZE IMAGE */
+
+  function syncImage() {
     if (!image.complete || !image.naturalWidth) {
       return false;
     }
 
-    const rect = image.getBoundingClientRect();
-    const parentRect = container.getBoundingClientRect();
+    const bounds = image.getBoundingClientRect();
+    const host = container.getBoundingClientRect();
 
-    if (!rect.width || !rect.height) return false;
-
-    width = Math.max(
-      1,
-      Math.round(rect.width * SETTINGS.resolution)
-    );
-
-    height = Math.max(
-      1,
-      Math.round(rect.height * SETTINGS.resolution)
-    );
-
-    canvas.width = width;
-    canvas.height = height;
+    if (bounds.width < 1 || bounds.height < 1) {
+      return false;
+    }
 
     canvas.style.left =
-      `${rect.left - parentRect.left}px`;
+      `${bounds.left - host.left}px`;
 
     canvas.style.top =
-      `${rect.top - parentRect.top}px`;
+      `${bounds.top - host.top}px`;
 
-    canvas.style.width = `${rect.width}px`;
-    canvas.style.height = `${rect.height}px`;
+    canvas.style.width = `${bounds.width}px`;
+    canvas.style.height = `${bounds.height}px`;
 
-    sourceCanvas.width = width;
-    sourceCanvas.height = height;
+    const nextWidth = Math.max(
+      1,
+      Math.round(bounds.width * settings.resolution)
+    );
 
-    sourceContext.clearRect(0, 0, width, height);
-    sourceContext.drawImage(image, 0, 0, width, height);
+    const nextHeight = Math.max(
+      1,
+      Math.round(bounds.height * settings.resolution)
+    );
+
+    // Reuse existing pixels when image size is unchanged.
+    if (
+      pixels &&
+      w === nextWidth &&
+      h === nextHeight
+    ) {
+      return true;
+    }
+
+    stop();
+
+    w = nextWidth;
+    h = nextHeight;
+
+    canvas.width = w;
+    canvas.height = h;
+
+    source.width = w;
+    source.height = h;
 
     try {
-      sourcePixels = sourceContext.getImageData(
-        0, 0, width, height
+      sourceCtx.clearRect(0, 0, w, h);
+      sourceCtx.drawImage(image, 0, 0, w, h);
+
+      pixels = sourceCtx.getImageData(
+        0, 0, w, h
       ).data;
 
-      framePixels = context.createImageData(
-        width,
-        height
-      );
+      frame = ctx.createImageData(w, h);
 
-      available = true;
       return true;
 
     } catch (error) {
       console.warn(
-        "Water ripple unavailable; original image remains visible.",
+        "Water ripple disabled: could not read image pixels.",
         error
       );
 
-      available = false;
+      pixels = null;
+      frame = null;
+
       return false;
     }
   }
 
-  /* =====================================================
-     ADD WAVE
-  ===================================================== */
+  /* CREATE WATER WAVE */
 
-  function addWave(x, y, time, intensity = 1) {
-    if (!available) return;
-
-    waves.push({
-      x,
-      y,
-      startTime: time,
-      intensity
-    });
-
-    if (waves.length > SETTINGS.maxWaves) {
-      waves.shift();
-    }
-
-    startAnimation();
-  }
-
-  function addWaveFromPointer(clientX, clientY, time) {
-    const rect = canvas.getBoundingClientRect();
-
-    if (!rect.width || !rect.height) return;
-
-    const x =
-      ((clientX - rect.left) / rect.width) * width;
-
-    const y =
-      ((clientY - rect.top) / rect.height) * height;
-
+  function ripple(x, y, intensity = 1) {
     if (
-      x < 0 || x > width ||
-      y < 0 || y > height
+      !pixels ||
+      document.hidden ||
+      reducedMotion.matches
     ) {
       return;
     }
 
-    addWave(x, y, time, 1);
+    waves.push({
+      x,
+      y,
+      intensity,
+      born: performance.now()
+    });
+
+    if (waves.length > settings.maxWaves) {
+      waves.shift();
+    }
+
+    if (raf === null) {
+      raf = requestAnimationFrame(tick);
+    }
   }
 
-  /* =====================================================
-     RENDER REFRACTION
-  ===================================================== */
+  /* RIPPLE AT CURSOR */
 
-  function render(time) {
-    if (!available || !sourcePixels || !framePixels) {
+  function rippleFromPointer(event) {
+    if (!syncImage()) return;
+
+    const rect = image.getBoundingClientRect();
+
+    if (
+      event.clientX < rect.left ||
+      event.clientX > rect.right ||
+      event.clientY < rect.top ||
+      event.clientY > rect.bottom
+    ) {
       return;
     }
 
-    const output = framePixels.data;
-    output.fill(0);
+    const x = clamp(
+      (event.clientX - rect.left) / rect.width * w,
+      0,
+      w - 1
+    );
 
-    const scale = SETTINGS.resolution;
+    const y = clamp(
+      (event.clientY - rect.top) / rect.height * h,
+      0,
+      h - 1
+    );
 
-    const waveWidth = SETTINGS.waveWidth * scale;
-    const strength = SETTINGS.strength * scale;
-    const waveSpeed = SETTINGS.speed * scale;
+    ripple(x, y);
+  }
 
-    const activeWaves = [];
+  /* RENDER REFRACTION */
+
+  function draw(time) {
+    const result = frame.data;
+    result.fill(0);
+
+    const scale = settings.resolution;
+    const spread = settings.waveWidth * scale;
+    const strength = settings.strength * scale;
+    const speed = settings.speed * scale;
 
     for (const wave of waves) {
-      const age = time - wave.startTime;
+      const age = time - wave.born;
 
-      if (age < 0 || age >= SETTINGS.duration) {
+      if (age < 0 || age >= settings.duration) {
         continue;
       }
 
-      activeWaves.push(wave);
+      const radius = age * speed;
 
-      const progress = age / SETTINGS.duration;
-      const radius = age * waveSpeed;
-      const fade = Math.pow(1 - progress, 1.5);
+      const fade = Math.pow(
+        1 - age / settings.duration,
+        1.5
+      );
 
-      const waveStrength =
-        strength * wave.intensity;
+      const power = strength * wave.intensity;
 
-      const extent =
-        radius + waveWidth * 2.5 + waveStrength;
+      const area =
+        radius + spread * 2.5 + power;
 
       const minX = clamp(
-        Math.floor(wave.x - extent),
-        0,
-        width - 1
+        Math.floor(wave.x - area),
+        0, w - 1
       );
 
       const maxX = clamp(
-        Math.ceil(wave.x + extent),
-        0,
-        width - 1
+        Math.ceil(wave.x + area),
+        0, w - 1
       );
 
       const minY = clamp(
-        Math.floor(wave.y - extent),
-        0,
-        height - 1
+        Math.floor(wave.y - area),
+        0, h - 1
       );
 
       const maxY = clamp(
-        Math.ceil(wave.y + extent),
-        0,
-        height - 1
+        Math.ceil(wave.y + area),
+        0, h - 1
       );
 
       for (let y = minY; y <= maxY; y++) {
@@ -277,266 +311,211 @@ openingSecondWaveDelay: 280
 
           const envelope = Math.exp(
             -(delta * delta) /
-            (2 * waveWidth * waveWidth)
+            (2 * spread * spread)
           );
 
           if (envelope < 0.012) continue;
 
-          const phase = delta * 0.28;
-
           const displacement =
-            Math.cos(phase) *
+            Math.cos(delta * 0.28) *
             envelope *
-            waveStrength *
+            power *
             fade;
 
           if (Math.abs(displacement) < 0.08) {
             continue;
           }
 
-          const directionX = dx / distance;
-          const directionY = dy / distance;
-
           const sampleX = clamp(
             Math.round(
-              x + directionX * displacement
+              x + dx / distance * displacement
             ),
-            0,
-            width - 1
+            0, w - 1
           );
 
           const sampleY = clamp(
             Math.round(
-              y + directionY * displacement
+              y + dy / distance * displacement
             ),
-            0,
-            height - 1
+            0, h - 1
           );
 
-          const sourceIndex =
-            (sampleY * width + sampleX) * 4;
+          const from =
+            (sampleY * w + sampleX) * 4;
 
-          const targetIndex =
-            (y * width + x) * 4;
+          const to =
+            (y * w + x) * 4;
 
-          output[targetIndex] = sourcePixels[sourceIndex];
-          output[targetIndex + 1] = sourcePixels[sourceIndex + 1];
-          output[targetIndex + 2] = sourcePixels[sourceIndex + 2];
+          result[to] = pixels[from];
+          result[to + 1] = pixels[from + 1];
+          result[to + 2] = pixels[from + 2];
 
-          const blend = Math.min(
-            1,
-            Math.abs(displacement) / 1.8
-          );
-
-          output[targetIndex + 3] =
-            sourcePixels[sourceIndex + 3] * blend;
+          result[to + 3] =
+            pixels[from + 3] *
+            Math.min(
+              1,
+              Math.abs(displacement) / 1.8
+            );
         }
       }
     }
 
-    waves = activeWaves;
-
-    context.clearRect(0, 0, width, height);
-
-    if (waves.length) {
-      context.putImageData(framePixels, 0, 0);
-    }
+    ctx.clearRect(0, 0, w, h);
+    ctx.putImageData(frame, 0, 0);
   }
 
-  /* =====================================================
-     ANIMATION LOOP
-  ===================================================== */
+  /* ANIMATION LOOP */
 
-  function animate(time) {
-    animationFrame = null;
+  function tick(time) {
+    raf = null;
+
+    if (
+      document.hidden ||
+      reducedMotion.matches ||
+      !pixels
+    ) {
+      stop();
+      return;
+    }
+
+    waves = waves.filter(wave => {
+      return time - wave.born < settings.duration;
+    });
 
     if (!waves.length) {
-      context.clearRect(0, 0, width, height);
+      clear();
+      lastDraw = -Infinity;
       return;
     }
 
     if (
-      time - lastFrameTime >= SETTINGS.frameInterval
+      time - lastDraw >= settings.frameInterval
     ) {
-      lastFrameTime = time;
-      render(time);
+      lastDraw = time;
+      draw(time);
     }
 
-    if (waves.length) {
-      animationFrame = requestAnimationFrame(animate);
-    } else {
-      context.clearRect(0, 0, width, height);
-    }
+    raf = requestAnimationFrame(tick);
   }
 
-  function startAnimation() {
-    if (animationFrame !== null) return;
+  /* POINTER INTERACTION */
 
-    animationFrame = requestAnimationFrame(animate);
-  }
-
-  function stopAnimation() {
-    if (animationFrame !== null) {
-      cancelAnimationFrame(animationFrame);
-      animationFrame = null;
+  function interact(event, immediate = false) {
+    if (
+      !hover.matches ||
+      reducedMotion.matches ||
+      (
+        event.pointerType !== "mouse" &&
+        event.pointerType !== "pen"
+      )
+    ) {
+      return;
     }
 
-    waves = [];
+    const now = performance.now();
 
-    if (width && height) {
-      context.clearRect(0, 0, width, height);
+    if (
+      !immediate &&
+      now - lastSpawn < settings.spawnInterval
+    ) {
+      return;
     }
+
+    if (
+      !immediate &&
+      lastClientX !== null &&
+      Math.hypot(
+        event.clientX - lastClientX,
+        event.clientY - lastClientY
+      ) < 5
+    ) {
+      return;
+    }
+
+    interacted = true;
+    cancelOpening();
+
+    lastSpawn = now;
+    lastClientX = event.clientX;
+    lastClientY = event.clientY;
+
+    rippleFromPointer(event);
   }
 
-  /* =====================================================
-     OPENING WATER RIPPLE
-     Runs only once after image is ready
-  ===================================================== */
+  /* IMAGE EVENTS */
 
-  function playOpeningRipple() {
+  image.addEventListener(
+    "pointerenter",
+    event => interact(event, true)
+  );
+
+  image.addEventListener(
+    "pointermove",
+    event => interact(event)
+  );
+
+  image.addEventListener(
+    "pointerdown",
+    event => interact(event, true)
+  );
+
+  image.addEventListener("pointerleave", () => {
+    lastSpawn = -Infinity;
+    lastClientX = null;
+    lastClientY = null;
+  });
+
+  image.addEventListener("dragstart", event => {
+    event.preventDefault();
+  });
+
+  /* OPENING RIPPLE */
+
+  function playOpening() {
+    openingTimer = null;
+
     if (
       openingPlayed ||
-      !SETTINGS.openingEnabled ||
-      !available ||
-      motionMedia.matches ||
-      document.hidden
+      interacted ||
+      document.hidden ||
+      !syncImage()
     ) {
       return;
     }
 
     openingPlayed = true;
 
-    const now = performance.now();
-
-    // Gentle first touch near the artwork center
-    addWave(
-      width * 0.43,
-      height * 0.48,
-      now,
-      SETTINGS.openingStrength
+    ripple(
+      w * 0.43,
+      h * 0.48,
+      0.75
     );
 
-    // A softer second wave creates an organic feel
-    openingTimer = window.setTimeout(() => {
-      openingTimer = null;
+    secondTimer = setTimeout(() => {
+      secondTimer = null;
 
-      if (
-        !available ||
-        motionMedia.matches ||
-        document.hidden
-      ) {
-        return;
+      if (!interacted && !document.hidden) {
+        ripple(
+          w * 0.61,
+          h * 0.57,
+          0.75 * 0.65
+        );
       }
+    }, settings.secondWaveDelay);
+  }
 
-      addWave(
-        width * 0.61,
-        height * 0.57,
-        performance.now(),
-        SETTINGS.openingStrength * 0.65
+  /* INITIALIZATION */
+
+  function initialize() {
+    if (!syncImage()) return;
+
+    if (!openingPlayed && !interacted) {
+      openingTimer = setTimeout(
+        playOpening,
+        settings.openingDelay
       );
-
-    }, SETTINGS.openingSecondWaveDelay);
-  }
-
-  function cancelOpeningTimer() {
-    if (openingTimer !== null) {
-      clearTimeout(openingTimer);
-      openingTimer = null;
     }
   }
-
-  /* =====================================================
-     MOUSE INTERACTION
-  ===================================================== */
-
-  function handlePointerEnter(event) {
-    if (!pointerMedia.matches || motionMedia.matches) {
-      return;
-    }
-
-    if (event.pointerType !== "mouse") return;
-    if (!available) return;
-
-    cancelOpeningTimer();
-
-    lastSpawnX = null;
-    lastSpawnY = null;
-    lastSpawnTime = performance.now();
-
-    addWaveFromPointer(
-      event.clientX,
-      event.clientY,
-      lastSpawnTime
-    );
-  }
-
-  function handlePointerMove(event) {
-    if (!pointerMedia.matches || motionMedia.matches) {
-      return;
-    }
-
-    if (event.pointerType !== "mouse") return;
-    if (!available) return;
-
-    const now = performance.now();
-
-    if (
-      now - lastSpawnTime < SETTINGS.spawnInterval
-    ) {
-      return;
-    }
-
-    const rect = image.getBoundingClientRect();
-
-    if (
-      event.clientX < rect.left ||
-      event.clientX > rect.right ||
-      event.clientY < rect.top ||
-      event.clientY > rect.bottom
-    ) {
-      return;
-    }
-
-    if (
-      lastSpawnX !== null &&
-      lastSpawnY !== null
-    ) {
-      const distance = Math.hypot(
-        event.clientX - lastSpawnX,
-        event.clientY - lastSpawnY
-      );
-
-      if (distance < SETTINGS.spawnDistance) {
-        return;
-      }
-    }
-
-    cancelOpeningTimer();
-
-    lastSpawnTime = now;
-    lastSpawnX = event.clientX;
-    lastSpawnY = event.clientY;
-
-    addWaveFromPointer(
-      event.clientX,
-      event.clientY,
-      now
-    );
-  }
-
-  /* =====================================================
-     INITIALIZATION
-  ===================================================== */
-
-function initialize() {
-  if (!prepareImage()) return;
-
-  window.setTimeout(() => {
-    if (!motionMedia.matches && !document.hidden) {
-      playOpeningRipple();
-    }
-  }, SETTINGS.openingStartDelay);
-}
 
   if (image.complete && image.naturalWidth) {
     initialize();
@@ -548,64 +527,47 @@ function initialize() {
     );
   }
 
-  container.addEventListener(
-    "pointerenter",
-    handlePointerEnter
-  );
+  /* RESPONSIVE REBUILD */
 
-  container.addEventListener(
-    "pointermove",
-    handlePointerMove
-  );
+  if ("ResizeObserver" in window) {
+    const observer = new ResizeObserver(() => {
+      syncImage();
+    });
 
-  container.addEventListener("pointerleave", () => {
-    lastSpawnX = null;
-    lastSpawnY = null;
-  });
+    observer.observe(image);
+  } else {
+    window.addEventListener(
+      "resize",
+      syncImage,
+      { passive: true }
+    );
+  }
 
-  /* =====================================================
-     CLEANUP
-  ===================================================== */
-
-  window.addEventListener(
-    "resize",
-    () => {
-      cancelOpeningTimer();
-      stopAnimation();
-      prepareImage();
-      // No replay on resize.
-    },
-    { passive: true }
-  );
-
-  window.addEventListener(
-    "scroll",
-    () => {
-      cancelOpeningTimer();
-      stopAnimation();
-    },
-    { passive: true }
-  );
-
-  window.addEventListener("blur", () => {
-    cancelOpeningTimer();
-    stopAnimation();
-  });
+  /* TAB / WINDOW RECOVERY */
 
   document.addEventListener(
     "visibilitychange",
     () => {
       if (document.hidden) {
-        cancelOpeningTimer();
-        stopAnimation();
+        stop();
+      } else {
+        syncImage();
       }
     }
   );
 
-  motionMedia.addEventListener("change", (event) => {
-    if (event.matches) {
-      cancelOpeningTimer();
-      stopAnimation();
+  window.addEventListener(
+    "pageshow",
+    () => syncImage()
+  );
+
+  reducedMotion.addEventListener(
+    "change",
+    event => {
+      if (event.matches) {
+        cancelOpening();
+        stop();
+      }
     }
-  });
+  );
 });

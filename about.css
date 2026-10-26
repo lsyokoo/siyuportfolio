@@ -311,7 +311,7 @@
 
 .about-background {
   padding: 25px clamp(3rem, 6vw, 6rem) 60px;
-  animation: aboutFadeIn 0.7s ease-out both;
+
 }
 
 .about-background-inner {
@@ -488,7 +488,7 @@
 
 .about-leadership {
   padding: 20px clamp(3rem, 6vw, 6rem) 85px;
-  animation: aboutFadeIn 0.7s ease-out both;
+
 }
 
 .about-leadership-inner > .about-section-title {
@@ -1689,4 +1689,93 @@
     top: calc(100% + 8px);
     bottom: auto;
   }
+}
+
+/* =====================================================
+   ABOUT — SECTION SPACING + COLLAGE VISIBILITY FIX
+   Keeps the original absolute collage positions intact.
+===================================================== */
+
+.about-intro { padding-bottom: 30px; }
+
+.about-offclock {
+  position: relative;
+  z-index: 2;
+  padding-top: 0;
+  padding-bottom: 185px;
+  overflow: visible;
+}
+
+.about-offclock-inner,
+.about-offclock-collage {
+  overflow: visible;
+}
+
+.about-background {
+  position: relative;
+  z-index: 1;
+  padding-top: 35px;
+}
+
+@media (max-width: 1000px) {
+  .about-intro { padding-bottom: 28px; }
+  .about-offclock { padding-top: 0; padding-bottom: 175px; }
+  .about-background { padding-top: 32px; }
+}
+
+@media (max-width: 768px) {
+  .about-intro { padding-bottom: 24px; }
+  .about-offclock { padding-top: 0; padding-bottom: 180px; }
+  .about-background { padding-top: 30px; }
+}
+
+@media (max-width: 480px) {
+  .about-intro { padding-bottom: 20px; }
+  .about-offclock { padding-top: 0; padding-bottom: 170px; }
+  .about-background { padding-top: 28px; }
+}
+
+/* =====================================================
+   ABOUT — SCROLL REVEAL
+   Used by about-reveal.js. Only sections observed by
+   JavaScript are hidden before they enter the viewport.
+===================================================== */
+
+.about-offclock-inner,
+.about-background-inner,
+.about-leadership-inner {
+  opacity: 1;
+  transform: none;
+}
+
+html.about-reveal-enabled .about-offclock-inner,
+html.about-reveal-enabled .about-background-inner,
+html.about-reveal-enabled .about-leadership-inner {
+  transition: opacity .75s ease,
+    transform .75s cubic-bezier(.22, 1, .36, 1);
+}
+
+html.about-reveal-enabled .about-offclock-inner:not(.is-visible),
+html.about-reveal-enabled .about-background-inner:not(.is-visible),
+html.about-reveal-enabled .about-leadership-inner:not(.is-visible) {
+  opacity: 0;
+  transform: translateY(18px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html.about-reveal-enabled .about-offclock-inner,
+  html.about-reveal-enabled .about-background-inner,
+  html.about-reveal-enabled .about-leadership-inner {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* =====================================================
+   OFF THE CLOCK — DELAYED FADE IN
+===================================================== */
+
+html.about-reveal-enabled .about-offclock-inner {
+  transition-delay: 0.15s;
 }

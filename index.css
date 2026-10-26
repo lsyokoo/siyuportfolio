@@ -1,53 +1,67 @@
 
 /* =====================================================
-   INDEX PAGE — EDITORIAL HERO + KINETIC TYPOGRAPHY
+   SIYU PORTFOLIO — INDEX PAGE
 
-   - Wider text column
-   - Burgundy Playfair Display Italic
-   - Natural text wrapping
-   - Animated letters on hover
-   - No underline
-   - Existing project cursor unaffected
+   Compact Editorial Hero
+   Inline Kinetic Typography
+   Responsive Layout
 ===================================================== */
 
 
 /* =====================================================
-   1. HERO LAYOUT
+   1. HERO SECTION
+===================================================== */
+
+#home {
+  position: relative;
+  display: block;
+
+  min-height: 0;
+  height: auto;
+
+   padding: 108px 2rem 52px;
+
+  background-color: #FAFAF9;
+}
+
+
+/* =====================================================
+   2. HERO LAYOUT
 ===================================================== */
 
 #home .hero-content {
   display: grid;
 
   grid-template-columns:
-    minmax(0, 1.65fr)
-    minmax(0, 1fr);
+    minmax(0, 780px)
+    minmax(0, 300px);
 
-  align-items: center;
-  column-gap: clamp(18px, 2vw, 32px);
+  align-items: start;
+  justify-content: start;
+
+  column-gap: 24px;
 
   width: 100%;
-  max-width: 1400px;
+   max-width: 1396px;
   margin: 0 auto;
 }
 
 #home .hero-text {
   width: 100%;
-  max-width: none;
   min-width: 0;
+
+  padding-top: 10px;
+
+  text-align: left;
 }
 
 
 /* =====================================================
-   2. MAIN HEADING
+   3. MAIN HEADING
 ===================================================== */
 
 #home .hero-title {
-  display: block;
-
-  width: 100%;
-  max-width: none;
-
-  margin: 0 0 32px;
+  margin: 0 0 27px;
 
   font-weight: 400;
   line-height: 1.4;
@@ -63,8 +77,9 @@
     Arial,
     sans-serif;
 
-  font-size: clamp(1.8rem, 2.5vw, 2.5rem);
+  font-size: clamp(1.8rem, 2.3vw, 2.3rem);
   font-weight: 400;
+
   line-height: 1.4;
   letter-spacing: -0.025em;
 
@@ -73,13 +88,11 @@
 
 
 /* =====================================================
-   3. BURGUNDY PLAYFAIR TEXT
+   4. BURGUNDY HIGHLIGHT TEXT
 ===================================================== */
 
 #home .hero-name,
 #home .hero-title-highlight {
-  display: inline;
-
   font-family:
     "Playfair Display",
     Georgia,
@@ -88,20 +101,19 @@
 
   font-style: italic;
   font-weight: 500;
+
   font-size: 1.12em;
   line-height: inherit;
   letter-spacing: -0.02em;
 
   color: #BB3F5B;
 
-  background: none;
-  background-image: none;
   text-decoration: none;
 }
 
 
 /* =====================================================
-   4. SUBTITLE
+   5. SUBTITLE
 ===================================================== */
 
 #home .hero-subtitle {
@@ -116,6 +128,7 @@
 
   font-size: clamp(1rem, 1.2vw, 1.15rem);
   font-weight: 400;
+
   line-height: 1.7;
   letter-spacing: 0;
 
@@ -124,98 +137,73 @@
 
 
 /* =====================================================
-   5. HERO ARTWORK
+   6. HERO ARTWORK
 ===================================================== */
 
 #home .hero-image {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
+  position: relative;
+  isolation: isolate;
 
-  width: 100%;
-  min-width: 0;
-}
-
-#home .hero-image img {
   display: block;
 
   width: 100%;
-  max-width: 480px;
-  height: auto;
-}
+  min-width: 0;
 
-
-/* =====================================================
-   6. KINETIC TYPOGRAPHY — ORIGINAL TEXT
-===================================================== */
-
-/*
-   The original text always determines its layout.
-
-   JS creates temporary visual letters outside
-   the heading when the user hovers.
-*/
-
-#home .kinetic-original {
-  color: inherit;
-}
-
-
-/* Hide original text while animated letters are visible */
-
-#home .hero-name.kinetic-playing .kinetic-original,
-#home .hero-title-highlight.kinetic-playing .kinetic-original {
-  visibility: hidden;
-}
-
-
-/* =====================================================
-   7. KINETIC LETTER OVERLAY
-===================================================== */
-
-.kinetic-letter-layer {
-  position: fixed;
-  inset: 0;
-
-  z-index: 100;
-
-  pointer-events: none;
   overflow: visible;
 }
 
-.kinetic-letter {
-  position: fixed;
+#home .hero-image .hero-image-base {
+  display: block;
 
-  display: inline-block;
+  width: 100%;
+  max-width: 300px;
+  height: auto;
 
-  margin: 0;
-  padding: 0;
+  animation: none;
+  filter: none;
 
-  white-space: pre;
-  color: #BB3F5B;
-
-  pointer-events: none;
   user-select: none;
-
-  transform-origin: 50% 85%;
-
-  animation:
-    kineticLetterBounce
-    650ms
-    cubic-bezier(0.22, 0.8, 0.25, 1)
-    both;
-
-  animation-delay: var(--letter-delay, 0ms);
+  -webkit-user-select: none;
+  -webkit-user-drag: none;
 }
 
 
 /* =====================================================
-   8. LETTER BOUNCE
+   7. INLINE KINETIC TYPOGRAPHY
 ===================================================== */
 
-@keyframes kineticLetterBounce {
+#home .kinetic-inline-word {
+  display: inline-block;
 
-  0% {
+  white-space: nowrap;
+  vertical-align: baseline;
+}
+
+#home .kinetic-inline-letter {
+  display: inline-block;
+
+  vertical-align: baseline;
+  transform-origin: 50% 85%;
+}
+
+
+/* =====================================================
+   8. KINETIC ANIMATION
+===================================================== */
+
+#home .kinetic-inline-playing .kinetic-inline-letter {
+  animation:
+    kineticInlineBounce
+    650ms
+    cubic-bezier(.22, .8, .25, 1)
+    both;
+
+  animation-delay: var(--kinetic-delay, 0ms);
+}
+
+@keyframes kineticInlineBounce {
+
+  0%, 100% {
     transform:
       translateY(0)
       rotate(0deg)
@@ -225,7 +213,7 @@
   25% {
     transform:
       translateY(-8px)
-      rotate(var(--letter-rotation, -3deg))
+      rotate(var(--kinetic-rotation, -3deg))
       scale(1.06);
   }
 
@@ -243,18 +231,11 @@
       scale(1.02);
   }
 
-  100% {
-    transform:
-      translateY(0)
-      rotate(0deg)
-      scale(1);
-  }
-
 }
 
 
 /* =====================================================
-   9. SUBTLE HOVER COLOR
+   9. HOVER COLOR
 ===================================================== */
 
 @media (hover: hover) and (pointer: fine) {
@@ -272,19 +253,58 @@
 }
 
 
+/* ==========================================
+   PROJECT LIST — ALIGN WITH NAVBAR
+========================================== */
+
+#home ~ .project-preview {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+#home ~ .project-preview .project-preview-content {
+  width: 100%;
+  max-width: 1396px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 /* =====================================================
-   10. TABLET
+   10. FIRST PROJECT REVEAL
 ===================================================== */
 
-@media (max-width: 1000px) {
+#home + .project-preview {
+  padding-top: 32px;
+}
+
+#home + .project-preview .hidden-left,
+#home + .project-preview .hidden-up {
+  transition-duration: 0.7s;
+  transition-delay: 0.5s;
+}
+
+
+/* =====================================================
+   11. TABLET
+===================================================== */
+
+@media (max-width: 1100px) {
+
+  #home {
+    padding:
+      118px
+      2rem
+      40px;
+  }
 
   #home .hero-content {
     grid-template-columns: 1fr;
-    gap: 46px;
+    gap: 28px;
   }
 
   #home .hero-text {
-    max-width: 760px;
+    max-width: 800px;
+    padding-top: 0;
   }
 
   #home .hero-title-main {
@@ -292,29 +312,44 @@
   }
 
   #home .hero-image {
+    display: flex;
     justify-content: center;
   }
 
-  #home .hero-image img {
-    max-width: 430px;
+  #home .hero-image .hero-image-base {
+    max-width: 300px;
+  }
+
+  #home + .project-preview {
+    padding-top: 28px;
   }
 
 }
 
 
 /* =====================================================
-   11. MOBILE
+   12. MOBILE
 ===================================================== */
 
 @media (max-width: 768px) {
 
+  #home {
+    padding:
+      106px
+      2rem
+      32px;
+  }
+
+  #home .hero-content {
+    gap: 24px;
+  }
+
   #home .hero-title {
-    margin-bottom: 28px;
+    margin-bottom: 23px;
   }
 
   #home .hero-title-main {
     font-size: clamp(1.7rem, 5vw, 2rem);
-    line-height: 1.4;
   }
 
   #home .hero-subtitle {
@@ -322,29 +357,47 @@
     line-height: 1.65;
   }
 
+  #home .hero-image .hero-image-base {
+    max-width: 280px;
+  }
+
+  #home + .project-preview {
+    padding-top: 24px;
+  }
+
 }
 
 
 /* =====================================================
-   12. SMALL MOBILE
+   13. SMALL MOBILE
 ===================================================== */
 
 @media (max-width: 600px) {
+
+  #home {
+    padding:
+      96px
+      1.25rem
+      28px;
+  }
 
   #home .hero-title-main {
     font-size: 1.7rem;
   }
 
-  #home .hero-name,
-  #home .hero-title-highlight {
-    font-size: 1.12em;
+  #home .hero-image .hero-image-base {
+    max-width: 260px;
+  }
+
+  #home + .project-preview {
+    padding-top: 20px;
   }
 
 }
 
 
 /* =====================================================
-   13. VERY SMALL MOBILE
+   14. VERY SMALL MOBILE
 ===================================================== */
 
 @media (max-width: 380px) {
@@ -357,22 +410,59 @@
     font-size: 0.96rem;
   }
 
+  #home .hero-image .hero-image-base {
+    max-width: 230px;
+  }
+
 }
 
 
 /* =====================================================
-   14. ACCESSIBILITY
+   15. ACCESSIBILITY
 ===================================================== */
 
 @media (prefers-reduced-motion: reduce) {
 
-  .kinetic-letter-layer {
-    display: none !important;
+  #home .kinetic-inline-letter {
+    animation: none !important;
+    transform: none !important;
   }
 
-  #home .hero-name.kinetic-playing .kinetic-original,
-  #home .hero-title-highlight.kinetic-playing .kinetic-original {
-    visibility: visible !important;
+  #home .hero-name,
+  #home .hero-title-highlight {
+    transition: none;
+  }
+
+  #home + .project-preview .hidden-left,
+  #home + .project-preview .hidden-up {
+    transition: none;
+    opacity: 1;
+    transform: none;
   }
 
 }
+
+
+/* ==========================================
+   PROJECT TITLE — INTERACTIVE LINK
+========================================== */
+
+#home ~ .project-preview .project-title-link {
+  color: inherit;
+  text-decoration: none;
+  transition: color 0.25s ease;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  #home ~ .project-preview .project-title-link:hover {
+    color: #BB3F5B;
+  }
+}
+
+#home ~ .project-preview .project-title-link:focus-visible {
+  color: #BB3F5B;
+  outline: 2px solid #BB3F5B;
+  outline-offset: 5px;
+  border-radius: 2px;
+}
+

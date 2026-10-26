@@ -1,277 +1,181 @@
 
 document.addEventListener("DOMContentLoaded", () => {
+  /* =====================================================
+     HERO — INLINE KINETIC TYPOGRAPHY
+  ===================================================== */
 
-  /* ==========================================
-     HERO KINETIC TYPOGRAPHY
-     - Play once on page load
-     - Replay on hover
-     - Preserve original text layout
-     - No overlapping letters
-  ========================================== */
+  const selectors = [
+    "#home .hero-name",
+    "#home .hero-title-highlight"
+  ];
 
-  const elements = [
-    document.querySelector("#home .hero-name"),
-    document.querySelector("#home .hero-title-highlight")
-  ].filter(Boolean);
-
-  if (!elements.length) return;
-
-  const hoverQuery = window.matchMedia(
-    "(hover: hover) and (pointer: fine)"
-  );
-
-  const motionQuery = window.matchMedia(
+  const reducedMotion = window.matchMedia(
     "(prefers-reduced-motion: reduce)"
   );
 
-  if (motionQuery.matches) return;
+  const canHover = window.matchMedia(
+    "(hover: hover) and (pointer: fine)"
+  );
+
+  if (reducedMotion.matches) return;
 
   const DURATION = 650;
   const STAGGER = 25;
+  const LOAD_DELAY = 450;
 
-const LOAD_DELAYS = [300, 700];
+  /* PREPARE LETTERS */
 
-  /* ==========================================
-     GLOBAL ANIMATION LAYER
-  ========================================== */
+  const items = selectors
+    .map(selector => document.querySelector(selector))
+    .filter(Boolean)
+    .map(element => {
+      const fragment = document.createDocumentFragment();
+      const letters = [];
 
-  const layer = document.createElement("div");
-  layer.className = "kinetic-letter-layer";
-  layer.setAttribute("aria-hidden", "true");
+      const tokens =
+        element.textContent.match(/\s+|[^\s]+/g) || [];
 
-  document.body.appendChild(layer);
+      tokens.forEach(token => {
+        if (/^\s+$/.test(token)) {
+          fragment.append(
+            document.createTextNode(token)
+          );
+          return;
+        }
 
-  let activeElement = null;
-  let animationTimer = null;
-  let loadTimers = [];
+        const word = document.createElement("span");
+        word.className = "kinetic-inline-word";
 
+        for (const char of Array.from(token)) {
+          const letter = document.createElement("span");
 
-  /* ==========================================
-     STOP ANIMATION
-  ========================================== */
+          letter.className = "kinetic-inline-letter";
+          letter.textContent = char;
 
-  function stopAnimation() {
-    clearTimeout(animationTimer);
+          word.append(letter);
+          letters.push(letter);
+        }
 
-    if (activeElement) {
-      activeElement.classList.remove(
-        "kinetic-playing"
-      );
-    }
-
-    layer.replaceChildren();
-    activeElement = null;
-  }
-
-
-  /* ==========================================
-     INITIALIZE ELEMENTS
-  ========================================== */
-
-  const items = elements.map((element) => {
-
-    const text = element.textContent;
-
-    const original = document.createElement("span");
-    original.className = "kinetic-original";
-    original.textContent = text;
-
-    element.replaceChildren(original);
-
-    return { element, original };
-  });
-
-
-  /* ==========================================
-     PLAY KINETIC ANIMATION
-  ========================================== */
-
-  function playAnimation(item) {
-    if (motionQuery.matches) return;
-
-    const { element, original } = item;
-
-    stopAnimation();
-
-    const textNode = original.firstChild;
-    if (!textNode) return;
-
-    const computed = window.getComputedStyle(element);
-    const letters = [];
-
-    let animatedIndex = 0;
-
-    // Measure the exact positions of the original letters.
-    for (let i = 0; i < textNode.length; i++) {
-
-      const char = textNode.textContent[i];
-
-      if (/\s/.test(char)) continue;
-
-      const range = document.createRange();
-
-      range.setStart(textNode, i);
-      range.setEnd(textNode, i + 1);
-
-      const rect = range.getBoundingClientRect();
-
-      if (rect.width === 0 && rect.height === 0) {
-        continue;
-      }
-
-      const letter = document.createElement("span");
-
-      letter.className = "kinetic-letter";
-      letter.textContent = char;
-
-      letter.style.left = `${rect.left}px`;
-      letter.style.top = `${rect.top}px`;
-
-      letter.style.fontFamily = computed.fontFamily;
-      letter.style.fontStyle = computed.fontStyle;
-      letter.style.fontWeight = computed.fontWeight;
-      letter.style.fontSize = computed.fontSize;
-      letter.style.lineHeight = computed.lineHeight;
-      letter.style.letterSpacing = computed.letterSpacing;
-      letter.style.color = computed.color;
-
-      letter.style.setProperty(
-        "--letter-delay",
-        `${animatedIndex * STAGGER}ms`
-      );
-
-      letter.style.setProperty(
-        "--letter-rotation",
-        animatedIndex % 2 === 0
-          ? "-3deg"
-          : "3deg"
-      );
-
-      letters.push(letter);
-      animatedIndex++;
-    }
-
-    if (!letters.length) return;
-
-    layer.replaceChildren(...letters);
-
-    element.classList.add("kinetic-playing");
-    activeElement = element;
-
-    animationTimer = window.setTimeout(() => {
-      stopAnimation();
-    }, DURATION + animatedIndex * STAGGER + 50);
-  }
-
-
-  /* ==========================================
-     HOVER INTERACTION
-  ========================================== */
-
-  items.forEach((item) => {
-
-    const { element } = item;
-
-    element.addEventListener("pointerenter", (event) => {
-      if (!hoverQuery.matches) return;
-
-      if (
-        event.pointerType &&
-        event.pointerType !== "mouse"
-      ) {
-        return;
-      }
-
-      // Cancel automatic animations if user
-      // interacts before they finish.
-      loadTimers.forEach(clearTimeout);
-      loadTimers = [];
-
-      playAnimation(item);
-    });
-
-    element.addEventListener(
-      "pointerleave",
-      stopAnimation
-    );
-
-    element.addEventListener(
-      "pointercancel",
-      stopAnimation
-    );
-  });
-
-
-  /* ==========================================
-     OPENING ANIMATION — ONCE PER LOAD
-  ========================================== */
-
-  function playOpeningAnimation() {
-
-    if (motionQuery.matches) return;
-
-    // Wait for Playfair Display to finish loading
-    // so character measurements are accurate.
-    const fontsReady = document.fonts
-      ? document.fonts.ready
-      : Promise.resolve();
-
-    fontsReady.then(() => {
-
-      requestAnimationFrame(() => {
-
-        items.forEach((item, index) => {
-
-          const timer = window.setTimeout(() => {
-            playAnimation(item);
-          }, LOAD_DELAYS[index] ?? 600);
-
-          loadTimers.push(timer);
-
-        });
-
+        fragment.append(word);
       });
 
+      element.replaceChildren(fragment);
+
+      return {
+        element,
+        letters,
+        timer: null
+      };
     });
+
+  let openingTimer = null;
+  let openingCancelled = false;
+
+  /* STOP ANIMATION */
+
+  function stop(item) {
+    clearTimeout(item.timer);
+    item.timer = null;
+
+    item.element.classList.remove(
+      "kinetic-inline-playing"
+    );
   }
 
-  playOpeningAnimation();
+  /* PLAY ANIMATION */
 
+  function play(item) {
+    if (document.hidden || reducedMotion.matches) return;
 
-  /* ==========================================
-     CLEANUP
-  ========================================== */
+    stop(item);
+
+    // Reset CSS animation for replay.
+    void item.element.offsetWidth;
+
+    item.letters.forEach((letter, index) => {
+      letter.style.setProperty(
+        "--kinetic-delay",
+        `${index * STAGGER}ms`
+      );
+
+      letter.style.setProperty(
+        "--kinetic-rotation",
+        index % 2 === 0 ? "-3deg" : "3deg"
+      );
+    });
+
+    item.element.classList.add(
+      "kinetic-inline-playing"
+    );
+
+    item.timer = window.setTimeout(
+      () => stop(item),
+      DURATION + item.letters.length * STAGGER + 30
+    );
+  }
+
+  /* CANCEL OPENING ANIMATION */
+
+  function cancelOpening() {
+    openingCancelled = true;
+    clearTimeout(openingTimer);
+  }
+
+  /* HOVER EVENTS */
+
+  items.forEach(item => {
+    item.element.addEventListener(
+      "pointerenter",
+      event => {
+        if (!canHover.matches) return;
+
+        if (
+          event.pointerType &&
+          event.pointerType !== "mouse"
+        ) {
+          return;
+        }
+
+        cancelOpening();
+        play(item);
+      }
+    );
+  });
+
+  /* OPENING ANIMATION */
+
+  Promise.resolve(document.fonts?.ready).then(() => {
+    if (openingCancelled || document.hidden) return;
+
+    openingTimer = window.setTimeout(() => {
+      if (openingCancelled || document.hidden) return;
+
+      // Both highlighted phrases start together.
+      items.forEach(play);
+
+    }, LOAD_DELAY);
+  });
+
+  /* CLEANUP */
 
   function cleanup() {
-    loadTimers.forEach(clearTimeout);
-    loadTimers = [];
-    stopAnimation();
+    cancelOpening();
+    items.forEach(stop);
   }
 
-  window.addEventListener(
-    "scroll",
-    cleanup,
-    { passive: true }
-  );
-
-  window.addEventListener(
-    "resize",
-    cleanup,
-    { passive: true }
-  );
-
-  window.addEventListener(
-    "blur",
-    cleanup
-  );
+  window.addEventListener("blur", cleanup);
 
   document.addEventListener(
     "visibilitychange",
     () => {
-      if (document.hidden) {
-        cleanup();
-      }
+      if (document.hidden) cleanup();
     }
   );
 
+  reducedMotion.addEventListener(
+    "change",
+    event => {
+      if (event.matches) cleanup();
+    }
+  );
 });

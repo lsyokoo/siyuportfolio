@@ -94,6 +94,56 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
   /* =======================================================
+     SMART CASE STUDY BACK NAVIGATION
+
+     Automatically return to the matching project
+     preview on the homepage.
+  ======================================================= */
+
+  const backLink = document.querySelector(".case-sidebar-back");
+
+  if (backLink) {
+    const projectDestinations = {
+      "abg.html": {
+        id: "project-ynyg",
+        name: "YNYG Post-Purchase"
+      },
+
+      "abg2b.html": {
+        id: "project-wholesale",
+        name: "YNYG Wholesale"
+      },
+
+      "bnu.html": {
+        id: "project-bnu",
+        name: "BNU"
+      },
+
+      "stylist.html": {
+        id: "project-stylist",
+        name: "Virtual Stylist"
+      }
+    };
+
+    const currentPage = window.location.pathname
+      .split("/")
+      .pop()
+      .toLowerCase();
+
+    const destination = projectDestinations[currentPage];
+
+    if (destination) {
+      backLink.href = "index.html#" + destination.id;
+
+      backLink.setAttribute(
+        "aria-label",
+        "Back to " + destination.name + " project preview"
+      );
+    }
+  }
+
+
+  /* =======================================================
      SCROLL REVEAL
   ======================================================= */
 
@@ -155,7 +205,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const linkHost = document.getElementById("caseSidebarLinks");
   const caseStudy = document.querySelector("main.case-study");
 
-  // Homepage and other non-case-study pages are unaffected.
+  // Homepage and non-case-study pages are unaffected.
   if (!sidebar || !linkHost || !caseStudy) {
     return;
   }
@@ -169,7 +219,11 @@ document.addEventListener("DOMContentLoaded", function () {
     );
   });
 
-  // Track existing IDs to prevent duplicates.
+
+  /* =======================================================
+     GENERATE UNIQUE SECTION IDS
+  ======================================================= */
+
   const usedIds = new Set(
     Array.from(document.querySelectorAll("[id]"), function (el) {
       return el.id;
@@ -187,7 +241,6 @@ document.addEventListener("DOMContentLoaded", function () {
         : "Overview";
     }
 
-    // Create unique IDs when missing.
     if (!section.id) {
       const slug =
         label
@@ -208,7 +261,6 @@ document.addEventListener("DOMContentLoaded", function () {
       usedIds.add(candidate);
     }
 
-    // Build the navigation link.
     const link = document.createElement("a");
 
     link.className = "case-sidebar-link";
@@ -232,6 +284,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   function updateActiveSection() {
     if (!navItems.length) {
+      ticking = false;
       return;
     }
 
@@ -247,8 +300,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-    // When the visitor reaches the bottom,
-    // select the last section.
     const atBottom =
       window.innerHeight + window.scrollY >=
       document.documentElement.scrollHeight - 8;
@@ -281,7 +332,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
   window.addEventListener("resize", requestActiveUpdate);
 
-  // Highlight the current section when the page loads.
   updateActiveSection();
 
 
@@ -295,7 +345,7 @@ document.addEventListener("DOMContentLoaded", function () {
     try {
       hash = decodeURIComponent(hash);
     } catch (error) {
-      // Keep the original hash if decoding fails.
+      // Keep original hash if decoding fails.
     }
 
     const target = document.getElementById(hash);
