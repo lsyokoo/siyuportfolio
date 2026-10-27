@@ -1,0 +1,466 @@
+
+/* =========================================================
+   SIYU PORTFOLIO — CRAFT PAGE
+
+   Editorial Heading
+   Pill-style Category Filters
+   Static Masonry Gallery
+========================================================= */
+
+
+/* =========================================================
+   1. PAGE / CONTAINER
+========================================================= */
+
+.craft-page {
+  width: 100%;
+  background: #FAFAF9;
+}
+
+.craft-container {
+  width: 100%;
+  max-width: 1460px;
+
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+
+/* =========================================================
+   2. PAGE HEADING
+========================================================= */
+
+.craft-intro {
+  padding-top: 130px;
+  padding-bottom: 36px;
+}
+
+.craft-title {
+  margin: 0;
+
+  font-family:
+    "Inter",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+
+  font-size: clamp(2.7rem, 4vw, 4.25rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.045em;
+
+  color: #3E4E50;
+}
+
+.craft-title span {
+  font-family:
+    "Playfair Display",
+    Georgia,
+    serif;
+
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: -0.035em;
+
+  color: #BB3F5B;
+}
+
+
+/* =========================================================
+   3. CATEGORY FILTERS — PILL STYLE
+========================================================= */
+
+.craft-filters {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 36px;
+  padding: 0;
+
+  border: none;
+}
+
+.craft-filter {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 42px;
+  padding: 10px 20px;
+
+  border: 1px solid #DAD7D4;
+  border-radius: 999px;
+
+  background: transparent;
+
+  font-family:
+    "Inter",
+    "Helvetica Neue",
+    Arial,
+    sans-serif;
+
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1.35;
+
+  color: #535B5B;
+
+  cursor: pointer;
+
+  transition:
+    color 0.2s ease,
+    background-color 0.2s ease,
+    border-color 0.2s ease;
+}
+
+/* Hover only changes the tab, never the gallery */
+
+@media (hover: hover) and (pointer: fine) {
+
+  .craft-filter:hover {
+    color: #BB3F5B;
+    border-color: #BB3F5B;
+  }
+
+}
+
+/* Selected category */
+
+.craft-filter.is-active {
+  color: #BB3F5B;
+  background-color: transparent;
+  border-color: #BB3F5B;
+  font-weight: 500;
+}
+
+.craft-filter:focus-visible {
+  outline: 2px solid #BB3F5B;
+  outline-offset: 4px;
+}
+
+
+/* =========================================================
+   4. GALLERY SECTION
+========================================================= */
+
+.craft-gallery-section {
+  padding-top: 0;
+  padding-bottom: 70px;
+}
+
+.craft-gallery {
+  width: 100%;
+
+  column-count: 3;
+  column-gap: 12px;
+}
+
+
+/* =========================================================
+   5. STATIC GALLERY ITEMS
+========================================================= */
+
+.craft-item {
+  display: block;
+
+  width: 100%;
+  margin: 0 0 12px;
+
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+
+  overflow: hidden;
+  border-radius: 3px;
+
+  background: transparent;
+}
+
+/* Hidden categories */
+
+.craft-item[hidden] {
+  display: none !important;
+}
+
+/* Image / video sizing */
+
+.craft-item img,
+.craft-item video {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  border-radius: 3px;
+
+  transform: none;
+  filter: none;
+  transition: none;
+}
+
+.craft-item video {
+  background: #EAE8E5;
+}
+
+/* No hover scaling or image effects */
+
+.craft-item:hover img,
+.craft-item:hover video {
+  transform: none;
+  filter: none;
+}
+
+
+/* =========================================================
+   6. REMAKE PROJECT LINK
+========================================================= */
+
+.craft-feature {
+  position: relative;
+}
+
+.craft-feature-link {
+  position: relative;
+  display: block;
+
+  width: 100%;
+
+  overflow: hidden;
+  border-radius: 3px;
+
+  color: inherit;
+  text-decoration: none;
+}
+
+.craft-feature-link img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.craft-feature-label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 30px 18px 15px;
+
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.43),
+    rgba(0, 0, 0, 0)
+  );
+
+  font-size: 0.74rem;
+  font-weight: 500;
+  line-height: 1.4;
+  letter-spacing: 1.2px;
+
+  color: #FFFFFF;
+
+  pointer-events: none;
+}
+
+/* Arrow decoration, not hover animation */
+
+.craft-feature-label span {
+  font-size: 1.15rem;
+  line-height: 1;
+}
+
+.craft-feature-link:focus-visible {
+  outline: 3px solid #BB3F5B;
+  outline-offset: 4px;
+}
+
+
+/* =========================================================
+   7. CATEGORY CHANGE ANIMATION
+   Item fade-in only, no hover effect
+========================================================= */
+
+.craft-item.is-entering {
+  animation: craftFadeUp 0.4s ease both;
+}
+
+@keyframes craftFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+/* =========================================================
+   8. ACCESSIBILITY
+========================================================= */
+
+.craft-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+
+  overflow: hidden;
+
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .craft-filter {
+    transition: none;
+  }
+
+  .craft-item.is-entering {
+    animation: none;
+  }
+
+}
+
+
+/* =========================================================
+   9. TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+  .craft-intro {
+    padding-top: 118px;
+    padding-bottom: 30px;
+  }
+
+  .craft-filters {
+    margin-top: 30px;
+  }
+
+  .craft-gallery {
+    column-count: 2;
+    column-gap: 10px;
+  }
+
+  .craft-item {
+    margin-bottom: 10px;
+  }
+
+}
+
+
+/* =========================================================
+   10. MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  .craft-intro {
+    padding-top: 110px;
+    padding-bottom: 26px;
+  }
+
+  .craft-title {
+    font-size: clamp(2.5rem, 6vw, 3.3rem);
+  }
+
+  .craft-filters {
+    gap: 10px;
+    margin-top: 28px;
+  }
+
+  .craft-filter {
+    min-height: 40px;
+    padding: 9px 17px;
+    font-size: 0.85rem;
+  }
+
+  .craft-gallery-section {
+    padding-bottom: 55px;
+  }
+
+}
+
+
+/* =========================================================
+   11. SMALL MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+  .craft-container {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .craft-intro {
+    padding-top: 100px;
+    padding-bottom: 24px;
+  }
+
+  .craft-title {
+    font-size: 2.5rem;
+  }
+
+  .craft-filters {
+    gap: 9px;
+    margin-top: 26px;
+  }
+
+  .craft-filter {
+    min-height: 38px;
+    padding: 8px 15px;
+    font-size: 0.82rem;
+  }
+
+  .craft-gallery {
+    column-count: 2;
+    column-gap: 8px;
+  }
+
+  .craft-item {
+    margin-bottom: 8px;
+  }
+
+  .craft-feature-label {
+    padding: 24px 10px 10px;
+    font-size: 0.6rem;
+  }
+
+}
+
+
+/* =========================================================
+   12. VERY SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .craft-title {
+    font-size: 2.25rem;
+  }
+
+  .craft-gallery {
+    column-count: 1;
+  }
+
+  .craft-item {
+    margin-bottom: 10px;
+  }
+
+  .craft-feature-label {
+    padding: 30px 16px 14px;
+    font-size: 0.72rem;
+  }
+
+}

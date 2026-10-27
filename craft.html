@@ -1,0 +1,823 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Craft | Siyu Liu</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- Shared website styles -->
+  <link rel="stylesheet" href="style1.css">
+
+  <!-- Craft page only -->
+  <link rel="stylesheet" href="craft.css">
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+
+  <header>
+    <nav>
+
+      <div class="logo">
+        <a href="index.html">SIYU</a>
+      </div>
+
+      <div class="nav-right">
+
+        <ul class="nav-menu">
+
+          <li>
+            <a href="index.html">WORK</a>
+          </li>
+
+          <li>
+            <a href="mediaart.html">CREATIVE TECH</a>
+          </li>
+
+          <li>
+            <a href="craft.html" class="active">CRAFT</a>
+          </li>
+
+
+          <li>
+            <a
+              href="assets/Siyu_Liu_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="nav-resume"
+              aria-label="Resume (PDF, opens in a new tab)"
+            >
+              RESUME
+              <span
+                class="nav-resume-arrow"
+                aria-hidden="true"
+              >↗</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="about.html">ABOUT</a>
+          </li>
+
+
+        </ul>
+
+        <div class="icons">
+
+          <div class="language-dropdown">
+            <svg
+              class="globe-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"></path>
+              <path d="M12 2a15.3 15.3 0 0 0-4 10 15.3 15.3 0 0 0 4 10"></path>
+            </svg>
+          </div>
+
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+        </div>
+      </div>
+
+    </nav>
+  </header>
+
+
+  <main class="craft-page">
+
+    <!-- ================= INTRO ================= -->
+
+    <section class="craft-intro">
+
+      <div class="craft-container">
+
+    <h1 class="craft-title">
+  Craft <span>&amp; Curiosity.</span>
+</h1>
+
+        <!-- Category filters -->
+
+        
+<div
+  class="craft-filters"
+  role="group"
+  aria-label="Filter creative work by category"
+>
+  <button
+    type="button"
+    class="craft-filter is-active"
+    data-filter="all"
+    aria-pressed="true"
+  >
+    All
+  </button>
+
+  <button
+    type="button"
+    class="craft-filter"
+    data-filter="photography"
+    aria-pressed="false"
+  >
+    Photography
+  </button>
+
+  <button
+    type="button"
+    class="craft-filter"
+    data-filter="fashion"
+    aria-pressed="false"
+  >
+    Fashion
+  </button>
+
+  <button
+    type="button"
+    class="craft-filter"
+    data-filter="visual"
+    aria-pressed="false"
+  >
+    Visual Design
+  </button>
+
+  <button
+    type="button"
+    class="craft-filter"
+    data-filter="sketchbook"
+    aria-pressed="false"
+  >
+    Sketchbook
+  </button>
+</div>
+
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= WORK GALLERY ================= -->
+
+    <section
+      class="craft-gallery-section"
+      aria-label="Creative work gallery"
+    >
+
+      <div class="craft-container">
+
+        <div class="craft-gallery" id="craftGallery">
+
+
+          <!-- ========================================
+               VISUAL DESIGN
+          ======================================== -->
+
+          <figure
+            class="craft-item"
+            data-category="visual"
+          >
+            <img
+              src="assets/visual/preasy.png"
+              alt="Preasy visual design"
+              loading="eager"
+              decoding="async"
+            >
+          </figure>
+
+
+         
+<!-- FASHION: REMAKE FEATURED PROJECT -->
+
+<figure
+  class="craft-item craft-feature"
+  data-category="fashion"
+>
+  <a
+    href="remake.html"
+    class="craft-feature-link"
+    data-project-cursor
+    data-cursor-label="View"
+    aria-label="View Remake fashion project"
+  >
+    <img
+      src="assets/fashion/remake/skirt/1.jpg"
+      alt="Remake fashion project"
+      loading="eager"
+      decoding="async"
+    >
+  </a>
+</figure>
+
+
+          <!-- PHOTOGRAPHY -->
+
+          <figure
+            class="craft-item"
+            data-category="photography"
+          >
+            <img
+              src="assets/others/photo2.jpg"
+              alt="Photography work 1"
+              loading="eager"
+              decoding="async"
+            >
+          </figure>
+
+
+          <!-- VISUAL: SELF MAPPING -->
+
+          <figure
+            class="craft-item"
+            data-category="visual"
+          >
+            <video
+              controls
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              aria-label="Self-mapping motion graphics"
+            >
+              <source
+                src="assets/visual/selfmapping.mp4"
+                type="video/mp4"
+              >
+              Your browser does not support HTML5 video.
+            </video>
+          </figure>
+
+
+          <!-- FASHION: FOOTWEAR -->
+
+          <figure
+            class="craft-item"
+            data-category="fashion"
+          >
+            <img
+              src="assets/fashion/shoecollage1.png"
+              alt="Shoe design collage 1"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+
+          <!-- VISUAL: YNYG -->
+
+          <figure
+            class="craft-item"
+            data-category="visual"
+          >
+            <img
+              src="assets/visual/ynygvisual.jpg"
+              alt="YNYG bag poster and product photography"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+
+          <!-- PHOTOGRAPHY -->
+
+          <figure
+            class="craft-item"
+            data-category="photography"
+          >
+            <img
+              src="assets/others/photo3.jpg"
+              alt="Photography work 2"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+
+          <!-- FASHION: FOOTWEAR -->
+
+          <figure
+            class="craft-item"
+            data-category="fashion"
+          >
+            <img
+              src="assets/fashion/shoecollage2.png"
+              alt="Shoe design collage 2"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+
+          <!-- VISUAL: LISA LEE -->
+
+          <figure
+            class="craft-item"
+            data-category="visual"
+          >
+            <img
+              src="assets/visual/Lisalee.png"
+              alt="Lisa Lee visual design"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+
+          <!-- SKETCHBOOK: STILL LIFE -->
+
+          <figure
+            class="craft-item"
+            data-category="sketchbook"
+          >
+            <img
+              src="assets/others/stilllife.jpg"
+              alt="Still life sketch"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+
+          <!-- FASHION: GLOVES -->
+
+          <figure
+            class="craft-item"
+            data-category="fashion"
+          >
+            <img
+              src="assets/others/gloves.jpg"
+              alt="Fabricated gloves"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+
+          <!-- VISUAL: JETS -->
+
+          <figure
+            class="craft-item"
+            data-category="visual"
+          >
+            <video
+              controls
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              aria-label="Jets visual motion design"
+            >
+              <source
+                src="assets/visual/jetsvisual.mp4"
+                type="video/mp4"
+              >
+              Your browser does not support HTML5 video.
+            </video>
+          </figure>
+
+
+          <!-- PHOTOGRAPHY -->
+
+          <figure
+            class="craft-item"
+            data-category="photography"
+          >
+            <img
+              src="assets/others/photo4.jpg"
+              alt="Photography work 3"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+
+          
+<!-- FASHION: RING -->
+
+<figure
+  class="craft-item"
+  data-category="fashion"
+>
+  <video
+    autoplay
+    muted
+    loop
+    playsinline
+    preload="metadata"
+    aria-label="Flux ring design"
+  >
+    <source
+      src="assets/fashion/otherfashion/fluxring.mp4"
+      type="video/mp4"
+    >
+    Your browser does not support HTML5 video.
+  </video>
+</figure>
+
+
+
+          <!-- VISUAL: HERO POSTER -->
+
+          <figure
+            class="craft-item"
+            data-category="visual"
+          >
+            <img
+              src="assets/visual/heroposter.png"
+              alt="Hero poster design"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+
+          <!-- SKETCHBOOK: ANATOMY -->
+
+          <figure
+            class="craft-item"
+            data-category="sketchbook"
+          >
+            <img
+              src="assets/others/anatomy.jpg"
+              alt="Anatomy sketch"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+
+          <!-- FASHION: BRACELET -->
+
+          <figure
+            class="craft-item"
+            data-category="fashion"
+          >
+            <img
+              src="assets/others/bracelet.png"
+              alt="Bracelet design"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+
+          <!-- PHOTOGRAPHY -->
+
+          <figure
+            class="craft-item"
+            data-category="photography"
+          >
+            <img
+              src="assets/others/photo1.jpg"
+              alt="Photography work 4"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+
+          <!-- VISUAL: BNU -->
+
+          <figure
+            class="craft-item"
+            data-category="visual"
+          >
+            <video
+              controls
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              aria-label="BNU brand motion graphics"
+            >
+              <source
+                src="assets/visual/bnu.mp4"
+                type="video/mp4"
+              >
+              Your browser does not support HTML5 video.
+            </video>
+          </figure>
+
+
+          <!-- FASHION: WEAVING -->
+
+          <figure
+            class="craft-item"
+            data-category="fashion"
+          >
+            <img
+              src="assets/fashion/otherfashion/weaving.jpg"
+              alt="Weaving project"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+
+          <!-- PHOTOGRAPHY -->
+
+          <figure
+            class="craft-item"
+            data-category="photography"
+          >
+            <img
+              src="assets/others/photo5.jpg"
+              alt="Photography work 5"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+
+          <!-- FASHION: AI FABRICATION -->
+
+          <figure
+            class="craft-item"
+            data-category="fashion"
+          >
+            <img
+              src="assets/others/fabricationai2.png"
+              alt="AI-assisted fabrication visualization 2"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+
+          <!-- SKETCHBOOK: INK PAINTING -->
+
+          <figure
+            class="craft-item"
+            data-category="sketchbook"
+          >
+            <img
+              src="assets/others/cat.jpg"
+              alt="Cat ink painting"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+
+
+
+          <!-- PHOTOGRAPHY: ISTANBUL -->
+
+          <figure
+            class="craft-item"
+            data-category="photography"
+          >
+            <img
+              src="assets/others/istanbul1.JPG"
+              alt="Istanbul photography"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+
+          <!-- FASHION: ILLUSTRATION -->
+
+          <figure
+            class="craft-item"
+            data-category="fashion"
+          >
+            <img
+              src="assets/fashion/otherfashion/illustration3.jpg"
+              alt="Fashion illustration 2"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+
+          <!-- SKETCHBOOK: FACE -->
+
+          <figure
+            class="craft-item"
+            data-category="sketchbook"
+          >
+            <img
+              src="assets/others/face.jpg"
+              alt="Face drawing"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+
+          <!-- PHOTOGRAPHY: BEACH -->
+
+          <figure
+            class="craft-item"
+            data-category="photography"
+          >
+            <img
+              src="assets/others/beach.jpg"
+              alt="Beach photography"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+
+          <!-- FASHION: HEADPIECE -->
+
+          <figure
+            class="craft-item"
+            data-category="fashion"
+          >
+            <img
+              src="assets/fashion/otherfashion/headpiece2.jpg"
+              alt="Paper headpiece design"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+
+
+          <!-- PHOTOGRAPHY: SWING -->
+
+          <figure
+            class="craft-item"
+            data-category="photography"
+          >
+            <img
+              src="assets/others/swing.jpg"
+              alt="Swing photography"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+
+          <!-- FASHION: HEADBAND -->
+
+          <figure
+            class="craft-item"
+            data-category="fashion"
+          >
+            <img
+              src="assets/fashion/otherfashion/puppyheadband.png"
+              alt="Puppy headband design"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+
+          <!-- SKETCHBOOK: HANDS -->
+
+          <figure
+            class="craft-item"
+            data-category="sketchbook"
+          >
+            <img
+              src="assets/others/hands.jpg"
+              alt="Hand drawing"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+
+          <!-- PHOTOGRAPHY: HOT AIR BALLOON -->
+
+          <figure
+            class="craft-item"
+            data-category="photography"
+          >
+            <img
+              src="assets/others/hotballoon.JPG"
+              alt="Hot air balloon photography"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+
+          <!-- FASHION: ILLUSTRATION -->
+
+          <figure
+            class="craft-item"
+            data-category="fashion"
+          >
+            <img
+              src="assets/fashion/otherfashion/illustration1.jpg"
+              alt="Fashion illustration 1"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+          
+          <!-- FASHION: UNIFORM -->
+
+          <figure
+            class="craft-item"
+            data-category="fashion"
+          >
+            <img
+              src="assets/fashion/otherfashion/uniform.png"
+              alt="Uniform design"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+
+          <!-- PHOTOGRAPHY: CAT -->
+
+          <figure
+            class="craft-item"
+            data-category="photography"
+          >
+            <img
+              src="assets/others/turkiyecat.jpg"
+              alt="Cat photography in Türkiye"
+              loading="lazy"
+              decoding="async"
+            >
+          </figure>
+
+
+        </div>
+
+        <!-- Accessible feedback on filter change -->
+        <p
+          class="craft-sr-only"
+          id="craftFilterStatus"
+          role="status"
+          aria-live="polite"
+        ></p>
+
+      </div>
+
+    </section>
+
+
+    <!-- BACK TO TOP -->
+
+    <div
+      class="scrolltop-container"
+      id="scrollTopArrow"
+    >
+      <img
+        src="assets/scrolldown.png"
+        alt="Back to top"
+        class="scrolltop"
+      >
+    </div>
+
+  </main>
+
+
+  <!-- FOOTER -->
+
+  <footer class="footer">
+    <p>
+      © 2026 Siyu Liu |
+
+      <a
+        href="https://www.linkedin.com/in/siyu-liu-9b2a43270/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >LinkedIn</a> |
+
+      <a href="mailto:lsy20041203@gmail.com">
+        Email
+      </a>
+    </p>
+  </footer>
+
+
+  <!-- SCRIPTS -->
+
+  <script src="script.js"></script>
+  <script src="project-cursor.js"></script>
+  <script src="craft.js"></script>
+
+</body>
+</html>
