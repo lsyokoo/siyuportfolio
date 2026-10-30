@@ -1,6 +1,6 @@
 
 /* =====================================================
-   ABOUT PAGE — EDITORIAL + STICKER COLLAGE
+   ABOUT PAGE — GLOBAL
 ===================================================== */
 
 :root {
@@ -13,20 +13,18 @@
   --about-bg: #FAFAF9;
 }
 
-/* =====================================================
-   SHARED LAYOUT
-===================================================== */
-
 .about-intro,
 .about-background,
-.about-leadership {
+.about-leadership,
+.about-offclock {
   width: 100%;
   background: var(--about-bg);
 }
 
 .about-intro-inner,
 .about-background-inner,
-.about-leadership-inner {
+.about-leadership-inner,
+.about-offclock-inner {
   width: 100%;
   max-width: 1400px;
   margin: 0 auto;
@@ -43,23 +41,23 @@
 }
 
 /* =====================================================
-   INTRO
+   INTRO LAYOUT
 ===================================================== */
 
 .about-intro {
-  padding: 145px clamp(3rem, 6vw, 6rem) 65px;
+  padding: 145px clamp(3rem, 6vw, 6rem) 30px;
 }
 
 .about-intro-inner {
   display: grid;
-  grid-template-columns: 225px minmax(0, 1fr);
-  column-gap: clamp(45px, 5.5vw, 85px);
+  grid-template-columns: 260px minmax(0, 1fr);
+  column-gap: clamp(35px, 4vw, 60px);
   align-items: center;
   animation: aboutFadeIn 0.65s ease-out both;
 }
 
 /* =====================================================
-   PROFILE POLAROID
+   PROFILE POLAROID — STATIC
 ===================================================== */
 
 .about-profile {
@@ -71,10 +69,9 @@
 
 .about-polaroid {
   position: relative;
-  width: 205px;
+  width: 245px;
   max-width: 100%;
   padding: 10px 10px 11px;
-
   background: #FFFFFF;
   border: 1px solid #EEECE8;
 
@@ -83,138 +80,107 @@
     0 12px 27px rgba(0, 0, 0, 0.09);
 
   transform: rotate(-3deg);
-  transform-origin: center center;
-
+  transform-origin: center;
   overflow: visible;
-
-  transition:
-    transform 0.35s ease,
-    box-shadow 0.35s ease;
 }
-
-/* Original profile hover is preserved */
-
-.about-polaroid:hover {
-  transform: rotate(0deg) translateY(-4px);
-
-  box-shadow:
-    0 6px 14px rgba(0, 0, 0, 0.08),
-    0 18px 34px rgba(0, 0, 0, 0.11);
-}
-
-/* Profile Tape */
 
 .about-profile-tape {
   position: absolute;
   z-index: 5;
-
   top: -14px;
   left: 50%;
-
   display: block;
-
   width: 95px;
   height: auto;
   max-width: 54%;
-
   transform: translateX(-50%) rotate(-6deg);
-
   pointer-events: none;
   user-select: none;
-  transition: none;
 }
 
 .about-profile-image {
   display: block;
   width: 100%;
   aspect-ratio: 4 / 4.6;
-
   object-fit: cover;
   object-position: center 35%;
-
   background: #EBE8E5;
 }
 
 .about-polaroid-caption {
   padding: 12px 0 2px;
-
   font-size: 0.77rem;
   line-height: 1.2;
   font-style: italic;
   font-weight: 400;
   letter-spacing: 0.01em;
-
   text-align: center;
   color: #76716D;
 }
 
 /* =====================================================
-   BIO
+   BIOGRAPHY — SUBTLE EDITORIAL TYPOGRAPHY
 ===================================================== */
 
 .about-bio {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-self: center;
-
   width: 100%;
   min-width: 0;
 }
 
 .about-bio-copy {
-  max-width: 850px;
+  width: 100%;
+  max-width: none;
+  min-width: 0;
 }
+
+/* Main Heading */
 
 .about-intro-heading {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-
-  gap: 7px;
-  max-width: 850px;
-  margin: 0 0 24px;
-  padding: 0;
-
-  color: var(--about-accent);
-}
-
-.about-intro-heading-main {
   display: block;
+  max-width: none;
+  margin: 0 0 26px;
 
   font-family: inherit;
-  font-size: clamp(1.55rem, 2.3vw, 2rem);
-  font-weight: 500;
-  line-height: 1.32;
-  letter-spacing: -0.035em;
+  font-size: clamp(1.7rem, 2.15vw, 2.15rem);
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: -0.025em;
 
+  color: #929292;
+}
+
+/* Editorial Highlights */
+
+.about-heading-name,
+.about-heading-highlight,
+.about-perspective-highlight,
+.about-design-question {
+  font-family: "Playfair Display", Georgia, serif;
+  font-style: italic;
+  font-weight: 500;
+}
+
+.about-heading-name {
   color: var(--about-text);
 }
 
-.about-intro-heading-question {
-  display: block;
-
-  font-family:
-    "Playfair Display",
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-size: clamp(1.65rem, 2.65vw, 2.45rem);
-  font-style: italic;
-  font-weight: 500;
-  line-height: 1.38;
-  letter-spacing: -0.02em;
-
+.about-heading-highlight,
+.about-perspective-highlight,
+.about-design-question {
   color: var(--about-accent);
 }
 
+/* Body Text */
+
 .about-bio-copy p {
-  margin: 0 0 13px;
-
+  margin: 0 0 17px;
   font-size: 1rem;
-  line-height: 1.65;
-
+  line-height: 1.7;
+  font-weight: 400;
   color: var(--about-body);
 }
 
@@ -222,13 +188,40 @@
   margin-bottom: 0;
 }
 
-.about-bio-copy .about-personal {
-  margin-top: 15px;
-  margin-bottom: 0;
+.about-bio-copy {
+  width: 100%;
+  max-width: 900px;
+}
+
+.about-intro-heading,
+.about-story,
+.about-perspective,
+.about-design {
+  max-width: 100%;
+}
+
+/* Perspective Shift */
+
+.about-bio-copy .about-perspective {
+  margin: 22px 0;
+  font-size: 1.07rem;
+  font-weight: 500;
+  line-height: 1.65;
+  letter-spacing: -0.01em;
+  color: var(--about-text);
+}
+
+/* Theme Red Strikethrough */
+
+.about-perspective s {
+  color: #888888;
+  text-decoration-line: line-through;
+  text-decoration-color: var(--about-accent);
+  text-decoration-thickness: 1.5px;
 }
 
 /* =====================================================
-   SOCIAL ICONS — ORIGINAL STYLING
+   SOCIAL ICONS
 ===================================================== */
 
 .about-socials {
@@ -244,7 +237,6 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-
   color: var(--about-body);
   text-decoration: none;
 }
@@ -253,7 +245,6 @@
   display: block;
   width: 24px;
   height: 24px;
-
   color: var(--about-body);
 
   transition:
@@ -262,35 +253,23 @@
     transform 0.25s ease;
 }
 
-/* Email */
-
 .about-social-email .about-social-icon {
-  width: 24px;
-  height: 24px;
   fill: var(--about-body);
   stroke: var(--about-body);
 }
 
-/* LinkedIn — original outline icon */
-
 .about-social-linkedin .about-social-icon {
-  display: block;
   width: 28px;
   height: 28px;
-
   fill: var(--about-body);
   stroke: var(--about-body);
   stroke-width: 0.1px;
 }
 
-/* Instagram */
-
 .about-social-instagram .about-social-icon {
   fill: none;
   stroke: var(--about-body);
 }
-
-/* Social Hover */
 
 .about-social-email:hover .about-social-icon,
 .about-social-linkedin:hover .about-social-icon {
@@ -306,12 +285,410 @@
 }
 
 /* =====================================================
-   WORK + EDUCATION
+   OFF THE CLOCK — COLLAGE
+===================================================== */
+
+.about-offclock {
+  position: relative;
+  z-index: 2;
+  padding: 0 clamp(3rem, 6vw, 6rem) 185px;
+  overflow: visible;
+}
+
+.about-offclock-inner {
+  overflow: visible;
+}
+
+.about-offclock-heading {
+  margin-bottom: 30px;
+}
+
+.about-offclock-heading .about-section-title {
+  margin-bottom: 10px;
+}
+
+.about-offclock-subtitle {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.5;
+  font-style: italic;
+  color: var(--about-body);
+}
+
+.about-offclock-collage {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  max-width: 1250px;
+  height: clamp(540px, 52vw, 710px);
+  margin: 0 auto;
+  overflow: visible;
+}
+
+.about-offclock .offclock-item {
+  position: absolute;
+  box-sizing: border-box;
+  margin: 0;
+  cursor: default;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* =====================================================
+   COLLAGE PHOTOS
+===================================================== */
+
+.about-offclock .offclock-photo {
+  padding: 10px;
+  background: #FFFFFF;
+  border: 1px solid #EEECE8;
+  border-radius: 0;
+
+  box-shadow:
+    0 3px 8px rgba(0, 0, 0, 0.07),
+    0 12px 27px rgba(0, 0, 0, 0.09);
+
+  overflow: visible;
+  user-select: none;
+
+  transition:
+    transform 0.38s cubic-bezier(.2, .75, .25, 1),
+    box-shadow 0.38s ease;
+}
+
+.about-offclock .offclock-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  border: none;
+  border-radius: 0;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* =====================================================
+   COLLAGE POSITIONS — DESKTOP
+===================================================== */
+
+/* Workshop + ByteDance — Top Left */
+
+.about-offclock .offclock-workshop {
+  top: 4%;
+  left: 2%;
+  width: 24%;
+  aspect-ratio: auto;
+  transform: rotate(-6deg);
+  z-index: 4;
+}
+
+.about-offclock .offclock-workshop img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+/* Cake — Upper Center */
+
+.about-offclock .offclock-baking {
+  top: 11%;
+  left: 30%;
+  right: auto;
+  width: 32%;
+  aspect-ratio: 4 / 3;
+  transform: rotate(-4deg);
+  z-index: 3;
+}
+
+.about-offclock .offclock-baking img {
+  object-fit: contain;
+  background: #FFFFFF;
+}
+
+/* Plushie — Top Right */
+
+.about-offclock .offclock-plushie {
+  top: 3%;
+  right: 3%;
+  left: auto;
+  width: 24%;
+  aspect-ratio: 4 / 5;
+  transform: rotate(6deg);
+  z-index: 4;
+}
+
+/* Peking Duck — Lower Left */
+
+.about-offclock .offclock-food {
+  top: 62%;
+  left: 4%;
+  right: auto;
+  width: 26%;
+  aspect-ratio: 1.25 / 1;
+  transform: rotate(5deg);
+  z-index: 5;
+}
+
+/* Blur Concert — Center Right */
+
+.about-offclock .offclock-concert {
+  top: 37%;
+  left: 59%;
+  right: auto;
+  width: 24%;
+  aspect-ratio: 4 / 5;
+  transform: rotate(-5deg);
+  z-index: 6;
+}
+
+/* Classical Music — Lower Center */
+
+.about-offclock .offclock-musical {
+  top: 55%;
+  left: 34%;
+  right: auto;
+  width: 21%;
+  aspect-ratio: 4 / 5;
+  transform: rotate(-1deg);
+  z-index: 7;
+}
+
+/* Museum — Lower Right */
+
+.about-offclock .offclock-museum {
+  top: 66%;
+  right: 2%;
+  left: auto;
+  width: 19%;
+  aspect-ratio: 4 / 5;
+  transform: rotate(5deg);
+  z-index: 5;
+}
+
+/* =====================================================
+   PNG STICKERS
+===================================================== */
+
+.about-offclock .offclock-sticker {
+  z-index: 9;
+  pointer-events: auto;
+  user-select: none;
+  filter: drop-shadow(0 3px 7px rgba(0, 0, 0, 0.12));
+
+  transition:
+    transform 0.35s cubic-bezier(.2, .75, .25, 1),
+    filter 0.35s ease;
+}
+
+.about-offclock .offclock-sticker img {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Nintendo Switch — Left Middle */
+
+.about-offclock .offclock-switch {
+  top: 52%;
+  left: 18%;
+  width: 13%;
+  transform: rotate(-9deg);
+}
+
+/* Gorillaz — Upper Right */
+
+.about-offclock .offclock-gorillaz {
+  top: 12%;
+  left: 59%;
+  width: 19%;
+  transform: rotate(8deg);
+}
+
+/* Piano */
+
+.about-offclock .offclock-piano {
+  top: 88%;
+  left: 53%;
+  width: 24%;
+  transform: rotate(-9deg);
+}
+
+/* =====================================================
+   COLLAGE HOVER
+===================================================== */
+
+@media (hover: hover) and (pointer: fine) {
+
+  .about-offclock .offclock-photo:hover {
+    z-index: 50;
+    transform: rotate(0deg) scale(1.065);
+
+    box-shadow:
+      0 9px 23px rgba(0, 0, 0, 0.11),
+      0 22px 45px rgba(0, 0, 0, 0.15);
+  }
+
+  .about-offclock .offclock-sticker:hover {
+    z-index: 50;
+    transform: rotate(0deg) scale(1.14);
+
+    filter:
+      drop-shadow(0 8px 14px rgba(0, 0, 0, 0.18));
+  }
+}
+
+/* =====================================================
+   COLLAGE CAPTIONS
+===================================================== */
+
+.about-offclock .offclock-photo::after,
+.about-offclock .offclock-sticker::after {
+  content: attr(data-caption);
+
+  position: absolute;
+  z-index: 4;
+  left: 14px;
+  bottom: -17px;
+
+  width: max-content;
+  max-width: min(265px, 80vw);
+  min-width: 145px;
+  box-sizing: border-box;
+
+  padding: 27px 16px 16px;
+
+  background:
+    linear-gradient(
+      var(--about-accent),
+      var(--about-accent)
+    ) 16px 16px / 34px 1px no-repeat,
+    #FFFFFF;
+
+  border: 1px solid #EAE6E2;
+  border-radius: 0;
+
+  box-shadow:
+    0 4px 12px rgba(0, 0, 0, 0.055),
+    0 10px 24px rgba(0, 0, 0, 0.055);
+
+  color: #343638;
+  font-family: inherit;
+  font-size: 0.83rem;
+  font-weight: 450;
+  font-style: normal;
+  line-height: 1.55;
+  letter-spacing: -0.005em;
+  text-align: left;
+  white-space: normal;
+
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  pointer-events: none;
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.3s cubic-bezier(.2, .75, .25, 1),
+    visibility 0.25s ease;
+}
+
+.about-offclock .offclock-photo::before,
+.about-offclock .offclock-sticker::before {
+  content: none;
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+  .about-offclock .offclock-photo:hover::after,
+  .about-offclock .offclock-sticker:hover::after {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+
+.about-offclock .offclock-musical::after,
+.about-offclock .offclock-switch::after {
+  max-width: 250px;
+}
+
+.about-offclock .offclock-sticker::after {
+  left: 5px;
+  bottom: -18px;
+}
+
+/* Museum Caption */
+
+.about-offclock .offclock-museum::after {
+  width: 190px;
+  min-width: 0;
+  max-width: 190px;
+  left: 50%;
+  bottom: -25px;
+  transform: translate(-50%, 8px);
+  padding: 26px 13px 13px;
+
+  background:
+    linear-gradient(
+      var(--about-accent),
+      var(--about-accent)
+    ) 13px 14px / 30px 1px no-repeat,
+    #FFFFFF;
+}
+
+/* Nintendo Switch Caption */
+
+.about-offclock .offclock-switch::after {
+  width: 210px;
+  min-width: 0;
+  max-width: 210px;
+  left: 50%;
+  top: calc(100% + 12px);
+  bottom: auto;
+  transform: translate(-50%, 8px);
+  padding: 26px 14px 13px;
+
+  background:
+    linear-gradient(
+      var(--about-accent),
+      var(--about-accent)
+    ) 14px 14px / 30px 1px no-repeat,
+    #FFFFFF;
+}
+
+@media (hover: hover) and (pointer: fine) {
+
+  .about-offclock .offclock-museum:hover::after,
+  .about-offclock .offclock-switch:hover::after {
+    transform: translate(-50%, 0);
+  }
+}
+
+/* Editorial Note */
+
+.about-offclock .offclock-note {
+  position: relative;
+  width: fit-content;
+  max-width: 320px;
+  margin: 100px 0 0 7%;
+  font-size: 0.88rem;
+  line-height: 1.55;
+  font-style: italic;
+  color: #807974;
+  transform: rotate(-3deg);
+  pointer-events: none;
+}
+
+/* =====================================================
+   WORK EXPERIENCE + EDUCATION
 ===================================================== */
 
 .about-background {
-  padding: 25px clamp(3rem, 6vw, 6rem) 60px;
-
+  position: relative;
+  z-index: 1;
+  padding: 35px clamp(3rem, 6vw, 6rem) 60px;
 }
 
 .about-background-inner {
@@ -338,21 +715,17 @@
 .about-school h3,
 .about-work-item h3 {
   margin: 0 0 4px;
-
   font-size: 1rem;
   line-height: 1.4;
   font-weight: 650;
-
   color: var(--about-text);
 }
 
 .about-school p,
 .about-work-company {
   margin: 0 0 3px;
-
   font-size: 1rem;
   line-height: 1.5;
-
   color: var(--about-body);
 }
 
@@ -364,20 +737,16 @@
 .about-work-date {
   display: block;
   margin: 0;
-
   font-size: 0.95rem;
   line-height: 1.5;
   font-style: italic;
   font-weight: 400;
-
   color: var(--about-muted);
 }
 
 /* =====================================================
-   EDUCATION LOGO STICKER COLLAGE
+   EDUCATION LOGO COLLAGE
 ===================================================== */
-
-/* Education text on left, collage on right */
 
 .about-education-content {
   display: grid;
@@ -390,8 +759,6 @@
   min-width: 0;
 }
 
-/* SVG filter definitions are invisible */
-
 .about-sticker-defs {
   position: absolute;
   width: 0;
@@ -399,87 +766,51 @@
   overflow: hidden;
 }
 
-/* Sticker placement area */
-
 .about-education-collage {
   position: relative;
   width: 160px;
   height: 190px;
-
   overflow: visible;
   flex-shrink: 0;
 }
 
-/* Shared sticker styling */
-
 .about-logo-sticker {
   position: absolute;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   background: transparent;
   border: 0;
   padding: 0;
-
   pointer-events: none;
-  transition: none;
 }
 
 .about-logo-sticker img {
   display: block;
-
   width: 100%;
   height: 100%;
-
   object-fit: contain;
-
-  /* White die-cut border follows PNG alpha */
   filter: url(#about-logo-white-outline);
-
-  transition: none;
 }
-
-/* UW sticker — behind */
 
 .about-logo-uw {
   top: 4px;
   right: 0;
-
   width: 122px;
   height: 122px;
-
   z-index: 1;
-
   transform: rotate(10deg);
-
-  filter:
-    drop-shadow(0 4px 5px rgba(0, 0, 0, 0.12));
+  filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 0.12));
 }
-
-/* Parsons sticker — in front */
 
 .about-logo-parsons {
   left: 0;
   bottom: 8px;
-
   width: 145px;
   height: 94px;
-
   z-index: 2;
-
   transform: rotate(-9deg);
-
-  filter:
-    drop-shadow(0 4px 5px rgba(0, 0, 0, 0.12));
-}
-
-/* No sticker hover effects */
-
-.about-logo-sticker:hover,
-.about-logo-sticker:hover img {
-  transition: none;
+  filter: drop-shadow(0 4px 5px rgba(0, 0, 0, 0.12));
 }
 
 /* =====================================================
@@ -488,7 +819,6 @@
 
 .about-leadership {
   padding: 20px clamp(3rem, 6vw, 6rem) 85px;
-
 }
 
 .about-leadership-inner > .about-section-title {
@@ -498,23 +828,18 @@
 .about-leadership-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-
   column-gap: clamp(50px, 6vw, 90px);
   row-gap: 56px;
-
   align-items: start;
 }
 
 .about-leadership-card {
   display: flex;
   flex-direction: column;
-
   width: 100%;
   min-width: 0;
-
   margin: 0;
   padding: 0;
-
   border: none;
   border-radius: 0;
   background: transparent;
@@ -528,30 +853,24 @@
 
 .about-leadership-text h3 {
   margin: 0 0 3px;
-
   font-size: 1rem;
   line-height: 1.4;
   font-weight: 650;
-
   color: var(--about-text);
 }
 
 .about-leadership-org {
   margin: 0 0 3px;
-
   font-size: 1rem;
   line-height: 1.45;
   font-style: italic;
-
   color: var(--about-body);
 }
 
 .about-leadership-detail {
   margin: 0;
-
   font-size: 1rem;
   line-height: 1.5;
-
   color: var(--about-body);
 }
 
@@ -569,17 +888,13 @@
   display: inline-flex;
   align-items: baseline;
   vertical-align: baseline;
-
   gap: 5px;
-
   color: var(--about-accent);
   font-size: inherit;
   font-weight: 500;
   line-height: inherit;
-
   text-decoration: none;
   white-space: nowrap;
-
   transition: color 0.25s ease;
 }
 
@@ -591,11 +906,9 @@
 
 .about-advising-arrow {
   display: inline-block;
-
   font-size: 0.95em;
   line-height: 1;
   text-decoration: none;
-
   transition: transform 0.25s ease;
 }
 
@@ -608,7 +921,7 @@
 }
 
 /* =====================================================
-   WHITE PHOTO PAPER — LEADERSHIP
+   LEADERSHIP PHOTO FRAMES — STATIC
 ===================================================== */
 
 .about-leadership-image {
@@ -619,11 +932,8 @@
 .about-photo-frame {
   position: relative;
   isolation: isolate;
-
   width: 100%;
-
   padding: 12px 12px 20px;
-
   background: #FFFFFF;
   border: 1px solid #F0EEEB;
 
@@ -632,51 +942,30 @@
     0 8px 19px rgba(0, 0, 0, 0.075);
 
   overflow: visible;
-
-  transform: none;
-  transition: none;
 }
-
-/* Photos remain uncropped */
 
 .about-photo-frame .about-leadership-photo {
   display: block;
-
   width: 100%;
   aspect-ratio: 16 / 10;
-
   object-fit: contain;
   object-position: center;
-
   background: #FFFFFF;
 }
-
-/* =====================================================
-   REAL TAPE
-===================================================== */
 
 .about-photo-frame .about-real-tape {
   position: absolute;
   z-index: 3;
-
   display: block;
-
   top: -17px;
   left: 50%;
-
   width: 115px;
   height: auto;
   max-width: 34%;
-
   transform: translateX(-50%);
-
   pointer-events: none;
   user-select: none;
-
-  transition: none;
 }
-
-/* Tape positions from your current version */
 
 .about-leadership-card:nth-child(1) .about-real-tape {
   transform: translateX(-50%) rotate(-4deg);
@@ -692,26 +981,6 @@
 
 .about-leadership-card:nth-child(4) .about-real-tape {
   transform: translateX(-50%) rotate(2deg);
-}
-
-/* =====================================================
-   NO LEADERSHIP PHOTO HOVER
-===================================================== */
-
-.about-photo-frame,
-.about-photo-frame:hover,
-.about-leadership-card:hover .about-photo-frame {
-  transform: none;
-  transition: none;
-
-  box-shadow:
-    0 2px 5px rgba(0, 0, 0, 0.035),
-    0 8px 19px rgba(0, 0, 0, 0.075);
-}
-
-.about-real-tape,
-.about-leadership-photo {
-  transition: none;
 }
 
 /* =====================================================
@@ -741,7 +1010,7 @@
 }
 
 /* =====================================================
-   TABLET
+   TABLET — EDUCATION
 ===================================================== */
 
 @media (max-width: 1100px) and (min-width: 769px) {
@@ -759,23 +1028,39 @@
   }
 }
 
+/* =====================================================
+   TABLET — GENERAL
+===================================================== */
+
 @media (max-width: 1000px) {
 
   .about-intro {
-    padding: 130px 2rem 55px;
+    padding: 130px 2rem 28px;
   }
 
   .about-intro-inner {
-    grid-template-columns: 215px minmax(0, 1fr);
-    column-gap: 40px;
+    grid-template-columns: 230px minmax(0, 1fr);
+    column-gap: 35px;
   }
 
   .about-polaroid {
-    width: 195px;
+    width: 220px;
+  }
+
+  .about-offclock {
+    padding: 0 2rem 175px;
+  }
+
+  .about-offclock-collage {
+    height: clamp(510px, 60vw, 640px);
+  }
+
+  .about-offclock .offclock-note {
+    font-size: 0.8rem;
   }
 
   .about-background {
-    padding: 25px 2rem 55px;
+    padding: 32px 2rem 55px;
   }
 
   .about-background-inner {
@@ -790,14 +1075,6 @@
     column-gap: 35px;
     row-gap: 48px;
   }
-
-  .about-intro-heading-main {
-    font-size: clamp(1.5rem, 2.6vw, 1.85rem);
-  }
-
-  .about-intro-heading-question {
-    font-size: clamp(1.6rem, 3vw, 2.1rem);
-  }
 }
 
 /* =====================================================
@@ -806,8 +1083,10 @@
 
 @media (max-width: 768px) {
 
+  /* Biography */
+
   .about-intro {
-    padding: 115px 2rem 45px;
+    padding: 115px 2rem 24px;
   }
 
   .about-intro-inner {
@@ -830,20 +1109,181 @@
   }
 
   .about-intro-heading {
-    margin-bottom: 21px;
-    gap: 6px;
+    font-size: clamp(1.65rem, 4.2vw, 1.9rem);
+    line-height: 1.45;
+    margin-bottom: 23px;
   }
 
-  .about-intro-heading-main {
-    font-size: 1.7rem;
+  .about-bio-copy p {
+    font-size: 0.96rem;
+    line-height: 1.7;
+    margin-bottom: 16px;
   }
 
-  .about-intro-heading-question {
-    font-size: clamp(1.8rem, 4.7vw, 2.2rem);
+  .about-bio-copy .about-perspective {
+    font-size: 1.02rem;
+    margin: 20px 0;
   }
+
+  /* Off the Clock */
+
+  .about-offclock {
+    padding: 0 1.5rem 180px;
+  }
+
+  .about-offclock-heading {
+    margin-bottom: 26px;
+  }
+
+  .about-offclock-collage {
+    max-width: 470px;
+    height: 760px;
+  }
+
+  .about-offclock .offclock-photo {
+    padding: 6px;
+  }
+
+  /* Workshop */
+
+  .about-offclock .offclock-workshop {
+    top: 3%;
+    left: 1%;
+    width: 40%;
+    transform: rotate(-6deg);
+  }
+
+  /* Cake */
+
+  .about-offclock .offclock-baking {
+    top: 26%;
+    left: 15%;
+    right: auto;
+    width: 58%;
+    aspect-ratio: 4 / 3;
+    transform: rotate(-4deg);
+  }
+
+  /* Plushie */
+
+  .about-offclock .offclock-plushie {
+    top: 3%;
+    left: auto;
+    right: 1%;
+    width: 39%;
+    transform: rotate(6deg);
+  }
+
+  /* Duck */
+
+  .about-offclock .offclock-food {
+    top: 70%;
+    left: 0;
+    width: 42%;
+    transform: rotate(5deg);
+  }
+
+  /* Concert */
+
+  .about-offclock .offclock-concert {
+    top: 46%;
+    left: 57%;
+    width: 40%;
+    transform: rotate(-5deg);
+  }
+
+  /* Classical */
+
+  .about-offclock .offclock-musical {
+    top: 55%;
+    left: 13%;
+    width: 34%;
+    transform: rotate(5deg);
+  }
+
+  /* Museum */
+
+  .about-offclock .offclock-museum {
+    top: 77%;
+    right: 1%;
+    width: 30%;
+    transform: rotate(-1deg);
+  }
+
+  /* Switch — Left Middle */
+
+  .about-offclock .offclock-switch {
+    top: 48%;
+    left: 7%;
+    width: 23%;
+    transform: rotate(9deg);
+  }
+
+  /* Gorillaz — Upper Right */
+
+  .about-offclock .offclock-gorillaz {
+    top: 30%;
+    left: 66%;
+    width: 30%;
+    transform: rotate(8deg);
+  }
+
+  /* Piano */
+
+  .about-offclock .offclock-piano {
+    top: 89%;
+    left: 37%;
+    width: 42%;
+    transform: rotate(-9deg);
+  }
+
+  /* Captions */
+
+  .about-offclock .offclock-photo::after,
+  .about-offclock .offclock-sticker::after {
+    left: 6px;
+    bottom: -12px;
+    min-width: 0;
+    max-width: min(205px, 74vw);
+    padding: 24px 12px 12px;
+
+    background:
+      linear-gradient(
+        var(--about-accent),
+        var(--about-accent)
+      ) 12px 13px / 28px 1px no-repeat,
+      #FFFFFF;
+
+    font-size: 0.75rem;
+    line-height: 1.45;
+  }
+
+  .about-offclock .offclock-museum::after {
+    left: 50%;
+    width: 165px;
+    max-width: 165px;
+    bottom: -18px;
+    transform: translate(-50%, 8px);
+  }
+
+  .about-offclock .offclock-switch::after {
+    left: 50%;
+    width: 185px;
+    max-width: 185px;
+    top: calc(100% + 8px);
+    bottom: auto;
+    transform: translate(-50%, 8px);
+  }
+
+  .about-offclock .offclock-note {
+    margin: 95px auto 0;
+    max-width: 260px;
+  }
+
+  /* Work + Education */
 
   .about-background {
-    padding: 18px 2rem 50px;
+    padding: 30px 2rem 50px;
   }
 
   .about-background-inner {
@@ -860,6 +1300,8 @@
     width: 150px;
     height: 175px;
   }
+
+  /* Leadership */
 
   .about-leadership {
     padding: 18px 2rem 70px;
@@ -878,7 +1320,7 @@
 @media (max-width: 600px) {
 
   .about-intro {
-    padding: 105px 1.25rem 42px;
+    padding: 105px 1.25rem 20px;
   }
 
   .about-polaroid {
@@ -890,23 +1332,8 @@
     top: -12px;
   }
 
-  .about-intro-heading-main {
-    font-size: 1.55rem;
-    line-height: 1.35;
-  }
-
-  .about-intro-heading-question {
-    font-size: 1.8rem;
-    line-height: 1.4;
-  }
-
-  .about-bio-copy p {
-    font-size: 0.96rem;
-    line-height: 1.65;
-  }
-
   .about-background {
-    padding: 16px 1.25rem 45px;
+    padding: 28px 1.25rem 45px;
   }
 
   .about-section-title {
@@ -960,623 +1387,14 @@
   }
 }
 
-/* =====================================================
-   REDUCED MOTION
-===================================================== */
-
-@media (prefers-reduced-motion: reduce) {
-
-  .about-intro-inner,
-  .about-background,
-  .about-leadership {
-    animation: none;
-    opacity: 1;
-    transform: none;
-  }
-
-  .about-polaroid,
-  .about-social-icon,
-  .about-advising-link,
-  .about-advising-arrow {
-    transition: none;
-  }
-
-  .about-polaroid:hover {
-    transform: rotate(-3deg);
-  }
-}
-
-
-
-/* =====================================================
-   OFF THE CLOCK — INTERACTIVE EDITORIAL COLLAGE
-===================================================== */
-
-.about-offclock {
-  width: 100%;
-  padding: 20px clamp(3rem, 6vw, 6rem) 100px;
-  background: var(--about-bg, #FAFAF9);
-}
-
-.about-offclock-inner {
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-
-.about-offclock-heading {
-  margin-bottom: 30px;
-}
-
-.about-offclock-heading .about-section-title {
-  margin-bottom: 10px;
-}
-
-.about-offclock-subtitle {
-  margin: 0;
-  font-size: 1rem;
-  line-height: 1.5;
-  font-style: italic;
-  color: var(--about-body, #3e4e50);
-}
-
-/* =====================================================
-   COLLAGE CANVAS
-===================================================== */
-
-.about-offclock-collage {
-  position: relative;
-  isolation: isolate;
-
-  width: 100%;
-  max-width: 1250px;
-  height: clamp(540px, 52vw, 710px);
-
-  margin: 0 auto;
-  overflow: visible;
-}
-
-.about-offclock .offclock-item {
-  position: absolute;
-  box-sizing: border-box;
-  margin: 0;
-  cursor: default;
-
-  -webkit-tap-highlight-color: transparent;
-}
-
-/* =====================================================
-   WHITE PHOTO PAPER — SQUARE CORNERS
-===================================================== */
-
-.about-offclock .offclock-photo {
-  padding: 10px;
-
-  background: #FFFFFF;
-  border: 1px solid #EEECE8;
-  border-radius: 0;
-
-  box-shadow:
-    0 3px 8px rgba(0, 0, 0, 0.07),
-    0 12px 27px rgba(0, 0, 0, 0.09);
-
-  overflow: visible;
-  user-select: none;
-
-  transition:
-    transform 0.38s cubic-bezier(.2, .75, .25, 1),
-    box-shadow 0.38s ease;
-}
-
-.about-offclock .offclock-photo img {
-  display: block;
-  width: 100%;
-  height: 100%;
-
-  object-fit: cover;
-  object-position: center;
-
-  border: none;
-  border-radius: 0;
-
-  user-select: none;
-  -webkit-user-drag: none;
-}
-
-/* =====================================================
-   PHOTO POSITIONS — DESKTOP
-===================================================== */
-
-/* Cafe — top left */
-
-.about-offclock .offclock-cafe {
-  top: 4%;
-  left: 2%;
-
-  width: 24%;
-  aspect-ratio: 4 / 5;
-
-  transform: rotate(-6deg);
-  z-index: 4;
-}
-
-/* Cake — center */
-
-.about-offclock .offclock-baking {
-  top: 11%;
-  left: 30%;
-  right: auto;
-
-  width: 32%;
-  aspect-ratio: 4 / 3;
-
-  transform: rotate(-4deg);
-  z-index: 3;
-}
-
-.about-offclock .offclock-baking img {
-  object-fit: contain;
-  background: #FFFFFF;
-}
-
-/* Seven Sisters — upper right */
-
-.about-offclock .offclock-seaside {
-  top: 3%;
-  left: auto;
-  right: 3%;
-
-  width: 24%;
-  aspect-ratio: 4 / 5;
-
-  transform: rotate(6deg);
-  z-index: 4;
-}
-
-/* Duck — lower left */
-
-.about-offclock .offclock-food {
-  top: 62%;
-  left: 4%;
-  right: auto;
-
-  width: 26%;
-  aspect-ratio: 1.25 / 1;
-
-  transform: rotate(5deg);
-  z-index: 5;
-}
-
-/* Concert — center right */
-
-.about-offclock .offclock-concert {
-  top: 37%;
-  left: 59%;
-  right: auto;
-
-  width: 24%;
-  aspect-ratio: 4 / 5;
-
-  transform: rotate(-5deg);
-  z-index: 6;
-}
-
-/* Classical music — lower center */
-
-.about-offclock .offclock-musical {
-  top: 55%;
-  left: 34%;
-  right: auto;
-
-  width: 21%;
-  aspect-ratio: 4 / 5;
-
-  transform: rotate(-1deg);
-  z-index: 7;
-}
-
-/* Museum — lower right */
-
-.about-offclock .offclock-museum {
-  top: 66%;
-  left: auto;
-  right: 2%;
-
-  width: 19%;
-  aspect-ratio: 4 / 5;
-
-  transform: rotate(5deg);
-  z-index: 5;
-}
-
-/* =====================================================
-   PNG STICKERS — INTERACTIVE
-===================================================== */
-
-.about-offclock .offclock-sticker {
-  z-index: 9;
-
-  pointer-events: auto;
-  user-select: none;
-
-  filter:
-    drop-shadow(0 3px 7px rgba(0, 0, 0, 0.12));
-
-  transition:
-    transform 0.35s cubic-bezier(.2, .75, .25, 1),
-    filter 0.35s ease;
-}
-
-.about-offclock .offclock-sticker img {
-  display: block;
-  width: 100%;
-  height: auto;
-
-  user-select: none;
-  -webkit-user-drag: none;
-}
-
-/* Nintendo Switch — right side of Cake */
-
-.about-offclock .offclock-switch {
-  top: 12%;
-  left: 59%;
-
-  width: 13%;
-
-  transform: rotate(9deg);
-}
-
-/* Gorillaz — left-middle */
-
-.about-offclock .offclock-gorillaz {
-  top: 42%;
-  left: 18%;
-
-  width: 19%;
-
-  transform: rotate(8deg);
-}
-
-/* Piano — bottom */
-
-.about-offclock .offclock-piano {
-  top: 88%;
-  left: 53%;
-
-  width: 24%;
-
-  transform: rotate(-9deg);
-}
-
-/* =====================================================
-   HOVER — PHOTOS ONLY, NO CLICK-TO-LOCK
-===================================================== */
-
-@media (hover: hover) and (pointer: fine) {
-
-  .about-offclock .offclock-photo:hover {
-    z-index: 50;
-
-    transform: rotate(0deg) scale(1.065);
-
-    box-shadow:
-      0 9px 23px rgba(0, 0, 0, 0.11),
-      0 22px 45px rgba(0, 0, 0, 0.15);
-  }
-
-  /* Sticker hover */
-
-  .about-offclock .offclock-sticker:hover {
-    z-index: 50;
-
-    transform: rotate(0deg) scale(1.14);
-
-    filter:
-      drop-shadow(0 8px 14px rgba(0, 0, 0, 0.18));
-  }
-}
-
-/* =====================================================
-   SHARED WHITE INFORMATION BUBBLES
-===================================================== */
-
-
-/* =====================================================
-   OFF THE CLOCK — EDITORIAL ANNOTATION CARDS
-   Refined photo captions, not cartoon tooltips
-===================================================== */
-
-/* Shared caption cards */
-
-.about-offclock .offclock-photo::after,
-.about-offclock .offclock-sticker::after {
-  content: attr(data-caption);
-
-  position: absolute;
-  z-index: 4;
-
-  /* Attached closely to photo's lower edge */
-  left: 14px;
-  bottom: -17px;
-
-  width: max-content;
-  max-width: min(265px, 80vw);
-  min-width: 145px;
-  box-sizing: border-box;
-
-  padding: 27px 16px 16px;
-
-  background:
-    linear-gradient(
-      var(--about-accent, #BB3F5B),
-      var(--about-accent, #BB3F5B)
-    )
-    16px 16px / 34px 1px no-repeat,
-    #FFFFFF;
-
-  border: 1px solid #EAE6E2;
-  border-radius: 0;
-
-  box-shadow:
-    0 4px 12px rgba(0, 0, 0, 0.055),
-    0 10px 24px rgba(0, 0, 0, 0.055);
-
-  color: #343638;
-  font-family: inherit;
-  font-size: 0.83rem;
-  font-weight: 450;
-  font-style: normal;
-  line-height: 1.55;
-  letter-spacing: -0.005em;
-  text-align: left;
-  white-space: normal;
-
-  opacity: 0;
-  visibility: hidden;
-
-  transform: translateY(8px);
-
-  pointer-events: none;
-
-  transition:
-    opacity 0.25s ease,
-    transform 0.3s cubic-bezier(.2, .75, .25, 1),
-    visibility 0.25s ease;
-}
-
-/* Remove any previous pointer triangles */
-
-.about-offclock .offclock-photo::before,
-.about-offclock .offclock-sticker::before {
-  content: none;
-}
-
-/* Show only during mouse hover */
-
-@media (hover: hover) and (pointer: fine) {
-
-  .about-offclock .offclock-photo:hover::after,
-  .about-offclock .offclock-sticker:hover::after {
-    opacity: 1;
-    visibility: visible;
-
-    transform: translateY(0);
-  }
-}
-
-/* For the longer captions, prevent excessive width */
-
-.about-offclock .offclock-musical::after,
-.about-offclock .offclock-switch::after {
-  max-width: 250px;
-}
-
-/* Sticker captions: positioned relative to PNGs */
-
-.about-offclock .offclock-sticker::after {
-  left: 5px;
-  bottom: -18px;
-}
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media (max-width: 768px) {
-
-  .about-offclock .offclock-photo::after,
-  .about-offclock .offclock-sticker::after {
-    left: 6px;
-    bottom: -12px;
-
-    min-width: 0;
-    max-width: min(205px, 74vw);
-
-    padding: 24px 12px 12px;
-
-    background:
-      linear-gradient(
-        var(--about-accent, #BB3F5B),
-        var(--about-accent, #BB3F5B)
-      )
-      12px 13px / 28px 1px no-repeat,
-      #FFFFFF;
-
-    font-size: 0.75rem;
-    line-height: 1.45;
-  }
-}
-
-/* Reduced motion */
-
-@media (prefers-reduced-motion: reduce) {
-  .about-offclock .offclock-photo::after,
-  .about-offclock .offclock-sticker::after {
-    transition: none;
-  }
-}
-
-
-
-
-/* =====================================================
-   EDITORIAL NOTE — BELOW COLLAGE
-===================================================== */
-
-.about-offclock .offclock-note {
-  position: relative;
-
-  width: fit-content;
-  max-width: 320px;
-
-  margin: 100px 0 0 7%;
-
-  font-size: 0.88rem;
-  line-height: 1.55;
-  font-style: italic;
-  color: #807974;
-
-  transform: rotate(-3deg);
-
-  pointer-events: none;
-}
-
-/* =====================================================
-   TABLET
-===================================================== */
-
-@media (max-width: 1000px) {
-
-  .about-offclock {
-    padding: 15px 2rem 90px;
-  }
-
-  .about-offclock-collage {
-    height: clamp(510px, 60vw, 640px);
-  }
-
-  .about-offclock .offclock-note {
-    font-size: 0.8rem;
-  }
-}
-
-/* =====================================================
-   MOBILE — COMPACT COLLAGE
-===================================================== */
-
-@media (max-width: 768px) {
-
-  .about-offclock {
-    padding: 10px 1.5rem 80px;
-  }
-
-  .about-offclock-heading {
-    margin-bottom: 26px;
-  }
-
-  .about-offclock-collage {
-    max-width: 470px;
-    height: 760px;
-  }
-
-  .about-offclock .offclock-photo {
-    padding: 6px;
-  }
-
-  .about-offclock .offclock-cafe {
-    top: 3%;
-    left: 1%;
-    width: 40%;
-    transform: rotate(-6deg);
-  }
-
-  .about-offclock .offclock-baking {
-    top: 26%;
-    left: 15%;
-    right: auto;
-
-    width: 58%;
-    aspect-ratio: 4 / 3;
-
-    transform: rotate(-4deg);
-  }
-
-  .about-offclock .offclock-seaside {
-    top: 3%;
-    left: auto;
-    right: 1%;
-
-    width: 39%;
-    transform: rotate(6deg);
-  }
-
-  .about-offclock .offclock-food {
-    top: 70%;
-    left: 0;
-    width: 42%;
-    transform: rotate(5deg);
-  }
-
-  .about-offclock .offclock-concert {
-    top: 46%;
-    left: 57%;
-    width: 40%;
-    transform: rotate(-5deg);
-  }
-
-  .about-offclock .offclock-musical {
-    top: 55%;
-    left: 13%;
-    width: 34%;
-    transform: rotate(5deg);
-  }
-
-  .about-offclock .offclock-museum {
-    top: 77%;
-    right: 1%;
-    width: 30%;
-    transform: rotate(-1deg);
-  }
-
-  /* Switch: right edge of Cake */
-
-  .about-offclock .offclock-switch {
-    top: 30%;
-    left: 66%;
-    width: 23%;
-
-    transform: rotate(9deg);
-  }
-
-  .about-offclock .offclock-gorillaz {
-    top: 48%;
-    left: 7%;
-    width: 30%;
-    transform: rotate(8deg);
-  }
-
-  .about-offclock .offclock-piano {
-    top: 89%;
-    left: 37%;
-    width: 42%;
-    transform: rotate(-9deg);
-  }
-
-  .about-offclock .offclock-note {
-    margin: 95px auto 0;
-    max-width: 260px;
-  }
-}
-
-/* =====================================================
-   SMALL MOBILE
-===================================================== */
-
 @media (max-width: 480px) {
 
+  .about-intro-heading {
+    font-size: 1.65rem;
+  }
+
   .about-offclock {
-    padding: 10px 1.25rem 75px;
+    padding: 0 1.25rem 170px;
   }
 
   .about-offclock-collage {
@@ -1593,152 +1411,7 @@
 }
 
 /* =====================================================
-   REDUCED MOTION
-===================================================== */
-
-@media (prefers-reduced-motion: reduce) {
-
-  .about-offclock .offclock-photo,
-  .about-offclock .offclock-sticker,
-  .about-offclock .offclock-photo::before,
-  .about-offclock .offclock-photo::after,
-  .about-offclock .offclock-sticker::before,
-  .about-offclock .offclock-sticker::after {
-    transition: none;
-  }
-}
-
-
-
-/* ==========================================
-   OFF THE CLOCK — LABEL REFINEMENTS
-   Lempicka + Nintendo Switch only
-========================================== */
-
-/* Lempicka: narrower, more balanced caption */
-
-.about-offclock .offclock-museum::after {
-  width: 190px;
-  min-width: 0;
-  max-width: 190px;
-
-  left: 50%;
-  bottom: -25px;
-
-  transform: translate(-50%, 8px);
-
-  padding: 26px 13px 13px;
-
-  background:
-    linear-gradient(
-      var(--about-accent, #BB3F5B),
-      var(--about-accent, #BB3F5B)
-    )
-    13px 14px / 30px 1px no-repeat,
-    #FFFFFF;
-}
-
-/* Switch: label BELOW the sticker, not over it */
-
-.about-offclock .offclock-switch::after {
-  width: 210px;
-  min-width: 0;
-  max-width: 210px;
-
-  left: 50%;
-  top: calc(100% + 12px);
-  bottom: auto;
-
-  transform: translate(-50%, 8px);
-
-  padding: 26px 14px 13px;
-
-  background:
-    linear-gradient(
-      var(--about-accent, #BB3F5B),
-      var(--about-accent, #BB3F5B)
-    )
-    14px 14px / 30px 1px no-repeat,
-    #FFFFFF;
-}
-
-/* Keep horizontal positioning when labels appear */
-
-@media (hover: hover) and (pointer: fine) {
-
-  .about-offclock .offclock-museum:hover::after,
-  .about-offclock .offclock-switch:hover::after {
-    transform: translate(-50%, 0);
-  }
-}
-
-/* Mobile */
-
-@media (max-width: 768px) {
-
-  .about-offclock .offclock-museum::after {
-    width: 165px;
-    max-width: 165px;
-    bottom: -18px;
-  }
-
-  .about-offclock .offclock-switch::after {
-    width: 185px;
-    max-width: 185px;
-
-    top: calc(100% + 8px);
-    bottom: auto;
-  }
-}
-
-/* =====================================================
-   ABOUT — SECTION SPACING + COLLAGE VISIBILITY FIX
-   Keeps the original absolute collage positions intact.
-===================================================== */
-
-.about-intro { padding-bottom: 30px; }
-
-.about-offclock {
-  position: relative;
-  z-index: 2;
-  padding-top: 0;
-  padding-bottom: 185px;
-  overflow: visible;
-}
-
-.about-offclock-inner,
-.about-offclock-collage {
-  overflow: visible;
-}
-
-.about-background {
-  position: relative;
-  z-index: 1;
-  padding-top: 35px;
-}
-
-@media (max-width: 1000px) {
-  .about-intro { padding-bottom: 28px; }
-  .about-offclock { padding-top: 0; padding-bottom: 175px; }
-  .about-background { padding-top: 32px; }
-}
-
-@media (max-width: 768px) {
-  .about-intro { padding-bottom: 24px; }
-  .about-offclock { padding-top: 0; padding-bottom: 180px; }
-  .about-background { padding-top: 30px; }
-}
-
-@media (max-width: 480px) {
-  .about-intro { padding-bottom: 20px; }
-  .about-offclock { padding-top: 0; padding-bottom: 170px; }
-  .about-background { padding-top: 28px; }
-}
-
-/* =====================================================
    ABOUT — SCROLL REVEAL
-   Used by about-reveal.js. Only sections observed by
-   JavaScript are hidden before they enter the viewport.
 ===================================================== */
 
 .about-offclock-inner,
@@ -1751,8 +1424,9 @@
 html.about-reveal-enabled .about-offclock-inner,
 html.about-reveal-enabled .about-background-inner,
 html.about-reveal-enabled .about-leadership-inner {
-  transition: opacity .75s ease,
-    transform .75s cubic-bezier(.22, 1, .36, 1);
+  transition:
+    opacity 0.75s ease,
+    transform 0.75s cubic-bezier(.22, 1, .36, 1);
 }
 
 html.about-reveal-enabled .about-offclock-inner:not(.is-visible),
@@ -1762,7 +1436,32 @@ html.about-reveal-enabled .about-leadership-inner:not(.is-visible) {
   transform: translateY(18px);
 }
 
+html.about-reveal-enabled .about-offclock-inner {
+  transition-delay: 0.15s;
+}
+
+/* =====================================================
+   REDUCED MOTION
+===================================================== */
+
 @media (prefers-reduced-motion: reduce) {
+
+  .about-intro-inner {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .about-social-icon,
+  .about-advising-link,
+  .about-advising-arrow,
+  .about-offclock .offclock-photo,
+  .about-offclock .offclock-sticker,
+  .about-offclock .offclock-photo::after,
+  .about-offclock .offclock-sticker::after {
+    transition: none;
+  }
+
   html.about-reveal-enabled .about-offclock-inner,
   html.about-reveal-enabled .about-background-inner,
   html.about-reveal-enabled .about-leadership-inner {
@@ -1770,12 +1469,4 @@ html.about-reveal-enabled .about-leadership-inner:not(.is-visible) {
     transform: none !important;
     transition: none !important;
   }
-}
-
-/* =====================================================
-   OFF THE CLOCK — DELAYED FADE IN
-===================================================== */
-
-html.about-reveal-enabled .about-offclock-inner {
-  transition-delay: 0.15s;
 }
