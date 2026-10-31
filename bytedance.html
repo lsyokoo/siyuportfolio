@@ -1,0 +1,775 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>ByteDance Dreamina AI | Siyu Liu</title>
+
+  <link rel="stylesheet" href="style1.css">
+  <link rel="stylesheet" href="casestudy.css">
+
+   <link rel="icon" type="image/png" href="assets/avatar.png">
+
+  <style>
+
+
+    .bytedance-page .bytedance-story-section
+    .case-section-title {
+      margin: 0 0 13px;
+      font-size: 0.78rem;
+      line-height: 1.4;
+      font-weight: 500;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--accent-warm);
+    }
+
+    .bytedance-statement {
+      max-width: 860px;
+      margin: 0 0 20px;
+      font-size: clamp(1.7rem, 2.1vw, 2.25rem);
+      line-height: 1.25;
+      font-weight: 450;
+      letter-spacing: -0.7px;
+      color: #353B3B;
+    }
+
+    .bytedance-description {
+      max-width: 780px;
+      margin: 0;
+      font-size: 1.05rem;
+      line-height: 1.75;
+      font-weight: 400;
+      color: #646967;
+    }
+
+    /* MEDIA */
+
+    .bytedance-media {
+      width: 100%;
+      margin-top: 34px;
+    }
+
+    .bytedance-media-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 20px;
+      margin-top: 34px;
+    }
+
+    .bytedance-placeholder {
+      width: 100%;
+      min-height: 220px;
+      aspect-ratio: 16 / 9;
+      padding: 24px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background: #F1F1EF;
+      border: 1px dashed #D4D4D1;
+      border-radius: 5px;
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    .bytedance-placeholder span {
+      color: #999B97;
+      font-size: 0.78rem;
+      font-weight: 400;
+      letter-spacing: 0.2px;
+    }
+
+    .bytedance-media-grid .bytedance-placeholder {
+      aspect-ratio: 4 / 3;
+      min-height: 180px;
+    }
+
+    .bytedance-media img,
+    .bytedance-media video {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-radius: 5px;
+    }
+
+    /* CAPTIONS */
+
+    .bytedance-caption {
+      margin: 11px 0 0;
+      font-size: 0.85rem;
+      line-height: 1.6;
+      color: #858A87;
+    }
+
+    /* REFLECTION */
+
+    .bytedance-page .case-reflection-block {
+      margin-top: 0;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 768px) {
+
+      .bytedance-statement {
+        font-size: clamp(1.55rem, 5vw, 1.95rem);
+        letter-spacing: -0.4px;
+      }
+
+      .bytedance-media-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+
+      .bytedance-placeholder {
+        min-height: 190px;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- ===========================================
+       HEADER
+  ============================================ -->
+
+  <header>
+    <nav>
+
+      <div class="logo">
+        <a href="index.html">SIYU</a>
+      </div>
+
+      <div class="nav-right">
+
+        <ul class="nav-menu">
+
+          <li>
+            <a href="index.html" class="active">
+              WORK
+            </a>
+          </li>
+
+          <li>
+            <a href="mediaart.html">
+              CREATIVE TECH
+            </a>
+          </li>
+
+          <li>
+            <a href="craft.html">
+              CRAFT
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="assets/Siyu_Liu_Resume.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="nav-resume"
+              aria-label="Resume (PDF, opens in a new tab)"
+            >
+              RESUME
+              <span class="nav-resume-arrow" aria-hidden="true">↗</span>
+            </a>
+          </li>
+
+          <li>
+            <a href="about.html">
+              ABOUT
+            </a>
+          </li>
+
+        </ul>
+
+        <div class="icons">
+
+          <div class="language-dropdown">
+            <svg
+              class="globe-icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="2" y1="12" x2="22" y2="12"></line>
+              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10"></path>
+              <path d="M12 2a15.3 15.3 0 0 0-4 10 15.3 15.3 0 0 0 4 10"></path>
+            </svg>
+          </div>
+
+          <div class="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+
+        </div>
+
+      </div>
+    </nav>
+  </header>
+
+
+  <!-- ===========================================
+       SIDEBAR
+  ============================================ -->
+
+  <aside
+    class="case-sidebar"
+    aria-label="Case study sections"
+  >
+
+    <a
+      href="index.html"
+      class="case-sidebar-back"
+      aria-label="Back to portfolio homepage"
+    >
+      <svg
+        viewBox="0 0 24 24"
+        width="30"
+        height="30"
+        fill="none"
+        stroke="currentColor"
+        stroke-width="1.7"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M19 12H5"></path>
+        <path d="m12 19-7-7 7-7"></path>
+      </svg>
+    </a>
+
+    <nav
+      class="case-sidebar-links"
+      id="caseSidebarLinks"
+      aria-label="On this page"
+    ></nav>
+
+  </aside>
+
+
+  <!-- ===========================================
+       MAIN CONTENT
+  ============================================ -->
+
+  <main class="case-study bytedance-page">
+
+
+    <!-- =========================================
+         HERO
+    ========================================== -->
+
+    <section class="case-hero" id="overview">
+
+      <div class="case-container">
+
+        <p class="case-eyebrow">
+          AGENTIC AI · MULTIMODAL UX
+        </p>
+
+        <h1 class="case-title">
+          Multimodal AI Interactions with ByteDance
+        </h1>
+
+
+        <!-- SUMMARY -->
+
+        <div class="case-summary">
+
+          <div class="case-summary-item">
+
+            <p class="case-summary-label">
+              CHALLENGE
+            </p>
+
+            <p class="case-summary-text">
+              How might we transform AI-generated
+              videos from passive viewing into
+              interactive experiences?
+            </p>
+
+          </div>
+
+
+          <div class="case-summary-item">
+
+            <p class="case-summary-label">
+              SOLUTION
+            </p>
+
+            <p class="case-summary-text">
+              Combined agentic AI workflows with
+              gesture and voice controls for
+              real-time audiovisual interaction.
+            </p>
+
+          </div>
+
+
+          <div class="case-summary-item">
+
+            <p class="case-summary-label">
+              OUTCOME
+            </p>
+
+            <p class="case-summary-text">
+              Delivered an interactive AI experience
+              to an audience of 60+ through
+              live performances and screenings.
+            </p>
+
+          </div>
+
+        </div>
+
+
+        <!-- META -->
+
+        <div class="case-meta">
+
+          <div class="case-meta-item">
+            <span class="case-meta-label">Role:</span>
+            <span class="case-meta-value">
+              Interaction Designer & Engineer
+            </span>
+          </div>
+
+          <div class="case-meta-item">
+            <span class="case-meta-label">Timeline:</span>
+            <span class="case-meta-value">
+              Oct 2025 – Dec 2025
+            </span>
+          </div>
+
+          <div class="case-meta-item">
+            <span class="case-meta-label">Tools:</span>
+            <span class="case-meta-value">
+              TouchDesigner · Max/MSP · Dreamina AI
+            </span>
+          </div>
+
+        </div>
+
+
+        <!-- HERO IMAGE -->
+
+        <div class="case-hero-media">
+
+          <img
+            src="assets/bytedance.png"
+            alt="ByteDance Dreamina interactive AI experience"
+            fetchpriority="high"
+          >
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         01. CHALLENGE
+    ========================================== -->
+
+    <section
+      class="case-section bytedance-story-section"
+      id="challenge"
+    >
+
+      <div class="case-container">
+
+        <h2 class="case-section-title">
+          Challenge
+        </h2>
+
+        <h3 class="bytedance-statement">
+          Beyond passive AI-generated content
+        </h3>
+
+        <p class="bytedance-description">
+          In collaboration with ByteDance Dreamina AI,
+          our team explored how AI-generated videos
+          could become experiences people actively
+          shape through movement, voice, and
+          real-time feedback.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         02. AGENTIC EXPLORATION
+    ========================================== -->
+
+    <section
+      class="case-section bytedance-story-section"
+      id="agentic-ai"
+    >
+
+      <div class="case-container">
+
+        <h2 class="case-section-title">
+          Agentic Exploration
+        </h2>
+
+        <h3 class="bytedance-statement">
+          From prompting to agentic creation
+        </h3>
+
+        <p class="bytedance-description">
+          I experimented with prompt engineering
+          to refine AI-generated visuals, then
+          explored Dreamina's AI Agent for more
+          complex, multi-step creation. I also
+          evaluated the agent's usability and
+          shared feedback with ByteDance's
+          product team.
+        </p>
+
+
+        <!-- PROMPT EXPLORATION -->
+
+        <div class="bytedance-media-grid">
+
+          <div>
+
+            <div class="bytedance-placeholder">
+              <span>
+                Prompt Engineering / Visual Exploration
+              </span>
+            </div>
+
+            <p class="bytedance-caption">
+              Prompt exploration and generated outputs
+            </p>
+
+          </div>
+
+
+          <div>
+
+            <div class="bytedance-placeholder">
+              <span>
+                Dreamina Agent Workflow
+              </span>
+            </div>
+
+            <p class="bytedance-caption">
+              Multi-step AI creation workflow
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         03. MULTIMODAL INTERACTION
+    ========================================== -->
+
+    <section
+      class="case-section bytedance-story-section"
+      id="interaction-design"
+    >
+
+      <div class="case-container">
+
+        <h2 class="case-section-title">
+          Multimodal Interaction
+        </h2>
+
+        <h3 class="bytedance-statement">
+          Giving participants control through gesture and voice
+        </h3>
+
+        <p class="bytedance-description">
+          I designed and implemented gesture
+          controls and voice input using
+          TouchDesigner and Max/MSP, allowing
+          participants to manipulate AI-generated
+          visuals and contribute audio in real time.
+        </p>
+
+
+        <!-- INTERACTION MODEL -->
+
+        <div class="bytedance-media">
+
+          <div class="bytedance-placeholder">
+            <span>
+              Gesture + Voice → Interactive Audiovisual System
+            </span>
+          </div>
+
+          <p class="bytedance-caption">
+            Interaction model connecting user inputs
+            with real-time audiovisual feedback
+          </p>
+
+        </div>
+
+
+        <!-- INTERACTION DEMOS -->
+
+        <div class="bytedance-media-grid">
+
+          <div>
+
+            <div class="bytedance-placeholder">
+              <span>
+                Gesture Interaction Demo
+              </span>
+            </div>
+
+            <p class="bytedance-caption">
+              Gesture-based visual control
+            </p>
+
+          </div>
+
+
+          <div>
+
+            <div class="bytedance-placeholder">
+              <span>
+                Voice Input Demo
+              </span>
+            </div>
+
+            <p class="bytedance-caption">
+              Real-time audio contribution
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         04. ITERATIONS
+    ========================================== -->
+
+    <section
+      class="case-section bytedance-story-section"
+      id="iterations"
+    >
+
+      <div class="case-container">
+
+        <h2 class="case-section-title">
+          Iterations
+        </h2>
+
+        <h3 class="bytedance-statement">
+          Making every interaction feel responsive
+        </h3>
+
+        <p class="bytedance-description">
+          Across 9 rounds of prototype testing,
+          I refined gesture recognition,
+          interaction clarity, and audiovisual
+          synchronization to create a more
+          responsive and cohesive experience.
+        </p>
+
+
+        <!-- BEFORE / AFTER -->
+
+        <div class="bytedance-media-grid">
+
+          <div>
+
+            <div class="bytedance-placeholder">
+              <span>
+                Earlier Prototype
+              </span>
+            </div>
+
+            <p class="bytedance-caption">
+              Earlier interaction prototype
+            </p>
+
+          </div>
+
+
+          <div>
+
+            <div class="bytedance-placeholder">
+              <span>
+                Refined Prototype
+              </span>
+            </div>
+
+            <p class="bytedance-caption">
+              Refined interaction prototype
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         05. IMPACT
+    ========================================== -->
+
+    <section
+      class="case-section bytedance-story-section"
+      id="impact"
+    >
+
+      <div class="case-container">
+
+        <h2 class="case-section-title">
+          Impact
+        </h2>
+
+        <h3 class="bytedance-statement">
+          From interactive prototype to public experience
+        </h3>
+
+        <p class="bytedance-description">
+          I worked with ByteDance PMs and
+          international teams to align project
+          timelines, coordinate AI Video Festival
+          preparations, and refine the experience
+          for public showcases.
+        </p>
+
+
+        <!-- FINAL EXPERIENCE -->
+
+        <div class="bytedance-media">
+
+          <div class="bytedance-placeholder">
+            <span>
+              Live Performance / Public Screening
+            </span>
+          </div>
+
+          <p class="bytedance-caption">
+            Final experience presented to an audience of 60+
+          </p>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================================
+         06. REFLECTION
+    ========================================== -->
+
+    <section
+      class="case-section bytedance-story-section"
+      id="reflection"
+    >
+
+      <div class="case-container">
+
+        <h2 class="case-section-title">
+          Reflection
+        </h2>
+
+        <h3 class="bytedance-statement">
+          Designing beyond the screen
+        </h3>
+
+        <p class="bytedance-description">
+          This project expanded how I think about
+          interaction design, from evaluating
+          agentic AI tools to designing real-time
+          multimodal feedback. It reinforced
+          the importance of testing interactions
+          in practice and balancing technical
+          constraints with user experience.
+        </p>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ===========================================
+       BACK TO TOP
+  ============================================ -->
+
+  <div
+    class="scrolltop-container"
+    id="scrollTopArrow"
+  >
+
+    <img
+      src="assets/scrolldown.png"
+      alt="Back to top"
+      class="scrolltop"
+    >
+
+  </div>
+
+
+  <!-- ===========================================
+       FOOTER
+  ============================================ -->
+
+  <footer class="footer">
+
+    <p>
+      © 2026 Siyu Liu |
+
+      <a
+        href="https://www.linkedin.com/in/siyu-liu-9b2a43270/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        LinkedIn
+      </a>
+
+      |
+
+      <a href="mailto:lsy20041203@gmail.com">
+        Email
+      </a>
+
+    </p>
+
+  </footer>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
