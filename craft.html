@@ -5,53 +5,34 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>Craft | Siyu Liu</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&display=swap"
     rel="stylesheet"
   >
 
-  <!-- Shared website styles -->
   <link rel="stylesheet" href="style1.css">
-
   <link rel="stylesheet" href="craft.css">
-
-   <link rel="icon" type="image/png" href="assets/avatar.png">
-
+  <link rel="icon" type="image/png" href="assets/avatar.png">
 </head>
 
 <body>
 
-  <!-- ================= HEADER ================= -->
-
+  <!-- HEADER -->
   <header>
     <nav>
-
       <div class="logo">
         <a href="index.html">SIYU</a>
       </div>
 
       <div class="nav-right">
-
         <ul class="nav-menu">
-
-          <li>
-            <a href="index.html">WORK</a>
-          </li>
-
-          <li>
-            <a href="mediaart.html">CREATIVE TECH</a>
-          </li>
-
-          <li>
-            <a href="craft.html" class="active">CRAFT</a>
-          </li>
-
+          <li><a href="index.html">WORK</a></li>
+          <li><a href="mediaart.html">CREATIVE TECH</a></li>
+          <li><a href="craft.html" class="active">CRAFT</a></li>
 
           <li>
             <a
@@ -62,22 +43,14 @@
               aria-label="Resume (PDF, opens in a new tab)"
             >
               RESUME
-              <span
-                class="nav-resume-arrow"
-                aria-hidden="true"
-              >↗</span>
+              <span class="nav-resume-arrow" aria-hidden="true">↗</span>
             </a>
           </li>
 
-          <li>
-            <a href="about.html">ABOUT</a>
-          </li>
-
-
+          <li><a href="about.html">ABOUT</a></li>
         </ul>
 
         <div class="icons">
-
           <div class="language-dropdown">
             <svg
               class="globe-icon"
@@ -101,125 +74,108 @@
             <span></span>
             <span></span>
           </div>
-
         </div>
       </div>
-
     </nav>
   </header>
 
-
   <main class="craft-page">
 
-    <!-- ================= INTRO ================= -->
-
+    <!-- INTRO -->
     <section class="craft-intro">
-
       <div class="craft-container">
 
-    <h1 class="craft-title">
-  Craft <span>&amp; Curiosity.</span>
-</h1>
+        <h1 class="craft-title">
+          Craft <span>&amp; Curiosity.</span>
+        </h1>
 
-        <!-- Category filters -->
+        <!-- CATEGORY FILTERS -->
+        <div
+          class="craft-filters"
+          role="group"
+          aria-label="Filter creative work by category"
+        >
+          <button
+            type="button"
+            class="craft-filter is-active"
+            data-filter="all"
+            aria-pressed="true"
+          >
+            All
+          </button>
 
-        
-<div
-  class="craft-filters"
-  role="group"
-  aria-label="Filter creative work by category"
->
-  <button
-    type="button"
-    class="craft-filter is-active"
-    data-filter="all"
-    aria-pressed="true"
-  >
-    All
-  </button>
+          <button
+            type="button"
+            class="craft-filter"
+            data-filter="photography"
+            aria-pressed="false"
+          >
+            Photography
+          </button>
 
-  <button
-    type="button"
-    class="craft-filter"
-    data-filter="photography"
-    aria-pressed="false"
-  >
-    Photography
-  </button>
+          <button
+            type="button"
+            class="craft-filter"
+            data-filter="fashion"
+            aria-pressed="false"
+          >
+            Fashion
+          </button>
 
-  <button
-    type="button"
-    class="craft-filter"
-    data-filter="fashion"
-    aria-pressed="false"
-  >
-    Fashion
-  </button>
+          <button
+            type="button"
+            class="craft-filter"
+            data-filter="visual"
+            aria-pressed="false"
+          >
+            Visual Design
+          </button>
 
-  <button
-    type="button"
-    class="craft-filter"
-    data-filter="visual"
-    aria-pressed="false"
-  >
-    Visual Design
-  </button>
-
-  <button
-    type="button"
-    class="craft-filter"
-    data-filter="sketchbook"
-    aria-pressed="false"
-  >
-    Sketchbook
-  </button>
-</div>
-
+          <button
+            type="button"
+            class="craft-filter"
+            data-filter="sketchbook"
+            aria-pressed="false"
+          >
+            Sketchbook
+          </button>
+        </div>
 
       </div>
-
     </section>
 
-
-    <!-- ================= WORK GALLERY ================= -->
-
+    <!-- WORK GALLERY -->
     <section
       class="craft-gallery-section"
       aria-label="Creative work gallery"
     >
-
       <div class="craft-container">
-
         <div class="craft-gallery" id="craftGallery">
 
+          <!-- FASHION: REMAKE FEATURED PROJECT -->
+          <figure
+            class="craft-item craft-feature"
+            data-category="fashion"
+          >
+            <a
+              href="remake.html"
+              class="craft-feature-link"
+              data-project-cursor
+              data-cursor-label="View"
+              aria-label="View Remake fashion project"
+            >
+              <img
+                src="assets/fashion/remake/skirt/1.jpg"
+                alt="Remake fashion project"
+                width="1080"
+                height="1620"
+                loading="eager"
+                decoding="async"
+              >
+            </a>
+          </figure>
 
-
-         
-<!-- FASHION: REMAKE FEATURED PROJECT -->
-
-<figure
-  class="craft-item craft-feature"
-  data-category="fashion"
->
-  <a
-    href="remake.html"
-    class="craft-feature-link"
-    data-project-cursor
-    data-cursor-label="View"
-    aria-label="View Remake fashion project"
-  >
-    <img
-      src="assets/fashion/remake/skirt/1.jpg"
-      alt="Remake fashion project"
-      loading="eager"
-      decoding="async"
-    >
-  </a>
-</figure>
-
-
-          <!-- PHOTOGRAPHY -->
-
+          <!-- PHOTOGRAPHY 1 -->
           <figure
             class="craft-item"
             data-category="photography"
@@ -227,19 +183,21 @@
             <img
               src="assets/others/photo2.jpg"
               alt="Photography work 1"
+              width="1080"
+              height="1620"
               loading="eager"
               decoding="async"
             >
           </figure>
 
-
           <!-- VISUAL: SELF MAPPING -->
-
           <figure
             class="craft-item"
             data-category="visual"
           >
             <video
+              width="3016"
+              height="1636"
               controls
               muted
               loop
@@ -255,9 +213,7 @@
             </video>
           </figure>
 
-
-          <!-- FASHION: FOOTWEAR -->
-
+          <!-- FASHION: FOOTWEAR 1 -->
           <figure
             class="craft-item"
             data-category="fashion"
@@ -265,14 +221,14 @@
             <img
               src="assets/fashion/shoecollage1.png"
               alt="Shoe design collage 1"
+              width="1333"
+              height="2000"
               loading="lazy"
               decoding="async"
             >
           </figure>
 
-
           <!-- VISUAL: YNYG -->
-
           <figure
             class="craft-item"
             data-category="visual"
@@ -280,14 +236,14 @@
             <img
               src="assets/visual/ynygvisual.jpg"
               alt="YNYG bag poster and product photography"
+              width="3523"
+              height="2933"
               loading="lazy"
               decoding="async"
             >
           </figure>
 
-
-          <!-- PHOTOGRAPHY -->
-
+          <!-- PHOTOGRAPHY 2 -->
           <figure
             class="craft-item"
             data-category="photography"
@@ -295,14 +251,14 @@
             <img
               src="assets/others/photo3.jpg"
               alt="Photography work 2"
+              width="1080"
+              height="1620"
               loading="lazy"
               decoding="async"
             >
           </figure>
 
-
-          <!-- FASHION: FOOTWEAR -->
-
+          <!-- FASHION: FOOTWEAR 2 -->
           <figure
             class="craft-item"
             data-category="fashion"
@@ -310,14 +266,14 @@
             <img
               src="assets/fashion/shoecollage2.png"
               alt="Shoe design collage 2"
+              width="1333"
+              height="2000"
               loading="lazy"
               decoding="async"
             >
           </figure>
 
-
           <!-- VISUAL: LISA LEE -->
-
           <figure
             class="craft-item"
             data-category="visual"
@@ -325,14 +281,14 @@
             <img
               src="assets/visual/Lisalee.png"
               alt="Lisa Lee visual design"
+              width="1599"
+              height="678"
               loading="lazy"
               decoding="async"
             >
           </figure>
 
-
           <!-- SKETCHBOOK: STILL LIFE -->
-
           <figure
             class="craft-item"
             data-category="sketchbook"
@@ -340,17 +296,14 @@
             <img
               src="assets/others/stilllife.jpg"
               alt="Still life sketch"
+              width="920"
+              height="655"
               loading="lazy"
               decoding="async"
             >
           </figure>
 
-
-
-
-
-          <!-- PHOTOGRAPHY -->
-
+          <!-- PHOTOGRAPHY 3 -->
           <figure
             class="craft-item"
             data-category="photography"
@@ -358,18 +311,14 @@
             <img
               src="assets/others/photo4.jpg"
               alt="Photography work 3"
+              width="1616"
+              height="874"
               loading="lazy"
               decoding="async"
             >
           </figure>
 
-
-        
-
-
-
           <!-- VISUAL: HERO POSTER -->
-
           <figure
             class="craft-item"
             data-category="visual"
@@ -377,16 +326,14 @@
             <img
               src="assets/visual/heroposter.png"
               alt="Hero poster design"
+              width="2364"
+              height="788"
               loading="lazy"
               decoding="async"
             >
           </figure>
 
-
-
-
-          <!-- PHOTOGRAPHY -->
-
+          <!-- PHOTOGRAPHY 4 -->
           <figure
             class="craft-item"
             data-category="photography"
@@ -394,13 +341,14 @@
             <img
               src="assets/others/photo1.jpg"
               alt="Photography work 4"
+              width="1620"
+              height="1080"
               loading="lazy"
               decoding="async"
             >
           </figure>
 
- <!-- FASHION: GLOVES -->
-
+          <!-- FASHION: GLOVES -->
           <figure
             class="craft-item"
             data-category="fashion"
@@ -408,19 +356,21 @@
             <img
               src="assets/others/gloves.jpg"
               alt="Fabricated gloves"
+              width="5703"
+              height="3802"
               loading="lazy"
               decoding="async"
             >
           </figure>
 
-
-          <!-- VISUAL: BNU -->
-
+          <!-- VISUAL: BNU VIDEO -->
           <figure
             class="craft-item"
             data-category="visual"
           >
             <video
+              width="1920"
+              height="1080"
               controls
               muted
               loop
@@ -436,10 +386,7 @@
             </video>
           </figure>
 
- <!-- ========================================
-               VISUAL DESIGN
-          ======================================== -->
-
+          <!-- VISUAL: PREASY -->
           <figure
             class="craft-item"
             data-category="visual"
@@ -447,14 +394,14 @@
             <img
               src="assets/visual/preasy.png"
               alt="Preasy visual design"
+              width="1678"
+              height="946"
               loading="eager"
               decoding="async"
             >
           </figure>
 
-
           <!-- FASHION: WEAVING -->
-
           <figure
             class="craft-item"
             data-category="fashion"
@@ -462,14 +409,14 @@
             <img
               src="assets/fashion/otherfashion/weaving.jpg"
               alt="Weaving project"
+              width="1081"
+              height="1419"
               loading="lazy"
               decoding="async"
             >
           </figure>
 
-
-          <!-- PHOTOGRAPHY -->
-
+          <!-- PHOTOGRAPHY 5 -->
           <figure
             class="craft-item"
             data-category="photography"
@@ -477,33 +424,37 @@
             <img
               src="assets/others/photo5.jpg"
               alt="Photography work 5"
+              width="1080"
+              height="1620"
               loading="lazy"
               decoding="async"
             >
           </figure>
 
+          <!-- VISUAL: JETS VIDEO -->
+          <figure
+            class="craft-item"
+            data-category="visual"
+          >
+            <video
+              width="1920"
+              height="1080"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="auto"
+              aria-label="Jets visual motion design"
+            >
+              <source
+                src="assets/visual/visualjets.mp4"
+                type="video/mp4"
+              >
+              Your browser does not support HTML5 video.
+            </video>
+          </figure>
 
-  <!-- VISUAL: JETS -->
-
-<figure class="craft-item" data-category="visual">
-  <video
-    autoplay
-    muted
-    loop
-    playsinline
-    preload="auto"
-    aria-label="Jets visual motion design"
-  >
-    <source
-      src="assets/visual/visualjets.mp4"
-      type="video/mp4"
-    >
-    Your browser does not support HTML5 video.
-  </video>
-</figure>
-
- <!-- SKETCHBOOK: ANATOMY -->
-
+          <!-- SKETCHBOOK: ANATOMY -->
           <figure
             class="craft-item"
             data-category="sketchbook"
@@ -511,13 +462,14 @@
             <img
               src="assets/others/anatomy.jpg"
               alt="Anatomy sketch"
+              width="3311"
+              height="2389"
               loading="lazy"
               decoding="async"
             >
           </figure>
 
           <!-- FASHION: AI FABRICATION -->
-
           <figure
             class="craft-item"
             data-category="fashion"
@@ -525,14 +477,14 @@
             <img
               src="assets/others/fabricationai2.png"
               alt="AI-assisted fabrication visualization 2"
+              width="1122"
+              height="1402"
               loading="lazy"
               decoding="async"
             >
           </figure>
 
-
           <!-- SKETCHBOOK: INK PAINTING -->
-
           <figure
             class="craft-item"
             data-category="sketchbook"
@@ -540,16 +492,14 @@
             <img
               src="assets/others/cat.jpg"
               alt="Cat ink painting"
+              width="4032"
+              height="2949"
               loading="lazy"
               decoding="async"
             >
           </figure>
 
-
-
-
           <!-- PHOTOGRAPHY: ISTANBUL -->
-
           <figure
             class="craft-item"
             data-category="photography"
@@ -557,17 +507,14 @@
             <img
               src="assets/others/istanbul1.JPG"
               alt="Istanbul photography"
+              width="6000"
+              height="4000"
               loading="lazy"
               decoding="async"
             >
           </figure>
 
-
-      
-
-
           <!-- SKETCHBOOK: FACE -->
-
           <figure
             class="craft-item"
             data-category="sketchbook"
@@ -575,14 +522,14 @@
             <img
               src="assets/others/face.jpg"
               alt="Face drawing"
+              width="4067"
+              height="4067"
               loading="lazy"
               decoding="async"
             >
           </figure>
 
-
           <!-- PHOTOGRAPHY: BEACH -->
-
           <figure
             class="craft-item"
             data-category="photography"
@@ -590,14 +537,14 @@
             <img
               src="assets/others/beach.jpg"
               alt="Beach photography"
+              width="5552"
+              height="3261"
               loading="lazy"
               decoding="async"
             >
           </figure>
 
-
           <!-- FASHION: HEADPIECE -->
-
           <figure
             class="craft-item"
             data-category="fashion"
@@ -605,15 +552,14 @@
             <img
               src="assets/fashion/otherfashion/headpiece2.jpg"
               alt="Paper headpiece design"
+              width="2399"
+              height="2277"
               loading="lazy"
               decoding="async"
             >
           </figure>
 
-
-
           <!-- PHOTOGRAPHY: SWING -->
-
           <figure
             class="craft-item"
             data-category="photography"
@@ -621,14 +567,14 @@
             <img
               src="assets/others/swing.jpg"
               alt="Swing photography"
+              width="5282"
+              height="3521"
               loading="lazy"
               decoding="async"
             >
           </figure>
 
-
           <!-- FASHION: HEADBAND -->
-
           <figure
             class="craft-item"
             data-category="fashion"
@@ -636,14 +582,14 @@
             <img
               src="assets/fashion/otherfashion/puppyheadband.png"
               alt="Puppy headband design"
+              width="1602"
+              height="982"
               loading="lazy"
               decoding="async"
             >
           </figure>
 
-
           <!-- SKETCHBOOK: HANDS -->
-
           <figure
             class="craft-item"
             data-category="sketchbook"
@@ -651,14 +597,14 @@
             <img
               src="assets/others/hands.jpg"
               alt="Hand drawing"
+              width="4755"
+              height="3698"
               loading="lazy"
               decoding="async"
             >
           </figure>
 
-
           <!-- PHOTOGRAPHY: HOT AIR BALLOON -->
-
           <figure
             class="craft-item"
             data-category="photography"
@@ -666,14 +612,14 @@
             <img
               src="assets/others/hotballoon.JPG"
               alt="Hot air balloon photography"
+              width="3996"
+              height="5781"
               loading="lazy"
               decoding="async"
             >
           </figure>
 
-
-          <!-- FASHION: ILLUSTRATION -->
-
+          <!-- FASHION: ILLUSTRATION 1 -->
           <figure
             class="craft-item"
             data-category="fashion"
@@ -681,13 +627,14 @@
             <img
               src="assets/fashion/otherfashion/illustration1.jpg"
               alt="Fashion illustration 1"
+              width="2452"
+              height="3010"
               loading="lazy"
               decoding="async"
             >
           </figure>
-          
-          <!-- FASHION: UNIFORM -->
 
+          <!-- FASHION: UNIFORM -->
           <figure
             class="craft-item"
             data-category="fashion"
@@ -695,12 +642,14 @@
             <img
               src="assets/fashion/otherfashion/uniform.png"
               alt="Uniform design"
+              width="1326"
+              height="1536"
               loading="lazy"
               decoding="async"
             >
           </figure>
-              <!-- FASHION: ILLUSTRATION -->
 
+          <!-- FASHION: ILLUSTRATION 2 -->
           <figure
             class="craft-item"
             data-category="fashion"
@@ -708,14 +657,14 @@
             <img
               src="assets/fashion/otherfashion/illustration3.jpg"
               alt="Fashion illustration 2"
+              width="1830"
+              height="1463"
               loading="lazy"
               decoding="async"
             >
           </figure>
 
-
           <!-- PHOTOGRAPHY: CAT -->
-
           <figure
             class="craft-item"
             data-category="photography"
@@ -723,37 +672,39 @@
             <img
               src="assets/others/turkiyecat.jpg"
               alt="Cat photography in Türkiye"
+              width="5042"
+              height="3361"
               loading="lazy"
               decoding="async"
             >
           </figure>
 
-          <!-- FASHION: RING -->
-
-<figure
-  class="craft-item"
-  data-category="fashion"
->
-  <video
-    autoplay
-    muted
-    loop
-    playsinline
-    preload="metadata"
-    aria-label="Flux ring design"
-  >
-    <source
-      src="assets/fashion/otherfashion/fluxring.mp4"
-      type="video/mp4"
-    >
-    Your browser does not support HTML5 video.
-  </video>
-</figure>
-
+          <!-- FASHION: FLUX RING -->
+          <figure
+            class="craft-item"
+            data-category="fashion"
+          >
+            <video
+              width="1408"
+              height="792"
+              autoplay
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              aria-label="Flux ring design"
+            >
+              <source
+                src="assets/fashion/otherfashion/fluxring.mp4"
+                type="video/mp4"
+              >
+              Your browser does not support HTML5 video.
+            </video>
+          </figure>
 
         </div>
 
-        <!-- Accessible feedback on filter change -->
+        <!-- ACCESSIBLE FILTER FEEDBACK -->
         <p
           class="craft-sr-only"
           id="craftFilterStatus"
@@ -762,12 +713,9 @@
         ></p>
 
       </div>
-
     </section>
 
-
     <!-- BACK TO TOP -->
-
     <div
       class="scrolltop-container"
       id="scrollTopArrow"
@@ -781,9 +729,7 @@
 
   </main>
 
-
   <!-- FOOTER -->
-
   <footer class="footer">
     <p>
       © 2026 Siyu Liu |
@@ -794,15 +740,11 @@
         rel="noopener noreferrer"
       >LinkedIn</a> |
 
-      <a href="mailto:lsy20041203@gmail.com">
-        Email
-      </a>
+      <a href="mailto:lsy20041203@gmail.com">Email</a>
     </p>
   </footer>
 
-
   <!-- SCRIPTS -->
-
   <script src="script.js"></script>
   <script src="project-cursor.js"></script>
   <script src="craft.js"></script>
