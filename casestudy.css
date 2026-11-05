@@ -1823,3 +1823,269 @@ body:has(.case-sidebar) .case-section {
   }
 
 }
+
+
+
+/* =========================================================
+   VIRTUAL STYLIST — 2026 ITERATION
+========================================================= */
+
+.stylist-iteration {
+  padding-top: 48px;
+  margin-top: 38px;
+  border-top: 1px solid rgba(53, 59, 59, 0.14);
+}
+
+.stylist-iteration-heading {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 28px;
+  margin-bottom: 26px;
+}
+
+.stylist-iteration-heading .stylist-phase-title {
+  margin-bottom: 0;
+}
+
+.stylist-iteration-summary {
+  max-width: 260px;
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.5;
+  color: #707474;
+}
+
+
+/* =========================================================
+   OPPORTUNITY CARDS
+========================================================= */
+
+.stylist-opportunity-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.stylist-opportunity-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 182px;
+  padding: 22px;
+
+  border: 1px solid rgba(53, 59, 59, 0.10);
+  border-radius: 10px;
+
+  background: #F8F7F5;
+}
+
+.stylist-opportunity-number,
+.stylist-reflection-kicker,
+.stylist-reflection-bottom-label {
+  font-size: 0.68rem;
+  letter-spacing: 1.3px;
+  font-weight: 500;
+  line-height: 1.5;
+  color: #BB3F5B;
+}
+
+.stylist-opportunity-card h4 {
+  margin: 19px 0 8px;
+  font-size: clamp(1.03rem, 1.3vw, 1.24rem);
+  font-weight: 500;
+  letter-spacing: -0.3px;
+  line-height: 1.3;
+  color: #353B3B;
+}
+
+.stylist-opportunity-card p {
+  margin: 0;
+  font-size: 0.91rem;
+  line-height: 1.5;
+  color: #717575;
+}
+
+
+/* =========================================================
+   RAPID PROTOTYPING
+========================================================= */
+
+.stylist-prototype-heading {
+  display: flex;
+  align-items: baseline;
+  gap: 22px;
+  margin: 42px 0 18px;
+}
+
+.stylist-prototype-heading h4 {
+  margin: 0;
+  font-size: clamp(1.15rem, 1.5vw, 1.4rem);
+  font-weight: 500;
+  letter-spacing: -0.3px;
+  color: #353B3B;
+}
+
+.stylist-prototype-heading p {
+  margin: 0;
+  color: #717575;
+  font-size: 0.91rem;
+  line-height: 1.5;
+}
+
+.stylist-iteration .stylist-video-grid {
+  margin-top: 0;
+}
+
+.stylist-iteration-footnote {
+  margin: 13px 0 0;
+  font-size: 0.77rem;
+  color: #858888;
+  letter-spacing: 0.15px;
+}
+
+
+/* =========================================================
+   REFLECTION — LEAD
+========================================================= */
+
+.stylist-reflection-lead {
+  max-width: 690px;
+  margin: 0 0 28px;
+
+  color: #555B5B;
+  font-size: clamp(1.05rem, 1.45vw, 1.3rem);
+  line-height: 1.5;
+  letter-spacing: -0.2px;
+}
+
+
+/* =========================================================
+   REFLECTION — CARD GRID
+========================================================= */
+
+.stylist-reflection-grid {
+  display: grid;
+  grid-template-columns:
+    minmax(0, 1.12fr)
+    minmax(0, 0.88fr);
+
+  gap: 20px;
+  align-items: stretch;
+}
+
+.stylist-reflection-card {
+  display: flex;
+  flex-direction: column;
+
+  min-height: 320px;
+  padding: clamp(22px, 2.7vw, 34px);
+
+  border: 1px solid rgba(53, 59, 59, 0.12);
+  border-radius: 12px;
+
+  background: #F8F7F5;
+}
+
+.stylist-reflection-card-featured {
+  background: #F4EFF0;
+}
+
+
+/* =========================================================
+   REFLECTION — CONTENT
+========================================================= */
+
+.stylist-reflection-card h3 {
+  margin: 16px 0 22px;
+  max-width: 370px;
+
+  font-size: clamp(1.3rem, 2vw, 1.9rem);
+  font-weight: 500;
+  line-height: 1.22;
+  letter-spacing: -0.6px;
+
+  color: #353B3B;
+}
+
+.stylist-reflection-observation,
+.stylist-reflection-statement {
+  margin: 0 0 30px;
+
+  font-size: clamp(1rem, 1.2vw, 1.1rem);
+  line-height: 1.62;
+
+  color: #4A5050;
+}
+
+.stylist-reflection-observation strong {
+  color: #BB3F5B;
+  font-weight: 600;
+}
+
+
+/* =========================================================
+   REFLECTION — BOTTOM TAKEAWAY
+========================================================= */
+
+.stylist-reflection-bottom {
+  margin-top: auto;
+  padding-top: 20px;
+  border-top: 1px solid rgba(53, 59, 59, 0.14);
+}
+
+.stylist-reflection-bottom-label {
+  display: block;
+  margin-bottom: 8px;
+}
+
+.stylist-reflection-bottom p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: #555B5B;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 800px) {
+
+  .stylist-iteration-heading,
+  .stylist-prototype-heading {
+    align-items: start;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .stylist-iteration-summary {
+    max-width: none;
+  }
+
+  .stylist-opportunity-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .stylist-opportunity-card {
+    min-height: auto;
+    padding: 20px;
+  }
+
+  .stylist-opportunity-card h4 {
+    margin-top: 11px;
+  }
+
+  .stylist-reflection-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stylist-reflection-card {
+    min-height: auto;
+  }
+
+}
+
+
+
