@@ -5,6 +5,7 @@
    Category Filtering
    URL Hash Support
    Visible Video Playback
+   Stable Initial Gallery Layout
 ========================================================= */
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -41,27 +42,34 @@ document.addEventListener("DOMContentLoaded", () => {
     "sketchbook"
   ]);
 
+  let animationFrame = null;
+
+
   /* =====================================================
      VIDEO PLAYBACK
   ===================================================== */
 
   function pauseHiddenVideos() {
     videos.forEach(video => {
-      if (video.closest(".craft-item").hidden) {
+      const item = video.closest(".craft-item");
+
+      if (item && item.hidden) {
         video.pause();
       }
     });
   }
 
-  // Play videos only when visible on screen.
-  // Pause them when they leave the viewport.
-
   if ("IntersectionObserver" in window) {
+
     const videoObserver = new IntersectionObserver(
       entries => {
+
         entries.forEach(entry => {
+
           const video = entry.target;
           const item = video.closest(".craft-item");
+
+          if (!item) return;
 
           const shouldPlay =
             entry.isIntersecting &&
@@ -70,14 +78,13 @@ document.addEventListener("DOMContentLoaded", () => {
             !reducedMotion.matches;
 
           if (shouldPlay) {
-            video.play().catch(() => {
-              // Browser may restrict playback.
-              // Native controls remain available.
-            });
+            video.play().catch(() => {});
           } else {
             video.pause();
           }
+
         });
+
       },
       {
         threshold: 0.3
@@ -87,29 +94,49 @@ document.addEventListener("DOMContentLoaded", () => {
     videos.forEach(video => {
       videoObserver.observe(video);
     });
+
   }
+
 
   document.addEventListener(
     "visibilitychange",
     () => {
+
       if (document.hidden) {
         videos.forEach(video => video.pause());
       }
+
     }
   );
 
+
   /* =====================================================
-     FILTER WORK
+     FILTER GALLERY
   ===================================================== */
 
-  function filterGallery(category, updateURL = true) {
+  function filterGallery(
+    category,
+    updateURL = true,
+    animate = false
+  ) {
+
     const selected = categories.has(category)
       ? category
       : "all";
 
-    /* Update buttons */
+
+    /* Cancel previous animation */
+
+    if (animationFrame !== null) {
+      cancelAnimationFrame(animationFrame);
+      animationFrame = null;
+    }
+
+
+    /* Update category buttons */
 
     filters.forEach(button => {
+
       const isActive =
         button.dataset.filter === selected;
 
@@ -122,47 +149,67 @@ document.addEventListener("DOMContentLoaded", () => {
         "aria-pressed",
         String(isActive)
       );
+
     });
 
-    /* Show matching items */
+
+    /* Update gallery visibility */
 
     let visibleCount = 0;
 
     items.forEach(item => {
+
       const matches =
         selected === "all" ||
         item.dataset.category === selected;
 
-      item.hidden = !matches;
-
       item.classList.remove("is-entering");
 
+      item.hidden = !matches;
+
       if (matches) {
+
         visibleCount++;
+
       } else {
+
         const video = item.querySelector("video");
 
         if (video) video.pause();
+
       }
+
     });
 
-    /* Animate newly visible items */
 
-    if (!reducedMotion.matches) {
-      requestAnimationFrame(() => {
+    /* Animate only after user interaction */
+
+    if (animate && !reducedMotion.matches) {
+
+      animationFrame = requestAnimationFrame(() => {
+
         items.forEach(item => {
+
           if (!item.hidden) {
             item.classList.add("is-entering");
           }
+
         });
+
+        animationFrame = null;
+
       });
+
     }
+
 
     pauseHiddenVideos();
 
-    /* Accessible feedback */
+
+    /* Accessibility status */
 
     if (status) {
+
       const label =
         selected === "all"
           ? "All categories"
@@ -171,11 +218,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
       status.textContent =
         `${label}: ${visibleCount} works displayed.`;
+
     }
 
-    /* Keep selected category shareable */
+
+    /* Update URL */
 
     if (updateURL) {
+
       const newURL =
         selected === "all"
           ? window.location.pathname +
@@ -187,44 +237,67 @@ document.addEventListener("DOMContentLoaded", () => {
         "",
         newURL
       );
+
     }
+
   }
 
+
   /* =====================================================
-     FILTER BUTTONS
+     CATEGORY BUTTONS
   ===================================================== */
 
   filters.forEach(button => {
+
     button.addEventListener("click", () => {
-      filterGallery(button.dataset.filter);
+
+      filterGallery(
+        button.dataset.filter,
+        true,
+        true
+      );
+
     });
+
   });
 
-  /* =====================================================
-     DIRECT LINKS
 
-     extra.html#fashion
-     extra.html#visual
-     extra.html#photography
-     extra.html#sketchbook
+  /* =====================================================
+     URL HASH SUPPORT
   ===================================================== */
 
   function categoryFromURL() {
+
     const hash = window.location.hash
       .slice(1)
       .toLowerCase();
 
-    return categories.has(hash) ? hash : "all";
+    return categories.has(hash)
+      ? hash
+      : "all";
+
   }
 
+
   window.addEventListener("hashchange", () => {
-    filterGallery(categoryFromURL(), false);
+
+    filterGallery(
+      categoryFromURL(),
+      false,
+      false
+    );
+
   });
 
+
   /* =====================================================
-     INITIALIZE
+     INITIALIZE — NO ANIMATION
   ===================================================== */
 
-  filterGallery(categoryFromURL(), false);
+  filterGallery(
+    categoryFromURL(),
+    false,
+    false
+  );
 
 });

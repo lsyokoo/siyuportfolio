@@ -1,9 +1,11 @@
+
 /* =========================================================
    SIYU PORTFOLIO — CRAFT PAGE
 
    Editorial Heading
    Pill-style Category Filters
    Static Masonry Gallery
+   No Entrance Animations
 ========================================================= */
 
 
@@ -27,14 +29,16 @@
 
 
 /* =========================================================
-   2. PAGE HEADING
+   2. PAGE HEADING — NO ANIMATION
 ========================================================= */
 
 .craft-intro {
   padding-top: 90px;
   padding-bottom: 20px;
 
-  animation: craftFadeUp 0.4s ease-out both;
+  animation: none;
+  opacity: 1;
+  transform: none;
 }
 
 .craft-title {
@@ -52,6 +56,10 @@
   letter-spacing: -0.045em;
 
   color: #3E4E50;
+
+  animation: none;
+  opacity: 1;
+  transform: none;
 }
 
 .craft-title span {
@@ -83,6 +91,10 @@
   padding: 0;
 
   border: none;
+
+  animation: none;
+  opacity: 1;
+  transform: none;
 }
 
 .craft-filter {
@@ -112,13 +124,17 @@
 
   cursor: pointer;
 
+  animation: none;
+  transform: none;
+
   transition:
     color 0.2s ease,
     background-color 0.2s ease,
     border-color 0.2s ease;
 }
 
-/* Hover only changes the tab, never the gallery */
+
+/* Hover only changes the tab */
 
 @media (hover: hover) and (pointer: fine) {
 
@@ -128,6 +144,7 @@
   }
 
 }
+
 
 /* Selected category */
 
@@ -145,12 +162,16 @@
 
 
 /* =========================================================
-   4. GALLERY SECTION
+   4. GALLERY SECTION — STATIC
 ========================================================= */
 
 .craft-gallery-section {
   padding-top: 0;
   padding-bottom: 70px;
+
+  animation: none;
+  opacity: 1;
+  transform: none;
 }
 
 .craft-gallery {
@@ -158,6 +179,10 @@
 
   column-count: 3;
   column-gap: 12px;
+
+  animation: none;
+  opacity: 1;
+  transform: none;
 }
 
 
@@ -178,13 +203,20 @@
   border-radius: 3px;
 
   background: transparent;
+
+  animation: none;
+  opacity: 1;
+  transform: none;
+  transition: none;
 }
+
 
 /* Hidden categories */
 
 .craft-item[hidden] {
   display: none !important;
 }
+
 
 /* Image / video sizing */
 
@@ -197,8 +229,11 @@
 
   border-radius: 3px;
 
+  opacity: 1;
   transform: none;
   filter: none;
+
+  animation: none;
   transition: none;
 }
 
@@ -206,12 +241,23 @@
   background: #EAE8E5;
 }
 
-/* No hover scaling or image effects */
 
+/* No hover effects */
+
+.craft-item:hover,
 .craft-item:hover img,
 .craft-item:hover video {
   transform: none;
   filter: none;
+}
+
+
+/* Disable legacy entering animations */
+
+.craft-item.is-entering {
+  animation: none;
+  opacity: 1;
+  transform: none;
 }
 
 
@@ -270,8 +316,6 @@
   pointer-events: none;
 }
 
-/* Arrow decoration, not hover animation */
-
 .craft-feature-label span {
   font-size: 1.15rem;
   line-height: 1;
@@ -284,32 +328,7 @@
 
 
 /* =========================================================
-   7. ANIMATIONS
-========================================================= */
-
-/* Gallery animation when switching categories */
-
-.craft-item.is-entering {
-  animation: craftFadeUp 0.4s ease-out both;
-}
-
-/* Shared fade-in + slide-up animation */
-
-@keyframes craftFadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-
-/* =========================================================
-   8. ACCESSIBILITY
+   7. ACCESSIBILITY
 ========================================================= */
 
 .craft-sr-only {
@@ -325,11 +344,6 @@
 
 @media (prefers-reduced-motion: reduce) {
 
-  .craft-intro,
-  .craft-item.is-entering {
-    animation: none;
-  }
-
   .craft-filter {
     transition: none;
   }
@@ -338,7 +352,7 @@
 
 
 /* =========================================================
-   9. TABLET
+   8. TABLET
 ========================================================= */
 
 @media (max-width: 1000px) {
@@ -365,7 +379,7 @@
 
 
 /* =========================================================
-   10. MOBILE
+   9. MOBILE
 ========================================================= */
 
 @media (max-width: 768px) {
@@ -398,7 +412,7 @@
 
 
 /* =========================================================
-   11. SMALL MOBILE
+   10. SMALL MOBILE
 ========================================================= */
 
 @media (max-width: 600px) {
@@ -446,7 +460,7 @@
 
 
 /* =========================================================
-   12. VERY SMALL MOBILE
+   11. VERY SMALL MOBILE
 ========================================================= */
 
 @media (max-width: 480px) {
