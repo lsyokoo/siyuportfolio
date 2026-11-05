@@ -14,8 +14,8 @@
   <!-- Case Study -->
   <link rel="stylesheet" href="casestudy.css">
 
-   <link rel="icon" type="image/png" href="assets/avatar.png">
-   
+  <link rel="icon" type="image/png" href="assets/avatar.png">
+
 </head>
 
 <body>
@@ -56,16 +56,16 @@
               aria-label="Resume (PDF, opens in a new tab)"
             >
               RESUME
-              <span class="nav-resume-arrow" aria-hidden="true">↗</span>
+              <span
+                class="nav-resume-arrow"
+                aria-hidden="true"
+              >↗</span>
             </a>
           </li>
-          
 
           <li>
             <a href="about.html">ABOUT</a>
           </li>
-
-           
 
         </ul>
 
@@ -81,6 +81,7 @@
               stroke-width="2"
               stroke-linecap="round"
               stroke-linejoin="round"
+              aria-hidden="true"
             >
               <circle cx="12" cy="12" r="10"></circle>
               <line x1="2" y1="12" x2="22" y2="12"></line>
@@ -204,7 +205,9 @@
             </p>
 
             <p class="case-summary-text">
-              A wholesale platform for retailer acquisition, Faire purchasing, and co-branding, with later explorations into direct ordering and operations.
+              A wholesale platform for retailer acquisition, Faire purchasing,
+              and co-branding, with later explorations into direct ordering
+              and operations.
             </p>
 
           </div>
@@ -333,12 +336,141 @@
 
     </section>
 
+
+    <!-- ===================================================
+         MORE PROJECTS
+    ==================================================== -->
+
+    <section
+      class="case-more"
+      aria-label="More Projects"
+    >
+
+      <div class="case-container">
+
+        <!-- Heading matches other case study sections -->
+        <!-- Not included in the auto-generated sidebar -->
+
+        <div
+          class="case-more-heading"
+          role="heading"
+          aria-level="2"
+        >
+          More Projects
+        </div>
+
+
+        <div class="case-more-grid">
+
+
+          <!-- ===========================================
+               PROJECT 1: YNYG POST-PURCHASE
+          ============================================ -->
+
+          <a
+            href="abg.html"
+            class="case-more-card"
+            data-project-cursor
+            data-cursor-label="View"
+            aria-label="View YNYG Post-Purchase case study"
+          >
+
+            <!-- Image -->
+
+            <div class="case-more-image">
+
+              <img
+                src="assets/uiux/abg/web1.webp"
+                alt="YNYG post-purchase experience preview"
+                width="1278"
+                height="695"
+                loading="lazy"
+                decoding="async"
+              >
+
+            </div>
+
+
+            <!-- Title and Tags -->
+
+            <div class="case-more-content">
+
+              <h3 class="case-more-title">
+                Optimizing Post-Purchase Engagement for YNYG
+              </h3>
+
+              <div class="project-pill-row case-more-tags">
+
+                <span>E-Commerce</span>
+                <span>Product Strategy</span>
+
+              </div>
+
+            </div>
+
+          </a>
+
+
+          <!-- ===========================================
+               PROJECT 2: BNU
+          ============================================ -->
+
+          <a
+            href="bnu.html"
+            class="case-more-card"
+            data-project-cursor
+            data-cursor-label="View"
+            aria-label="View BNU case study"
+          >
+
+            <!-- Image -->
+
+            <div class="case-more-image">
+
+              <img
+                src="assets/uiux/bnu1.webp"
+                alt="BNU multilingual website preview"
+                width="1600"
+                height="870"
+                loading="lazy"
+                decoding="async"
+              >
+
+            </div>
+
+
+            <!-- Title and Tags -->
+
+            <div class="case-more-content">
+
+              <h3 class="case-more-title">
+                Building a Multilingual Web System for BNU
+              </h3>
+
+              <div class="project-pill-row case-more-tags">
+
+                <span>Motion Design</span>
+                <span>Localization</span>
+
+              </div>
+
+            </div>
+
+          </a>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
   </main>
 
 
   <!-- =====================================================
        BACK TO TOP
-       Outside main for full-page centering
   ====================================================== -->
 
   <div
@@ -362,7 +494,6 @@
   <footer class="footer">
 
     <p>
-
       © 2026 Siyu Liu |
 
       <a
@@ -385,10 +516,11 @@
 
 
   <!-- =====================================================
-       SHARED SCRIPT
+       SCRIPTS
   ====================================================== -->
 
   <script src="script.js"></script>
+  <script src="project-cursor.js"></script>
 
 </body>
 </html>
