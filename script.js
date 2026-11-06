@@ -362,3 +362,45 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
 });
+
+
+
+/* =========================================================
+   NAVBAR — AUTOMATIC ACTIVE TAB
+========================================================= */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const currentPage =
+    window.location.pathname.split("/").pop() || "index.html";
+
+  const workPages = [
+    "index.html",
+    "stylist.html",
+    "abg.html",
+    "abg2b.html",
+    "bnu.html",
+    "bytedance.html"
+  ];
+
+  let activePage = currentPage;
+
+  if (workPages.includes(currentPage)) {
+    activePage = "index.html";
+  }
+
+  document.querySelectorAll(".nav-menu a").forEach(link => {
+    const linkPage =
+      new URL(link.href, window.location.href)
+        .pathname.split("/").pop();
+
+    const isActive = linkPage === activePage;
+
+    link.classList.toggle("active", isActive);
+
+    if (isActive) {
+      link.setAttribute("aria-current", "page");
+    } else {
+      link.removeAttribute("aria-current");
+    }
+  });
+});

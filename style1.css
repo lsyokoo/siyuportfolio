@@ -2,6 +2,7 @@
    Base / Global
 ========================= */
 
+
 :root {
   --primary-color: #353B3B;
   --secondary-color: #777A78;
@@ -861,36 +862,6 @@ nav {
 
 
 
-/* =========================
-   Footer
-========================= */
-
-.footer {
-  background-color: var(--bg-light);
-
-  color: #424746;
-
-  text-align: center;
-
-  padding: 20px;
-}
-
-
-.footer a {
-  color: #424746;
-
-  text-decoration: none;
-}
-
-
-.footer a:hover {
-  text-decoration: underline;
-
-  color: var(--accent-warm);
-}
-
-
-
 /* =========================================================
    TABLET
 ========================================================= */
@@ -1379,5 +1350,230 @@ nav {
 @media (prefers-reduced-motion: reduce) {
   .nav-menu .nav-resume-arrow {
     transition: none;
+  }
+}
+
+
+
+
+/* =========================================================
+   FOOTER — FIXED + ADAPTIVE CONTRAST
+========================================================= */
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+
+  width: 100%;
+  z-index: 1000;
+  padding: 16px 32px;
+
+  background: transparent !important;
+  border: none;
+  box-shadow: none;
+  text-align: center;
+
+  mix-blend-mode: difference;
+  pointer-events: none;
+}
+
+.footer p {
+  margin: 0;
+  color: #FFFFFF !important;
+  font-size: 0.78rem;
+  line-height: 1.5;
+  text-align: center;
+  mix-blend-mode: normal;
+}
+
+.footer a,
+.footer a:link,
+.footer a:visited,
+.footer a:hover,
+.footer a:focus,
+.footer a:active {
+  color: #FFFFFF !important;
+  mix-blend-mode: normal;
+}
+
+.footer a {
+  pointer-events: auto;
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.footer a:hover {
+  opacity: 0.6;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+body {
+  padding-bottom: 60px;
+}
+
+
+
+/* =========================================================
+   NAVBAR — LINKEDIN + GLOBE + HAMBURGER
+   Always visible, aligned, responsive
+========================================================= */
+
+/* Right-side icon group */
+
+.nav-right .icons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+
+  gap: 12px;
+}
+
+/* Shared icon positioning */
+
+.nav-social-linkedin,
+.nav-right .language-dropdown {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 32px;
+  height: 32px;
+  flex: 0 0 32px;
+
+  margin: 0;
+  padding: 0;
+}
+
+/* LinkedIn */
+
+.nav-social-linkedin {
+  color: #424746;
+  text-decoration: none;
+  line-height: 0;
+
+  transition: color 0.25s ease;
+}
+
+.nav-linkedin-icon {
+  display: block;
+
+  width: 28px;
+  height: 28px;
+
+  fill: currentColor;
+}
+
+/* Globe */
+
+.nav-right .language-dropdown {
+  margin-right: 0;
+}
+
+.nav-right .globe-icon {
+  display: block;
+
+  width: 22px;
+  height: 22px;
+
+  margin: 0;
+  flex-shrink: 0;
+}
+
+/* LinkedIn Hover */
+
+.nav-social-linkedin:hover {
+  color: #BB3F5B;
+}
+
+.nav-social-linkedin:focus-visible {
+  outline: 2px solid #BB3F5B;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+  /* Keep social icons visible outside the menu */
+
+  .nav-right .icons {
+    position: absolute;
+
+    top: 23px;
+    right: 2rem;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
+    gap: 10px;
+  }
+
+  .nav-social-linkedin {
+    display: inline-flex;
+  }
+
+  .nav-right .language-dropdown {
+    margin-right: 0;
+  }
+
+  /* Align hamburger with the other icons */
+
+  .nav-right .hamburger {
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    width: 32px;
+    height: 32px;
+
+    padding: 0;
+    margin: 0;
+  }
+
+  .nav-right .hamburger span {
+    flex-shrink: 0;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+  .nav-right .icons {
+    top: 20px;
+    right: 1.25rem;
+
+    gap: 6px;
+  }
+
+  .nav-social-linkedin,
+  .nav-right .language-dropdown {
+    width: 30px;
+    height: 30px;
+    flex-basis: 30px;
+  }
+
+  .nav-linkedin-icon {
+    width: 26px;
+    height: 26px;
+  }
+
+  .nav-right .globe-icon {
+    width: 21px;
+    height: 21px;
+  }
+
+  .nav-right .hamburger {
+    width: 30px;
+    height: 30px;
   }
 }
