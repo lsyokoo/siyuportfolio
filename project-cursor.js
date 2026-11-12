@@ -69,7 +69,7 @@ document.addEventListener("DOMContentLoaded", () => {
     activeProject = project;
 
     // Each thumbnail can have a different label.
-    const label = project.dataset.cursorLabel || "View";
+    const label = project.dataset.cursorLabel || "VIEW";
 
     cursor.textContent = label;
 

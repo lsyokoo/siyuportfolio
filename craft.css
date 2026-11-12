@@ -63,15 +63,10 @@
 }
 
 .craft-title span {
-  font-family:
-    "Playfair Display",
-    Georgia,
-    serif;
-
-  font-style: italic;
-  font-weight: 500;
-  letter-spacing: -0.035em;
-
+  font-family: "Rock 3D", system-ui;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
   color: #BB3F5B;
 }
 

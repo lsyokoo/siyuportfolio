@@ -2,6 +2,7 @@
    Base / Global
 ========================= */
 
+@import url('https://fonts.googleapis.com/css2?family=Rock+3D&display=swap');
 
 :root {
   --primary-color: #353B3B;
@@ -1151,11 +1152,6 @@ nav {
    PROJECT THUMBNAIL — CUSTOM CURSOR
 ========================================== */
 
-/* ==========================================
-   PROJECT THUMBNAIL — CUSTOM CURSOR
-   View / Coming Soon
-========================================== */
-
 .project-view-cursor {
   position: fixed;
   top: 0;
@@ -1176,16 +1172,11 @@ nav {
   background: #BB3F5B;
   color: #FFFFFF;
 
-  font-family:
-    "Playfair Display",
-    Georgia,
-    "Times New Roman",
-    serif;
-
+  font-family: "Rock 3D", system-ui;
   font-size: 1.65rem;
-  font-style: italic;
-  font-weight: 500;
-  letter-spacing: -0.02em;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
   line-height: 1.15;
   text-align: center;
 
@@ -1212,19 +1203,17 @@ nav {
   transform: translate(-50%, -50%) scale(1);
 }
 
-
 /* Coming Soon — dark circle */
 
 .project-view-cursor.is-coming-soon {
   background-color: #303333;
-
   color: #FFFFFF;
 
-  font-family: "Playfair Display", Georgia, serif;
-  font-style: italic;
-  font-weight: 500;
+  font-family: "Rock 3D", system-ui;
+  font-style: normal;
+  font-weight: 400;
   font-size: 1.16rem;
-  letter-spacing: -0.025em;
+  letter-spacing: 0;
 }
 
 
@@ -1575,5 +1564,94 @@ body {
   .nav-right .hamburger {
     width: 30px;
     height: 30px;
+  }
+}
+
+
+/* ==========================================
+   NAVBAR LOGO — ROCK 3D
+========================================== */
+
+.logo a {
+  display: inline-block;
+
+  font-family: 'Rock 3D', sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1.2;
+
+  letter-spacing: 0;
+
+  color: #424746;
+
+  transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+}
+
+.logo a:hover {
+  color: #BB3F5B;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .logo a {
+    font-size: 1.55rem;
+  }
+}
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .logo a {
+    transition: none;
+  }
+  }
+
+
+  /* ==========================================
+   ROCK 3D HOVER — AVATAR CURSOR
+========================================== */
+
+.rock-hover-target {
+  cursor: none;
+}
+
+.rock-avatar-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 99999;
+
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+
+  opacity: 0;
+  visibility: hidden;
+
+  transform: translate(-50%, -50%);
+
+  transition:
+    opacity 0.14s ease,
+    visibility 0.14s ease;
+}
+
+.rock-avatar-cursor.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Mobile / touch devices */
+@media (hover: none), (pointer: coarse) {
+  .rock-hover-target {
+    cursor: auto;
+  }
+
+  .rock-avatar-cursor {
+    display: none;
   }
 }

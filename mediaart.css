@@ -29,14 +29,18 @@
   color: var(--accent-pink);
 }
 
+
 .ma-hero-description {
-  max-width: 820px;
+  max-width: 1050px;
   margin: 0;
 
-  font-size: clamp(1rem, 1.3vw, 1.22rem);
-  line-height: 1.65;
+  font-family: "Inter", sans-serif;
+  font-size: clamp(1.6rem, 2.12vw, 3rem);
+  font-weight: 400;
+  line-height: 1.35;
+  letter-spacing: -0.02em;
 
-  color: #3e4e50;
+  color: #353B3B;
 
   opacity: 0;
   animation: maFadeUp 0.65s ease-out forwards;
@@ -372,13 +376,13 @@
 .ma-hero-highlight {
   display: inline;
 
-  font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-  font-style: italic;
-  font-weight: 500;
+  font-family: "Rock 3D", system-ui;
+  font-style: normal;
+  font-weight: 400;
 
-  font-size: 1.13em;
+  font-size: 1em;
   line-height: inherit;
-  letter-spacing: -0.02em;
+  letter-spacing: 0;
 
   color: #BB3F5B;
   cursor: default;

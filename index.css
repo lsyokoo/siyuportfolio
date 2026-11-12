@@ -87,30 +87,22 @@
 }
 
 
+
 /* =====================================================
-   4. BURGUNDY HIGHLIGHT TEXT
+   4. BURGUNDY HIGHLIGHT TEXT — rock3d
 ===================================================== */
 
 #home .hero-name,
 #home .hero-title-highlight {
-  font-family:
-    "Playfair Display",
-    Georgia,
-    "Times New Roman",
-    serif;
-
-  font-style: italic;
-  font-weight: 500;
-
-  font-size: 1.12em;
+  font-family: "Rock 3D", system-ui;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 1em;
   line-height: inherit;
-  letter-spacing: -0.02em;
-
+  letter-spacing: 0;
   color: #BB3F5B;
-
   text-decoration: none;
 }
-
 
 /* =====================================================
    5. SUBTITLE
@@ -481,18 +473,119 @@
   cursor: none !important;
 }
 
-/* Custom avatar cursor */
-.hero-avatar-cursor {
-  position: fixed;
-  z-index: 99999;
 
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
+
+/* =====================================================
+   CURIOSITY WORDS — INTERACTIVE EASTER EGG
+===================================================== */
+
+/* Keep Hero artwork as positioning container */
+
+#home .hero-image {
+  position: relative;
+  isolation: isolate;
+}
+
+/* Overlay aligned with the actual image */
+
+#home .industry-words-layer {
+  position: absolute;
+  z-index: 10;
+
+  overflow: hidden;
+  pointer-events: none;
+
+  background: transparent;
+}
+
+/* Individual Rock 3D word */
+
+#home .industry-word {
+  position: absolute;
+  display: inline-block;
+  width: max-content;
+  max-width: 95%;
+
+  padding: 3px 5px;
+
+  font-family: "Rock 3D", system-ui;
+  font-size: clamp(17px, 1.7vw, 23px);
+  font-weight: 400;
+  font-style: normal;
+
+  line-height: 1.3;
+  letter-spacing: 0;
+  white-space: nowrap;
+
+  /* Adaptive color */
+  color: #FFFFFF;
+  mix-blend-mode: difference;
 
   pointer-events: none;
   user-select: none;
-  -webkit-user-drag: none;
+  -webkit-user-select: none;
 
-  transform: translate(-50%, -50%);
+  animation: industryWordReveal 2.6s ease-out both;
+}
+
+/* Longer words */
+
+#home .industry-word-long {
+  font-size: clamp(15px, 1.3vw, 18px);
+}
+
+/* Subtle appearance and disappearance */
+
+@keyframes industryWordReveal {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -40%) scale(0.96);
+  }
+
+  15% {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+
+  72% {
+    opacity: 1;
+    transform: translate(-50%, -54%) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-50%, -65%) scale(1);
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+  #home .industry-word {
+    font-size: 18px;
+  }
+
+  #home .industry-word-long {
+    font-size: 15px;
+  }
+}
+
+/* Reduced motion */
+
+@media (prefers-reduced-motion: reduce) {
+  #home .industry-word.no-motion {
+    animation: industryWordFade 2.6s ease both;
+  }
+}
+
+@keyframes industryWordFade {
+  0%, 100% {
+    opacity: 0;
+    transform: translate(-50%, -50%);
+  }
+
+  15%, 75% {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
 }

@@ -404,3 +404,48 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+
+/* ==========================================
+   ROCK 3D HOVER — AVATAR CURSOR
+========================================== */
+
+document.addEventListener("DOMContentLoaded", () => {
+  const hoverTargets = document.querySelectorAll(".rock-hover-target");
+
+  if (!hoverTargets.length) return;
+
+  const avatarCursor = document.createElement("img");
+  avatarCursor.src = "assets/avatar.png";
+  avatarCursor.alt = "";
+  avatarCursor.className = "rock-avatar-cursor";
+  avatarCursor.setAttribute("aria-hidden", "true");
+
+  document.body.appendChild(avatarCursor);
+
+  const moveCursor = (event) => {
+    avatarCursor.style.left = `${event.clientX}px`;
+    avatarCursor.style.top = `${event.clientY}px`;
+  };
+
+  hoverTargets.forEach((target) => {
+    target.addEventListener("mouseenter", (event) => {
+      avatarCursor.classList.add("is-visible");
+      moveCursor(event);
+    });
+
+    target.addEventListener("mousemove", moveCursor);
+
+    target.addEventListener("mouseleave", () => {
+      avatarCursor.classList.remove("is-visible");
+    });
+  });
+
+  document.addEventListener("mouseleave", () => {
+    avatarCursor.classList.remove("is-visible");
+  });
+
+  window.addEventListener("blur", () => {
+    avatarCursor.classList.remove("is-visible");
+  });
+});

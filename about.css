@@ -153,16 +153,20 @@
   color: #929292;
 }
 
-/* Editorial Highlights */
+
+
+/* Editorial Highlights — Rock 3D */
 
 .about-heading-name,
 .about-heading-highlight,
 .about-perspective-highlight,
 .about-design-question {
-  font-family: "Playfair Display", Georgia, serif;
-  font-style: italic;
-  font-weight: 500;
+  font-family: "Rock 3D", system-ui;
+  font-style: normal;
+  font-weight: 400;
+  letter-spacing: 0;
 }
+
 
 .about-heading-name {
   color: var(--about-text);
@@ -1469,4 +1473,60 @@ html.about-reveal-enabled .about-offclock-inner {
     transform: none !important;
     transition: none !important;
   }
+}
+
+
+/* ==========================================
+   ABOUT — CLOUD AVATAR STICKER
+========================================== */
+
+.about-avatar-sticker {
+  position: absolute;
+
+  /* Left side, slightly below center */
+  left: -28px;
+  top: 58%;
+  right: auto;
+  bottom: auto;
+
+  width: 85px;
+  height: auto;
+
+  transform: rotate(12deg);
+  transform-origin: center;
+
+  z-index: 10;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+/* Tablet */
+@media (max-width: 1000px) {
+  .about-avatar-sticker {
+    left: -24px;
+    top: 58%;
+    width: 75px;
+  }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .about-avatar-sticker {
+    left: -18px;
+    top: 58%;
+    width: 65px;
+  }
+}
+
+
+
+/* Perspective Highlight */
+
+.about-perspective .about-perspective-highlight {
+  font-family: "Inter", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+  color: #BB3F5B;
+  letter-spacing: 0;
 }
