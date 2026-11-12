@@ -1655,3 +1655,23 @@ body {
     display: none;
   }
 }
+
+
+html {
+  scroll-padding-top: 100px;
+  scroll-padding-bottom: 75px;
+}
+
+/* Visible keyboard focus */
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid #BB3F5B;
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}

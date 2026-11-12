@@ -22,10 +22,10 @@
     /* Words to discover */
 
 const WORDS = [
-     "PEOPLE PERSON",
-  "SYSTEMS THINKING",
+     "SYSTEMS THINKING",
+     "COMMUNITY",
   "ADAPTABILITY",
-   "ETHICAL DESIGN"
+   "AI ETHICS"
 ];
 
     const DURATION = 2600;
